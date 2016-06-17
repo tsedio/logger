@@ -5,7 +5,7 @@ import {Logger} from "./lib/Logger";
 import {ILoggerOptions} from "./interfaces/LoggerOptions";
 import {ILoggerRepporting} from "./interfaces/LoggerRepporting";
 import {LOG_COLORS} from "./lib/LogColors";
-import WritableStream = NodeJS.WritableStream;
+
 
 let $log: Logger = new Logger();
 
