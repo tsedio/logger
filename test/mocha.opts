@@ -1,0 +1,4 @@
+--timeout 3000
+--ui bdd
+--check-leaks
+--recursive

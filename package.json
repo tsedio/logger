@@ -1,0 +1,46 @@
+{
+  "name": "ts-log-debug",
+  "version": "1.1.6",
+  "description": "Provide logger written in TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "typings install",
+    "tsc": "tsc",
+    "postinstall": "tsc",
+    "lint": "tslint ./*.ts ./lib/*.ts",
+    "test": "mocha --reporter spec --check-leaks --bail test/",
+    "coverage": "npm run test-cov && npm run test-remap",
+    "test-cov": "istanbul cover -x \"examples/**\" node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "test-remap": "./node_modules/.bin/remap-istanbul -i coverage/coverage.json -o coverage/lcov-report -t html",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/romakita/log-debug"
+  },
+  "keywords": [
+    "ts",
+    "log",
+    "debug",
+    "typescript",
+    "trace"
+  ],
+  "author": "Romakita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romakita/log-debug/issues"
+  },
+  "homepage": "https://github.com/romakita/log-debug",
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "typescript": "^1.8.10",
+    "remap-istanbul": "^0.6.4",
+    "tslint": "^3.5.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.0",
+    "source-map-support": "^0.4.0"
+  }
+}
