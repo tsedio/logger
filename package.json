@@ -4,15 +4,20 @@
   "description": "Provide logger written in TypeScript.",
   "main": "index.js",
   "scripts": {
-    "preinstall": "typings install",
-    "tsc": "tsc",
-    "postinstall": "tsc",
-    "lint": "tslint ./*.ts ./lib/*.ts",
-    "test": "mocha --reporter spec --check-leaks --bail test/",
+    "build": "npm run tsc:es5 && npm run tsc:es6",
     "coverage": "npm run test-cov && npm run test-remap",
-    "test-cov": "istanbul cover -x \"examples/**\" node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
-    "test-remap": "./node_modules/.bin/remap-istanbul -i coverage/coverage.json -o coverage/lcov-report -t html",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+    "postinstall": "npm run build",
+    "tslint": "tslint ./*.ts ./lib/*.ts",
+    "release:major": "npm version major && npm publish && git push --follow-tags",
+    "release:minor": "npm version minor && npm publish && git push --follow-tags",
+    "release:patch": "npm version patch && npm publish && git push --follow-tags",
+    "test": "mocha --reporter spec --check-leaks --bail test/",
+    "test:cov": "istanbul cover -x \"examples/**\" node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "test:remap": "./node_modules/.bin/remap-istanbul -i coverage/coverage.json -o coverage/lcov-report -t html",
+    "test:travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+    "tsc": "tsc",
+    "tsc:es5": "tsc --project tsconfig.json",
+    "tsc:es6": "tsc --project tsconfig.es6.json"
   },
   "repository": {
     "type": "git",
@@ -32,12 +37,15 @@
   },
   "homepage": "https://github.com/romakita/log-debug",
   "devDependencies": {
+    "@types/chai": "^3.4.32",
+    "@types/mocha": "^2.2.31",
+    "@types/node": "^6.0.38",
     "chai": "^2.1.0",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
-    "typescript": "^1.8.10",
     "remap-istanbul": "^0.6.4",
-    "tslint": "^3.5.0"
+    "tslint": "^3.5.0",
+    "typescript": "^2.0.2"
   },
   "dependencies": {
     "colors": "^1.1.0",
