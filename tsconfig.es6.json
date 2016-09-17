@@ -12,6 +12,7 @@
     "noLib": false,
     "suppressImplicitAnyIndexErrors": false,
     "lib": ["es6"],
+    "outDir": "es6",
     "types":[
       "node",
       "mocha",

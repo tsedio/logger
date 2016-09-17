@@ -19,7 +19,6 @@
     ]
   },
   "exclude": [
-    "node_modules",
-    "es6"
+    "node_modules"
   ]
 }
