@@ -39,7 +39,6 @@
   "devDependencies": {
     "@types/chai": "^3.4.32",
     "@types/mocha": "^2.2.31",
-    "@types/node": "^6.0.38",
     "chai": "^2.1.0",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
@@ -48,6 +47,7 @@
     "typescript": "^2.0.2"
   },
   "dependencies": {
+    "@types/node": "^6.0.38",
     "colors": "^1.1.0",
     "source-map-support": "^0.4.0"
   }
