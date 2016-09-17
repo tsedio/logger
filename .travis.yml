@@ -1,18 +1,12 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.12'
   - '4'
   - '5'
-  - '6'
-
-
-before_install:
-  - npm install -g typings@1.0.4
+  - 'node'
 
 script:
   - "npm test"
-  - "npm run-script test-travis"
+  - "npm run test:travis"
 
 after_script:
   - "test -e ./coverage/lcov.info && npm install coveralls@2 remap-istanbul@0.6.4 && ./node_modules/.bin/remap-istanbul -i ./coverage/coverage.json -t lcovonly | coveralls"
