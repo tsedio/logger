@@ -35,14 +35,14 @@ node_modules
 typings/
 
 # Typescript
-index.js
-index.js.map
 test/*.js
 test/*.js.map
-/interfaces/*.js
-/interfaces/*.js.map
-/lib/*.js
-/lib/*.js.map
+/src/*.js
+/src/*.js.map
+/lib
+/dts
+/es6
+
 # Test
 /stdout
 /stderr

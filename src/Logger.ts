@@ -1,6 +1,6 @@
 import {LOG_COLORS} from "./LogColors";
-import {ILoggerOptions} from "./../interfaces/LoggerOptions";
-import {ILoggerRepporting} from "./../interfaces/LoggerRepporting";
+import {ILoggerOptions} from "./interfaces/LoggerOptions";
+import {ILoggerRepporting} from "./interfaces/LoggerRepporting";
 import WritableStream = NodeJS.WritableStream;
 
 const util = require('util');

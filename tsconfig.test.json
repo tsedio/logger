@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es5",
     "noImplicitAny": false,
     "sourceMap": true,
     "declaration":false,
@@ -9,16 +9,15 @@
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "isolatedModules": false,
-    "noLib": false,
     "suppressImplicitAnyIndexErrors": false,
     "lib": ["es6"],
-    "outDir": "es6",
     "types":[
       "node",
       "mocha",
       "chai"
     ]
   },
+
   "exclude": [
     "node_modules"
   ]

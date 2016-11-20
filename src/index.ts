@@ -1,10 +1,10 @@
 
 require('source-map-support').install();
 
-import {Logger} from "./lib/Logger";
+import {Logger} from "./Logger";
 import {ILoggerOptions} from "./interfaces/LoggerOptions";
 import {ILoggerRepporting} from "./interfaces/LoggerRepporting";
-import {LOG_COLORS} from "./lib/LogColors";
+import {LOG_COLORS} from "./LogColors";
 
 
 let $log: Logger = new Logger();

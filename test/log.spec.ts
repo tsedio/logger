@@ -1,6 +1,5 @@
-import {$log as $gLog, Logger} from '../index';
+import {$log as $gLog, Logger} from '../src/index';
 import * as Chai from 'chai';
-import * as Stream from "stream";
 import {Writable} from "stream";
 
 var expect = Chai.expect;
