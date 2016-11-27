@@ -1,6 +1,6 @@
 {
   "name": "ts-log-debug",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Provide logger written in TypeScript.",
   "main": "lib/index.js",
   "typings": "dts/index.d.ts",
