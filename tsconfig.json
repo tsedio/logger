@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "module": "commonjs",
     "target": "es5",
     "noImplicitAny": false,
@@ -10,14 +11,16 @@
     "moduleResolution": "node",
     "isolatedModules": false,
     "suppressImplicitAnyIndexErrors": false,
-    "lib": ["es6"],
+    "lib": ["es6", "dom"],
     "types":[
-      "node"
+      "node",
+      "chai",
+      "mocha"
     ]
   },
 
   "exclude": [
     "node_modules",
-    "test"
+    "dts"
   ]
 }
