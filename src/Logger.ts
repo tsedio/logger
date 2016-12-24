@@ -5,7 +5,12 @@ import WritableStream = NodeJS.WritableStream;
 
 const util = require('util');
 const colors = require('colors/safe');
-
+export interface ITableSettings {
+    padding?: number,
+    header?: {
+        [key: string]: string
+    }
+}
 export class Logger {
     /**
      * noColors
@@ -392,5 +397,143 @@ export class Logger {
      */
     private colorize(title, color){
         return this.noColors ? title : colors[color](title);
+    }
+
+    private charRepeater = (x, char = " ") => {
+        let res = "";
+        while (x--) res += char;
+        return res;
+    };
+
+    /**
+     *
+     * @returns {string}
+     */
+    private buildStartLine(fields: any, settings: ITableSettings) {
+
+        let line = "┌";
+        let list = Object.keys(fields);
+
+        list.forEach((key, index) => {
+
+            if(index != 0 && index != list.length ){
+                line += "┬";
+            }
+
+            line += this.charRepeater(fields[key] + 2 * settings.padding, "─");
+        });
+
+        line += "┐";
+
+        return line;
+    }
+
+    /**
+     *
+     * @param fields
+     * @param settings
+     * @returns {string}
+     */
+    private buildEndLine(fields: any, settings: ITableSettings) {
+
+        let line = "└";
+        let list = Object.keys(fields);
+
+        list.forEach((key, index) => {
+
+            if(index != 0 && index != list.length){
+                line += "┴";
+            }
+
+            line += this.charRepeater(fields[key] + 2 * settings.padding, "─");
+        });
+
+        line += "┘";
+        return line;
+    }
+
+    /**
+     *
+     * @param fields
+     * @param settings
+     * @param char
+     * @returns {string}
+     */
+    private buildLine(fields: any, settings: ITableSettings, char = "─") {
+        let line = "";
+
+        Object.keys(fields).forEach(key => {
+            line += "│";
+            line += this.charRepeater(fields[key] + 2 * settings.padding, char);
+        });
+
+        line += "│";
+        return line;
+    }
+
+    /**
+     *
+     */
+    private buildLineData(scope: any, fields: any, settings: ITableSettings) {
+        let line = "";
+
+        Object.keys(fields).forEach(key => {
+            line += "│ ";
+            line += scope[key];
+            line += this.charRepeater(fields[key]+ 2 * (settings.padding - 1) - scope[key].length, " ");
+            line += " ";
+        });
+
+        line += "│";
+        return line;
+    };
+
+    /**
+     *
+     * @param list
+     * @param settings
+     */
+    public drawTable(list: any[], settings: ITableSettings = {}): string {
+
+
+        settings.padding = settings.padding || 1;
+
+        if (settings.header === undefined) {
+
+            settings.header = {};
+
+            Object.keys(list[0]).forEach(key => settings.header[key] = key);
+        }
+
+        const fields = {};
+
+        // Calculate width for each column
+
+        Object.keys(settings.header).forEach(key => fields[key] = settings.header[key].length);
+
+        list.forEach(route => {
+            Object.keys(fields).forEach(key =>
+                fields[key] = Math.max((""+route[key]).length, fields[key])
+            );
+        });
+
+        let output = "";
+
+        output += this.buildStartLine(fields, settings) + "\n";
+        output += this.buildLineData(settings.header, fields, settings) + "\n";
+
+        list.forEach(scope => {
+            output += this.buildLine(fields, settings) + "\n";
+            output += this.buildLineData(scope, fields, settings) + "\n";
+        });
+
+        output += this.buildEndLine(fields, settings);
+
+        return output;
+    }
+
+    public printTable(list: any[], settings: ITableSettings = {}){
+        this.info("\n" + this.drawTable(list, settings));
+        return this;
     }
 }

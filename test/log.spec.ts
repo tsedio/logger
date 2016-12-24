@@ -431,6 +431,66 @@ describe('Logger', () => {
                 .error('error()')
                 .trace('trace()');
         });
-    })
+    });
+
+    describe('Table', () => {
+
+        it('should build a table from data', () => {
+
+            $gLog.printTable([
+                {
+                    field1: "Test1",
+                    field2: "Test2",
+                    field3: "Test3"
+                },
+
+                {
+                    field1: "Test1",
+                    field2: "Test2",
+                    field3: "Test3"
+                },
+
+                {
+                    field1: "Test1",
+                    field2: "Test2",
+                    field3: "Test3"
+                }
+            ]);
+
+
+        });
+
+        it('should build a table from data', () => {
+
+            $gLog.printTable([
+                {
+                    field1: "Test1",
+                    field2: "Test2",
+                    field3: "Test3"
+                },
+
+                {
+                    field1: "Test1",
+                    field2: "Test2",
+                    field3: "Test3"
+                },
+
+                {
+                    field1: "Test1",
+                    field2: "Test2",
+                    field3: "Test3"
+                }
+            ], {
+                padding: 2,
+                header: {
+                    field1: "FIELD 1",
+                    field2: "FIELD 2"
+                }
+            });
+
+
+        });
+
+    });
 
 });
