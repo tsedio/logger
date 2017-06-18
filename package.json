@@ -3,20 +3,18 @@
   "version": "2.2.0",
   "description": "Provide logger written in TypeScript.",
   "main": "lib/index.js",
-  "typings": "dts/index.d.ts",
+  "typings": "lib/index.d.ts",
   "scripts": {
+    "clean": "rimraf test/*.js test/**/*.js test/*.js.map test/**/*.js.map src/**/*.js src/**/*.js.map",
     "prepublish": "npm run tsc:compile",
-    "coverage": "npm run test-cov && npm run test-remap",
     "tslint": "tslint ./src/*.ts",
-    "release:major": "npm version major && npm publish && git push --follow-tags",
-    "release:minor": "npm version minor && npm publish && git push --follow-tags",
-    "release:patch": "npm version patch && npm publish && git push --follow-tags",
-    "test": "npm run tsc && mocha --reporter spec --check-leaks --bail test/",
-    "test:cov": "istanbul cover -x \"examples/**\" node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/ && npm run test:remap",
-    "test:remap": "./node_modules/.bin/remap-istanbul -i coverage/coverage.json -o coverage/lcov-report -t html",
-    "test:travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
-    "tsc": "tsc",
-    "tsc:compile": "tsc --project tsconfig.compile.json"
+    "test": "npm run clean && npm run tsc && npm run tslint && NODE_ENV=test nyc --reporter=html --reporter=text _mocha --recursive",
+    "test:mocha": "nyc --reporter=html --reporter=text _mocha --recursive ",
+    "test:travis": "nyc report --reporter=text-lcov | coveralls",
+    "tsc": "tsc --project tsconfig.json",
+    "tsc:compile": "rm -rf ./lib && tsc --project tsconfig.compile.json",
+    "version": "npm run build:doc && git add docs",
+    "build:doc": "typedoc --target ES6 --module commonjs --name TsLogDebug --exclude '**/test/**/*.ts' --out docs/api/ ./src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -36,18 +34,37 @@
   },
   "homepage": "https://github.com/romakita/log-debug",
   "devDependencies": {
-    "chai": "^2.1.0",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.4.5",
-    "remap-istanbul": "^0.6.4",
-    "tslint": "^3.5.0",
-    "typescript": "^2.0.2"
+    "@types/chai": "^4.0.0",
+    "@types/chai-as-promised": "0.0.31",
+    "@types/mocha": "^2.2.31",
+    "@types/node": "^7.0.31",
+    "@types/sinon": "^2.3.1",
+    "@types/sinon-chai": "^2.7.28",
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.0.0",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "remap-istanbul": "^0.9.5",
+    "rimraf": "^2.6.1",
+    "sinon": "^2.3.4",
+    "sinon-chai": "^2.11.0",
+    "ts-node": "^3.0.6",
+    "tslint": "^5.4.3",
+    "typedoc": "^0.5.10",
+    "typedoc-plugin-external-module-name": "^1.0.9",
+    "typescript": "^2.3.4"
   },
   "dependencies": {
-    "@types/node": "^6.0.38",
-    "@types/chai": "^3.4.32",
-    "@types/mocha": "^2.2.31",
     "colors": "^1.1.0",
-    "source-map-support": "^0.4.0"
+    "date-format": "^1.1.0",
+    "semver": "^5.3.0",
+    "source-map-support": "^0.4.0",
+    "streamroller": "^0.4.1"
+  },
+  "directories": {
+    "lib": "lib",
+    "src": "src",
+    "test": "test"
   }
 }

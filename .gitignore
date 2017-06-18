@@ -39,6 +39,11 @@ test/*.js
 test/*.js.map
 /src/*.js
 /src/*.js.map
+
+test/**/*.js
+test/**/*.js.map
+/src/**/*.js
+/src/**/*.js.map
 /lib
 /dts
 /es6
@@ -48,3 +53,4 @@ test/*.js.map
 /stderr
 
 .DS_Store
+.nyc_output
