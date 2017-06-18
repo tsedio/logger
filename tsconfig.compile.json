@@ -16,18 +16,22 @@
     "rootDir": "src/",
     "outDir": "lib/",
     "declaration": true,
-    "declarationDir":"dts/",
+    "declarationDir": "lib/",
     "noResolve": false,
     "types":[
       "node",
       "chai",
-      "mocha"
+      "mocha",
+      "sinon",
+      "sinon-chai",
+      "chai-as-promised"
     ]
   },
 
   "exclude": [
     "node_modules",
     "test",
-    "dts"
+    "dts",
+    "lib"
   ]
 }

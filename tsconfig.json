@@ -15,12 +15,16 @@
     "types":[
       "node",
       "chai",
-      "mocha"
+      "mocha",
+      "sinon",
+      "sinon-chai",
+      "chai-as-promised"
     ]
   },
 
   "exclude": [
     "node_modules",
-    "dts"
+    "dts",
+    "lib"
   ]
 }
