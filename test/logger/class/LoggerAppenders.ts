@@ -3,7 +3,7 @@ import {LoggerAppenders} from "../../../src/logger/class/LoggerAppenders";
 import {Appender} from "../../../src";
 import {BaseAppender} from "../../../src/appenders/class/BaseAppender";
 import {LogEvent} from "../../../src/core/LogEvent";
-import {LogLevel} from "../../../src/core/LogLevel";
+import {levels} from "../../../src/core/LogLevel";
 
 @Appender({name: "test2"})
 class TestAppender extends BaseAppender {
@@ -16,7 +16,7 @@ describe("LoggerAppenders", () => {
     before(() => {
         this.appenders = new LoggerAppenders();
         this.appenders.push({type: "test2", levels: ["debug"]});
-        this.result = this.appenders.byLogLevel(LogLevel.levels().DEBUG);
+        this.result = this.appenders.byLogLevel(levels().DEBUG);
     });
 
     describe("when appender exists", () => {

@@ -1,5 +1,5 @@
 import {LogEvent} from "../../../src/core/LogEvent";
-import {LogLevel} from "../../../src/core/LogLevel";
+import {levels} from "../../../src/core/LogLevel";
 import {expect} from "../../tools";
 import {JsonLayout} from "../../../src/layouts/components/JsonLayout";
 
@@ -15,7 +15,7 @@ describe("JsonLayout", () => {
 
             const context = new Map();
             context.set("user", "romain");
-            this.logEvent = new LogEvent("category", LogLevel.levels().DEBUG, ["data"], context);
+            this.logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
             this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
             this.result = this.layout.transform(this.logEvent);
         });
@@ -41,7 +41,7 @@ describe("JsonLayout", () => {
 
             const context = new Map();
             context.set("user", "romain");
-            this.logEvent = new LogEvent("category", LogLevel.levels().DEBUG, ["data"], context);
+            this.logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
             this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
             this.result = this.layout.transform(this.logEvent);
         });

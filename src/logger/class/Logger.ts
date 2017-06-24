@@ -6,7 +6,7 @@ import {LoggerAppenders} from "./LoggerAppenders";
 import {drawTable, ITableSettings} from "../utils/tableUtils";
 
 import {LogEvent} from "../../core/LogEvent";
-import {LogLevel} from "../../core/LogLevel";
+import {levels, LogLevel} from "../../core/LogLevel";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
 const util = require("util");
 
@@ -60,7 +60,7 @@ export class Logger {
      * @returns {any}
      */
     public debug(...data): Logger {
-        return this.write(LogLevel.levels().DEBUG, data);
+        return this.write(levels().DEBUG, data);
     }
 
     /**
@@ -69,7 +69,7 @@ export class Logger {
      * @returns {any}
      */
     public info(...data): Logger {
-        return this.write(LogLevel.levels().INFO, data);
+        return this.write(levels().INFO, data);
     }
 
     /**
@@ -78,7 +78,7 @@ export class Logger {
      * @returns {any}
      */
     public warn(...data): Logger {
-        return this.write(LogLevel.levels().WARN, data);
+        return this.write(levels().WARN, data);
     }
 
     /**
@@ -90,11 +90,11 @@ export class Logger {
      * @returns {any}
      */
     public error(...data): Logger {
-        return this.write(LogLevel.levels().ERROR, data);
+        return this.write(levels().ERROR, data);
     }
 
     public fatal(...data): Logger {
-        return this.write(LogLevel.levels().FATAL, data);
+        return this.write(levels().FATAL, data);
     }
 
     /**
@@ -105,7 +105,7 @@ export class Logger {
     public trace(...data): Logger {
         const stack = "\n" + Logger.createStack() + "\n";
         data.push(stack);
-        return this.write(LogLevel.levels().TRACE, data);
+        return this.write(levels().TRACE, data);
     }
 
     /**
