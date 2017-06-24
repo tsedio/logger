@@ -1,7 +1,7 @@
 {
   "name": "ts-log-debug",
   "version": "3.0.0-0",
-  "description": "Provide logger written in TypeScript.",
+  "description": "A multi chanel logger written in TypeScript.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
