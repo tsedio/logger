@@ -14,12 +14,13 @@ class TestLayout extends BaseLayout {
     }
 }
 
+const stub = Sinon.stub();
+
 @Appender({name: "test"})
 class TestAppender extends BaseAppender {
-    static stub = Sinon.stub();
 
     write(loggingEvent: LogEvent) {
-        TestAppender.stub(loggingEvent);
+        stub(loggingEvent);
     }
 }
 
@@ -30,7 +31,7 @@ describe("Logger", () => {
         this.logger.name = "loggerName";
         this.logger.start();
         this.logger.appenders.push({type: "test", layout: {type: "test"}});
-        this.transformStub = TestAppender.stub;
+        this.transformStub = stub;
     });
 
     after(() => {
