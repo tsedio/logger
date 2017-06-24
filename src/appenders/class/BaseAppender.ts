@@ -12,6 +12,7 @@ export interface IAppenderOptions {
 }
 
 export interface IBaseAppender {
+    write(loggingEvent: LogEvent);
     build?();
     reopen?();
     shutdown?(complete);
