@@ -1,601 +1,417 @@
 <!doctype html>
 <html class="default no-js">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>logger | TsLogDebug</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/css/main.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>logger | TsLogDebug</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
-    <div class="tsd-page-toolbar">
-        <div class="container">
-            <div class="table-wrap">
-                <div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
-                    <div class="field">
-                        <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-                        <input id="tsd-search-field" type="text"/>
-                    </div>
-                    <ul class="results">
-                        <li class="state loading">Preparing search index...</li>
-                        <li class="state failure">The search index is not available</li>
-                    </ul>
-                    <a href="../index.html" class="title">TsLogDebug</a>
-                </div>
-                <div class="table-cell" id="tsd-widgets">
-                    <div id="tsd-filter">
-                        <a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-                        <div class="tsd-filter-group">
-                            <div class="tsd-select" id="tsd-filter-visibility">
-                                <span class="tsd-select-label">All</span>
-                                <ul class="tsd-select-list">
-                                    <li data-value="public">Public</li>
-                                    <li data-value="protected">Public/Protected</li>
-                                    <li data-value="private" class="selected">All</li>
-                                </ul>
-                            </div>
-                            <input type="checkbox" id="tsd-filter-inherited" checked/>
-                            <label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-                            <input type="checkbox" id="tsd-filter-externals" checked/>
-                            <label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-                            <input type="checkbox" id="tsd-filter-only-exported"/>
-                            <label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
-                        </div>
-                    </div>
-                    <a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tsd-page-title">
-        <div class="container">
-            <ul class="tsd-breadcrumb">
-                <li>
-                    <a href="../globals.html">Globals</a>
-                </li>
-                <li>
-                    <a href="logger.html">logger</a>
-                </li>
-            </ul>
-            <h1>External module logger</h1>
-        </div>
-    </div>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">TsLogDebug</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="logger.html">logger</a>
+				</li>
+			</ul>
+			<h1>External module logger</h1>
+		</div>
+	</div>
 </header>
 <div class="container container-main">
-    <div class="row">
-        <div class="col-8 col-content">
-            <section class="tsd-panel tsd-comment">
-                <div class="tsd-comment tsd-typography">
-                </div>
-            </section>
-            <section class="tsd-panel-group tsd-index-group">
-                <h2>Index</h2>
-                <section class="tsd-panel tsd-index-panel">
-                    <div class="tsd-index-content">
-                        <section class="tsd-index-section ">
-                            <h3>Classes</h3>
-                            <ul class="tsd-index-list">
-                                <li class="tsd-kind-class tsd-parent-kind-external-module"><a
-                                        href="../classes/logger.logger-1.html" class="tsd-kind-icon">Logger</a></li>
-                                <li class="tsd-kind-class tsd-parent-kind-external-module"><a
-                                        href="../classes/logger.loggerappenders.html" class="tsd-kind-icon">Logger
-                                    <wbr>
-                                    Appenders</a></li>
-                            </ul>
-                        </section>
-                        <section class="tsd-index-section ">
-                            <h3>Interfaces</h3>
-                            <ul class="tsd-index-list">
-                                <li class="tsd-kind-interface tsd-parent-kind-external-module"><a
-                                        href="../interfaces/logger.itablesettings.html" class="tsd-kind-icon">ITable
-                                    <wbr>
-                                    Settings</a></li>
-                            </ul>
-                        </section>
-                        <section class="tsd-index-section tsd-is-not-exported">
-                            <h3>Variables</h3>
-                            <ul class="tsd-index-list">
-                                <li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a
-                                        href="logger.html#util" class="tsd-kind-icon">util</a></li>
-                            </ul>
-                        </section>
-                        <section class="tsd-index-section ">
-                            <h3>Functions</h3>
-                            <ul class="tsd-index-list">
-                                <li class="tsd-kind-function tsd-parent-kind-external-module"><a
-                                        href="logger.html#buildendline" class="tsd-kind-icon">build
-                                    <wbr>
-                                    End
-                                    <wbr>
-                                    Line</a></li>
-                                <li class="tsd-kind-function tsd-parent-kind-external-module"><a
-                                        href="logger.html#buildline" class="tsd-kind-icon">build
-                                    <wbr>
-                                    Line</a></li>
-                                <li class="tsd-kind-function tsd-parent-kind-external-module"><a
-                                        href="logger.html#buildlinedata" class="tsd-kind-icon">build
-                                    <wbr>
-                                    Line
-                                    <wbr>
-                                    Data</a></li>
-                                <li class="tsd-kind-function tsd-parent-kind-external-module"><a
-                                        href="logger.html#buildstartline" class="tsd-kind-icon">build
-                                    <wbr>
-                                    Start
-                                    <wbr>
-                                    Line</a></li>
-                                <li class="tsd-kind-function tsd-parent-kind-external-module"><a
-                                        href="logger.html#charrepeater" class="tsd-kind-icon">char
-                                    <wbr>
-                                    Repeater</a></li>
-                                <li class="tsd-kind-function tsd-parent-kind-external-module"><a
-                                        href="logger.html#drawtable" class="tsd-kind-icon">draw
-                                    <wbr>
-                                    Table</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                </section>
-            </section>
-            <section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-                <h2>Variables</h2>
-                <section
-                        class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-                    <a name="util" class="tsd-anchor"></a>
-                    <h3>util</h3>
-                    <div class="tsd-signature tsd-kind-icon">util<span class="tsd-signature-symbol">:</span> <span
-                            class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&quot;util&quot;)</span>
-                    </div>
-                    <aside class="tsd-sources">
-                        <ul>
-                            <li>Defined in <a
-                                    href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/class/Logger.ts#L11">logger/class/Logger.ts:11</a>
-                            </li>
-                        </ul>
-                    </aside>
-                </section>
-            </section>
-            <section class="tsd-panel-group tsd-member-group ">
-                <h2>Functions</h2>
-                <section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-                    <a name="buildendline" class="tsd-anchor"></a>
-                    <h3>build
-                        <wbr>
-                        End
-                        <wbr>
-                        Line
-                    </h3>
-                    <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-                        <li class="tsd-signature tsd-kind-icon">build
-                            <wbr>
-                            End
-                            <wbr>
-                            Line<span class="tsd-signature-symbol">(</span>fields<span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>,
-                            settings<span class="tsd-signature-symbol">: </span><a
-                                    href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span
-                                    class="tsd-signature-symbol">)</span><span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
-                        </li>
-                    </ul>
-                    <ul class="tsd-descriptions">
-                        <li class="tsd-description">
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>Defined in <a
-                                            href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/utils/tableUtils.ts#L48">logger/utils/tableUtils.ts:48</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <div class="tsd-comment tsd-typography">
-                            </div>
-                            <h4 class="tsd-parameters-title">Parameters</h4>
-                            <ul class="tsd-parameters">
-                                <li>
-                                    <h5>fields: <span class="tsd-signature-type">any</span></h5>
-                                </li>
-                                <li>
-                                    <h5>settings: <a href="../interfaces/logger.itablesettings.html"
-                                                     class="tsd-signature-type">ITableSettings</a></h5>
-                                </li>
-                            </ul>
-                            <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-                        </li>
-                    </ul>
-                </section>
-                <section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-                    <a name="buildline" class="tsd-anchor"></a>
-                    <h3>build
-                        <wbr>
-                        Line
-                    </h3>
-                    <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-                        <li class="tsd-signature tsd-kind-icon">build
-                            <wbr>
-                            Line<span class="tsd-signature-symbol">(</span>fields<span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>,
-                            settings<span class="tsd-signature-symbol">: </span><a
-                                    href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a>,
-                            char<span class="tsd-signature-symbol">?: </span><span
-                                    class="tsd-signature-type">string</span><span
-                                    class="tsd-signature-symbol">)</span><span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
-                        </li>
-                    </ul>
-                    <ul class="tsd-descriptions">
-                        <li class="tsd-description">
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>Defined in <a
-                                            href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/utils/tableUtils.ts#L73">logger/utils/tableUtils.ts:73</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <div class="tsd-comment tsd-typography">
-                            </div>
-                            <h4 class="tsd-parameters-title">Parameters</h4>
-                            <ul class="tsd-parameters">
-                                <li>
-                                    <h5>fields: <span class="tsd-signature-type">any</span></h5>
-                                </li>
-                                <li>
-                                    <h5>settings: <a href="../interfaces/logger.itablesettings.html"
-                                                     class="tsd-signature-type">ITableSettings</a></h5>
-                                </li>
-                                <li>
-                                    <h5><span class="tsd-flag ts-flagDefault value">Default value</span> char: <span
-                                            class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;─&quot;</span>
-                                    </h5>
-                                </li>
-                            </ul>
-                            <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-                        </li>
-                    </ul>
-                </section>
-                <section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-                    <a name="buildlinedata" class="tsd-anchor"></a>
-                    <h3>build
-                        <wbr>
-                        Line
-                        <wbr>
-                        Data
-                    </h3>
-                    <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-                        <li class="tsd-signature tsd-kind-icon">build
-                            <wbr>
-                            Line
-                            <wbr>
-                            Data<span class="tsd-signature-symbol">(</span>scope<span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>,
-                            fields<span class="tsd-signature-symbol">: </span><span
-                                    class="tsd-signature-type">any</span>, settings<span
-                                    class="tsd-signature-symbol">: </span><a
-                                    href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span
-                                    class="tsd-signature-symbol">)</span><span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
-                        </li>
-                    </ul>
-                    <ul class="tsd-descriptions">
-                        <li class="tsd-description">
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>Defined in <a
-                                            href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/utils/tableUtils.ts#L88">logger/utils/tableUtils.ts:88</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <h4 class="tsd-parameters-title">Parameters</h4>
-                            <ul class="tsd-parameters">
-                                <li>
-                                    <h5>scope: <span class="tsd-signature-type">any</span></h5>
-                                </li>
-                                <li>
-                                    <h5>fields: <span class="tsd-signature-type">any</span></h5>
-                                </li>
-                                <li>
-                                    <h5>settings: <a href="../interfaces/logger.itablesettings.html"
-                                                     class="tsd-signature-type">ITableSettings</a></h5>
-                                </li>
-                            </ul>
-                            <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-                        </li>
-                    </ul>
-                </section>
-                <section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-                    <a name="buildstartline" class="tsd-anchor"></a>
-                    <h3>build
-                        <wbr>
-                        Start
-                        <wbr>
-                        Line
-                    </h3>
-                    <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-                        <li class="tsd-signature tsd-kind-icon">build
-                            <wbr>
-                            Start
-                            <wbr>
-                            Line<span class="tsd-signature-symbol">(</span>fields<span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>,
-                            settings<span class="tsd-signature-symbol">: </span><a
-                                    href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span
-                                    class="tsd-signature-symbol">)</span><span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
-                        </li>
-                    </ul>
-                    <ul class="tsd-descriptions">
-                        <li class="tsd-description">
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>Defined in <a
-                                            href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/utils/tableUtils.ts#L23">logger/utils/tableUtils.ts:23</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <div class="tsd-comment tsd-typography">
-                            </div>
-                            <h4 class="tsd-parameters-title">Parameters</h4>
-                            <ul class="tsd-parameters">
-                                <li>
-                                    <h5>fields: <span class="tsd-signature-type">any</span></h5>
-                                </li>
-                                <li>
-                                    <h5>settings: <a href="../interfaces/logger.itablesettings.html"
-                                                     class="tsd-signature-type">ITableSettings</a></h5>
-                                </li>
-                            </ul>
-                            <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-                        </li>
-                    </ul>
-                </section>
-                <section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-                    <a name="charrepeater" class="tsd-anchor"></a>
-                    <h3>char
-                        <wbr>
-                        Repeater
-                    </h3>
-                    <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-                        <li class="tsd-signature tsd-kind-icon">char
-                            <wbr>
-                            Repeater<span class="tsd-signature-symbol">(</span>x<span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>,
-                            char<span class="tsd-signature-symbol">?: </span><span
-                                    class="tsd-signature-type">string</span><span
-                                    class="tsd-signature-symbol">)</span><span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
-                        </li>
-                    </ul>
-                    <ul class="tsd-descriptions">
-                        <li class="tsd-description">
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>Defined in <a
-                                            href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/utils/tableUtils.ts#L13">logger/utils/tableUtils.ts:13</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <h4 class="tsd-parameters-title">Parameters</h4>
-                            <ul class="tsd-parameters">
-                                <li>
-                                    <h5>x: <span class="tsd-signature-type">any</span></h5>
-                                </li>
-                                <li>
-                                    <h5><span class="tsd-flag ts-flagDefault value">Default value</span> char: <span
-                                            class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot; &quot;</span>
-                                    </h5>
-                                </li>
-                            </ul>
-                            <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-                        </li>
-                    </ul>
-                </section>
-                <section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-                    <a name="drawtable" class="tsd-anchor"></a>
-                    <h3>draw
-                        <wbr>
-                        Table
-                    </h3>
-                    <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-                        <li class="tsd-signature tsd-kind-icon">draw
-                            <wbr>
-                            Table<span class="tsd-signature-symbol">(</span>list<span
-                                    class="tsd-signature-symbol">: </span><span
-                                    class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>,
-                            settings<span class="tsd-signature-symbol">?: </span><a
-                                    href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span
-                                    class="tsd-signature-symbol">)</span><span
-                                    class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
-                        </li>
-                    </ul>
-                    <ul class="tsd-descriptions">
-                        <li class="tsd-description">
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>Defined in <a
-                                            href="https://github.com/Romakita/ts-log-debug/blob/d1cb836/src/logger/utils/tableUtils.ts#L107">logger/utils/tableUtils.ts:107</a>
-                                    </li>
-                                </ul>
-                            </aside>
-                            <div class="tsd-comment tsd-typography">
-                            </div>
-                            <h4 class="tsd-parameters-title">Parameters</h4>
-                            <ul class="tsd-parameters">
-                                <li>
-                                    <h5>list: <span class="tsd-signature-type">any</span><span
-                                            class="tsd-signature-symbol">[]</span></h5>
-                                </li>
-                                <li>
-                                    <h5><span class="tsd-flag ts-flagDefault value">Default value</span> settings: <a
-                                            href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span
-                                            class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-                                </li>
-                            </ul>
-                            <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-        </div>
-        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-            <nav class="tsd-navigation primary">
-                <ul>
-                    <li class="globals  ">
-                        <a href="../globals.html"><em>Globals</em></a>
-                    </li>
-                    <li class=" tsd-kind-external-module">
-                        <a href="appenders.html">appenders</a>
-                    </li>
-                    <li class=" tsd-kind-external-module">
-                        <a href="core.html">core</a>
-                    </li>
-                    <li class=" tsd-kind-external-module">
-                        <a href="layouts.html">layouts</a>
-                    </li>
-                    <li class="current tsd-kind-external-module">
-                        <a href="logger.html">logger</a>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="tsd-navigation secondary menu-sticky">
-                <ul class="before-current">
-                    <li class=" tsd-kind-class tsd-parent-kind-external-module">
-                        <a href="../classes/logger.logger-1.html" class="tsd-kind-icon">Logger</a>
-                    </li>
-                    <li class=" tsd-kind-class tsd-parent-kind-external-module">
-                        <a href="../classes/logger.loggerappenders.html" class="tsd-kind-icon">Logger
-                            <wbr>
-                            Appenders</a>
-                    </li>
-                    <li class=" tsd-kind-interface tsd-parent-kind-external-module">
-                        <a href="../interfaces/logger.itablesettings.html" class="tsd-kind-icon">ITable
-                            <wbr>
-                            Settings</a>
-                    </li>
-                    <li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-                        <a href="logger.html#util" class="tsd-kind-icon">util</a>
-                    </li>
-                    <li class=" tsd-kind-function tsd-parent-kind-external-module">
-                        <a href="logger.html#buildendline" class="tsd-kind-icon">build
-                            <wbr>
-                            End
-                            <wbr>
-                            Line</a>
-                    </li>
-                    <li class=" tsd-kind-function tsd-parent-kind-external-module">
-                        <a href="logger.html#buildline" class="tsd-kind-icon">build
-                            <wbr>
-                            Line</a>
-                    </li>
-                    <li class=" tsd-kind-function tsd-parent-kind-external-module">
-                        <a href="logger.html#buildlinedata" class="tsd-kind-icon">build
-                            <wbr>
-                            Line
-                            <wbr>
-                            Data</a>
-                    </li>
-                    <li class=" tsd-kind-function tsd-parent-kind-external-module">
-                        <a href="logger.html#buildstartline" class="tsd-kind-icon">build
-                            <wbr>
-                            Start
-                            <wbr>
-                            Line</a>
-                    </li>
-                    <li class=" tsd-kind-function tsd-parent-kind-external-module">
-                        <a href="logger.html#charrepeater" class="tsd-kind-icon">char
-                            <wbr>
-                            Repeater</a>
-                    </li>
-                    <li class=" tsd-kind-function tsd-parent-kind-external-module">
-                        <a href="logger.html#drawtable" class="tsd-kind-icon">draw
-                            <wbr>
-                            Table</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/logger.logger-1.html" class="tsd-kind-icon">Logger</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/logger.loggerappenders.html" class="tsd-kind-icon">Logger<wbr>Appenders</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/logger.itablesettings.html" class="tsd-kind-icon">ITable<wbr>Settings</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="logger.html#util" class="tsd-kind-icon">util</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="logger.html#buildendline" class="tsd-kind-icon">build<wbr>End<wbr>Line</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="logger.html#buildline" class="tsd-kind-icon">build<wbr>Line</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="logger.html#buildlinedata" class="tsd-kind-icon">build<wbr>Line<wbr>Data</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="logger.html#buildstartline" class="tsd-kind-icon">build<wbr>Start<wbr>Line</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="logger.html#charrepeater" class="tsd-kind-icon">char<wbr>Repeater</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="logger.html#drawtable" class="tsd-kind-icon">draw<wbr>Table</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="util" class="tsd-anchor"></a>
+					<h3>util</h3>
+					<div class="tsd-signature tsd-kind-icon">util<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&quot;util&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/class/Logger.ts#L11">logger/class/Logger.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="buildendline" class="tsd-anchor"></a>
+					<h3>build<wbr>End<wbr>Line</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>End<wbr>Line<span class="tsd-signature-symbol">(</span>fields<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, settings<span class="tsd-signature-symbol">: </span><a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/utils/tableUtils.ts#L48">logger/utils/tableUtils.ts:48</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fields: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>settings: <a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="buildline" class="tsd-anchor"></a>
+					<h3>build<wbr>Line</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Line<span class="tsd-signature-symbol">(</span>fields<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, settings<span class="tsd-signature-symbol">: </span><a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a>, char<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/utils/tableUtils.ts#L73">logger/utils/tableUtils.ts:73</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fields: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>settings: <a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> char: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;─&quot;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="buildlinedata" class="tsd-anchor"></a>
+					<h3>build<wbr>Line<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Line<wbr>Data<span class="tsd-signature-symbol">(</span>scope<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fields<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, settings<span class="tsd-signature-symbol">: </span><a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/utils/tableUtils.ts#L88">logger/utils/tableUtils.ts:88</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scope: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>fields: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>settings: <a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="buildstartline" class="tsd-anchor"></a>
+					<h3>build<wbr>Start<wbr>Line</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Start<wbr>Line<span class="tsd-signature-symbol">(</span>fields<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, settings<span class="tsd-signature-symbol">: </span><a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/utils/tableUtils.ts#L23">logger/utils/tableUtils.ts:23</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fields: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>settings: <a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="charrepeater" class="tsd-anchor"></a>
+					<h3>char<wbr>Repeater</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">char<wbr>Repeater<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, char<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/utils/tableUtils.ts#L13">logger/utils/tableUtils.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> char: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot; &quot;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="drawtable" class="tsd-anchor"></a>
+					<h3>draw<wbr>Table</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">draw<wbr>Table<span class="tsd-signature-symbol">(</span>list<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, settings<span class="tsd-signature-symbol">?: </span><a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/b1e7ad1/src/logger/utils/tableUtils.ts#L107">logger/utils/tableUtils.ts:107</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>list: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> settings: <a href="../interfaces/logger.itablesettings.html" class="tsd-signature-type">ITableSettings</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="appenders.html">appenders</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="core.html">core</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="layouts.html">layouts</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="logger.html">logger</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/logger.logger-1.html" class="tsd-kind-icon">Logger</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/logger.loggerappenders.html" class="tsd-kind-icon">Logger<wbr>Appenders</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/logger.itablesettings.html" class="tsd-kind-icon">ITable<wbr>Settings</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="logger.html#util" class="tsd-kind-icon">util</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="logger.html#buildendline" class="tsd-kind-icon">build<wbr>End<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="logger.html#buildline" class="tsd-kind-icon">build<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="logger.html#buildlinedata" class="tsd-kind-icon">build<wbr>Line<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="logger.html#buildstartline" class="tsd-kind-icon">build<wbr>Start<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="logger.html#charrepeater" class="tsd-kind-icon">char<wbr>Repeater</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="logger.html#drawtable" class="tsd-kind-icon">draw<wbr>Table</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
 <footer class="with-border-bottom">
-    <div class="container">
-        <h2>Legend</h2>
-        <div class="tsd-legend-group">
-            <ul class="tsd-legend">
-                <li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-                <li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-                <li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-                <li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-                <li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span>
-                </li>
-                <li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-                <li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-                <li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-                <li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-                <li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-                <li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span>
-                </li>
-                <li class="tsd-kind-constructor tsd-parent-kind-interface"><span
-                        class="tsd-kind-icon">Constructor</span></li>
-                <li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-                <li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-                <li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span>
-                </li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-                <li class="tsd-kind-class tsd-has-type-parameter"><span
-                        class="tsd-kind-icon">Class with type parameter</span></li>
-                <li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span>
-                </li>
-                <li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-                <li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-                <li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-                <li class="tsd-kind-index-signature tsd-parent-kind-class"><span
-                        class="tsd-kind-icon">Index signature</span></li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span>
-                </li>
-                <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span>
-                </li>
-                <li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span>
-                </li>
-                <li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span>
-                </li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span>
-                </li>
-                <li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span>
-                </li>
-                <li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span>
-                </li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span>
-                </li>
-                <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span>
-                </li>
-                <li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span>
-                </li>
-            </ul>
-            <ul class="tsd-legend">
-                <li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span>
-                </li>
-                <li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
 </footer>
 <div class="container tsd-generator">
-    <p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
