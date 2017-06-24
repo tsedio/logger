@@ -1,6 +1,6 @@
 import {PatternLayout} from "../../../src/layouts/components/PatternLayout";
 import {LogEvent} from "../../../src/core/LogEvent";
-import {LogLevel} from "../../../src/core/LogLevel";
+import {levels} from "../../../src/core/LogLevel";
 import {expect} from "../../tools";
 const os = require("os");
 const semver = require("semver");
@@ -26,7 +26,7 @@ describe("PatternLayout", () => {
 
             const context = new Map();
             context.set("user", "romain");
-            this.logEvent = new LogEvent("category", LogLevel.levels().DEBUG, ["data"], context);
+            this.logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
             this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
             this.result = this.layout.transform(this.logEvent);
         });
@@ -52,7 +52,7 @@ describe("PatternLayout", () => {
 
             const context = new Map();
             context.set("user", "romain");
-            const logEvent = new LogEvent("multiple.levels.of.tests", LogLevel.levels().DEBUG, [new Error("test")], context);
+            const logEvent = new LogEvent("multiple.levels.of.tests", levels().DEBUG, [new Error("test")], context);
             (logEvent as any)._startTime = new Date("2017-06-18 22:29:38.234");
             this.result = this.layout.transform(logEvent);
         });
@@ -76,7 +76,7 @@ describe("PatternLayout", () => {
             };
             const context = new Map();
             context.set("user", "romain");
-            this.logEvent = new LogEvent("multiple.levels.of.tests", LogLevel.levels().DEBUG, ["this is a test"], context);
+            this.logEvent = new LogEvent("multiple.levels.of.tests", levels().DEBUG, ["this is a test"], context);
             this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
 
             this.testPattern = (tokens, pattern, value) => {

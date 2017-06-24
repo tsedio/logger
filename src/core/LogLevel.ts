@@ -47,10 +47,6 @@ export class LogLevel {
 
         return this.getLevel(sArg.toString());
     }
-
-    static levels() {
-        return DEFAULT_LOG_LEVELS;
-    }
 }
 
 const DEFAULT_LOG_LEVELS = {
@@ -64,3 +60,7 @@ const DEFAULT_LOG_LEVELS = {
     MARK: new LogLevel(9007199254740992, "MARK"), // 2^53
     OFF: new LogLevel(Number.MAX_VALUE, "OFF")
 };
+
+export function levels() {
+    return DEFAULT_LOG_LEVELS;
+}

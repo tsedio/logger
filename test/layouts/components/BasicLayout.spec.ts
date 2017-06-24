@@ -1,7 +1,6 @@
 import {LogEvent} from "../../../src/core/LogEvent";
-import {LogLevel} from "../../../src/core/LogLevel";
+import {levels} from "../../../src/core/LogLevel";
 import {expect} from "../../tools";
-import {ColoredLayout} from "../../../src/layouts/components/ColoredLayout";
 import {BasicLayout} from "../../../src/layouts/components/BasicLayout";
 
 describe("BasicLayout", () => {
@@ -14,7 +13,7 @@ describe("BasicLayout", () => {
 
         const context = new Map();
         context.set("user", "romain");
-        const logEvent = new LogEvent("category", LogLevel.levels().DEBUG, ["data"], context);
+        const logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
         (logEvent as any)._startTime = new Date("2017-06-18 22:29:38.234");
         this.result = this.layout.transform(logEvent);
     });
