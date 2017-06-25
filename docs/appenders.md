@@ -27,13 +27,12 @@ This defines three appenders named `stdout`, `stderr` and `file`.
 
 The following appenders are included with `ts-log-debug`.
 
-* [console]()
-* [file]()
-* [stderr]()
-* [stdout]()
+* [console](appenders/console.md)
+* [file](appenders/file.md)
+* [stderr](appenders/stderr.md)
+* [stdout](appenders/stdout.md)
 
-
-# Custom Appender
+# Other Appenders
 
 `ts-log-debug` can load appenders from outside the core appenders. The type config value is used as a require path if no matching appender can be found. For example, the following configuration will create an appender with decorators:
 
@@ -42,7 +41,7 @@ The following appenders are included with `ts-log-debug`.
 import {Appender, BaseAppender, LogEvent} from "ts-log-debug";
 const consoleLog = console.log.bind(console);
 
-@ Appender({name: "console2"})
+@Appender({name: "console2"})
 export class ConsoleAppender extends BaseAppender {
   write(loggingEvent: LogEvent) {
       consoleLog(this.layout(loggingEvent, this.config.timezoneOffset));

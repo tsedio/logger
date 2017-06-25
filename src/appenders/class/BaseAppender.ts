@@ -45,7 +45,7 @@ export interface IBaseAppender {
  * const logger = new Logger("loggerName");
  *
  * logger.appenders
- *   .push({
+ *   .set("console-log", {
  *       type: "console2", level: ["debug", "info", "trace"]
  *   });
  * ```
@@ -54,7 +54,7 @@ export interface IBaseAppender {
  */
 export abstract class BaseAppender implements IBaseAppender {
     private _layout;
-    private appenderOptions: IAppenderOptions;
+    private appenderOptions: IAppenderOptions = {name: ""};
 
     constructor(private _config: IAppenderConfiguration) {
 
@@ -66,7 +66,7 @@ export abstract class BaseAppender implements IBaseAppender {
     }
 
     configure(config: PartialAppenderConfiguration) {
-        Object.assign(this._config || {}, config);
+        Object.assign(this._config, config);
 
         this._layout = Layouts.get(this.appenderOptions.defaultLayout || "colored", this._config);
 

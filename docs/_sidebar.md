@@ -2,6 +2,11 @@
 
 - Appenders
   - [Configuration](appenders.md)
+  - [Console](appenders/console.md)
+  - [File](appenders/file.md)
+  - [Stdout](appenders/stdout.md)
+  - [Stderr](appenders/stderr.md)
+  - [Custom appender](appenders/custom.md)
     
 - Layouts
   - [Configuration](layouts.md)

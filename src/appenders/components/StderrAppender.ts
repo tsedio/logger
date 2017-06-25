@@ -33,7 +33,8 @@ import {BaseAppender} from "../class/BaseAppender";
  */
 @Appender({name: "stderr"})
 export class StderrAppender extends BaseAppender {
+    private log = process.stderr.write.bind(process.stderr);
     write(loggingEvent: LogEvent) {
-        process.stdout.write(`${this.layout(loggingEvent, this.config.timezoneOffset)}\n`);
+        this.log(`${this.layout(loggingEvent, this.config.timezoneOffset)}\n`);
     }
 }

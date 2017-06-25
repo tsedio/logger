@@ -7,7 +7,7 @@ You can add your own layouts with `@Layout()` before pushing a configure to your
 import {BaseLayout, LogEvent, Layout} from "ts-log-debug";
 import {formatLogData} from "ts-log-debug/lib/utils/inpectUtils";
 
-@ Layout({name: "customJson"})
+@Layout({name: "customJson"})
 export class JsonLayout extends BaseLayout {
   transform(loggingEvent: LogEvent, timezoneOffset?): string {
       const log = {

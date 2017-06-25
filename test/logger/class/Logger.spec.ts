@@ -34,10 +34,6 @@ describe("Logger", () => {
         this.transformStub = stub;
     });
 
-    after(() => {
-
-    });
-
     it("should return log name", () => {
         expect(this.logger.name).to.eq("loggerName");
     });

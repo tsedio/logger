@@ -10,16 +10,16 @@
 [![img](https://david-dm.org/romakita/ts-log-debug/peer-status.svg)](https://david-dm.org/romakita/ts-log-debug/#info=peerDependenciess)
 [![Known Vulnerabilities](https://snyk.io/test/github/romakita/ts-log-debug/badge.svg)](https://snyk.io/test/github/romakita/ts-express-decorators)
 
-> A multi chanel logger written in TypeScript.
+> A multi channel logger written in TypeScript.
 
 ## Features
 
 * Colored console logging to stdout or stderr,
-* File appender, with configurable log rolling based on file size or date
-* Configurable log message layout/patterns
-* Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.)
+* File appender, with configurable log rolling based on file size or date,
+* Configurable log message layout/patterns,
+* Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.).
 
-Please refer to the [documentation](http://ts-log-debug.github.io) for more details.
+Please refer to the [documentation](https://romakita.github.io/ts-log-debug/) for more details.
 
 ## Installation
 

@@ -6,7 +6,6 @@ import {LogEvent} from "../../core/LogEvent";
 import {Appender} from "../decorators/appender";
 import {BaseAppender} from "../class/BaseAppender";
 
-const consoleLog = console.log.bind(console);
 /**
  * ## Console Appender
  *
@@ -36,7 +35,8 @@ const consoleLog = console.log.bind(console);
  */
 @Appender({name: "console"})
 export class ConsoleAppender extends BaseAppender {
+    private log = console.log.bind(console);
     write(loggingEvent: LogEvent) {
-        consoleLog(this.layout(loggingEvent, this.config.timezoneOffset));
+        this.log(this.layout(loggingEvent, this.config.timezoneOffset));
     }
 }
