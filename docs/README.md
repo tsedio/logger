@@ -15,9 +15,9 @@
 ## Features
 
 * Colored console logging to stdout or stderr,
-* File appender, with configurable log rolling based on file size or date
-* Configurable log message layout/patterns
-* Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.)
+* File appender, with configurable log rolling based on file size or date,
+* Configurable log message layout/patterns,
+* Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.).
 
 Please refer to the [documentation](http://ts-log-debug.github.io) for more details.
 

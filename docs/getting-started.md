@@ -1,4 +1,4 @@
-
+# Getting started
 ## Installation
 
 ```bash
@@ -51,3 +51,18 @@ logger.appenders
     });
 ```
 
+## Shutdown
+
+Shutdown return a Promise that will be resolved when ts-log-debug has closed all appenders and finished writing log events.
+Use this when your programme exits to make sure all your logs are written to files, sockets are closed, etc.
+
+```typescript
+import {Logger} from "ts-log-debug";
+
+const logger = new Logger("loggerName");
+logger
+  .shutdown()
+  .then(() => {
+     console.log("Complete")
+  });
+```

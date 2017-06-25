@@ -120,9 +120,11 @@ export class FileAppender extends BaseAppender {
      *
      * @param complete
      */
-    public shutdown(complete) {
-        this.writer.write("", "utf-8", () => {
-            this.writer.end(complete);
+    public shutdown(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.writer.write("", "utf-8", () => {
+                this.writer.end(resolve);
+            });
         });
     }
 

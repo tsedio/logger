@@ -126,6 +126,22 @@ export class Logger {
 
     /**
      *
+     * @returns {Promise<TAll[]>}
+     */
+    public shutdown() {
+
+        this.stop();
+
+        const promises = this.appenders
+            .toArray()
+            .filter((appender) => !!appender.instance.shutdown)
+            .map((appender) => appender.instance.shutdown());
+
+        return Promise.all(promises);
+    }
+
+    /**
+     *
      * @returns {Logger}
      */
     private write(logLevel: LogLevel, data: any[]): Logger {

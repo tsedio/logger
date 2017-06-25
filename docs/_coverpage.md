@@ -1,5 +1,6 @@
 <!-- _coverpage.md -->
 
+
 # TsLogDebug <small>3.0</small>
 
 > A multi chanel logger written in TypeScript.

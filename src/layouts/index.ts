@@ -284,16 +284,15 @@
  * @preferred
  */
 /** */
-import "./components/BasicLayout";
-import "./components/ColoredLayout";
-import "./components/DummyLayout";
-import "./components/MessagePassThroughLayout";
-import "./components/PatternLayout";
-import "./components/JsonLayout";
-
 export * from "./constants/logColors";
 export * from "./class/Layouts";
 export * from "./class/BaseLayout";
 export * from "./interfaces/BasicLayoutConfiguration";
 export * from "./decorators/layout";
 
+import "./components/BasicLayout";
+import "./components/ColoredLayout";
+import "./components/DummyLayout";
+import "./components/MessagePassThroughLayout";
+import "./components/PatternLayout";
+import "./components/JsonLayout";

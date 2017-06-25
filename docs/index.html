@@ -8,26 +8,43 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/buble.css" title="buble">
     <style>
+        .app-nav a.logo {
+            float: left;
+            z-index: 1;
+            height: 20px;
+            display: block;
+            margin-top: -10px;
+        }
+
+        .app-nav a.logo img {
+            width: 200px;
+            color: white;
+        }
+
         section.cover {
             color: white;
             background: linear-gradient(to bottom, #4e83cc 0%, #2d5996 50%) !important
         }
-        section.cover blockquote{
+
+        section.cover blockquote {
             color: #FFA700;
         }
+
         section.cover h1 .anchor span {
-            color:white
+            color: white
         }
 
-        section.cover .cover-main>p:last-child a {
+        section.cover .cover-main > p:last-child a {
             border-color: white;
             color: white
         }
-        section.cover .cover-main>p:last-child a:hover {
+
+        section.cover .cover-main > p:last-child a:hover {
             background: white;
             color: #337ab7;
         }
-        section.cover .cover-main>p:last-child a:last-child {
+
+        section.cover .cover-main > p:last-child a:last-child {
             color: #111;
             border-color: #FFA700;
             background-color: #FFA700;
@@ -36,7 +53,7 @@
         .github-corner svg {
             color: #fff;
             fill: #FFA700;
-            fill: var(--theme-color,#FFA700);
+            fill: var(--theme-color, #FFA700);
             height: 80px;
             width: 80px;
         }
@@ -44,6 +61,7 @@
 </head>
 <body>
 <nav>
+    <a href="/" class="logo"><img src="_media/nodetyped.svg"></a>
     <a href="/api">Api Docs</a>
 </nav>
 <div id="app">Loading ...</div>
