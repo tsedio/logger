@@ -29,8 +29,9 @@ import {Logger} from "./logger/class/Logger";
 
 let $log: Logger = new Logger("default");
 
-$log.appenders.push({type: "stdout", levels: ["info", "debug"]});
-$log.appenders.push({type: "stderr", levels: ["trace", "fatal", "error", "warn"]});
+$log.appenders
+    .set("stdout", {type: "stdout", levels: ["info", "debug"]})
+    .set("stderr", {type: "stderr", levels: ["trace", "fatal", "error", "warn"]});
 
 export default {
     $log

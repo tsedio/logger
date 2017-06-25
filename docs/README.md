@@ -54,11 +54,11 @@ import {Logger} from "ts-log-debug";
 
 const logger = new Logger("loggerName");
 logger.appenders
-    .push({
+    .set("std-log", {
         type: "stdout",
         levels: ["debug", "info", "trace"]
     })
-    .push({
+    .set("error-log", {
         type: "stderr",
         levels: ["fatal", "error", "warn"],
         layout: {
@@ -66,13 +66,13 @@ logger.appenders
           pattern: "%d %p %c %X{user} %m%n"
         }
     })
-    .push({
+    .set("file-log", {
         type: "file",
         filename: `${__dirname}/app.log`,
         layout:{
             type: "json",
             separator: ","
         }
-    })
+    });
 ```
 
