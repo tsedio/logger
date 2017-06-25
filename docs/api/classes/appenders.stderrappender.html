@@ -121,6 +121,12 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="appenders.stderrappender.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="appenders.stderrappender.html#log" class="tsd-kind-icon">log</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
@@ -151,7 +157,7 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="appenders.baseappender.html">BaseAppender</a>.<a href="appenders.baseappender.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -163,6 +169,19 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 							<h4 class="tsd-returns-title">Returns <a href="appenders.stderrappender.html" class="tsd-signature-type">StderrAppender</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> log</h3>
+					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;process.stderr.write.bind(process.stderr)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/components/StderrAppender.ts#L36">appenders/components/StderrAppender.ts:36</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
@@ -178,7 +197,7 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="appenders.baseappender.html">BaseAppender</a>.<a href="appenders.baseappender.html#config">config</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L79">appenders/class/BaseAppender.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L79">appenders/class/BaseAppender.ts:79</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/appenders.iappenderconfiguration.html" class="tsd-signature-type">IAppenderConfiguration</a></h4>
@@ -199,7 +218,7 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="appenders.baseappender.html">BaseAppender</a>.<a href="appenders.baseappender.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L68">appenders/class/BaseAppender.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L68">appenders/class/BaseAppender.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -223,7 +242,7 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="appenders.baseappender.html">BaseAppender</a>.<a href="appenders.baseappender.html#layout">layout</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L87">appenders/class/BaseAppender.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L87">appenders/class/BaseAppender.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,7 +271,7 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 								<p>Implementation of <a href="../interfaces/appenders.ibaseappender.html">IBaseAppender</a>.<a href="../interfaces/appenders.ibaseappender.html#write">write</a></p>
 								<p>Overrides <a href="appenders.baseappender.html">BaseAppender</a>.<a href="appenders.baseappender.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/components/StderrAppender.ts#L36">appenders/components/StderrAppender.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/components/StderrAppender.ts#L37">appenders/components/StderrAppender.ts:37</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -306,6 +325,9 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 								<a href="appenders.stderrappender.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="appenders.stderrappender.html#log" class="tsd-kind-icon">log</a>
+							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="appenders.stderrappender.html#config" class="tsd-kind-icon">config</a>
 							</li>
@@ -345,9 +367,6 @@ logger.appenders.set(<span class="hljs-string">"log-error"</span>, {
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
 						<a href="../modules/appenders.html#appendersregistry" class="tsd-kind-icon">Appenders<wbr>Registry</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/appenders.html#consolelog" class="tsd-kind-icon">console<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../modules/appenders.html#eol" class="tsd-kind-icon">eol</a>

@@ -93,7 +93,7 @@
 <span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger(<span class="hljs-string">"loggerName"</span>);
 
 logger.appenders
-  .push({
+  .set(<span class="hljs-string">"console-log"</span>, {
       <span class="hljs-keyword">type</span>: <span class="hljs-string">"console2"</span>, level: [<span class="hljs-string">"debug"</span>, <span class="hljs-string">"info"</span>, <span class="hljs-string">"trace"</span>]
   });
 </code></pre>
@@ -142,7 +142,6 @@ logger.appenders
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="appenders.baseappender.html#_config" class="tsd-kind-icon">_config</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="appenders.baseappender.html#_layout" class="tsd-kind-icon">_layout</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="appenders.baseappender.html#appenderoptions" class="tsd-kind-icon">appender<wbr>Options</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -157,6 +156,12 @@ logger.appenders
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="appenders.baseappender.html#configure" class="tsd-kind-icon">configure</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="appenders.baseappender.html#layout" class="tsd-kind-icon">layout</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="appenders.baseappender.html#write" class="tsd-kind-icon">write</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-private"><a href="appenders.baseappender.html#appenderoptions" class="tsd-kind-icon">appender<wbr>Options</a></li>
 							</ul>
 						</section>
 					</div>
@@ -174,7 +179,7 @@ logger.appenders
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,7 +201,7 @@ logger.appenders
 					<div class="tsd-signature tsd-kind-icon">_config<span class="tsd-signature-symbol">:</span> <a href="../interfaces/appenders.iappenderconfiguration.html" class="tsd-signature-type">IAppenderConfiguration</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L59">appenders/class/BaseAppender.ts:59</a></li>
+							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L59">appenders/class/BaseAppender.ts:59</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -206,17 +211,7 @@ logger.appenders
 					<div class="tsd-signature tsd-kind-icon">_layout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L56">appenders/class/BaseAppender.ts:56</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="appenderoptions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> appender<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">appender<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/appenders.iappenderoptions.html" class="tsd-signature-type">IAppenderOptions</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L56">appenders/class/BaseAppender.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +228,7 @@ logger.appenders
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L79">appenders/class/BaseAppender.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L79">appenders/class/BaseAppender.ts:79</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/appenders.iappenderconfiguration.html" class="tsd-signature-type">IAppenderConfiguration</a></h4>
@@ -253,7 +248,7 @@ logger.appenders
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L68">appenders/class/BaseAppender.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L68">appenders/class/BaseAppender.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -276,7 +271,7 @@ logger.appenders
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L87">appenders/class/BaseAppender.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L87">appenders/class/BaseAppender.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -304,7 +299,7 @@ logger.appenders
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/appenders.ibaseappender.html">IBaseAppender</a>.<a href="../interfaces/appenders.ibaseappender.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/839cd69/src/appenders/class/BaseAppender.ts#L91">appenders/class/BaseAppender.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L91">appenders/class/BaseAppender.ts:91</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -316,6 +311,29 @@ logger.appenders
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+					<a name="appenderoptions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> appender<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">appender<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="appenderoptions.name" class="tsd-anchor"></a>
+						<h3>name</h3>
+						<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Romakita/ts-log-debug/blob/34c72c4/src/appenders/class/BaseAppender.ts#L57">appenders/class/BaseAppender.ts:57</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -355,9 +373,6 @@ logger.appenders
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="appenders.baseappender.html#_layout" class="tsd-kind-icon">_layout</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="appenders.baseappender.html#appenderoptions" class="tsd-kind-icon">appender<wbr>Options</a>
-							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="appenders.baseappender.html#config" class="tsd-kind-icon">config</a>
 							</li>
@@ -369,6 +384,9 @@ logger.appenders
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="appenders.baseappender.html#write" class="tsd-kind-icon">write</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+								<a href="appenders.baseappender.html#appenderoptions" class="tsd-kind-icon">appender<wbr>Options</a>
 							</li>
 						</ul>
 					</li>
@@ -406,9 +424,6 @@ logger.appenders
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
 						<a href="../modules/appenders.html#appendersregistry" class="tsd-kind-icon">Appenders<wbr>Registry</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/appenders.html#consolelog" class="tsd-kind-icon">console<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../modules/appenders.html#eol" class="tsd-kind-icon">eol</a>
