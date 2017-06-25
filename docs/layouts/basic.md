@@ -12,7 +12,7 @@ import {Logger} from "ts-log-debug";
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set("std-log", {
       type: "stdout", layout: {type: "basic"}, level: ["debug", "info", "trace"]
   });
 logger.debug('Log something');

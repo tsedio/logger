@@ -59,7 +59,7 @@ import "./consoleAppender.ts"
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set("std-log", {
       type: "console2", level: ["debug", "info", "trace"]
   });
 ```

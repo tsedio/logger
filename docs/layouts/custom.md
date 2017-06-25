@@ -34,7 +34,7 @@ import "./customLayout.ts";
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set("std-log", {
       type: "console", layout:{type: "customJson"}, level: ["debug", "info", "trace"]
   });
 logger.info('this is just a test');

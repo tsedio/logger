@@ -22,17 +22,18 @@ Will be procude the following log output:
 [2017-06-17 11:43:37.987] [DEBUG] [APP] - Some debug messages
 ```
 
-Create your custom logger:
+## Create your own logger
+
 ```typescript
 import {Logger} from "ts-log-debug";
 
 const logger = new Logger("loggerName");
 logger.appenders
-    .push({
+    .set("std-log", {
         type: "stdout",
         levels: ["debug", "info", "trace"]
     })
-    .push({
+    .set("error-log", {
         type: "stderr",
         levels: ["fatal", "error", "warn"],
         layout: {
@@ -40,12 +41,13 @@ logger.appenders
           pattern: "%d %p %c %X{user} %m%n"
         }
     })
-    .push({
+    .set("all-log-file", {
         type: "file",
         filename: `${__dirname}/app.log`,
         layout:{
             type: "json",
             separator: ","
         }
-    })
+    });
 ```
+

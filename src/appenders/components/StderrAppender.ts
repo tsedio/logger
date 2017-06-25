@@ -23,7 +23,7 @@ import {BaseAppender} from "../class/BaseAppender";
  *
  * const logger = new Logger("loggerName");
  *
- * logger.appenders.push({
+ * logger.appenders.set("log-error", {
  *     type: "stderr",
  *     levels: ["error", "warn", "fatal"]
  * });

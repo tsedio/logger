@@ -11,7 +11,7 @@ import {Logger} from "ts-log-debug";
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set("std-log-json", {
       type: "console", layout: {type: "json", separator: ","}, level: ["debug", "info", "trace"]
   });
 

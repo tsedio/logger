@@ -26,7 +26,7 @@ const consoleLog = console.log.bind(console);
  *
  * const logger = new Logger("loggerName");
  *
- * logger.appenders.push({
+ * logger.appenders.set("console", {
  *     type: "console",
  *     levels: ["debug", "info", "trace"]
  * });

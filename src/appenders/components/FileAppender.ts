@@ -38,7 +38,7 @@ const eol = Os.EOL || "\n";
  *
  * const logger = new Logger("loggerName");
  *
- * logger.appenders.push({
+ * logger.appenders.set("log-file", {
  *     type: "file",
  *     filename: "all-the-logs.log"
  * });
@@ -53,7 +53,7 @@ const eol = Os.EOL || "\n";
  *
  * const logger = new Logger("loggerName");
  *
- * logger.appenders.push({
+ * logger.appenders.set("log-file2", {
  *     type: "file",
  *     filename: "all-the-logs.log",
  *     maxLogSize: 10485760,

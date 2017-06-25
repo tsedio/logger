@@ -38,7 +38,7 @@ import {Logger} from "ts-log-debug";
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set("std-log-custom", {
        type: "console",
        layout: {
            type: 'pattern',
@@ -65,7 +65,7 @@ import {Logger} from "ts-log-debug";
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set("std-log", {
        type: "console",
        layout: {
            type: 'pattern',

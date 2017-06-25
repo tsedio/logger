@@ -30,7 +30,7 @@ describe("Logger", () => {
         this.logger = new Logger();
         this.logger.name = "loggerName";
         this.logger.start();
-        this.logger.appenders.push({type: "test", layout: {type: "test"}});
+        this.logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
         this.transformStub = stub;
     });
 
