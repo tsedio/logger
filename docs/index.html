@@ -62,6 +62,9 @@
 <body>
 <nav>
     <a href="/" class="logo"><img src="_media/nodetyped.svg"></a>
+    <a href="#/getting-started">Quick start</a>
+    <a href="#/appenders">Appenders</a>
+    <a href="#/layouts">Layouts</a>
     <a href="/api">Api Docs</a>
 </nav>
 <div id="app">Loading ...</div>
@@ -69,7 +72,7 @@
 <script>
     window.$docsify = {
         name: 'TsLogDebug',
-        repo: 'http://github.com/romakita/log-debug',
+        repo: 'http://github.com/romakita/ts-log-debug',
 
         auto2top: true,
         coverpage: true,
@@ -90,7 +93,7 @@
         plugins: [
             function (hook, vm) {
                 hook.beforeEach(function (html) {
-                    var url = 'http://github.com/romakita/log-debug/blob/master/docs/' + vm.route.file
+                    var url = 'http://github.com/romakita/ts-log-debug/blob/master/docs/' + vm.route.file
                     var editHtml = '[:memo: Edit Document](' + url + ')\n'
 
                     return editHtml

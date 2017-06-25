@@ -3,7 +3,7 @@
 
 # TsLogDebug <small>3.0</small>
 
-> A multi chanel logger written in TypeScript.
+> A multi channel logger written in TypeScript.
 
 * Colored console logging,
 * Configurable log message layout/patterns.
