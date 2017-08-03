@@ -19,4 +19,5 @@
     - [Pattern](layouts/pattern.md)
   - [Custom layouts](layouts/custom.md)
 
+- [Contributing](contributiong.md)
 - [License](license.md)

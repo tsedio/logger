@@ -58,3 +58,4 @@ This will result in one current log file (`all-the-logs.log`). When that reaches
 compressed to `all-the-logs.log.1.gz and a` new file opened called `all-the-logs.log`.
 When `all-the-logs.log` reaches 10Mb again, then all-the-logs.log.1.gz will be renamed to 
 `all-the-logs.log.2.gz`, and so on.
+
