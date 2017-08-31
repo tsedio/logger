@@ -16,6 +16,7 @@ export interface ILoggerAppender {
 export class LoggerAppenders {
 
     private _appenders: Map<string, ILoggerAppender> = new Map();
+    private _lvls: Map<string, any> = new Map<string, any>();
 
     /**
      * The `has() method returns a boolean indicating whether an element with the specified configuration name exists or not.
@@ -96,7 +97,12 @@ export class LoggerAppenders {
      * @returns {[BaseAppender]}
      */
     byLogLevel(loggingLevel: LogLevel): BaseAppender[] {
-        return this.toArray()
+        const level = loggingLevel.toString();
+        if (this._lvls.has(level)) {
+            return this._lvls.get(level);
+        }
+
+        const list = this.toArray()
             .filter((appender) =>
                 appender.config.levels
                     ?
@@ -107,6 +113,10 @@ export class LoggerAppenders {
                     true
             )
             .map(appender => appender.instance);
+
+        this._lvls.set(loggingLevel.toString(), list);
+
+        return list;
     }
 
     get size() {
