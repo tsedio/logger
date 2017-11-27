@@ -8,8 +8,7 @@ import {LogLevel} from "../../../src/core/LogLevel";
 
 @Layout({name: "test"})
 class TestLayout extends BaseLayout {
-    transform(loggingEvent: LogEvent, timezoneOffset?): string {
-
+    transform(loggingEvent: LogEvent, timezoneOffset?: number): any {
         return null;
     }
 }

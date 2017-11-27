@@ -5,20 +5,18 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "clean": "rimraf test/*.js test/**/*.js test/*.js.map test/**/*.js.map src/**/*.js src/**/*.js.map",
-    "prepublish": "npm run tsc:compile",
-    "tslint": "tslint ./src/*.ts",
+    "clean": "rimraf 'test/**/*.{js,js.map}' 'src/**/*.{js,js.map}'",
+    "tslint": "tslint 'src/**/*.ts?(x)'",
     "test": "npm run clean && npm run tsc && npm run tslint && NODE_ENV=test nyc --reporter=html --reporter=text _mocha --recursive",
-    "test:mocha": "nyc --reporter=html --reporter=text _mocha --recursive ",
-    "test:travis": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls:travis": "nyc report --reporter=text-lcov | coveralls",
     "tsc": "tsc --project tsconfig.json",
-    "tsc:compile": "rm -rf ./lib && tsc --project tsconfig.compile.json",
-    "version": "npm run build:doc && git add docs",
-    "build:doc": "typedoc --target ES6 --module commonjs --name TsLogDebug --exclude '**/test/**/*.ts' --out docs/api/ ./src/**/*.ts"
+    "tsc:compile": "rimraf ./lib && tsc --project tsconfig.compile.json",
+    "doc:serve": "concurrently \"tsc --project tsconfig.compile.json -w\" \"docsify serve ./docs\" \"cd docs/_build && nodemon --delay 2.5 -e ts --watch ../../lib build-api.js\"",
+    "doc:build": "cd docs/_build && node build-api.js && cd ../.."
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/romakita/ts-log-debug"
+    "url": "https://github.com/romakita/ts-log-debug.git"
   },
   "keywords": [
     "ts",
@@ -42,29 +40,39 @@
     "@types/sinon-chai": "^2.7.28",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
-    "coveralls": "^2.13.1",
-    "istanbul": "^0.4.5",
+    "coveralls": "^3.0.0",
+    "docsify-cli": "^4.1.9",
+    "docsify-server-renderer": "^4.2.6",
     "mocha": "^3.4.2",
-    "remap-istanbul": "^0.9.5",
-    "rimraf": "^2.6.1",
+    "nyc": "^11.3.0",
+    "rimraf": "^2.6.2",
+    "semantic-release": "^8.2.0",
     "sinon": "^2.3.4",
-    "sinon-chai": "^2.11.0",
-    "ts-node": "^3.0.6",
-    "tslint": "^5.4.3",
-    "typedoc": "^0.5.10",
-    "typedoc-plugin-external-module-name": "^1.0.9",
-    "typescript": "^2.3.4"
+    "sinon-chai": "^2.14.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
   },
   "dependencies": {
     "colors": "^1.1.0",
     "date-format": "^1.1.0",
     "semver": "^5.3.0",
     "source-map-support": "^0.4.0",
-    "streamroller": "^0.5.0"
+    "streamroller": "^0.5.0",
+    "tslib": "^1.8.0",
+    "ts-log-debug": "^3.0.1"
   },
   "directories": {
     "lib": "lib",
     "src": "src",
     "test": "test"
+  },
+  "release": {
+    "debug": false,
+    "branch": "production"
+  },
+  "gflow": {
+    "master": "master",
+    "production": "production"
   }
 }

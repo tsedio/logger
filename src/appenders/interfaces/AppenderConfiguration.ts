@@ -11,6 +11,7 @@ export interface IAppenderConfiguration {
     maxLogSize?: number;
     backups?: number;
     levels?: string[];
+
     [key: string]: any;
 }
 

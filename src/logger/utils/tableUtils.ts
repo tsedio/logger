@@ -10,7 +10,7 @@ export interface ITableSettings {
     };
 }
 
-export function charRepeater(x, char = " ") {
+export function charRepeater(x: number, char = " ") {
     let res = "";
     while (x--) res += char;
     return res;
@@ -31,7 +31,7 @@ export function buildStartLine(fields: any, settings: ITableSettings) {
             line += "┬";
         }
 
-        line += charRepeater(fields[key] + 2 * settings.padding, "─");
+        line += charRepeater(fields[key] + 2 * settings.padding!, "─");
     });
 
     line += "┐";
@@ -56,7 +56,7 @@ export function buildEndLine(fields: any, settings: ITableSettings) {
             line += "┴";
         }
 
-        line += charRepeater(fields[key] + 2 * settings.padding, "─");
+        line += charRepeater(fields[key] + 2 * settings.padding!, "─");
     });
 
     line += "┘";
@@ -75,7 +75,7 @@ export function buildLine(fields: any, settings: ITableSettings, char = "─") {
 
     Object.keys(fields).forEach(key => {
         line += "│";
-        line += charRepeater(fields[key] + 2 * settings.padding, char);
+        line += charRepeater(fields[key] + 2 * settings.padding!, char);
     });
 
     line += "│";
@@ -91,13 +91,14 @@ export function buildLineData(scope: any, fields: any, settings: ITableSettings)
     Object.keys(fields).forEach(key => {
         line += "│ ";
         line += scope[key];
-        line += charRepeater(fields[key] + 2 * (settings.padding - 1) - scope[key].length, " ");
+        line += charRepeater(fields[key] + 2 * (settings.padding! - 1) - scope[key].length, " ");
         line += " ";
     });
 
     line += "│";
     return line;
 }
+
 /**
  *
  * @param list
@@ -113,14 +114,14 @@ export function drawTable(list: any[], settings: ITableSettings = {}): string {
 
         settings.header = {};
 
-        Object.keys(list[0]).forEach(key => settings.header[key] = key);
+        Object.keys(list[0]).forEach(key => settings.header![key] = key);
     }
 
-    const fields = {};
+    const fields: any = {};
 
     // Calculate width for each column
 
-    Object.keys(settings.header).forEach(key => fields[key] = settings.header[key].length);
+    Object.keys(settings.header).forEach(key => fields[key] = settings.header![key].length);
 
     list.forEach(route => {
         Object.keys(fields).forEach(key =>

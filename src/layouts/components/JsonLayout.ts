@@ -5,7 +5,8 @@
 import {BaseLayout} from "../class/BaseLayout";
 import {LogEvent} from "../../core/LogEvent";
 import {Layout} from "../decorators/layout";
-import {formatLogData} from "../utils/inpectUtils";
+import {formatLogData} from "../utils/inspectUtils";
+
 /**
  *
  * @private
@@ -13,7 +14,7 @@ import {formatLogData} from "../utils/inpectUtils";
 @Layout({name: "json"})
 export class JsonLayout extends BaseLayout {
 
-    transform(loggingEvent: LogEvent, timezoneOffset?): string {
+    transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
         const log = {
             startTime: loggingEvent.startTime,
             categoryName: loggingEvent.categoryName,
@@ -25,5 +26,5 @@ export class JsonLayout extends BaseLayout {
         log.data = log.data.map((data) => formatLogData([data]));
 
         return JSON.stringify(log) + (this.config["separator"] || "");
-    };
+    }
 }

@@ -5,8 +5,6 @@
 import {LogLevel} from "./LogLevel";
 
 export class LogEvent {
-    private _startTime = new Date();
-
     /**
      * Models a logging event.
      * @constructor
@@ -15,8 +13,10 @@ export class LogEvent {
      * @param {Array} _data objects to log
      * @param _context
      */
-    constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context) {
+    constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context: any) {
     }
+
+    private _startTime = new Date();
 
     get startTime(): Date {
         return this._startTime;

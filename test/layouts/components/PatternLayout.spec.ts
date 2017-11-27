@@ -33,7 +33,7 @@ describe("PatternLayout", () => {
 
 
         it("should return a formated string", () => {
-            expect(this.result).to.eq("2017-06-18 22:29:38.234 DEBUG category romain DEBUG - data\n");
+            expect(this.result).to.eq("2017-06-18T22:29:38.234 DEBUG category romain DEBUG - data\n");
         });
     });
 
@@ -70,7 +70,7 @@ describe("PatternLayout", () => {
                 testFunction: function () {
                     return "testFunctionToken";
                 },
-                fnThatUsesLogEvent: function (logEvent) {
+                fnThatUsesLogEvent: function (logEvent: any) {
                     return logEvent.level.toString();
                 }
             };
@@ -79,7 +79,7 @@ describe("PatternLayout", () => {
             this.logEvent = new LogEvent("multiple.levels.of.tests", levels().DEBUG, ["this is a test"], context);
             this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
 
-            this.testPattern = (tokens, pattern, value) => {
+            this.testPattern = (tokens: any, pattern: any, value: any) => {
 
                 const layout = new PatternLayout({
                     type: "pattern",
@@ -135,12 +135,12 @@ describe("PatternLayout", () => {
         });
 
         it("%d should output the date in ISO8601 format", () => {
-            this.testPattern(this.tokens, "%d", "2017-06-18 22:29:38.234");
+            this.testPattern(this.tokens, "%d", "2017-06-18T22:29:38.234");
         });
 
         it("%d should allow for format specification", () => {
             this.testPattern(this.tokens, "%d{ISO8601_WITH_TZ_OFFSET}", dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, this.logEvent.startTime, this.timezoneOffset));
-            this.testPattern(this.tokens, "%d{ISO8601}", "2017-06-18 22:29:38.234");
+            this.testPattern(this.tokens, "%d{ISO8601}", "2017-06-18T22:29:38.234");
             this.testPattern(this.tokens, "%d{ABSOLUTE}", "22:29:38.234");
             this.testPattern(this.tokens, "%d{DATE}", "18 06 2017 22:29:38.234");
             this.testPattern(this.tokens, "%d{yy MM dd hh mm ss}", "17 06 18 22 29 38");

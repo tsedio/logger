@@ -2,7 +2,7 @@
  * @module layouts
  */
 /** */
-const styles = {
+const styles: any = {
     // styles
     bold: [1, 22],
     italic: [3, 23],
@@ -21,15 +21,15 @@ const styles = {
     yellow: [33, 39]
 };
 
-export function colorizeStart(style) {
+export function colorizeStart(style: any) {
     return style ? `\x1B[${styles[style][0]}m` : "";
 }
 
 
-export function colorizeEnd(style) {
+export function colorizeEnd(style: any) {
     return style ? `\x1B[${styles[style][1]}m` : "";
 }
 
-export function colorize(str, style) {
+export function colorize(str: string, style: any) {
     return colorizeStart(style) + str + colorizeEnd(style);
 }

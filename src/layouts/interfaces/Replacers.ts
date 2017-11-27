@@ -3,17 +3,31 @@
  */
 /** */
 export interface IReplacers {
-    "c"(loggingEvent?, specifier?): string;
-    "d"(loggingEvent?, specifier?): string;
-    "h"(loggingEvent?, specifier?): string;
-    "m"(loggingEvent?, specifier?): string;
-    "n"(loggingEvent?, specifier?): string;
-    "p"(loggingEvent?, specifier?): string;
-    "r"(loggingEvent?, specifier?): string;
-    "["(loggingEvent?, specifier?): string;
-    "]"(loggingEvent?, specifier?): string;
-    "y"(loggingEvent?, specifier?): string;
-    "z"(loggingEvent?, specifier?): string;
-    "%"(loggingEvent?, specifier?): string;
-    "x"(loggingEvent?, specifier?): string;
+    "c"(loggingEvent?: any, specifier?: any): string;
+
+    "d"(loggingEvent?: any, specifier?: any): string;
+
+    "h"(loggingEvent?: any, specifier?: any): string;
+
+    "m"(loggingEvent?: any, specifier?: any): string;
+
+    "n"(loggingEvent?: any, specifier?: any): string;
+
+    "p"(loggingEvent?: any, specifier?: any): string;
+
+    "r"(loggingEvent?: any, specifier?: any): string;
+
+    "["(loggingEvent?: any, specifier?: any): string;
+
+    "]"(loggingEvent?: any, specifier?: any): string;
+
+    "y"(loggingEvent?: any, specifier?: any): string;
+
+    "z"(loggingEvent?: any, specifier?: any): string;
+
+    "%"(loggingEvent?: any, specifier?: any): string;
+
+    "x"(loggingEvent?: any, specifier?: any): string;
+
+    [key: string]: (loggingEvent?: any, specifier?: any) => string;
 }

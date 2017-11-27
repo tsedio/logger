@@ -36,6 +36,7 @@ import {BaseAppender} from "../class/BaseAppender";
 @Appender({name: "console"})
 export class ConsoleAppender extends BaseAppender {
     private log = console.log.bind(console);
+
     write(loggingEvent: LogEvent) {
         this.log(this.layout(loggingEvent, this.config.timezoneOffset));
     }

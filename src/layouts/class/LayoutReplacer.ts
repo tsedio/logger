@@ -6,8 +6,10 @@ import {LogEvent} from "../../core/LogEvent";
 import * as Os from "os";
 import {LOG_COLORS} from "../constants/logColors";
 import {colorizeEnd, colorizeStart} from "../utils/colorizeUtils";
-import {formatLogData} from "../utils/inpectUtils";
+import {formatLogData} from "../utils/inspectUtils";
 import {IReplacers} from "../interfaces/Replacers";
+import {TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
+
 /**
  *
  */
@@ -15,26 +17,7 @@ const dateFormat = require("date-format");
 const eol = Os.EOL || "\n";
 
 export class LayoutReplacer {
-
-    constructor(private tokens, private timezoneOffset) {
-    }
-
-    build(): IReplacers {
-        return {
-            "c": this.categoryName,
-            "d": this.formatAsDate,
-            "h": this.hostname,
-            "m": this.formatMessage,
-            "n": this.endOfLine,
-            "p": this.logLevel,
-            "r": this.startTime,
-            "[": this.startColour,
-            "]": this.endColour,
-            "y": this.clusterInfo,
-            "z": this.pid,
-            "%": this.percent,
-            "x": this.userDefined
-        };
+    constructor(private tokens: TokensHandlers, private timezoneOffset: number) {
     }
 
     /**
@@ -122,7 +105,8 @@ export class LayoutReplacer {
      * @returns {string}
      */
     public startColour = (loggingEvent: LogEvent): string => {
-        return colorizeStart(LOG_COLORS[loggingEvent.level.toString()]);
+        const index: any = loggingEvent.level.toString();
+        return colorizeStart(LOG_COLORS[index]);
     };
     /**
      *
@@ -130,7 +114,8 @@ export class LayoutReplacer {
      * @returns {string}
      */
     public endColour = (loggingEvent: LogEvent): string => {
-        return colorizeEnd(LOG_COLORS[loggingEvent.level.toString()]);
+        const index: any = loggingEvent.level.toString();
+        return colorizeEnd(LOG_COLORS[index]);
     };
     /**
      *
@@ -139,7 +124,6 @@ export class LayoutReplacer {
     public percent = () => {
         return "%";
     };
-
     /**
      *
      * @param loggingEvent
@@ -148,7 +132,6 @@ export class LayoutReplacer {
     public pid = (loggingEvent?: LogEvent): string => {
         return loggingEvent && loggingEvent.pid ? loggingEvent.pid.toString() : process.pid.toString();
     };
-
     /**
      *
      * @param loggingEvent
@@ -167,7 +150,6 @@ export class LayoutReplacer {
 
         return this.pid();
     };
-
     /**
      *
      * @param loggingEvent
@@ -182,4 +164,22 @@ export class LayoutReplacer {
 
         return null;
     };
+
+    build(): IReplacers {
+        return {
+            "c": this.categoryName,
+            "d": this.formatAsDate,
+            "h": this.hostname,
+            "m": this.formatMessage,
+            "n": this.endOfLine,
+            "p": this.logLevel,
+            "r": this.startTime,
+            "[": this.startColour,
+            "]": this.endColour,
+            "y": this.clusterInfo,
+            "z": this.pid,
+            "%": this.percent,
+            "x": this.userDefined
+        };
+    }
 }

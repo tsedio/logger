@@ -1,26 +1,15 @@
 language: node_js
+notifications:
+  email: false
 node_js:
-  - '4'
-  - '5'
-  - '6'
-  - '7'
   - 'node'
-
-env:
-  - NODE_ENV=test
-
-cache:
-  directories:
-    - "node_modules"
-
-before_script:
-  - npm prune
-
-before_install:
-  - npm install -g coveralls@2 nyc@10.3
-
-script:
-  - npm run test
-
+  - '8'
+  - '7'
+  - '6'
 after_success:
-  - npm run test:travis
+  - npm run coveralls:travis
+  - sh ./sh/prepublish.sh && semantic-release pre && sh ./sh/publish.sh
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
+sudo: false

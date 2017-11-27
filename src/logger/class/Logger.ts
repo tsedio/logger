@@ -8,16 +8,10 @@ import {drawTable, ITableSettings} from "../utils/tableUtils";
 import {LogEvent} from "../../core/LogEvent";
 import {levels, LogLevel} from "../../core/LogLevel";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
+
 const util = require("util");
 
 export class Logger {
-
-    private _appenders: LoggerAppenders = new LoggerAppenders();
-    private _level: LogLevel;
-    /**
-     *
-     */
-    private _context: Map<any, any> = new Map();
 
     /**
      *
@@ -26,8 +20,29 @@ export class Logger {
         this.level = "all";
     }
 
+    private _appenders: LoggerAppenders = new LoggerAppenders();
+
     get appenders(): LoggerAppenders {
         return this._appenders;
+    }
+
+    private _level: LogLevel;
+
+    get level(): string {
+        return this._level.toString();
+    }
+
+    set level(level: string) {
+        this._level = LogLevel.getLevel(level, "debug");
+    }
+
+    /**
+     *
+     */
+    private _context: Map<any, any> = new Map();
+
+    get context(): Map<any, any> {
+        return this._context;
     }
 
     get name(): string {
@@ -38,16 +53,25 @@ export class Logger {
         this._name = value;
     }
 
-    set level(level: string) {
-        this._level = LogLevel.getLevel(level, "debug");
-    }
+    /**
+     * Create stack trace  the lines of least Logger.
+     * @returns {string}
+     */
+    public static createStack(): string {
+        const stack: string = new Error().stack!.replace("Error\n", "");
+        const array: string[] = stack.split("\n");
 
-    get context(): Map<any, any> {
-        return this._context;
-    }
+        /* istanbul ignore else */
+        if (array[0].indexOf("Logger.") > -1) { // remove current function
+            array.splice(0, 1);
+        }
 
-    get level(): string {
-        return this._level.toString();
+        /* istanbul ignore else */
+        if (array[0].indexOf("Logger.") > -1) { // remove caller
+            array.splice(0, 1);
+        }
+
+        return array.join("\n");
     }
 
     public isLevelEnabled(otherLevel: string | LogLevel) {
@@ -59,7 +83,7 @@ export class Logger {
      * @param data
      * @returns {any}
      */
-    public debug(...data): Logger {
+    public debug(...data: any[]): Logger {
         return this.write(levels().DEBUG, data);
     }
 
@@ -68,7 +92,7 @@ export class Logger {
      * @param data
      * @returns {any}
      */
-    public info(...data): Logger {
+    public info(...data: any[]): Logger {
         return this.write(levels().INFO, data);
     }
 
@@ -77,7 +101,7 @@ export class Logger {
      * @param data
      * @returns {any}
      */
-    public warn(...data): Logger {
+    public warn(...data: any[]): Logger {
         return this.write(levels().WARN, data);
     }
 
@@ -89,11 +113,11 @@ export class Logger {
      * @param args
      * @returns {any}
      */
-    public error(...data): Logger {
+    public error(...data: any[]): Logger {
         return this.write(levels().ERROR, data);
     }
 
-    public fatal(...data): Logger {
+    public fatal(...data: any[]): Logger {
         return this.write(levels().FATAL, data);
     }
 
@@ -102,7 +126,7 @@ export class Logger {
      * @param data
      * @returns {Logger}
      */
-    public trace(...data): Logger {
+    public trace(...data: any[]): Logger {
         const stack = "\n" + Logger.createStack() + "\n";
         data.push(stack);
         return this.write(levels().TRACE, data);
@@ -142,6 +166,26 @@ export class Logger {
 
     /**
      *
+     * @param list
+     * @param settings
+     */
+    public drawTable(list: any[], settings: ITableSettings = {}): string {
+        return drawTable(list, settings);
+    }
+
+    /**
+     *
+     * @param list
+     * @param settings
+     * @returns {Logger}
+     */
+    public printTable(list: any[], settings: ITableSettings = {}) {
+        this.info(`\n${this.drawTable(list, settings)}`);
+        return this;
+    }
+
+    /**
+     *
      * @returns {Logger}
      */
     private write(logLevel: LogLevel, data: any[]): Logger {
@@ -161,47 +205,6 @@ export class Logger {
                 appender.write(logEvent);
             });
 
-        return this;
-    }
-
-    /**
-     * Create stack trace  the lines of least Logger.
-     * @returns {string}
-     */
-    public static createStack(): string {
-        const stack: string = new Error().stack.replace("Error\n", "");
-        const array: string[] = stack.split("\n");
-
-        /* istanbul ignore else */
-        if (array[0].indexOf("Logger.") > -1) { // remove current function
-            array.splice(0, 1);
-        }
-
-        /* istanbul ignore else */
-        if (array[0].indexOf("Logger.") > -1) { // remove caller
-            array.splice(0, 1);
-        }
-
-        return array.join("\n");
-    }
-
-    /**
-     *
-     * @param list
-     * @param settings
-     */
-    public drawTable(list: any[], settings: ITableSettings = {}): string {
-        return drawTable(list, settings);
-    }
-
-    /**
-     *
-     * @param list
-     * @param settings
-     * @returns {Logger}
-     */
-    public printTable(list: any[], settings: ITableSettings = {}) {
-        this.info(`\n${this.drawTable(list, settings)}`);
         return this;
     }
 }

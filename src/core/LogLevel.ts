@@ -5,9 +5,23 @@
 
 export class LogLevel {
 
-    constructor(private level, private levelStr) {
+    constructor(private level: number, private levelStr: string) {
         this.level = level;
         this.levelStr = levelStr;
+    }
+
+    static getLevel(sArg: any | string | LogLevel, defaultLevel?: string | LogLevel): LogLevel {
+
+        if (sArg instanceof LogLevel) {
+            return sArg;
+        }
+
+        if (typeof sArg === "string") {
+            const index: any = sArg.toUpperCase();
+            return (DEFAULT_LOG_LEVELS as any)[index] || defaultLevel;
+        }
+
+        return this.getLevel(sArg.toString());
     }
 
     toString() {
@@ -33,19 +47,6 @@ export class LogLevel {
             otherLevel = LogLevel.getLevel(otherLevel);
         }
         return this.level === (otherLevel as LogLevel).level;
-    }
-
-    static getLevel(sArg: any | string | LogLevel, defaultLevel?): LogLevel {
-
-        if (sArg instanceof LogLevel) {
-            return sArg;
-        }
-
-        if (typeof sArg === "string") {
-            return DEFAULT_LOG_LEVELS[sArg.toUpperCase()] || defaultLevel;
-        }
-
-        return this.getLevel(sArg.toString());
     }
 }
 

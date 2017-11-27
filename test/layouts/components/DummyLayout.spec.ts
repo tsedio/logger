@@ -22,6 +22,4 @@ describe("DummyLayout", () => {
     it("should return a formated string", () => {
         expect(this.result).to.eq("data");
     });
-
-
 });

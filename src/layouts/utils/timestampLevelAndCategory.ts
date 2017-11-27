@@ -2,12 +2,13 @@
  * @module layouts
  */
 /** */
-import {formatLogData} from "./inpectUtils";
+import {formatLogData} from "./inspectUtils";
 import {colorize} from "./colorizeUtils";
 import {LogEvent} from "../../core/LogEvent";
+
 const dateFormat = require("date-format");
 
-export function timestampLevelAndCategory(loggingEvent: LogEvent, colour, timezoneOffset) {
+export function timestampLevelAndCategory(loggingEvent: LogEvent, colour: any, timezoneOffset: number | undefined) {
     return colorize(
         formatLogData(
             "[%s] [%s] [%s] - ",

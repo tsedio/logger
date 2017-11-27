@@ -10,5 +10,5 @@ export abstract class BaseLayout {
 
     }
 
-    abstract transform(loggingEvent: LogEvent, timezoneOffset?): string;
+    abstract transform(loggingEvent: LogEvent, timezoneOffset?: number): string;
 }

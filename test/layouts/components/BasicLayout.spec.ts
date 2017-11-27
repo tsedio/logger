@@ -20,7 +20,7 @@ describe("BasicLayout", () => {
 
 
     it("should return a formated string", () => {
-        expect(this.result).to.contain("[2017-06-18 22:29:38.234] [DEBUG] [category] - data");
+        expect(this.result).to.contain("[2017-06-18T22:29:38.234] [DEBUG] [category] - data");
     });
 
 

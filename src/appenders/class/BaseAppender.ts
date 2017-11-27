@@ -12,10 +12,13 @@ export interface IAppenderOptions {
 }
 
 export interface IBaseAppender {
-    write(loggingEvent: LogEvent);
-    build?();
-    reopen?();
-    shutdown?(complete);
+    write(loggingEvent: LogEvent): any;
+
+    build?(): any;
+
+    reopen?(): any;
+
+    shutdown?(complete: any): any;
 }
 
 /**
@@ -53,8 +56,10 @@ export interface IBaseAppender {
  *
  */
 export abstract class BaseAppender implements IBaseAppender {
-    private _layout;
+    private _layout: any;
     private appenderOptions: IAppenderOptions = {name: ""};
+
+    [key: string]: any;
 
     constructor(private _config: IAppenderConfiguration) {
 
@@ -63,6 +68,10 @@ export abstract class BaseAppender implements IBaseAppender {
         if (this["build"]) {
             this["build"]();
         }
+    }
+
+    get config(): IAppenderConfiguration {
+        return this._config;
     }
 
     configure(config: PartialAppenderConfiguration) {
@@ -76,17 +85,13 @@ export abstract class BaseAppender implements IBaseAppender {
         return this;
     }
 
-    get config(): IAppenderConfiguration {
-        return this._config;
-    }
-
     /**
      *
      * @param args
      */
-    layout(...args): string {
+    layout(...args: any[]): string {
         return this._layout.transform(...args);
     }
 
-    abstract write(loggingEvent: LogEvent);
+    abstract write(loggingEvent: LogEvent): any;
 }

@@ -18,6 +18,10 @@ export class LoggerAppenders {
     private _appenders: Map<string, ILoggerAppender> = new Map();
     private _lvls: Map<string, any> = new Map<string, any>();
 
+    get size() {
+        return this._appenders.size;
+    }
+
     /**
      * The `has() method returns a boolean indicating whether an element with the specified configuration name exists or not.
      * @param name Required. The key of the element to test for presence in the Map object.`
@@ -33,7 +37,7 @@ export class LoggerAppenders {
      * @returns {ILoggerAppender}
      */
     get(name: string): ILoggerAppender {
-        return this._appenders.get(name);
+        return this._appenders.get(name)!;
     }
 
     /**
@@ -49,7 +53,7 @@ export class LoggerAppenders {
             throw(error);
         }
 
-        const klass = (AppendersRegistry.get(config.type).provide);
+        const klass = (AppendersRegistry.get(config.type)!.provide);
         const instance: BaseAppender = new klass(config);
 
         this._appenders.set(name, {name, instance, config});
@@ -86,7 +90,7 @@ export class LoggerAppenders {
      * @returns {Array}
      */
     toArray() {
-        const array = [];
+        const array: any[] = [];
         this._appenders.forEach(o => array.push(o));
         return array;
     }
@@ -107,7 +111,7 @@ export class LoggerAppenders {
                 appender.config.levels
                     ?
                     appender.config.levels.find(
-                        (level) => level.toUpperCase() === loggingLevel.toString()
+                        (level: string) => level.toUpperCase() === loggingLevel.toString()
                     )
                     :
                     true
@@ -117,9 +121,5 @@ export class LoggerAppenders {
         this._lvls.set(loggingLevel.toString(), list);
 
         return list;
-    }
-
-    get size() {
-        return this._appenders.size;
     }
 }

@@ -20,7 +20,7 @@ describe("ColoredLayout", () => {
 
 
     it("should return a formated string", () => {
-        expect(this.result).to.contain("[36m[2017-06-18 22:29:38.234] [DEBUG] [category] - [39mdata");
+        expect(this.result).to.contain("[36m[2017-06-18T22:29:38.234] [DEBUG] [category] - [39mdata");
     });
 
 
