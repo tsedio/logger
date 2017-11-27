@@ -2,116 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TsLogDebug - A multi chanel logger written in TypeScript.</title>
+    <title>Ts.LogDebug - A multi chanel logger written in TypeScript.</title>
     <meta name="description" content="A multi chanel logger written in TypeScript.">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/buble.css" title="buble">
+    <link rel="stylesheet" href="_styles/ps-icon-pack.css" title="buble">
+    <link rel="stylesheet" href="_styles/main.css" title="buble">
     <style>
-        .app-nav a.logo {
-            float: left;
-            z-index: 1;
-            height: 20px;
-            display: block;
-            margin-top: -10px;
-        }
 
-        .app-nav a.logo img {
-            width: 200px;
-            color: white;
-        }
-
-        section.cover {
-            color: white;
-            background: linear-gradient(to bottom, #4e83cc 0%, #2d5996 50%) !important
-        }
-
-        section.cover blockquote {
-            color: #FFA700;
-        }
-
-        section.cover h1 .anchor span {
-            color: white
-        }
-
-        section.cover .cover-main > p:last-child a {
-            border-color: white;
-            color: white
-        }
-
-        section.cover .cover-main > p:last-child a:hover {
-            background: white;
-            color: #337ab7;
-        }
-
-        section.cover .cover-main > p:last-child a:last-child {
-            color: #111;
-            border-color: #FFA700;
-            background-color: #FFA700;
-        }
-
-        .github-corner svg {
-            color: #fff;
-            fill: #FFA700;
-            fill: var(--theme-color, #FFA700);
-            height: 80px;
-            width: 80px;
-        }
-        .markdown-section code {
-            white-space: pre;
-        }
     </style>
 </head>
 <body>
-<nav>
-    <a href="#/getting-started">Quick start</a>
-    <a href="#/appenders">Appenders</a>
-    <a href="#/layouts">Layouts</a>
-    <a href="api">Api Docs</a>
-</nav>
 <div id="app">Loading ...</div>
 </body>
 <script>
-    window.$docsify = {
-        name: 'TsLogDebug',
-        repo: 'http://github.com/romakita/ts-log-debug',
+  window.$docsify = {
+    name: "Ts.LogDebug",
+    repo: "http://github.com/romakita/ts-log-debug",
+    auto2top: true,
+    coverpage: true,
+    executeScript: true,
+    loadSidebar: true,
+    loadNavbar: true,
+    maxLevel: 4,
+    subMaxLevel: 2,
+    ga: "UA-35240348-2",
+    search: {
+      noData: {
+        "/": "No results!"
+      },
+      paths: "auto",
+      placeholder: {
+        "/": "Search"
+      }
+    },
+    formatUpdated: "{MM}/{DD} {HH}:{mm}",
+    plugins: [
+      function (hook, vm) {
+        hook.beforeEach(function (html) {
+          var url = "http://github.com/Romakita/ts-log-debug/blob/master/docs/" + vm.route.file;
+          var github = "<iframe src=\"https://ghbtns.com/github-btn.html?user=romakita&amp;repo=ts-log-debug&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>";
 
-        auto2top: true,
-        coverpage: true,
-        executeScript: true,
-        loadSidebar: true,
-        maxLevel: 4,
-        subMaxLevel: 2,
-        search: {
-            noData: {
-                '/': 'No results!'
-            },
-            paths: 'auto',
-            placeholder: {
-                '/': 'Search'
-            }
-        },
-        formatUpdated: '{MM}/{DD} {HH}:{mm}',
-        plugins: [
-            function (hook, vm) {
-                hook.beforeEach(function (html) {
-                    var url = 'http://github.com/romakita/ts-log-debug/blob/master/docs/' + vm.route.file
-                    var editHtml = '[:memo: Edit Document](' + url + ')\n'
-
-                    return editHtml
-                        + html
-                        + '\n----\n'
-                        + 'Last modified {docsify-updated} '
-                        + editHtml
-                })
-            }
-        ]
-    }
+          return "<div class=\"tool-docs header\">"
+            + "<a href=\"" + url + "\" title=\"Edit document\"><div class=\"ps-icon ps-icon-pen\"></div></a>"
+            + github
+            + "</div>"
+            + "\n\n"
+            + html
+            + "\n----\n"
+            + "<small>Last modified {docsify-updated} - This work is under the [MIT License](license.md)</small>"
+            + "<div style='position: absolute; right:0px;bottom: 45px'>" + github + "</div>\n\n";
+        });
+      }
+    ]
+  };
 </script>
 <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/zoom-image.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+<script src="_plugins/api-search.js"></script>
+
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-typescript.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+
 </html>

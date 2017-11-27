@@ -2,14 +2,13 @@
  * @module layouts
  */
 /** */
-const semver = require("semver");
 
 import {truncateAndPad} from "../utils/StringUtils";
 import {BaseLayout} from "../class/BaseLayout";
 import {IReplacers} from "../interfaces/Replacers";
 import {LayoutReplacer} from "../class/LayoutReplacer";
 import {LogEvent} from "../../core/LogEvent";
-import {IBasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
+import {IBasicLayoutConfiguration, TokenHandler, TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
 import {Layout} from "../decorators/layout";
 
 const regex = /%(-?[0-9]+)?(\.?[0-9]+)?([[\]cdhmnprzxy%])(\{([^}]+)\})?|([^%]+)/;
@@ -50,20 +49,19 @@ const TTCC_CONVERSION_PATTERN = "%r %p %c - %m%n";
 @Layout({name: "pattern"})
 export class PatternLayout extends BaseLayout {
     private _replacers: IReplacers;
-    private tokens;
+    private tokens: TokensHandlers;
     private pattern: string;
+    private replaceToken = (conversionCharacter: string, loggingEvent: any, specifier: any) => {
+        return this._replacers[conversionCharacter](loggingEvent, specifier);
+    };
 
     constructor(config: IBasicLayoutConfiguration) {
         super(config);
 
         this.pattern = config && config.pattern || TTCC_CONVERSION_PATTERN;
-        this.tokens = config && config.tokens;
+        this.tokens = config && config.tokens!;
         this._replacers = new LayoutReplacer(this.tokens, this.config.timezoneOffset).build();
     }
-
-    private replaceToken = (conversionCharacter, loggingEvent, specifier) => {
-        return this._replacers[conversionCharacter](loggingEvent, specifier);
-    };
 
     /**
      *
@@ -71,7 +69,7 @@ export class PatternLayout extends BaseLayout {
      * @param timezoneOffset
      * @returns {string}
      */
-    transform(loggingEvent: LogEvent, timezoneOffset?): string {
+    transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
 
         let formattedString = "";
         let result;
@@ -98,7 +96,7 @@ export class PatternLayout extends BaseLayout {
             searchString = searchString.substr(result.index + result[0].length);
         }
         return formattedString;
-    };
+    }
 }
 
 

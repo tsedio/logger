@@ -8,6 +8,7 @@ import {LogEvent} from "../../core/LogEvent";
 import * as Path from "path";
 import * as Os from "os";
 import {BaseAppender} from "../class/BaseAppender";
+
 const streams = require("streamroller");
 const eol = Os.EOL || "\n";
 
@@ -68,46 +69,7 @@ const eol = Os.EOL || "\n";
  */
 @Appender({name: "file", defaultLayout: "basic"})
 export class FileAppender extends BaseAppender {
-    private writer;
-
-    private build() {
-        let {filename: file, maxlogSize: logSize, backups: numBackups} = this.config;
-
-        file = Path.normalize(file);
-        numBackups = numBackups === undefined ? 5 : numBackups;
-        // there has to be at least one backup if logSize has been specified
-        numBackups = numBackups === 0 ? 1 : numBackups;
-
-        this.writer = this.openTheStream(file, logSize, numBackups, this.config);
-
-        // On SIGHUP, close and reopen all files. This allows this appender to work with
-        // logrotate. Note that if you are using logrotate, you should not set
-        // `logSize`.
-        process.on("SIGHUP", () => {
-            this.reopen();
-        });
-    }
-
-    /**
-     *
-     * @param file
-     * @param fileSize
-     * @param numFiles
-     * @param options
-     * @returns {streams.RollingFileStream}
-     */
-    private openTheStream(file, fileSize, numFiles, options) {
-        const stream = new streams.RollingFileStream(
-            file,
-            fileSize,
-            numFiles,
-            options
-        );
-        stream.on("error", (err) => {
-            console.error("FileAppender - Writing to file %s, error happened ", file, err);
-        });
-        return stream;
-    }
+    private writer: any;
 
     /**
      *
@@ -134,5 +96,44 @@ export class FileAppender extends BaseAppender {
      */
     public write(loggingEvent: LogEvent) {
         this.writer.write(this.layout(loggingEvent, this.config.timezoneOffset) + eol, "utf8");
+    }
+
+    private build() {
+        let {filename: file, maxlogSize: logSize, backups: numBackups} = this.config;
+
+        file = Path.normalize(file!);
+        numBackups = numBackups === undefined ? 5 : numBackups;
+        // there has to be at least one backup if logSize has been specified
+        numBackups = numBackups === 0 ? 1 : numBackups;
+
+        this.writer = this.openTheStream(file, logSize, numBackups, this.config);
+
+        // On SIGHUP, close and reopen all files. This allows this appender to work with
+        // logrotate. Note that if you are using logrotate, you should not set
+        // `logSize`.
+        process.on("SIGHUP", () => {
+            this.reopen();
+        });
+    }
+
+    /**
+     *
+     * @param file
+     * @param fileSize
+     * @param numFiles
+     * @param options
+     * @returns {streams.RollingFileStream}
+     */
+    private openTheStream(file: string, fileSize: number, numFiles: number, options: any) {
+        const stream = new streams.RollingFileStream(
+            file,
+            fileSize,
+            numFiles,
+            options
+        );
+        stream.on("error", (err: any) => {
+            console.error("FileAppender - Writing to file %s, error happened ", file, err);
+        });
+        return stream;
     }
 }

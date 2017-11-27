@@ -2,7 +2,7 @@
  * @module layouts
  */
 /** */
-import {formatLogData} from "../utils/inpectUtils";
+import {formatLogData} from "../utils/inspectUtils";
 import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory";
 import {BaseLayout} from "../class/BaseLayout";
 import {LogEvent} from "../../core/LogEvent";
@@ -19,11 +19,11 @@ export class BasicLayout extends BaseLayout {
      *
      * @author Stephan Strittmatter
      */
-    transform(loggingEvent: LogEvent, timezoneOffset?): string {
+    transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
         return timestampLevelAndCategory(
-                loggingEvent,
-                undefined,
-                timezoneOffset
-            ) + formatLogData(loggingEvent.data);
+            loggingEvent,
+            undefined,
+            timezoneOffset
+        ) + formatLogData(loggingEvent.data);
     }
 }

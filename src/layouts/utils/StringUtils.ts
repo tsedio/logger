@@ -2,7 +2,7 @@
  * @module layouts
  */
 /** */
-export function truncate(truncation, toTruncate) {
+export function truncate(truncation: string, toTruncate: string) {
     let len;
     if (truncation) {
         len = parseInt(truncation.substr(1), 10);
@@ -12,7 +12,7 @@ export function truncate(truncation, toTruncate) {
     return toTruncate;
 }
 
-export function pad(padding, toPad) {
+export function pad(padding: string, toPad: string) {
     let len;
     if (padding) {
         if (padding.charAt(0) === "-") {
@@ -32,7 +32,7 @@ export function pad(padding, toPad) {
     return toPad;
 }
 
-export function truncateAndPad(toTruncAndPad, truncation, padding) {
+export function truncateAndPad(toTruncAndPad: string, truncation: string, padding: string) {
     let replacement = toTruncAndPad;
     replacement = truncate(truncation, replacement);
     replacement = pad(padding, replacement);

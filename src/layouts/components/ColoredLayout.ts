@@ -2,7 +2,7 @@
  * @module layouts
  */
 /** */
-import {formatLogData} from "../utils/inpectUtils";
+import {formatLogData} from "../utils/inspectUtils";
 import {LogEvent} from "../../core/LogEvent";
 import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory";
 import {LOG_COLORS} from "../constants/logColors";
@@ -15,11 +15,12 @@ export class ColoredLayout extends BaseLayout {
      * colouredLayout - taken from masylum's fork.
      * same as basicLayout, but with colours.
      */
-    transform(loggingEvent: LogEvent, timezoneOffset?): string {
+    transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
+        const index: any = loggingEvent.level.toString();
         return timestampLevelAndCategory(
-                loggingEvent,
-                LOG_COLORS[loggingEvent.level.toString()],
-                timezoneOffset
-            ) + formatLogData(loggingEvent.data);
+            loggingEvent,
+            LOG_COLORS[index],
+            timezoneOffset
+        ) + formatLogData(loggingEvent.data);
     }
 }
