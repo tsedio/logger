@@ -1,7 +1,3 @@
-/**
- * @module layouts
- */
-/** */
 import {formatLogData} from "../utils/inspectUtils";
 import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory";
 import {BaseLayout} from "../class/BaseLayout";
