@@ -18,7 +18,7 @@ git status
 
 git commit -m "Travis build: $TRAVIS_BUILD_NUMBER  v$PACKAGE_VERSION [ci skip]"
 
-git remote add origin-travis https://${GH_TOKEN}@github.com/Romakita/ts-express-decorators.git
+git remote add origin-travis https://${GH_TOKEN}@github.com/Romakita/ts-log-debug.git
 
 echo "Push to origin";
 git push --quiet --set-upstream origin-travis production
