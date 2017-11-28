@@ -1,6 +1,6 @@
 {
   "name": "ts-log-debug",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "A multi channel logger written in TypeScript.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
