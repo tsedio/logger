@@ -15,7 +15,6 @@ class TestAppender extends BaseAppender {
 describe("LoggerAppenders", () => {
     before(() => {
         this.appenders = new LoggerAppenders();
-        this.appenders = new LoggerAppenders();
         this.appenders.set("custom", {type: "test2", levels: ["debug"]});
     });
 
@@ -34,6 +33,29 @@ describe("LoggerAppenders", () => {
         describe("when appender doesn't exists", () => {
             it("should throw an error", () => {
                 assert.throws(() => this.appenders.set("unknow", {type: "unknow"}), "");
+            });
+        });
+
+        describe("caching updated", () => {
+            beforeEach(() => {
+                this.cachedAppenders = new LoggerAppenders();
+                this.cachedAppenders.set("custom", {type: "test2", levels: ["debug"]});
+                this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
+            });
+            it("when cleared should have no appenders", () => {
+                this.cachedAppenders.clear();
+                this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
+                expect(this.result).to.be.an("array").lengthOf(0);
+            });
+            it("when deleted should have no appenders", () => {
+                this.cachedAppenders.delete("custom");
+                this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
+                expect(this.result).to.be.an("array").lengthOf(0);
+            });
+            it("when deleted should have no appenders", () => {
+                this.cachedAppenders.set("custom2", {type: "test2", levels: ["debug"]});
+                this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
+                expect(this.result).to.be.an("array").lengthOf(2);
             });
         });
     });

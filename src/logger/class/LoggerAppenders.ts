@@ -57,6 +57,7 @@ export class LoggerAppenders {
         const instance: BaseAppender = new klass(config);
 
         this._appenders.set(name, {name, instance, config});
+        this._lvls.clear();
         return this;
     }
 
@@ -66,7 +67,11 @@ export class LoggerAppenders {
      * @returns {boolean} Returns true if an element in the Map object existed and has been removed, or false if the element does not exist.
      */
     delete(name: string): boolean {
-        return this._appenders.delete(name);
+        let existed = this._appenders.delete(name);
+        if (existed) {
+            this._lvls.clear();
+        }
+        return existed;
     }
 
     /**
@@ -74,6 +79,7 @@ export class LoggerAppenders {
      */
     clear(): void {
         this._appenders.clear();
+        this._lvls.clear();
     }
 
     /**
