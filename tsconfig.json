@@ -13,14 +13,9 @@
     "strictNullChecks": true,
     "importHelpers": true,
     "lib": ["es6"],
-    "types":[
-      "node",
-      "chai",
-      "mocha",
-      "sinon",
-      "sinon-chai",
-      "chai-as-promised"
-    ]
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
   },
 
   "exclude": [
