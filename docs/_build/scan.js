@@ -10,12 +10,11 @@ const path = require("path");
 const fs = require("fs");
 const fsExtra = require("fs-extra");
 const {Parser} = require("./parsers/parser.js");
-const {$log} = require("ts-log-debug");
 const info = require("./info");
 const DocComponent = require("./models/component.js").DocComponent;
 
 module.exports = (pattern) => {
-  $log.info("Scan folders", pattern);
+  console.info("Scan folders", pattern);
   let files = glob.sync(pattern);
 
   return files
@@ -36,7 +35,7 @@ module.exports = (pattern) => {
         return docComponent;
 
       } catch (er) {
-        $log.error(er);
+        console.error(er);
       }
 
     });

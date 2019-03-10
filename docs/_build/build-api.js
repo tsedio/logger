@@ -8,10 +8,6 @@ const scan = require("./scan");
 const writeVersion = require("./write-version");
 const path = require("path");
 
-const {$log} = require("ts-log-debug");
-
-$log.name = "DOC";
-
 const options = {
   file: path.resolve(__dirname + "/../api/index.md"),
   pattern: __dirname + "/../../lib/**/*.ts"
@@ -35,5 +31,5 @@ Promise.resolve()
   .then(() => {
     writeIndex();
   })
-  .then(() => $log.info("done"))
+  .then(() => console.info("done"))
   .catch(err => console.error(err));

@@ -1,5 +1,4 @@
 "use strict";
-const {$log} = require("ts-log-debug");
 const info = require("../info");
 const {SymbolParser} = require("./symbol-parser");
 

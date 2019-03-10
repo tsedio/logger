@@ -1,4 +1,3 @@
-const {$log} = require("ts-log-debug");
 const DocSymbol = require("../models/symbol.js").DocSymbol;
 const {descriptionParser} = require("./description-parser");
 const info = require("../info");

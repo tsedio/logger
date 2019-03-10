@@ -1,7 +1,6 @@
 "use strict";
 const path = require("path");
 const fsExtra = require("fs-extra");
-const {$log} = require("ts-log-debug");
 const info = require("./info");
 
 const toHTML = (symbol) => {
@@ -126,7 +125,7 @@ module.exports.writeSymbol = (symbol) => {
     return;
   }
 
-  $log.info("Write", path.join(symbol.module.docPath, symbol.symbolName.toLowerCase() + ".md"));
+  console.info("Write", path.join(symbol.module.docPath, symbol.symbolName.toLowerCase() + ".md"));
 
   fsExtra.writeFile(path.join("../api", symbol.module.docPath, symbol.symbolName.toLowerCase() + ".md"), symbol.output, {
     encoding: "utf8",
