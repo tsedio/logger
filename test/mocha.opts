@@ -1,4 +1,5 @@
---timeout 3000
---ui bdd
+--require ts-node/register
 --check-leaks
 --recursive
+--reporter dot
+{packages,test}/**/*.spec.ts

@@ -1,5 +1,4 @@
 /**
- * @module core
  * @preferred
  *
  * @fileoverview ts-log-debug is a library to log in TypeScript.
@@ -17,9 +16,6 @@
  * @static
  * Website:
  */
-/** */
-require("source-map-support").install();
-
 export * from "./core";
 export * from "./appenders";
 export * from "./layouts";
@@ -30,11 +26,11 @@ import {Logger} from "./logger/class/Logger";
 let $log: Logger = new Logger("default");
 
 $log.appenders
-    .set("stdout", {type: "stdout", levels: ["info", "debug"]})
-    .set("stderr", {type: "stderr", levels: ["trace", "fatal", "error", "warn"]});
+  .set("stdout", {type: "stdout", levels: ["info", "debug"]})
+  .set("stderr", {type: "stderr", levels: ["trace", "fatal", "error", "warn"]});
 
 export default {
-    $log
+  $log
 };
 
 export {$log};

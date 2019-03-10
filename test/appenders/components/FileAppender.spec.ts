@@ -5,25 +5,24 @@ import {levels, LogEvent} from "../../../src";
 import {expect, Sinon} from "../../tools";
 
 describe("FileAppender", () => {
+  it("should log something", () => {
+    // GIVEN
+    const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
+    const appender = new FileAppender({type: "console", filename: "log.log"});
 
-    before(() => {
-        this.logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
-        this.appender = new FileAppender({type: "console", filename: "log.log"});
-        this.logStub = Sinon.stub(this.appender.writer, "write");
+    const writeStub = Sinon.stub((appender as any).writer, "write");
 
-        this.appender.write(this.logEvent);
+    appender.write(logEvent);
 
-        this.appender.shutdown();
-        this.appender.reopen();
-    });
+    // WHEN
+    appender.shutdown();
+    appender.reopen();
 
-    after(() => {
-        this.logStub.restore();
-    });
 
-    it("should log something", () => {
-        this.logStub.should.have.been.called;
-        expect(this.logStub.getCall(0).args[0]).to.contains("[DEBUG] [test]");
-    });
+    // THEN
+    writeStub.should.have.been.called;
+    expect(writeStub.getCall(0).args[0]).to.contains("[DEBUG] [test]");
 
+    writeStub.restore();
+  });
 });

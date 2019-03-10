@@ -1,6 +1,6 @@
 {
   "include": [
-    "src/**/*.js"
+    "src/**/*.ts"
   ],
   "exclude": [
     "**/index.ts",
@@ -8,8 +8,9 @@
     "**/interfaces/*.js"
   ],
   "reporter": [
-    "lcov",
-    "text-summary"
+    "text-summary",
+    "html",
+    "lcov"
   ],
   "extension": [
     ".ts"
@@ -18,6 +19,5 @@
   "lines": 93,
   "statements": 92,
   "functions": 86,
-  "branches": 78,
-  "all": true
+  "branches": 78
 }
