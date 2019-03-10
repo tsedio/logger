@@ -69,71 +69,76 @@ const eol = Os.EOL || "\n";
  */
 @Appender({name: "file", defaultLayout: "basic"})
 export class FileAppender extends BaseAppender {
-    private writer: any;
+  private writer: any;
+  private listener: any;
 
-    /**
-     *
-     */
-    public reopen() {
-        this.writer.closeTheStream(this.writer.openTheStream.bind(this.writer));
-    }
+  /**
+   *
+   */
+  public reopen() {
+    return this
+      .shutdown()
+      .then(() => {
+        this.build();
+      });
+  }
 
-    /**
-     *
-     * @param complete
-     */
-    public shutdown(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            this.writer.write("", "utf-8", () => {
-                this.writer.end(resolve);
-            });
-        });
-    }
+  /**
+   *
+   */
+  public shutdown(): Promise<any> {
+    process.removeListener("SIGHUP", this.listener);
 
-    /**
-     *
-     * @param loggingEvent
-     */
-    public write(loggingEvent: LogEvent) {
-        this.writer.write(this.layout(loggingEvent, this.config.timezoneOffset) + eol, "utf8");
-    }
+    return new Promise((resolve, reject) => {
+      this.writer.write("", "utf-8", () => {
+        this.writer.end(resolve);
+      });
+    });
+  }
 
-    private build() {
-        let {filename: file, maxlogSize: logSize, backups: numBackups} = this.config;
+  /**
+   *
+   * @param loggingEvent
+   */
+  public write(loggingEvent: LogEvent) {
+    this.writer.write(this.layout(loggingEvent, this.config.timezoneOffset) + eol, "utf8");
+  }
 
-        file = Path.normalize(file!);
-        numBackups = numBackups === undefined ? 5 : numBackups;
-        // there has to be at least one backup if logSize has been specified
-        numBackups = numBackups === 0 ? 1 : numBackups;
+  private build() {
+    let {filename: file, maxlogSize: logSize, backups: numBackups} = this.config;
 
-        this.writer = this.openTheStream(file, logSize, numBackups, this.config);
+    file = Path.normalize(file!);
+    numBackups = numBackups === undefined ? 5 : numBackups;
+    // there has to be at least one backup if logSize has been specified
+    numBackups = numBackups === 0 ? 1 : numBackups;
 
-        // On SIGHUP, close and reopen all files. This allows this appender to work with
-        // logrotate. Note that if you are using logrotate, you should not set
-        // `logSize`.
-        process.on("SIGHUP", () => {
-            this.reopen();
-        });
-    }
+    this.writer = this.openTheStream(file, logSize, numBackups, this.config);
+    // On SIGHUP, close and reopen all files. This allows this appender to work with
+    // logrotate. Note that if you are using logrotate, you should not set
+    // `logSize`.
+    this.listener = () => this.reopen();
 
-    /**
-     *
-     * @param file
-     * @param fileSize
-     * @param numFiles
-     * @param options
-     * @returns {streams.RollingFileStream}
-     */
-    private openTheStream(file: string, fileSize: number, numFiles: number, options: any) {
-        const stream = new streams.RollingFileStream(
-            file,
-            fileSize,
-            numFiles,
-            options
-        );
-        stream.on("error", (err: any) => {
-            console.error("FileAppender - Writing to file %s, error happened ", file, err);
-        });
-        return stream;
-    }
+    process.on("SIGHUP", this.listener);
+  }
+
+  /**
+   *
+   * @param file
+   * @param fileSize
+   * @param numFiles
+   * @param options
+   * @returns {streams.RollingFileStream}
+   */
+  private openTheStream(file: string, fileSize: number, numFiles: number, options: any) {
+    const stream = new streams.RollingFileStream(
+      file,
+      fileSize,
+      numFiles,
+      options
+    );
+    stream.on("error", (err: any) => {
+      console.error("FileAppender - Writing to file %s, error happened ", file, err);
+    });
+    return stream;
+  }
 }
