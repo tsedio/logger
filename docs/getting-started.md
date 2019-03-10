@@ -4,6 +4,7 @@
 ```bash
 npm install -g typescript
 npm install ts-log-debug
+npm install source-map-support
 ```
 
 ## Quick start

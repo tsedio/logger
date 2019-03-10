@@ -2,6 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
+    "lib": [
+      "es6"
+    ],
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
@@ -12,12 +15,11 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "importHelpers": true,
-    "lib": ["es6"],
+    "noEmit": true,
     "typeRoots": [
       "./node_modules/@types"
-    ],
+    ]
   },
-
   "exclude": [
     "node_modules",
     "dts",

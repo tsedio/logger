@@ -18,8 +18,6 @@
  * Website:
  */
 /** */
-require("source-map-support").install();
-
 export * from "./core";
 export * from "./appenders";
 export * from "./layouts";
