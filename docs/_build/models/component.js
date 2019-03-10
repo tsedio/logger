@@ -1,7 +1,6 @@
 const info = require("../info");
 const path = require("path");
 const fs = require("fs");
-const {$log} = require("ts-log-debug");
 const {name} = require("../../../package.json");
 
 class DocComponent {

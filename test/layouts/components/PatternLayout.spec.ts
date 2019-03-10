@@ -60,7 +60,6 @@ describe("PatternLayout", () => {
 
 
     it("should return a formated string", () => {
-      console.log("this.result", this.result);
       expect(this.result).to.contain("Error: test");
     });
   });
