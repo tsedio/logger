@@ -1,7 +1,3 @@
-/**
- * @module logger
- */
-/** */
 import {LoggerAppenders} from "./LoggerAppenders";
 import {drawTable, ITableSettings} from "../utils/tableUtils";
 
@@ -9,202 +5,200 @@ import {LogEvent} from "../../core/LogEvent";
 import {levels, LogLevel} from "../../core/LogLevel";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
 
-const util = require("util");
-
 export class Logger {
 
-    /**
-     *
-     */
-    constructor(private _name: string = "default") {
-        this.level = "all";
+  /**
+   *
+   */
+  constructor(private _name: string = "default") {
+    this.level = "all";
+  }
+
+  private _appenders: LoggerAppenders = new LoggerAppenders();
+
+  get appenders(): LoggerAppenders {
+    return this._appenders;
+  }
+
+  private _level: LogLevel;
+
+  get level(): string {
+    return this._level.toString();
+  }
+
+  set level(level: string) {
+    this._level = LogLevel.getLevel(level, "debug");
+  }
+
+  /**
+   *
+   */
+  private _context: Map<any, any> = new Map();
+
+  get context(): Map<any, any> {
+    return this._context;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  set name(value: string) {
+    this._name = value;
+  }
+
+  /**
+   * Create stack trace  the lines of least Logger.
+   * @returns {string}
+   */
+  public static createStack(): string {
+    const stack: string = new Error().stack!.replace("Error\n", "");
+    const array: string[] = stack.split("\n");
+
+    /* istanbul ignore else */
+    if (array[0].indexOf("Logger.") > -1) { // remove current function
+      array.splice(0, 1);
     }
 
-    private _appenders: LoggerAppenders = new LoggerAppenders();
-
-    get appenders(): LoggerAppenders {
-        return this._appenders;
+    /* istanbul ignore else */
+    if (array[0].indexOf("Logger.") > -1) { // remove caller
+      array.splice(0, 1);
     }
 
-    private _level: LogLevel;
+    return array.join("\n");
+  }
 
-    get level(): string {
-        return this._level.toString();
-    }
+  public isLevelEnabled(otherLevel: string | LogLevel) {
+    return this._level.isLessThanOrEqualTo(otherLevel);
+  }
 
-    set level(level: string) {
-        this._level = LogLevel.getLevel(level, "debug");
-    }
+  /**
+   * Prints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar to printf() (the arguments are all passed to util.format()).
+   * @param data
+   * @returns {any}
+   */
+  public debug(...data: any[]): Logger {
+    return this.write(levels().DEBUG, data);
+  }
 
-    /**
-     *
-     */
-    private _context: Map<any, any> = new Map();
+  /**
+   *
+   * @param data
+   * @returns {any}
+   */
+  public info(...data: any[]): Logger {
+    return this.write(levels().INFO, data);
+  }
 
-    get context(): Map<any, any> {
-        return this._context;
-    }
+  /**
+   *
+   * @param data
+   * @returns {any}
+   */
+  public warn(...data: any[]): Logger {
+    return this.write(levels().WARN, data);
+  }
 
-    get name(): string {
-        return this._name;
-    }
+  /**
+   * Prints to stderr with newline. Multiple arguments can be passed, with the first used as the primary
+   * message and all additional used as substitution values similar to printf() (the arguments are all
+   * passed to util.format()).
+   * @param data
+   * @param args
+   * @returns {any}
+   */
+  public error(...data: any[]): Logger {
+    return this.write(levels().ERROR, data);
+  }
 
-    set name(value: string) {
-        this._name = value;
-    }
+  public fatal(...data: any[]): Logger {
+    return this.write(levels().FATAL, data);
+  }
 
-    /**
-     * Create stack trace  the lines of least Logger.
-     * @returns {string}
-     */
-    public static createStack(): string {
-        const stack: string = new Error().stack!.replace("Error\n", "");
-        const array: string[] = stack.split("\n");
+  /**
+   *
+   * @param data
+   * @returns {Logger}
+   */
+  public trace(...data: any[]): Logger {
+    const stack = "\n" + Logger.createStack() + "\n";
+    data.push(stack);
+    return this.write(levels().TRACE, data);
+  }
 
-        /* istanbul ignore else */
-        if (array[0].indexOf("Logger.") > -1) { // remove current function
-            array.splice(0, 1);
-        }
+  /**
+   *
+   */
+  public start(): Logger {
+    this.level = "ALL";
+    return this;
+  }
 
-        /* istanbul ignore else */
-        if (array[0].indexOf("Logger.") > -1) { // remove caller
-            array.splice(0, 1);
-        }
+  /**
+   *
+   */
+  public stop(): Logger {
+    this.level = "OFF";
+    return this;
+  }
 
-        return array.join("\n");
-    }
+  /**
+   *
+   * @returns {Promise<TAll[]>}
+   */
+  public shutdown() {
 
-    public isLevelEnabled(otherLevel: string | LogLevel) {
-        return this._level.isLessThanOrEqualTo(otherLevel);
-    }
+    this.stop();
 
-    /**
-     * Prints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar to printf() (the arguments are all passed to util.format()).
-     * @param data
-     * @returns {any}
-     */
-    public debug(...data: any[]): Logger {
-        return this.write(levels().DEBUG, data);
-    }
+    const promises = this.appenders
+      .toArray()
+      .filter((appender) => !!appender.instance.shutdown)
+      .map((appender) => appender.instance.shutdown());
 
-    /**
-     *
-     * @param data
-     * @returns {any}
-     */
-    public info(...data: any[]): Logger {
-        return this.write(levels().INFO, data);
-    }
+    return Promise.all(promises);
+  }
 
-    /**
-     *
-     * @param data
-     * @returns {any}
-     */
-    public warn(...data: any[]): Logger {
-        return this.write(levels().WARN, data);
-    }
+  /**
+   *
+   * @param list
+   * @param settings
+   */
+  public drawTable(list: any[], settings: ITableSettings = {}): string {
+    return drawTable(list, settings);
+  }
 
-    /**
-     * Prints to stderr with newline. Multiple arguments can be passed, with the first used as the primary
-     * message and all additional used as substitution values similar to printf() (the arguments are all
-     * passed to util.format()).
-     * @param data
-     * @param args
-     * @returns {any}
-     */
-    public error(...data: any[]): Logger {
-        return this.write(levels().ERROR, data);
-    }
+  /**
+   *
+   * @param list
+   * @param settings
+   * @returns {Logger}
+   */
+  public printTable(list: any[], settings: ITableSettings = {}) {
+    this.info(`\n${this.drawTable(list, settings)}`);
+    return this;
+  }
 
-    public fatal(...data: any[]): Logger {
-        return this.write(levels().FATAL, data);
-    }
+  /**
+   *
+   * @returns {Logger}
+   */
+  private write(logLevel: LogLevel, data: any[]): Logger {
 
-    /**
-     *
-     * @param data
-     * @returns {Logger}
-     */
-    public trace(...data: any[]): Logger {
-        const stack = "\n" + Logger.createStack() + "\n";
-        data.push(stack);
-        return this.write(levels().TRACE, data);
-    }
+    if (!this.isLevelEnabled(logLevel)) return this;
 
-    /**
-     *
-     */
-    public start(): Logger {
-        this.level = "ALL";
-        return this;
-    }
+    const logEvent = new LogEvent(
+      this._name,
+      logLevel,
+      data,
+      this._context
+    );
 
-    /**
-     *
-     */
-    public stop(): Logger {
-        this.level = "OFF";
-        return this;
-    }
+    this.appenders
+      .byLogLevel(logLevel)
+      .forEach((appender: BaseAppender) => {
+        appender.write(logEvent);
+      });
 
-    /**
-     *
-     * @returns {Promise<TAll[]>}
-     */
-    public shutdown() {
-
-        this.stop();
-
-        const promises = this.appenders
-            .toArray()
-            .filter((appender) => !!appender.instance.shutdown)
-            .map((appender) => appender.instance.shutdown());
-
-        return Promise.all(promises);
-    }
-
-    /**
-     *
-     * @param list
-     * @param settings
-     */
-    public drawTable(list: any[], settings: ITableSettings = {}): string {
-        return drawTable(list, settings);
-    }
-
-    /**
-     *
-     * @param list
-     * @param settings
-     * @returns {Logger}
-     */
-    public printTable(list: any[], settings: ITableSettings = {}) {
-        this.info(`\n${this.drawTable(list, settings)}`);
-        return this;
-    }
-
-    /**
-     *
-     * @returns {Logger}
-     */
-    private write(logLevel: LogLevel, data: any[]): Logger {
-
-        if (!this.isLevelEnabled(logLevel)) return this;
-
-        const logEvent = new LogEvent(
-            this._name,
-            logLevel,
-            data,
-            this._context
-        );
-
-        this.appenders
-            .byLogLevel(logLevel)
-            .forEach((appender: BaseAppender) => {
-                appender.write(logEvent);
-            });
-
-        return this;
-    }
+    return this;
+  }
 }

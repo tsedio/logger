@@ -1,19 +1,14 @@
-/**
- * @module logger
- */
-/** */
-
 export interface ITableSettings {
-    padding?: number;
-    header?: {
-        [key: string]: string
-    };
+  padding?: number;
+  header?: {
+    [key: string]: string
+  };
 }
 
 export function charRepeater(x: number, char = " ") {
-    let res = "";
-    while (x--) res += char;
-    return res;
+  let res = "";
+  while (x--) res += char;
+  return res;
 }
 
 /**
@@ -22,21 +17,21 @@ export function charRepeater(x: number, char = " ") {
  */
 export function buildStartLine(fields: any, settings: ITableSettings) {
 
-    let line = "┌";
-    let list = Object.keys(fields);
+  let line = "┌";
+  let list = Object.keys(fields);
 
-    list.forEach((key, index) => {
+  list.forEach((key, index) => {
 
-        if (index !== 0 && index !== list.length) {
-            line += "┬";
-        }
+    if (index !== 0 && index !== list.length) {
+      line += "┬";
+    }
 
-        line += charRepeater(fields[key] + 2 * settings.padding!, "─");
-    });
+    line += charRepeater(fields[key] + 2 * settings.padding!, "─");
+  });
 
-    line += "┐";
+  line += "┐";
 
-    return line;
+  return line;
 }
 
 /**
@@ -47,20 +42,20 @@ export function buildStartLine(fields: any, settings: ITableSettings) {
  */
 export function buildEndLine(fields: any, settings: ITableSettings) {
 
-    let line = "└";
-    let list = Object.keys(fields);
+  let line = "└";
+  let list = Object.keys(fields);
 
-    list.forEach((key, index) => {
+  list.forEach((key, index) => {
 
-        if (index !== 0 && index !== list.length) {
-            line += "┴";
-        }
+    if (index !== 0 && index !== list.length) {
+      line += "┴";
+    }
 
-        line += charRepeater(fields[key] + 2 * settings.padding!, "─");
-    });
+    line += charRepeater(fields[key] + 2 * settings.padding!, "─");
+  });
 
-    line += "┘";
-    return line;
+  line += "┘";
+  return line;
 }
 
 /**
@@ -71,32 +66,32 @@ export function buildEndLine(fields: any, settings: ITableSettings) {
  * @returns {string}
  */
 export function buildLine(fields: any, settings: ITableSettings, char = "─") {
-    let line = "";
+  let line = "";
 
-    Object.keys(fields).forEach(key => {
-        line += "│";
-        line += charRepeater(fields[key] + 2 * settings.padding!, char);
-    });
-
+  Object.keys(fields).forEach(key => {
     line += "│";
-    return line;
+    line += charRepeater(fields[key] + 2 * settings.padding!, char);
+  });
+
+  line += "│";
+  return line;
 }
 
 /**
  *
  */
 export function buildLineData(scope: any, fields: any, settings: ITableSettings) {
-    let line = "";
+  let line = "";
 
-    Object.keys(fields).forEach(key => {
-        line += "│ ";
-        line += scope[key];
-        line += charRepeater(fields[key] + 2 * (settings.padding! - 1) - scope[key].length, " ");
-        line += " ";
-    });
+  Object.keys(fields).forEach(key => {
+    line += "│ ";
+    line += scope[key];
+    line += charRepeater(fields[key] + 2 * (settings.padding! - 1) - scope[key].length, " ");
+    line += " ";
+  });
 
-    line += "│";
-    return line;
+  line += "│";
+  return line;
 }
 
 /**
@@ -108,38 +103,38 @@ export function buildLineData(scope: any, fields: any, settings: ITableSettings)
 export function drawTable(list: any[], settings: ITableSettings = {}): string {
 
 
-    settings.padding = settings.padding || 1;
+  settings.padding = settings.padding || 1;
 
-    if (settings.header === undefined) {
+  if (settings.header === undefined) {
 
-        settings.header = {};
+    settings.header = {};
 
-        Object.keys(list[0]).forEach(key => settings.header![key] = key);
-    }
+    Object.keys(list[0]).forEach(key => settings.header![key] = key);
+  }
 
-    const fields: any = {};
+  const fields: any = {};
 
-    // Calculate width for each column
+  // Calculate width for each column
 
-    Object.keys(settings.header).forEach(key => fields[key] = settings.header![key].length);
+  Object.keys(settings.header).forEach(key => fields[key] = settings.header![key].length);
 
-    list.forEach(route => {
-        Object.keys(fields).forEach(key =>
-            fields[key] = Math.max(("" + route[key]).length, fields[key])
-        );
-    });
+  list.forEach(route => {
+    Object.keys(fields).forEach(key =>
+      fields[key] = Math.max(("" + route[key]).length, fields[key])
+    );
+  });
 
-    let output = "";
+  let output = "";
 
-    output += buildStartLine(fields, settings) + "\n";
-    output += buildLineData(settings.header, fields, settings) + "\n";
+  output += buildStartLine(fields, settings) + "\n";
+  output += buildLineData(settings.header, fields, settings) + "\n";
 
-    list.forEach(scope => {
-        output += buildLine(fields, settings) + "\n";
-        output += buildLineData(scope, fields, settings) + "\n";
-    });
+  list.forEach(scope => {
+    output += buildLine(fields, settings) + "\n";
+    output += buildLineData(scope, fields, settings) + "\n";
+  });
 
-    output += buildEndLine(fields, settings);
+  output += buildEndLine(fields, settings);
 
-    return output;
+  return output;
 }

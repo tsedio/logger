@@ -3,9 +3,9 @@ notifications:
   email: false
 node_js:
   - 'node'
+  - '10'
+  - '9'
   - '8'
-  - '7'
-  - '6'
 after_success:
   - npm run coveralls:travis
   - sh ./sh/prepublish.sh && semantic-release pre && sh ./sh/publish.sh
