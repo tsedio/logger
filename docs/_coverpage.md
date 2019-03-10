@@ -1,7 +1,7 @@
 <!-- _coverpage.md -->
 
 
-# Ts.LogDebug <small class="version">4.0.4</small>
+# Ts.LogDebug <small class="version">5.0.0</small>
 
 > A multi channel logger written in TypeScript.
 

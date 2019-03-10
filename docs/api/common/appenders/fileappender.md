@@ -1,10 +1,10 @@
 <header class="symbol-info-header">    <h1 id="fileappender">FileAppender</h1>    <label class="symbol-info-type-label class">Class</label>    <label class="api-type-label private">private</label>  </header>
-<section class="symbol-info">      <table class="is-full-width">        <tbody>        <tr>          <th>Module</th>          <td>            <div class="lang-typescript">                <span class="token keyword">import</span> { FileAppender }                 <span class="token keyword">from</span>                 <span class="token string">"ts-log-debug/lib/appenders/components/FileAppender"</span>                            </div>          </td>        </tr>        <tr>          <th>Source</th>          <td>            <a href="https://github.com/romakita/log-debug/blob/v4.0.4/src/appenders/components/FileAppender.ts#L0-L0">                appenders/components/FileAppender.ts            </a>        </td>        </tr>                </tbody>      </table>    </section>
+<section class="symbol-info">      <table class="is-full-width">        <tbody>        <tr>          <th>Module</th>          <td>            <div class="lang-typescript">                <span class="token keyword">import</span> { FileAppender }                 <span class="token keyword">from</span>                 <span class="token string">"ts-log-debug/lib/appenders/components/FileAppender"</span>                            </div>          </td>        </tr>        <tr>          <th>Source</th>          <td>            <a href="https://github.com/romakita/log-debug/blob/v5.0.0/src/appenders/components/FileAppender.ts#L0-L0">                appenders/components/FileAppender.ts            </a>        </td>        </tr>                </tbody>      </table>    </section>
 
 ### Overview
 
 <pre><code class="typescript-lang"><span class="token keyword">class</span> FileAppender <span class="token keyword">extends</span> <a href="#api/common/appenders/baseappender"><span class="token">BaseAppender</span></a> <span class="token punctuation">{</span>
-    <span class="token function">reopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token function">reopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<<span class="token keyword">void</span>><span class="token punctuation">;</span>
     <span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<<span class="token keyword">any</span>><span class="token punctuation">;</span>
     <span class="token function">write</span><span class="token punctuation">(</span>loggingEvent<span class="token punctuation">:</span> <a href="#api/common/core/logevent"><span class="token">LogEvent</span></a><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
@@ -65,7 +65,7 @@ logger.debug('I will be logged in all-the-logs.log');
 
 ### Members
 
-<div class="method-overview"><pre><code class="typescript-lang"><span class="token function">reopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span></code></pre></div>
+<div class="method-overview"><pre><code class="typescript-lang"><span class="token function">reopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<<span class="token keyword">void</span>></code></pre></div>
 <hr />
 <div class="method-overview"><pre><code class="typescript-lang"><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<<span class="token keyword">any</span>></code></pre></div>
 <hr />
