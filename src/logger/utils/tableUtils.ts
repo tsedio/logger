@@ -1,7 +1,7 @@
 export interface ITableSettings {
   padding?: number;
   header?: {
-    [key: string]: string
+    [key: string]: string;
   };
 }
 
@@ -16,12 +16,10 @@ export function charRepeater(x: number, char = " ") {
  * @returns {string}
  */
 export function buildStartLine(fields: any, settings: ITableSettings) {
-
   let line = "┌";
   let list = Object.keys(fields);
 
   list.forEach((key, index) => {
-
     if (index !== 0 && index !== list.length) {
       line += "┬";
     }
@@ -41,12 +39,10 @@ export function buildStartLine(fields: any, settings: ITableSettings) {
  * @returns {string}
  */
 export function buildEndLine(fields: any, settings: ITableSettings) {
-
   let line = "└";
   let list = Object.keys(fields);
 
   list.forEach((key, index) => {
-
     if (index !== 0 && index !== list.length) {
       line += "┴";
     }
@@ -101,27 +97,22 @@ export function buildLineData(scope: any, fields: any, settings: ITableSettings)
  * @returns {string}
  */
 export function drawTable(list: any[], settings: ITableSettings = {}): string {
-
-
   settings.padding = settings.padding || 1;
 
   if (settings.header === undefined) {
-
     settings.header = {};
 
-    Object.keys(list[0]).forEach(key => settings.header![key] = key);
+    Object.keys(list[0]).forEach(key => (settings.header![key] = key));
   }
 
   const fields: any = {};
 
   // Calculate width for each column
 
-  Object.keys(settings.header).forEach(key => fields[key] = settings.header![key].length);
+  Object.keys(settings.header).forEach(key => (fields[key] = settings.header![key].length));
 
   list.forEach(route => {
-    Object.keys(fields).forEach(key =>
-      fields[key] = Math.max(("" + route[key]).length, fields[key])
-    );
+    Object.keys(fields).forEach(key => (fields[key] = Math.max(("" + route[key]).length, fields[key])));
   });
 
   let output = "";

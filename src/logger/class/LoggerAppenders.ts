@@ -10,7 +10,6 @@ export interface ILoggerAppender {
 }
 
 export class LoggerAppenders {
-
   private _appenders: Map<string, ILoggerAppender> = new Map();
   private _lvls: Map<string, any> = new Map<string, any>();
 
@@ -46,10 +45,10 @@ export class LoggerAppenders {
     if (!AppendersRegistry.has(config.type)) {
       const error = new Error(`Appender ${config.type} doesn't exists. Check your configuration:\n${JSON.stringify(config)}\n`);
       error.name = "UNKNOW_APPENDER";
-      throw(error);
+      throw error;
     }
 
-    const klass = (AppendersRegistry.get(config.type)!.provide);
+    const klass = AppendersRegistry.get(config.type)!.provide;
     const instance: BaseAppender = new klass(config);
 
     this._appenders.set(name, {name, instance, config});
@@ -109,14 +108,8 @@ export class LoggerAppenders {
     }
 
     const list = this.toArray()
-      .filter((appender) =>
-        appender.config.levels
-          ?
-          appender.config.levels.find(
-            (level: string) => level.toUpperCase() === loggingLevel.toString()
-          )
-          :
-          true
+      .filter(appender =>
+        appender.config.levels ? appender.config.levels.find((level: string) => level.toUpperCase() === loggingLevel.toString()) : true
       )
       .map(appender => appender.instance);
 

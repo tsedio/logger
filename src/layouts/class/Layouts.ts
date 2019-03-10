@@ -14,6 +14,8 @@ export class Layouts {
       console.warn(name + " layout doesn't exists");
     }
 
-    return new (LayoutsRegistry.get(name.replace(/layout/gi, ""))!).provide(config);
+    const layoutKlass: any = LayoutsRegistry.get(name.replace(/layout/gi, ""));
+
+    return new layoutKlass.provide(config);
   }
 }

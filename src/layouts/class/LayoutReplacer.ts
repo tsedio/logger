@@ -13,8 +13,7 @@ const dateFormat = require("date-format");
 const eol = Os.EOL || "\n";
 
 export class LayoutReplacer {
-  constructor(private tokens: TokensHandlers, private timezoneOffset: number) {
-  }
+  constructor(private tokens: TokensHandlers, private timezoneOffset: number) {}
 
   /**
    *
@@ -153,7 +152,6 @@ export class LayoutReplacer {
    * @returns {any}
    */
   public userDefined = (loggingEvent: LogEvent, specifier: string) => {
-
     if (typeof this.tokens[specifier] !== "undefined") {
       return typeof this.tokens[specifier] === "function" ? this.tokens[specifier](loggingEvent) : this.tokens[specifier];
     }
@@ -163,19 +161,19 @@ export class LayoutReplacer {
 
   build(): IReplacers {
     return {
-      "c": this.categoryName,
-      "d": this.formatAsDate,
-      "h": this.hostname,
-      "m": this.formatMessage,
-      "n": this.endOfLine,
-      "p": this.logLevel,
-      "r": this.startTime,
+      c: this.categoryName,
+      d: this.formatAsDate,
+      h: this.hostname,
+      m: this.formatMessage,
+      n: this.endOfLine,
+      p: this.logLevel,
+      r: this.startTime,
       "[": this.startColour,
       "]": this.endColour,
-      "y": this.clusterInfo,
-      "z": this.pid,
+      y: this.clusterInfo,
+      z: this.pid,
       "%": this.percent,
-      "x": this.userDefined
+      x: this.userDefined
     };
   }
 }

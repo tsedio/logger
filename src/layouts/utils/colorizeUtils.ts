@@ -21,7 +21,6 @@ export function colorizeStart(style: any) {
   return style ? `\x1B[${styles[style][0]}m` : "";
 }
 
-
 export function colorizeEnd(style: any) {
   return style ? `\x1B[${styles[style][1]}m` : "";
 }

@@ -16,10 +16,8 @@ export class BasicLayout extends BaseLayout {
    * @author Stephan Strittmatter
    */
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
-    return timestampLevelAndCategory(
-      loggingEvent,
-      undefined,
-      timezoneOffset
-    ) + (Util.format as any)(...[].concat(loggingEvent.data as any));
+    return (
+      timestampLevelAndCategory(loggingEvent, undefined, timezoneOffset) + (Util.format as any)(...[].concat(loggingEvent.data as any))
+    );
   }
 }

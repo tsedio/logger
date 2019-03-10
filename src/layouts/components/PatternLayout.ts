@@ -50,7 +50,7 @@ export class PatternLayout extends BaseLayout {
   constructor(config: IBasicLayoutConfiguration) {
     super(config);
 
-    this.pattern = config && config.pattern || TTCC_CONVERSION_PATTERN;
+    this.pattern = (config && config.pattern) || TTCC_CONVERSION_PATTERN;
     this.tokens = config && config.tokens!;
     this._replacers = new LayoutReplacer(this.tokens, this.config.timezoneOffset).build();
   }
@@ -62,7 +62,6 @@ export class PatternLayout extends BaseLayout {
    * @returns {string}
    */
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
-
     let formattedString = "";
     let result;
     let searchString = this.pattern;
@@ -94,5 +93,3 @@ export class PatternLayout extends BaseLayout {
     return this._replacers[conversionCharacter](loggingEvent, specifier);
   };
 }
-
-

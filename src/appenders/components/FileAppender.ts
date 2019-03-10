@@ -76,11 +76,9 @@ export class FileAppender extends BaseAppender {
    *
    */
   public reopen() {
-    return this
-      .shutdown()
-      .then(() => {
-        this.build();
-      });
+    return this.shutdown().then(() => {
+      this.build();
+    });
   }
 
   /**
@@ -130,12 +128,7 @@ export class FileAppender extends BaseAppender {
    * @returns {streams.RollingFileStream}
    */
   private openTheStream(file: string, fileSize: number, numFiles: number, options: any) {
-    const stream = new streams.RollingFileStream(
-      file,
-      fileSize,
-      numFiles,
-      options
-    );
+    const stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
     stream.on("error", (err: any) => {
       console.error("FileAppender - Writing to file %s, error happened ", file, err);
     });

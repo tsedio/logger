@@ -10,11 +10,8 @@ const dateFormat = require("date-format");
 const EOL = os.EOL || "\n";
 
 describe("PatternLayout", () => {
-
   describe("when have data", () => {
-
     before(() => {
-
       this.layout = new PatternLayout({
         type: "pattern",
         pattern: "%d %p %c %x{user} %5.10p - %m%n",
@@ -32,7 +29,6 @@ describe("PatternLayout", () => {
       this.result = this.layout.transform(this.logEvent);
     });
 
-
     it("should return a formated string", () => {
       expect(this.result).to.eq("2017-06-18T22:29:38.234 DEBUG category romain DEBUG - data\n");
     });
@@ -40,7 +36,6 @@ describe("PatternLayout", () => {
 
   describe("when have an error", () => {
     before(() => {
-
       this.layout = new PatternLayout({
         type: "pattern",
         pattern: "%d %p %c %x{user} %5.10p - %m%n",
@@ -58,7 +53,6 @@ describe("PatternLayout", () => {
       this.result = this.layout.transform(logEvent);
     });
 
-
     it("should return a formated string", () => {
       expect(this.result).to.contain("Error: test");
     });
@@ -68,10 +62,10 @@ describe("PatternLayout", () => {
     before(() => {
       this.tokens = {
         testString: "testStringToken",
-        testFunction: function () {
+        testFunction: function() {
           return "testFunctionToken";
         },
-        fnThatUsesLogEvent: function (logEvent: any) {
+        fnThatUsesLogEvent: function(logEvent: any) {
           return logEvent.level.toString();
         }
       };
@@ -81,7 +75,6 @@ describe("PatternLayout", () => {
       this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
 
       this.testPattern = (tokens: any, pattern: any, value: any) => {
-
         const layout = new PatternLayout({
           type: "pattern",
           pattern,
@@ -90,11 +83,9 @@ describe("PatternLayout", () => {
 
         expect(layout.transform(this.logEvent)).to.eq(value);
       };
-
     });
 
-
-    it("should default to \"time logLevel loggerName - message\"", () => {
+    it("should default to `time logLevel loggerName - message`", () => {
       this.testPattern(this.tokens, null, `22:29:38 DEBUG multiple.levels.of.tests - this is a test${EOL}`);
     });
 
@@ -140,7 +131,11 @@ describe("PatternLayout", () => {
     });
 
     it("%d should allow for format specification", () => {
-      this.testPattern(this.tokens, "%d{ISO8601_WITH_TZ_OFFSET}", dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, this.logEvent.startTime, this.timezoneOffset));
+      this.testPattern(
+        this.tokens,
+        "%d{ISO8601_WITH_TZ_OFFSET}",
+        dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, this.logEvent.startTime, this.timezoneOffset)
+      );
       this.testPattern(this.tokens, "%d{ISO8601}", "2017-06-18T22:29:38.234");
       this.testPattern(this.tokens, "%d{ABSOLUTE}", "22:29:38.234");
       this.testPattern(this.tokens, "%d{DATE}", "18 06 2017 22:29:38.234");
@@ -162,7 +157,8 @@ describe("PatternLayout", () => {
     });
 
     it("should handle complicated patterns", () => {
-      this.testPattern(this.tokens,
+      this.testPattern(
+        this.tokens,
         "%m%n %c{2} at %d{ABSOLUTE} cheese %p%n",
         `this is a test${EOL} of.tests at 22:29:38.234 cheese DEBUG${EOL}`
       );
@@ -211,6 +207,4 @@ describe("PatternLayout", () => {
       this.testPattern(this.tokens, "%x", "null");
     });
   });
-
-
 });

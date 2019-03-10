@@ -9,7 +9,6 @@ import * as Util from "util";
  */
 @Layout({name: "json"})
 export class JsonLayout extends BaseLayout {
-
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
     const log = {
       startTime: loggingEvent.startTime,
@@ -19,7 +18,7 @@ export class JsonLayout extends BaseLayout {
       context: loggingEvent.context
     };
 
-    log.data = log.data.map((data) => (Util.format as any)(...[].concat(data as any)));
+    log.data = log.data.map(data => (Util.format as any)(...[].concat(data as any)));
 
     return JSON.stringify(log) + (this.config["separator"] || "");
   }

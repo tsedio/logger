@@ -7,18 +7,18 @@ import {Layouts} from "../../layouts/class/Layouts";
 import {IAppenderConfiguration, PartialAppenderConfiguration} from "../interfaces/AppenderConfiguration";
 
 export interface IAppenderOptions {
-    name: string;
-    defaultLayout?: string;
+  name: string;
+  defaultLayout?: string;
 }
 
 export interface IBaseAppender {
-    write(loggingEvent: LogEvent): any;
+  write(loggingEvent: LogEvent): any;
 
-    build?(): any;
+  build?(): any;
 
-    reopen?(): any;
+  reopen?(): any;
 
-    shutdown?(complete: any): any;
+  shutdown?(complete: any): any;
 }
 
 /**
@@ -56,42 +56,41 @@ export interface IBaseAppender {
  *
  */
 export abstract class BaseAppender implements IBaseAppender {
-    private _layout: any;
-    private appenderOptions: IAppenderOptions = {name: ""};
+  private _layout: any;
+  private appenderOptions: IAppenderOptions = {name: ""};
 
-    [key: string]: any;
+  [key: string]: any;
 
-    constructor(private _config: IAppenderConfiguration) {
+  constructor(private _config: IAppenderConfiguration) {
+    this.configure(_config);
 
-        this.configure(_config);
-
-        if (this["build"]) {
-            this["build"]();
-        }
+    if (this["build"]) {
+      this["build"]();
     }
+  }
 
-    get config(): IAppenderConfiguration {
-        return this._config;
+  get config(): IAppenderConfiguration {
+    return this._config;
+  }
+
+  configure(config: PartialAppenderConfiguration) {
+    Object.assign(this._config, config);
+
+    this._layout = Layouts.get(this.appenderOptions.defaultLayout || "colored", this._config);
+
+    if (this._config.layout) {
+      this._layout = Layouts.get(this._config.layout.type, this._config.layout);
     }
+    return this;
+  }
 
-    configure(config: PartialAppenderConfiguration) {
-        Object.assign(this._config, config);
+  /**
+   *
+   * @param args
+   */
+  layout(...args: any[]): string {
+    return this._layout.transform(...args);
+  }
 
-        this._layout = Layouts.get(this.appenderOptions.defaultLayout || "colored", this._config);
-
-        if (this._config.layout) {
-            this._layout = Layouts.get(this._config.layout.type, this._config.layout);
-        }
-        return this;
-    }
-
-    /**
-     *
-     * @param args
-     */
-    layout(...args: any[]): string {
-        return this._layout.transform(...args);
-    }
-
-    abstract write(loggingEvent: LogEvent): any;
+  abstract write(loggingEvent: LogEvent): any;
 }

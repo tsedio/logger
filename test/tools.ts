@@ -11,18 +11,12 @@ const expect = Chai.expect;
 const assert = Chai.assert;
 
 const $logStub = {
-    $log: {
-        info: Sinon.stub(),
-        debug: Sinon.stub(),
-        error: Sinon.stub(),
-        warn: Sinon.stub()
-    }
+  $log: {
+    info: Sinon.stub(),
+    debug: Sinon.stub(),
+    error: Sinon.stub(),
+    warn: Sinon.stub()
+  }
 };
 
-export {
-    expect,
-    assert,
-    Sinon,
-    SinonChai,
-    $logStub
-};
+export {expect, assert, Sinon, SinonChai, $logStub};

@@ -18,7 +18,6 @@ describe("FileAppender", () => {
     appender.shutdown();
     appender.reopen();
 
-
     // THEN
     writeStub.should.have.been.called;
     expect(writeStub.getCall(0).args[0]).to.contains("[DEBUG] [test]");

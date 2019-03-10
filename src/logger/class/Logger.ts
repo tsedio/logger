@@ -6,7 +6,6 @@ import {levels, LogLevel} from "../../core/LogLevel";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
 
 export class Logger {
-
   /**
    *
    */
@@ -56,12 +55,14 @@ export class Logger {
     const array: string[] = stack.split("\n");
 
     /* istanbul ignore else */
-    if (array[0].indexOf("Logger.") > -1) { // remove current function
+    if (array[0].indexOf("Logger.") > -1) {
+      // remove current function
       array.splice(0, 1);
     }
 
     /* istanbul ignore else */
-    if (array[0].indexOf("Logger.") > -1) { // remove caller
+    if (array[0].indexOf("Logger.") > -1) {
+      // remove caller
       array.splice(0, 1);
     }
 
@@ -147,13 +148,12 @@ export class Logger {
    * @returns {Promise<TAll[]>}
    */
   public shutdown() {
-
     this.stop();
 
     const promises = this.appenders
       .toArray()
-      .filter((appender) => !!appender.instance.shutdown)
-      .map((appender) => appender.instance.shutdown());
+      .filter(appender => !!appender.instance.shutdown)
+      .map(appender => appender.instance.shutdown());
 
     return Promise.all(promises);
   }
@@ -183,21 +183,13 @@ export class Logger {
    * @returns {Logger}
    */
   private write(logLevel: LogLevel, data: any[]): Logger {
-
     if (!this.isLevelEnabled(logLevel)) return this;
 
-    const logEvent = new LogEvent(
-      this._name,
-      logLevel,
-      data,
-      this._context
-    );
+    const logEvent = new LogEvent(this._name, logLevel, data, this._context);
 
-    this.appenders
-      .byLogLevel(logLevel)
-      .forEach((appender: BaseAppender) => {
-        appender.write(logEvent);
-      });
+    this.appenders.byLogLevel(logLevel).forEach((appender: BaseAppender) => {
+      appender.write(logEvent);
+    });
 
     return this;
   }
