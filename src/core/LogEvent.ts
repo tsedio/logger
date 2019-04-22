@@ -18,7 +18,7 @@ export class LogEvent {
   private _startTime = new Date();
 
   get startTime(): Date {
-    return this._startTime;
+    return this.data && this.data[0] && this.data[0].time ? this.data[0].time : this._startTime;
   }
 
   public get categoryName(): string {
