@@ -103,7 +103,7 @@ export class FileAppender extends BaseAppender {
   }
 
   private build() {
-    let {filename: file, maxlogSize: logSize, backups: numBackups} = this.config;
+    let {filename: file, maxLogSize: logSize, backups: numBackups} = this.config;
 
     file = Path.normalize(file!);
     numBackups = numBackups === undefined ? 5 : numBackups;
