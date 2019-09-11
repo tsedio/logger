@@ -13,9 +13,7 @@ export class ColoredLayout extends BaseLayout {
    */
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
     const index: any = loggingEvent.level.toString();
-    return (
-      timestampLevelAndCategory(loggingEvent, LOG_COLORS[index], timezoneOffset) +
-      (Util.format as any)(...[].concat(loggingEvent.data as any))
-    );
+    const color = LOG_COLORS[index as keyof typeof LOG_COLORS];
+    return timestampLevelAndCategory(loggingEvent, color, timezoneOffset) + (Util.format as any)(...[].concat(loggingEvent.data as any));
   }
 }

@@ -3,20 +3,21 @@ import {levels, LogEvent} from "../../../src";
 import {Sinon} from "../../tools";
 
 describe("StdoutAppender", () => {
+  let logEvent: any, appender: any;
   before(() => {
-    this.logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
-    this.appender = new StdoutAppender({type: "console"});
-    this.logStub = Sinon.stub(this.appender, "log");
+    logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
+    appender = new StdoutAppender({type: "console"});
+    Sinon.stub(appender, "log");
 
-    this.appender.write(this.logEvent);
+    appender.write(logEvent);
   });
 
   after(() => {
-    this.logStub.restore();
+    appender.log.restore();
   });
 
   it("should log something", () => {
-    this.logStub.should.have.been.calledOnce;
-    this.logStub.should.have.been.calledWithMatch("[DEBUG] [test] -");
+    appender.log.should.have.been.calledOnce;
+    appender.log.should.have.been.calledWithMatch("[DEBUG] [test] -");
   });
 });

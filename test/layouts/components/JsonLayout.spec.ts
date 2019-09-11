@@ -5,23 +5,24 @@ import {JsonLayout} from "../../../src/layouts/components/JsonLayout";
 
 describe("JsonLayout", () => {
   describe("when seperator is given", () => {
+    let logEvent: any, layout: any, result: any;
     before(() => {
-      this.layout = new JsonLayout({
+      layout = new JsonLayout({
         type: "json",
         separator: ","
       });
 
       const context = new Map();
       context.set("user", "romain");
-      this.logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
-      this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
-      this.result = this.layout.transform(this.logEvent);
+      logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
+      logEvent._startTime = new Date("2017-06-18 22:29:38.234");
+      result = layout.transform(logEvent);
     });
 
     it("should return a formated string", () => {
-      expect(this.result).to.eq(
+      expect(result).to.eq(
         JSON.stringify({
-          startTime: this.logEvent._startTime,
+          startTime: logEvent._startTime,
           categoryName: "category",
           level: "DEBUG",
           data: ["data"],
@@ -32,22 +33,23 @@ describe("JsonLayout", () => {
   });
 
   describe("when seperator isn't given", () => {
+    let logEvent: any, layout: any, result: any;
     before(() => {
-      this.layout = new JsonLayout({
+      layout = new JsonLayout({
         type: "json"
       });
 
       const context = new Map();
       context.set("user", "romain");
-      this.logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
-      this.logEvent._startTime = new Date("2017-06-18 22:29:38.234");
-      this.result = this.layout.transform(this.logEvent);
+      logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
+      logEvent._startTime = new Date("2017-06-18 22:29:38.234");
+      result = layout.transform(logEvent);
     });
 
     it("should return a formated string", () => {
-      expect(this.result).to.eq(
+      expect(result).to.eq(
         JSON.stringify({
-          startTime: this.logEvent._startTime,
+          startTime: logEvent._startTime,
           categoryName: "category",
           level: "DEBUG",
           data: ["data"],

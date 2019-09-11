@@ -4,8 +4,8 @@ import {expect} from "../../tools";
 import {DummyLayout} from "../../../src/layouts/components/DummyLayout";
 
 describe("DummyLayout", () => {
-  before(() => {
-    this.layout = new DummyLayout({
+  it("should return a formated string", () => {
+    const layout = new DummyLayout({
       type: "dummy"
     });
 
@@ -13,10 +13,8 @@ describe("DummyLayout", () => {
     context.set("user", "romain");
     const logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
     (logEvent as any)._startTime = new Date("2017-06-18 22:29:38.234");
-    this.result = this.layout.transform(logEvent);
-  });
+    const result = layout.transform(logEvent);
 
-  it("should return a formated string", () => {
-    expect(this.result).to.eq("data");
+    expect(result).to.eq("data");
   });
 });
