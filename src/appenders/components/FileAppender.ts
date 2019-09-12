@@ -103,7 +103,7 @@ export class FileAppender extends BaseAppender {
   }
 
   private build() {
-    let {filename: file, maxlogSize: logSize, backups: numBackups} = this.config;
+    let {filename: file, maxLogSize: logSize, backups: numBackups} = this.config;
 
     file = Path.normalize(file!);
     numBackups = numBackups === undefined ? 5 : numBackups;
@@ -127,7 +127,7 @@ export class FileAppender extends BaseAppender {
    * @param options
    * @returns {streams.RollingFileStream}
    */
-  private openTheStream(file: string, fileSize: number, numFiles: number, options: any) {
+  private openTheStream(file: string, fileSize: number | undefined, numFiles: number, options: any) {
     const stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
     stream.on("error", (err: any) => {
       console.error("FileAppender - Writing to file %s, error happened ", file, err);

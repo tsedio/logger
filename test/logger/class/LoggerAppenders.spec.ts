@@ -11,53 +11,57 @@ class TestAppender extends BaseAppender {
 }
 
 describe("LoggerAppenders", () => {
+  let appenders: any;
   before(() => {
-    this.appenders = new LoggerAppenders();
-    this.appenders.set("custom", {type: "test2", levels: ["debug"]});
+    appenders = new LoggerAppenders();
+    appenders.set("custom", {type: "test2", levels: ["debug"]});
   });
 
   describe("byLogLevel()", () => {
+    let result: any;
     before(() => {
-      this.result = this.appenders.byLogLevel(levels().DEBUG);
+      result = appenders.byLogLevel(levels().DEBUG);
     });
 
     describe("when appender exists", () => {
       it("should returns all appenders for a given level", () => {
-        expect(this.result).to.be.an("array");
-        expect(this.result[0]).instanceof(TestAppender);
+        expect(result).to.be.an("array");
+        expect(result[0]).instanceof(TestAppender);
       });
     });
 
     describe("when appender doesn't exists", () => {
       it("should throw an error", () => {
-        assert.throws(() => this.appenders.set("unknow", {type: "unknow"}), "");
+        assert.throws(() => appenders.set("unknow", {type: "unknow"}), "");
       });
     });
 
     describe("caching updated", () => {
+      let cachedAppenders: any;
+      let result: any;
       beforeEach(() => {
-        this.cachedAppenders = new LoggerAppenders();
-        this.cachedAppenders.set("custom", {type: "test2", levels: ["debug"]});
-        this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
+        cachedAppenders = new LoggerAppenders();
+        cachedAppenders.set("custom", {type: "test2", levels: ["debug"]});
+        result = cachedAppenders.byLogLevel(levels().DEBUG);
       });
       it("when cleared should have no appenders", () => {
-        this.cachedAppenders.clear();
-        this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(this.result)
+        cachedAppenders.clear();
+        result = cachedAppenders.byLogLevel(levels().DEBUG);
+        expect(result)
           .to.be.an("array")
           .lengthOf(0);
       });
       it("when deleted should have no appenders", () => {
-        this.cachedAppenders.delete("custom");
-        this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(this.result)
+        cachedAppenders.delete("custom");
+        result = cachedAppenders.byLogLevel(levels().DEBUG);
+        expect(result)
           .to.be.an("array")
           .lengthOf(0);
       });
       it("when deleted should have no appenders", () => {
-        this.cachedAppenders.set("custom2", {type: "test2", levels: ["debug"]});
-        this.result = this.cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(this.result)
+        cachedAppenders.set("custom2", {type: "test2", levels: ["debug"]});
+        result = cachedAppenders.byLogLevel(levels().DEBUG);
+        expect(result)
           .to.be.an("array")
           .lengthOf(2);
       });
@@ -66,29 +70,30 @@ describe("LoggerAppenders", () => {
 
   describe("has()", () => {
     it("should return true", () => {
-      expect(this.appenders.has("custom")).to.be.true;
+      expect(appenders.has("custom")).to.be.true;
     });
     it("should return false", () => {
-      expect(this.appenders.has("custom2")).to.be.false;
+      expect(appenders.has("custom2")).to.be.false;
     });
   });
 
   describe("get()", () => {
     it("should return configuration", () => {
-      expect(!!this.appenders.get("custom")).to.be.true;
+      expect(!!appenders.get("custom")).to.be.true;
     });
     it("should return false", () => {
-      expect(!!this.appenders.get("custom2")).to.be.false;
+      expect(!!appenders.get("custom2")).to.be.false;
     });
   });
 
   describe("forEach()", () => {
+    let result: any;
     before(() => {
-      this.result = [];
-      this.appenders.forEach((o: any) => this.result.push(o));
+      result = [];
+      appenders.forEach((o: any) => result.push(o));
     });
     it("should return all elements", () => {
-      expect(this.result)
+      expect(result)
         .to.be.an("array")
         .and.length(1);
     });
@@ -96,7 +101,7 @@ describe("LoggerAppenders", () => {
 
   describe("toArray()", () => {
     it("should return all elements", () => {
-      expect(this.appenders.toArray())
+      expect(appenders.toArray())
         .to.be.an("array")
         .and.length(1);
     });
@@ -104,25 +109,25 @@ describe("LoggerAppenders", () => {
 
   describe("delete()", () => {
     before(() => {
-      this.appenders.set("custom2", {type: "test2", levels: ["debug"]});
+      appenders.set("custom2", {type: "test2", levels: ["debug"]});
     });
 
     it("should return configuration", () => {
-      expect(this.appenders.delete("custom2")).to.be.true;
+      expect(appenders.delete("custom2")).to.be.true;
     });
   });
 
   describe("clear()", () => {
     before(() => {
-      this.appenders.clear();
+      appenders.clear();
     });
 
     after(() => {
-      this.appenders.set("custom", {type: "test2", levels: ["debug"]});
+      appenders.set("custom", {type: "test2", levels: ["debug"]});
     });
 
     it("should return configuration", () => {
-      expect(this.appenders.size).to.eq(0);
+      expect(appenders.size).to.eq(0);
     });
   });
 });

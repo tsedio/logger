@@ -3,6 +3,7 @@ import {BaseAppender, LogEvent} from "../../../src";
 import {levels} from "../../../src/core/LogLevel";
 
 const buildStub = Sinon.stub();
+
 class TestAppender extends BaseAppender {
   write(loggingEvent: LogEvent) {
     this.layout(loggingEvent);
@@ -14,10 +15,12 @@ class TestAppender extends BaseAppender {
 }
 
 describe("BaseAppender", () => {
+  let logEvent: any;
+  let testAppender: any;
   before(() => {
-    this.logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
-    this.testAppender = new TestAppender({type: "console"});
-    this.testAppender.write(this.logEvent);
+    logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
+    testAppender = new TestAppender({type: "console"});
+    testAppender.write(logEvent);
   });
 
   describe("build()", () => {
@@ -26,7 +29,7 @@ describe("BaseAppender", () => {
 
   describe("config()", () => {
     it("should return configuration", () => {
-      expect(this.testAppender.config).to.deep.eq({type: "console"});
+      expect(testAppender.config).to.deep.eq({type: "console"});
     });
   });
 });

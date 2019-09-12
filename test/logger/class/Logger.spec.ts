@@ -23,290 +23,296 @@ class TestAppender extends BaseAppender {
 }
 
 describe("Logger", () => {
+  let logger: Logger;
   before(() => {
-    this.logger = new Logger();
-    this.logger.name = "loggerName";
-    this.logger.start();
-    this.logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
-    this.transformStub = stub;
+    logger = new Logger();
+    logger.name = "loggerName";
+    logger.start();
+    logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
   });
 
   it("should return log name", () => {
-    expect(this.logger.name).to.eq("loggerName");
+    expect(logger.name).to.eq("loggerName");
   });
 
   it("should return context", () => {
-    expect(this.logger.context).instanceof(Map);
+    expect(logger.context).instanceof(Map);
   });
 
   it("should return level", () => {
-    expect(this.logger.level).to.eq("ALL");
+    expect(logger.level).to.eq("ALL");
   });
 
   describe("debug()", () => {
+    let arg: any;
     before(() => {
-      this.logger.debug("test");
-      this.arg = this.transformStub.getCall(0).args[0];
+      logger.debug("test");
+      arg = stub.getCall(0).args[0];
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.have.been.calledOnce;
+      stub.should.have.been.calledOnce;
     });
 
     it("should have a categoryName", () => {
-      expect(this.arg.categoryName).to.eq("loggerName");
+      expect(arg.categoryName).to.eq("loggerName");
     });
 
     it("should have a logLevel", () => {
-      expect(this.arg.level).instanceof(LogLevel);
-      expect(this.arg.level.toString()).to.equal("DEBUG");
+      expect(arg.level).instanceof(LogLevel);
+      expect(arg.level.toString()).to.equal("DEBUG");
     });
 
     it("should have a data", () => {
-      expect(this.arg.data)
+      expect(arg.data)
         .to.be.an("array")
         .and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
-      expect(this.arg.startTime).instanceof(Date);
+      expect(arg.startTime).instanceof(Date);
     });
 
     it("should have a formatedLevel", () => {
-      expect(this.arg.formatedLevel).to.eq("DEBUG");
+      expect(arg.formatedLevel).to.eq("DEBUG");
     });
 
     it("should have a context", () => {
-      expect(this.arg.context).instanceof(Map);
+      expect(arg.context).instanceof(Map);
     });
   });
 
   describe("info()", () => {
+    let arg: any;
     before(() => {
-      this.logger.info("test");
-      this.arg = this.transformStub.getCall(0).args[0];
+      logger.info("test");
+      arg = stub.getCall(0).args[0];
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.have.been.calledOnce;
+      stub.should.have.been.calledOnce;
     });
 
     it("should have a categoryName", () => {
-      expect(this.arg.categoryName).to.eq("loggerName");
+      expect(arg.categoryName).to.eq("loggerName");
     });
 
     it("should have a logLevel", () => {
-      expect(this.arg.level).instanceof(LogLevel);
-      expect(this.arg.level.toString()).to.equal("INFO");
+      expect(arg.level).instanceof(LogLevel);
+      expect(arg.level.toString()).to.equal("INFO");
     });
 
     it("should have a data", () => {
-      expect(this.arg.data)
+      expect(arg.data)
         .to.be.an("array")
         .and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
-      expect(this.arg.startTime).instanceof(Date);
+      expect(arg.startTime).instanceof(Date);
     });
 
     it("should have a formatedLevel", () => {
-      expect(this.arg.formatedLevel).to.eq("INFO ");
+      expect(arg.formatedLevel).to.eq("INFO ");
     });
 
     it("should have a context", () => {
-      expect(this.arg.context).instanceof(Map);
+      expect(arg.context).instanceof(Map);
     });
   });
 
   describe("warn()", () => {
+    let arg: any;
     before(() => {
-      this.logger.warn("test");
-      this.arg = this.transformStub.getCall(0).args[0];
+      logger.warn("test");
+      arg = stub.getCall(0).args[0];
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.have.been.calledOnce;
+      stub.should.have.been.calledOnce;
     });
 
     it("should have a categoryName", () => {
-      expect(this.arg.categoryName).to.eq("loggerName");
+      expect(arg.categoryName).to.eq("loggerName");
     });
 
     it("should have a logLevel", () => {
-      expect(this.arg.level).instanceof(LogLevel);
-      expect(this.arg.level.toString()).to.equal("WARN");
+      expect(arg.level).instanceof(LogLevel);
+      expect(arg.level.toString()).to.equal("WARN");
     });
 
     it("should have a data", () => {
-      expect(this.arg.data)
+      expect(arg.data)
         .to.be.an("array")
         .and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
-      expect(this.arg.startTime).instanceof(Date);
+      expect(arg.startTime).instanceof(Date);
     });
 
     it("should have a formatedLevel", () => {
-      expect(this.arg.formatedLevel).to.eq("WARN ");
+      expect(arg.formatedLevel).to.eq("WARN ");
     });
 
     it("should have a context", () => {
-      expect(this.arg.context).instanceof(Map);
+      expect(arg.context).instanceof(Map);
     });
   });
 
   describe("trace()", () => {
+    let arg: any;
     before(() => {
-      this.logger.trace("test");
-      this.arg = this.transformStub.getCall(0).args[0];
+      logger.trace("test");
+      arg = stub.getCall(0).args[0];
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.have.been.calledOnce;
+      stub.should.have.been.calledOnce;
     });
 
     it("should have a categoryName", () => {
-      expect(this.arg.categoryName).to.eq("loggerName");
+      expect(arg.categoryName).to.eq("loggerName");
     });
 
     it("should have a logLevel", () => {
-      expect(this.arg.level).instanceof(LogLevel);
-      expect(this.arg.level.toString()).to.equal("TRACE");
+      expect(arg.level).instanceof(LogLevel);
+      expect(arg.level.toString()).to.equal("TRACE");
     });
 
     it("should have a data", () => {
-      expect(this.arg.data)
+      expect(arg.data)
         .to.be.an("array")
         .and.length(2);
     });
 
     it("should have a startTime", () => {
-      expect(this.arg.startTime).instanceof(Date);
+      expect(arg.startTime).instanceof(Date);
     });
 
     it("should have a formatedLevel", () => {
-      expect(this.arg.formatedLevel).to.eq("TRACE");
+      expect(arg.formatedLevel).to.eq("TRACE");
     });
 
     it("should have a context", () => {
-      expect(this.arg.context).instanceof(Map);
+      expect(arg.context).instanceof(Map);
     });
   });
 
   describe("error()", () => {
+    let arg: any;
     before(() => {
-      this.logger.error("test");
-      this.arg = this.transformStub.getCall(0).args[0];
+      logger.error("test");
+      arg = stub.getCall(0).args[0];
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.have.been.calledOnce;
+      stub.should.have.been.calledOnce;
     });
 
     it("should have a categoryName", () => {
-      expect(this.arg.categoryName).to.eq("loggerName");
+      expect(arg.categoryName).to.eq("loggerName");
     });
 
     it("should have a logLevel", () => {
-      expect(this.arg.level).instanceof(LogLevel);
-      expect(this.arg.level.toString()).to.equal("ERROR");
+      expect(arg.level).instanceof(LogLevel);
+      expect(arg.level.toString()).to.equal("ERROR");
     });
 
     it("should have a data", () => {
-      expect(this.arg.data)
+      expect(arg.data)
         .to.be.an("array")
         .and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
-      expect(this.arg.startTime).instanceof(Date);
+      expect(arg.startTime).instanceof(Date);
     });
 
     it("should have a formatedLevel", () => {
-      expect(this.arg.formatedLevel).to.eq("ERROR");
+      expect(arg.formatedLevel).to.eq("ERROR");
     });
 
     it("should have a context", () => {
-      expect(this.arg.context).instanceof(Map);
+      expect(arg.context).instanceof(Map);
     });
   });
 
   describe("fatal()", () => {
+    let arg: any;
     before(() => {
-      this.logger.fatal("test");
-      this.arg = this.transformStub.getCall(0).args[0];
+      logger.fatal("test");
+      arg = stub.getCall(0).args[0];
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.have.been.calledOnce;
+      stub.should.have.been.calledOnce;
     });
 
     it("should have a categoryName", () => {
-      expect(this.arg.categoryName).to.eq("loggerName");
+      expect(arg.categoryName).to.eq("loggerName");
     });
 
     it("should have a logLevel", () => {
-      expect(this.arg.level).instanceof(LogLevel);
-      expect(this.arg.level.toString()).to.equal("FATAL");
+      expect(arg.level).instanceof(LogLevel);
+      expect(arg.level.toString()).to.equal("FATAL");
     });
 
     it("should have a data", () => {
-      expect(this.arg.data)
+      expect(arg.data)
         .to.be.an("array")
         .and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
-      expect(this.arg.startTime).instanceof(Date);
+      expect(arg.startTime).instanceof(Date);
     });
 
     it("should have a formatedLevel", () => {
-      expect(this.arg.formatedLevel).to.eq("FATAL");
+      expect(arg.formatedLevel).to.eq("FATAL");
     });
 
     it("should have a context", () => {
-      expect(this.arg.context).instanceof(Map);
+      expect(arg.context).instanceof(Map);
     });
   });
 
   describe("stop()", () => {
     before(() => {
-      this.logger.stop();
-      this.logger.fatal("test");
-      this.logger.start();
+      logger.stop();
+      logger.fatal("test");
+      logger.start();
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.not.have.been.called;
+      stub.should.not.have.been.called;
     });
   });
 
   describe("printTable()", () => {
     before(() => {
-      this.logger.printTable(
+      logger.printTable(
         [
           {
             field1: "Test1",
@@ -336,17 +342,18 @@ describe("Logger", () => {
       );
     });
     after(() => {
-      this.transformStub.reset();
+      stub.reset();
     });
 
     it("should call layout", () => {
-      this.transformStub.should.been.called;
+      stub.should.been.called;
     });
   });
 
   describe("when appender doesn't exists", () => {
     it("should throw an error", () => {
-      assert.throws(() => this.logger.appenders.push({type: "unknow"}), "");
+      // @ts-ignore
+      assert.throws(() => logger.appenders.push({type: "unknow"}), "");
     });
   });
 });

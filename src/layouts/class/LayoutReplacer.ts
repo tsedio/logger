@@ -101,7 +101,7 @@ export class LayoutReplacer {
    */
   public startColour = (loggingEvent: LogEvent): string => {
     const index: any = loggingEvent.level.toString();
-    return colorizeStart(LOG_COLORS[index]);
+    return colorizeStart(LOG_COLORS[index as keyof typeof LOG_COLORS]);
   };
   /**
    *
@@ -110,7 +110,7 @@ export class LayoutReplacer {
    */
   public endColour = (loggingEvent: LogEvent): string => {
     const index: any = loggingEvent.level.toString();
-    return colorizeEnd(LOG_COLORS[index]);
+    return colorizeEnd(LOG_COLORS[index as keyof typeof LOG_COLORS]);
   };
   /**
    *
