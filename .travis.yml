@@ -4,8 +4,6 @@ notifications:
 node_js:
   - 'node'
   - '10'
-  - '9'
-  - '8'
 after_success:
   - npm run build
   - npx travis-deploy-once "npm run semantic-release"
