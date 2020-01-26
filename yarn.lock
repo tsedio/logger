@@ -1826,6 +1826,21 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@typedproject/ts-doc@4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@typedproject/ts-doc/-/ts-doc-4.0.6.tgz#e22b304ab05305616515fa03c0283a8b1995409d"
+  integrity sha512-Wg/6aHNZGo5NftrT0UK4SRZ6LI6WunpNIlXGW+NgfbC7yf2I+Dpfy2IjYFKRnhllNT97roz9/4r3Y/9OWQKJpA==
+  dependencies:
+    chalk "3.0.0"
+    ejs "2.7.1"
+    fancy-log "1.3.3"
+    fs-extra "8.1.0"
+    glob "7.1.6"
+    globby "8.0.2"
+    listr "^0.14.3"
+    read-pkg-up "7.0.0"
+    ts-log-debug "5.1.1"
+
 "@types/chai-as-promised@7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@types/chai-as-promised/-/chai-as-promised-7.1.0.tgz#010b04cde78eacfb6e72bfddb3e58fe23c2e78b9"
@@ -4864,6 +4879,14 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+dir-glob@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-2.0.0.tgz#0b205d2b6aef98238ca286598a8204d29d0a0034"
+  integrity sha512-37qirFDz8cA5fimp9feo43fSuRo2gHwaIn6dXL8Ber1dGwUosDrGZeCCXq57WnIqE4aQ+u3eQZzsk1yOzhdwag==
+  dependencies:
+    arrify "^1.0.1"
+    path-type "^3.0.0"
+
 dir-glob@^2.0.0, dir-glob@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-2.2.2.tgz#fa09f0694153c8918b18ba0deafae94769fc50c4"
@@ -5052,6 +5075,11 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+
+ejs@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.7.1.tgz#5b5ab57f718b79d4aca9254457afecd36fa80228"
+  integrity sha512-kS/gEPzZs3Y1rRsbGX4UOSjtP/CeJP0CxSNZHYxGfVM/VgLcv0ZqM7C45YyTj2DI2g7+P9Dd24C+IMIg6D0nYQ==
 
 electron-to-chromium@^1.3.338:
   version "1.3.340"
@@ -5546,7 +5574,7 @@ fast-deep-equal@^3.1.1:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
   integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
 
-fast-glob@^2.2.6:
+fast-glob@^2.0.2, fast-glob@^2.2.6:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.7.tgz#6953857c3afa475fff92ee6015d52da70a4cd39d"
   integrity sha512-g1KuQwHOZAmOZMuBtHdxDtju+T2RT8jgCC9aANsbpdiDDTSnjgfuVsIBNKbUeJI3oKMRExcfNDtJl4OhbffMsw==
@@ -5866,6 +5894,15 @@ from2@^2.1.0, from2@^2.3.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
+fs-extra@8.1.0, fs-extra@^8.0.0, fs-extra@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
+  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-extra@^4.0.2:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
@@ -5881,15 +5918,6 @@ fs-extra@^7.0.1:
   integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
-fs-extra@^8.0.0, fs-extra@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
-  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
-  dependencies:
-    graceful-fs "^4.2.0"
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
@@ -6239,7 +6267,7 @@ glob@7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
+glob@7.1.6, glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -6290,6 +6318,19 @@ globals@^11.1.0:
   version "11.12.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
+
+globby@8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-8.0.2.tgz#5697619ccd95c5275dbb2d6faa42087c1a941d8d"
+  integrity sha512-yTzMmKygLp8RUpG1Ymu2VXPSJQZjNAZPD4ywgYEaG7e4tBJeUQBO8OpXrf1RCNcEs5alsoJYPAMiIHP0cmeC7w==
+  dependencies:
+    array-union "^1.0.1"
+    dir-glob "2.0.0"
+    fast-glob "^2.0.2"
+    glob "^7.1.2"
+    ignore "^3.3.5"
+    pify "^3.0.0"
+    slash "^1.0.0"
 
 globby@^10.0.0:
   version "10.0.2"
@@ -11369,6 +11410,15 @@ read-package-tree@^5.1.6, read-package-tree@^5.3.1:
     readdir-scoped-modules "^1.0.0"
     util-promisify "^2.1.0"
 
+read-pkg-up@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-7.0.0.tgz#3f3e53858ec5ae5e6fe14bc479da0a7c98f85ff3"
+  integrity sha512-t2ODkS/vTTcRlKwZiZsaLGb5iwfx9Urp924aGzVyboU6+7Z2i6eGr/G1Z4mjvwLLQV3uFOBKobNRGM3ux2PD/w==
+  dependencies:
+    find-up "^4.1.0"
+    read-pkg "^5.2.0"
+    type-fest "^0.8.1"
+
 read-pkg-up@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
@@ -13372,6 +13422,17 @@ trim-off-newlines@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
+ts-log-debug@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/ts-log-debug/-/ts-log-debug-5.1.1.tgz#ccd909b6e227ac4ca49108f031b7ee5d87cbe1f5"
+  integrity sha512-kpDkz26MGaQ682xjlRNTK+VjLF3bfOZ9Bvre20yZSQSr4E63JL/BsSPICflutx5LADQ9gdvcFKXmZczqhy4nPQ==
+  dependencies:
+    colors "^1.3.3"
+    date-format "^2.0.0"
+    semver "^5.6.0"
+    streamroller "^1.0.3"
+    tslib "^1.9.3"
+
 ts-node@^8.0.3:
   version "8.6.2"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.6.2.tgz#7419a01391a818fbafa6f826a33c1a13e9464e35"
@@ -13393,7 +13454,7 @@ tsconfig-paths@3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@1.10.0, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@1.10.0, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
@@ -14004,10 +14065,10 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-tsed@2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-tsed/-/vuepress-theme-tsed-2.5.3.tgz#9bb690c9f12b0a21de9a090e87fe3c5dc3c32c97"
-  integrity sha512-m143/A+qFSt+SFqmnj/kKRgl3sQg+TNlMyU4V5NkBJXCVCRlmjEApC4H62NMDdVIs1qFLhMqwj3IsEnWv5CwWQ==
+vuepress-theme-tsed@2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-tsed/-/vuepress-theme-tsed-2.5.4.tgz#d08ab0dd5b0e3ca8d4c2a01c1fc0e3c8c92095a7"
+  integrity sha512-ca/RFx/YGi0n6OBcQETCeV/KSulPi0w0a9pf8k168RkjR/YLjEg670fUmNEsBcaWBiZKo1MI2SJ750o05xSMug==
   dependencies:
     "@vuepress/plugin-active-header-links" "1.2.0"
     "@vuepress/plugin-nprogress" "1.2.0"

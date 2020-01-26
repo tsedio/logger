@@ -48,6 +48,7 @@
     "lerna": "3.18.4"
   },
   "devDependencies": {
+    "@typedproject/ts-doc": "4.0.6",
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "7.1.0",
     "@types/mocha": "^5.2.6",
@@ -88,7 +89,7 @@
     "typescript": "3.7.5",
     "tsconfig-paths": "3.9.0",
     "vue-analytics": "5.17.2",
-    "vuepress-theme-tsed": "2.5.3"
+    "vuepress-theme-tsed": "2.5.4"
   },
   "husky": {
     "hooks": {
