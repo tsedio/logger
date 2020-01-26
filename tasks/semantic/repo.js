@@ -1,24 +1,45 @@
-const fs = require('fs')
-const logger = require('fancy-log')
-const gulpRepo = require('../gulp/repo')
+const logger = require("fancy-log");
+const execa = require("execa");
+const gulpRepo = require("../gulp/repo");
 
 module.exports = {
   /**
    * Prepare release before create a new release with semantic-release
    * @returns {Promise<T | never>}
    */
-  async prepare (pluginConfig, context) {
+  async prepare(pluginConfig, context) {
     const {
-      nextRelease: { version }
-    } = context
+      nextRelease: {version}
+    } = context;
 
-    logger('Write package.json')
+    logger("Update all packages with the right version");
 
-    const pkg = JSON.parse(fs.readFileSync('./package.json', { encoding: 'utf8' }))
-    pkg.version = version
+    await execa("lerna", ["version", version, "--exact", "--yes", "--no-git-tag-version", "--no-push"], {
+      cwd: process.cwd(),
+      stdio: ["inherit"]
+    });
 
-    fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2), { encoding: 'utf8' })
+    await execa("yarn", ["version", "--no-git-tag-version", "--new-version", version], {
+      cwd: process.cwd(),
+      stdio: ["inherit"]
+    });
 
-    await gulpRepo.build()
+    await execa("yarn", ["build"], {
+      cwd: process.cwd(),
+      stdio: ["inherit"]
+    });
+  },
+  /**
+   * Publish packages
+   */
+  async publish(pluginConfig) {
+    if (pluginConfig.dryRun) {
+      return gulpRepo.publishDryRun();
+    }
+
+    return gulpRepo.publish();
+  },
+
+  async success() {
   }
-}
+};

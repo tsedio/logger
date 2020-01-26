@@ -1,9 +1,7 @@
 {
-  "concurrent": true,
-  "linters": {
-    "*.ts": [
-      "prettier --parser typescript --write",
-      "git add"
-    ]
-  }
+  "packages/*/src/**/*.ts": [
+     "prettier --write",
+     "yarn test:lint:fix",
+     "git add"
+   ]
 }

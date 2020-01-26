@@ -1,14 +1,20 @@
 language: node_js
-notifications:
-  email: true
+cache: yarn
+
 node_js:
-  - 'node'
+  - '12'
   - '10'
-after_success:
-  - npm run build
-  - npx travis-deploy-once "npm run semantic-release"
-  - npm run test:coveralls
+
+script: yarn test && yarn travis:coveralls
+
+jobs:
+  include:
+    - stage: deploy
+      name: 'Deploy packages'
+      node_js: 12
+      if: (NOT type IN (pull_request)) AND (branch = production)
+      script: yarn semantic-release && yarn docs:publish
+
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
-sudo: false

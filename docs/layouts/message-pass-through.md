@@ -1,4 +1,4 @@
-# Message Pass-Through
+# Message Pass-Through layout
 
 type - `messagePassThrough`
 
@@ -8,7 +8,7 @@ level or category. It is typically used in appenders that serialise the events u
 ## Example
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 

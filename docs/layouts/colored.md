@@ -1,4 +1,4 @@
-# Colored
+# Colored layout
 
 * type - `colored`
 
@@ -15,7 +15,7 @@
 ## Example
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 

@@ -37,16 +37,15 @@ typings/
 # Typescript
 test/*.js
 test/*.js.map
-/src/*.js
-/src/*.js.map
-
-test/**/*.js
-test/**/*.js.map
-/src/**/*.js
-/src/**/*.js.map
+/packages/*.js
+/packages/*.js.map
+/packages/*/lib
 /lib
 /dts
 /es6
+/dist
+/docs/api
+/docs/api/**/*.md
 
 # Test
 /stdout

@@ -1,3 +1,7 @@
+---
+sidebar: auto
+otherTopics: true
+---
 # Getting started
 ## Installation
 
@@ -12,7 +16,7 @@ npm install source-map-support
 Minimalist version:
 
 ```typescript
-import {$log} from "ts-log-debug";
+import {$log} from "@tsed/logger";
 $log.level = "debug";
 $log.name = "APP";
 
@@ -26,7 +30,7 @@ Will be procude the following log output:
 ## Create your own logger
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 logger.appenders
@@ -58,7 +62,7 @@ Shutdown return a Promise that will be resolved when ts-log-debug has closed all
 Use this when your programme exits to make sure all your logs are written to files, sockets are closed, etc.
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 logger

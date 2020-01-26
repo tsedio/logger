@@ -1,6 +1,6 @@
 {
   "include": [
-    "src/**/*.ts"
+    "packages/*/src/**/*.ts"
   ],
   "exclude": [
     "**/index.ts",
@@ -19,5 +19,5 @@
   "lines": 93,
   "statements": 92,
   "functions": 86,
-  "branches": 73.47
+  "branches": 71.93
 }

@@ -1,4 +1,4 @@
-# Pattern
+# Pattern layout
 
 * type - pattern
 * pattern - string - specifier for the output format, using placeholders as described below
@@ -33,7 +33,7 @@ Fields can be any of:
 User-defined tokens can be either a string or a function. Functions will be passed the log event, and should return a string. For example, you could define a custom token that outputs the log event's context value for `user` like so:
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
@@ -61,7 +61,7 @@ This would output:
 You can also use the Logger context to store tokens (sometimes called Nested Diagnostic Context, or Mapped Diagnostic Context) and use them in your layouts.
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 const logger = new Logger("loggerName");
 
 logger.appenders
@@ -81,4 +81,7 @@ This would output:
 ```bash
 2017-06-01 08:32:56.283 INFO default charlie doing something.
 ```
-> Note that you can also add functions to the Logger Context, and they will be passed the logEvent as well.
+
+::: tip
+Note that you can also add functions to the Logger Context, and they will be passed the logEvent as well.
+:::

@@ -5,12 +5,12 @@ This appender writes all log events to the standard output stream.
 ## Configuration
 
 type - `stdout`
-layout - object (optional, defaults to coloredLayout) - see [layouts](../layouts.md)
+layout - object (optional, defaults to coloredLayout) - see [layouts](/layouts/readme.md)
 
 ## Example
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
