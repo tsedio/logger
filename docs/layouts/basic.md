@@ -1,4 +1,4 @@
-# Basic
+# Basic layout
 
 * type - `basic`
 
@@ -7,7 +7,7 @@ Basic layout will output the timestamp, level, category, followed by the formatt
 ## Example
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 

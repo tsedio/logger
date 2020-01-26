@@ -1,25 +1,31 @@
 {
-  "name": "ts-log-debug",
+  "name": "@tsed/logger-root",
   "version": "5.1.1",
   "description": "A multi channel logger written in TypeScript.",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "private": true,
   "scripts": {
-    "precommit": "lint-staged",
-    "postcommit": "git update-index --again",
     "prepublishOnly": "gflow release post",
     "gflow-release-pre": "",
-    "semantic-release": "gflow release pre && semantic-release",
+    "semantic-release": "semantic-release",
     "semantic-release:dry-run": "semantic-release --dry-run",
-    "build": "tsc --project tsconfig.compile.json",
-    "prettier": "prettier '{src,test}/**/*.ts' --write",
-    "test": "npm run test:lint && NODE_ENV=test nyc mocha",
-    "test:unit": "mocha --recursive",
+    "clean": "gulp clean:workspace",
+    "test": "yarn clean && yarn test:lint && yarn test:coverage",
+    "test:unit": "cross-env NODE_ENV=test mocha",
+    "test:coverage": "cross-env NODE_ENV=test nyc mocha",
     "test:lint": "tslint --project tsconfig.json",
-    "test:coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test:lint:fix": "tslint --project tsconfig.json --fix",
+    "travis:deploy-once": "travis-deploy-once",
+    "travis:coveralls": "nyc report --reporter=text-lcov | coveralls",
     "tsc": "tsc --project tsconfig.json",
-    "doc:serve": "concurrently \"tsc --project tsconfig.compile.json -w\" \"docsify serve ./docs\" \"cd docs/_build && nodemon --delay 2.5 -e ts --watch ../../lib build-api.js\"",
-    "doc:build": "cd docs/_build && node build-api.js && cd ../.."
+    "build": "lerna run build --stream && gulp repo:build",
+    "publish:dryRun": "yarn build && gulp repo:publishDryRun",
+    "docs:serve": "yarn api:build && yarn vuepress:serve ",
+    "docs:build": "yarn api:build && yarn vuepress:build ",
+    "docs:publish": "yarn docs:build && gulp docs:publish",
+    "api:build": "lerna run build && ts-doc",
+    "vuepress:build": "vuepress build docs",
+    "vuepress:serve": "vuepress dev docs",
+    "prettier": "prettier '{src,test}/**/*.ts' --write"
   },
   "repository": {
     "type": "git",
@@ -32,12 +38,15 @@
     "typescript",
     "trace"
   ],
-  "author": "Romakita",
+  "author": "Romain Lenzotti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TypedProject/log-debug/issues"
+    "url": "https://github.com/TypedProject/ts-log-debug/issues"
   },
-  "homepage": "https://github.com/TypedProject/log-debug",
+  "homepage": "https://github.com/TypedProject//ts-log-debug",
+  "dependencies": {
+    "lerna": "3.18.4"
+  },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "7.1.0",
@@ -47,42 +56,53 @@
     "@types/sinon-chai": "^3.2.2",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.0.0",
+    "chalk": "3.0.0",
     "concurrently": "^4.1.0",
     "coveralls": "^3.0.3",
-    "docsify-cli": "^4.2.1",
-    "docsify-server-renderer": "^4.7.0",
+    "cross-env": "6.0.3",
+    "execa": "3.3.0",
+    "fancy-log": "1.3.3",
     "gflow": "^4.0.5",
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    "gulp-exec": "4.0.0",
+    "gulp-json-editor": "2.2.1",
+    "gulp-load-plugins": "2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^5.0.0",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.0",
     "mocha": "^6.0.2",
     "nyc": "^13.3.0",
     "prettier": "^1.13.5",
+    "require-dir": "1.2.0",
     "rimraf": "^2.6.3",
-    "semantic-release": "^15.13.3",
+    "semantic-release": "^15.13.18",
     "sinon": "^7.2.7",
     "sinon-chai": "^3.3.0",
-    "source-map-support": "^0.5.10",
+    "source-map-support": "0.5.16",
     "travis-deploy-once": "^5.0.0",
     "ts-node": "^8.0.3",
     "tslint": "^5.13.1",
-    "typescript": "^3.3.3333"
+    "typescript": "3.7.5",
+    "tsconfig-paths": "3.9.0",
+    "vue-analytics": "5.17.2",
+    "vuepress-theme-tsed": "2.5.3"
   },
-  "peerDependencies": {
-    "source-map-support": "^0.5.10"
-  },
-  "dependencies": {
-    "colors": "^1.3.3",
-    "date-format": "^2.0.0",
-    "semver": "^5.6.0",
-    "streamroller": "^1.0.3",
-    "tslib": "^1.9.3"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
   },
   "directories": {
-    "lib": "lib",
-    "src": "src",
+    "packages": "packages",
     "test": "test"
   },
-  "release": {
-    "branch": "production"
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   }
 }

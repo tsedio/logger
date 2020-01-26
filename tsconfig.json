@@ -1,28 +1,27 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2016",
-    "lib": [
-      "es6"
-    ],
-    "sourceMap": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "moduleResolution": "node",
-    "isolatedModules": false,
-    "suppressImplicitAnyIndexErrors": false,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "importHelpers": true,
-    "noEmit": true,
-    "typeRoots": [
-      "./node_modules/@types"
+    "baseUrl": ".",
+    "paths": {
+      "@tsed/*": [
+        "packages/*/src"
+      ]
+    }
+  },
+  "linterOptions": {
+    "exclude": [
+      "docs",
+      "integration",
+      "examples"
     ]
   },
   "exclude": [
-    "node_modules",
-    "dts",
-    "lib"
+    "test",
+    "**/test",
+    "docs",
+    "integration",
+    "examples",
+    "lib",
+    "**/lib"
   ]
 }

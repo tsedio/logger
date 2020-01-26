@@ -1,12 +1,12 @@
-# Json
+# Json layout
 
 * type - `json`
-* seperator - string - char that separate each line
+* separator - string - char that separate each line
 
 ## Example
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 

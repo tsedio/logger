@@ -1,10 +1,10 @@
-# Create your own layouts
+# Custom layout
 
-You can add your own layouts with `@Layout()` before pushing a configure to your logger.
+You can add your own layouts with @@Layout()@@ before pushing a configure to your logger.
 
 ```typescript
 // customLayout.ts
-import {BaseLayout, LogEvent, Layout} from "ts-log-debug";
+import {BaseLayout, LogEvent, Layout} from "@tsed/logger";
 import {formatLogData} from "ts-log-debug/lib/utils/inpectUtils";
 
 @Layout({name: "customJson"})
@@ -28,7 +28,7 @@ export class JsonLayout extends BaseLayout {
 This layout can be use like this:
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 import "./customLayout.ts";
 
 const logger = new Logger("loggerName");

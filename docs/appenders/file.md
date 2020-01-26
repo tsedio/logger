@@ -2,7 +2,7 @@
 
 The file appender writes log events to a file. It supports an optional maximum file size, and will keep a configurable 
 number of backups. 
-When using the file appender, you should also call [logger.shutdown()](../getting-started.md) when your application terminates, 
+When using the file appender, you should also call [logger.shutdown()](/getting-started.md) when your application terminates, 
 to ensure that any remaining asynchronous writes have finished. 
 Although the file appender uses the [streamroller](https://github.com/nomiddlename/streamroller) library, this is included as a dependency of ts-log-debug so you do not 
 need to include it yourself.
@@ -13,7 +13,7 @@ need to include it yourself.
 - **filename - string** - the path of the file where you want your logs written.
 - **maxLogSize - integer** (optional) - the maximum size (in bytes) for the log file. If not specified, then no log rolling will happen.
 - **backups - integer** (optional, default value = 5) - the number of old log files to keep during log rolling.
-- **layout** - (optional, defaults to basic layout) - see [layouts](../layouts.md)
+- **layout** - (optional, defaults to basic layout) - see [layouts](/layouts/readme.md)
 
 Any other configuration parameters will be passed to the underlying [streamroller](https://github.com/nomiddlename/streamroller) 
 implementation (see also node.js core file streams):
@@ -25,7 +25,7 @@ implementation (see also node.js core file streams):
 
 ## Example
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
@@ -42,7 +42,7 @@ This example will result in a single log file (all-the-logs.log) containing the 
 ## Example with log rolling (and compressed backups)
 
 ```typescript
-import {Logger} from "ts-log-debug";
+import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
