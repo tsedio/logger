@@ -1,7 +1,7 @@
 module.exports = {
-  title: '@tsed/logger - Ts.LogDebug - A Node.js and TypeScript multi chanel logger',
+  title: 'Ts.LogDebug - A Node.js and TypeScript multi chanel logger',
   description: 'A Node.js and TypeScript multi chanel logger',
-  serviceWorker: false,
+  serviceWorker: true,
   theme: 'tsed',
   themeConfig: {
     shortTitle: 'Ts.LogDebug',
@@ -9,6 +9,8 @@ module.exports = {
     repo: 'TypedProject/ts-log-debug',
     openCollective: 'tsed',
     gitterUrl: 'https://gitter.im/Tsed-io/community',
+    stackoverflowUrl: "https://stackoverflow.com/questions/tagged/tsed",
+    sponsorUrl: "https://opencollective.com/tsed",
     editLinks: true,
     docsDir: 'docs',
     sidebar: 'auto',
