@@ -289,6 +289,7 @@ export * from "./class/Layouts";
 export * from "./class/BaseLayout";
 export * from "./interfaces/BasicLayoutConfiguration";
 export * from "./decorators/layout";
+export * from "./utils/colorizeUtils";
 
 import "./components/BasicLayout";
 import "./components/ColoredLayout";
