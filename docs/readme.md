@@ -6,12 +6,12 @@ meta:
  - name: description
    content: A Node.js and TypeScript multi chanel logger.
  - name: keywords
-   content: Ts.LogDebug nodejs typescript logger javascript decorators
+   content: Ts.Logger nodejs typescript logger javascript decorators
 actionText: Get Started →
 actionLink: /getting-started.html
 repoText: Github
-repoLink: https://github.com/TypedProject/ts-log-debug
-heroText: Ts.LogDebug
+repoLink: https://github.com/TypedProject/logger
+heroText: Ts.Logger
 heroDescription: A Node.js and TypeScript multi chanel logger
 heroTerms:
 - Colored
@@ -20,7 +20,7 @@ heroTerms:
 - Extensible
 testimonial:
   title: What is it ?
-  details: Ts.LogDebug is a Node.js and TypeScript logger with multi chanel support and configurable.
+  details: Ts.Logger is a Node.js and TypeScript logger with multi chanel support and configurable.
 features:
 - title: Colored
   details: Colored console logging to stdout or stderr.
@@ -54,15 +54,15 @@ showContent: false
 
 # TsLogDebug 
 
-[![Build Status](https://travis-ci.org/TypedProject/ts-log-debug.svg?branch=master)](https://travis-ci.org/TypedProject/ts-log-debug)
-[![Coverage Status](https://coveralls.io/repos/github/TypedProject/ts-log-debug/badge.svg?branch=master)](https://coveralls.io/github/TypedProject/ts-log-debug?branch=master)
+[![Build Status](https://travis-ci.org/TypedProject/logger.svg?branch=master)](https://travis-ci.org/TypedProject/logger)
+[![Coverage Status](https://coveralls.io/repos/github/TypedProject/logger/badge.svg?branch=master)](https://coveralls.io/github/TypedProject/logger?branch=master)
 [![TypeScript](https://badges.frapsoft.com/typescript/love/typescript.svg?v=100)](https://github.com/ellerbrock/typescript-badges/) 
-[![Package Quality](http://npm.packagequality.com/shield/ts-log-debug.png)](http://packagequality.com/#?package=ts-log-debug)
-[![npm version](https://badge.fury.io/js/ts-log-debug.svg)](https://badge.fury.io/js/ts-log-debug)
-[![Dependencies](https://david-dm.org/TypedProject/ts-log-debug.svg)](https://david-dm.org/TypedProject/ts-log-debug#info=dependencies)
-[![img](https://david-dm.org/TypedProject/ts-log-debug/dev-status.svg)](https://david-dm.org/TypedProject/ts-log-debug/#info=devDependencies)
-[![img](https://david-dm.org/TypedProject/ts-log-debug/peer-status.svg)](https://david-dm.org/TypedProject/ts-log-debug/#info=peerDependenciess)
-[![Known Vulnerabilities](https://snyk.io/test/github/TypedProject/ts-log-debug/badge.svg)](https://snyk.io/test/github/TypedProject/ts-express-decorators)
+[![Package Quality](http://npm.packagequality.com/shield/logger.png)](http://packagequality.com/#?package=ts-log-debug)
+[![npm version](https://badge.fury.io/js/logger.svg)](https://badge.fury.io/js/logger)
+[![Dependencies](https://david-dm.org/TypedProject/logger.svg)](https://david-dm.org/TypedProject/logger#info=dependencies)
+[![img](https://david-dm.org/TypedProject/logger/dev-status.svg)](https://david-dm.org/TypedProject/logger/#info=devDependencies)
+[![img](https://david-dm.org/TypedProject/logger/peer-status.svg)](https://david-dm.org/TypedProject/logger/#info=peerDependenciess)
+[![Known Vulnerabilities](https://snyk.io/test/github/TypedProject/logger/badge.svg)](https://snyk.io/test/github/TypedProject/logger)
 
 
 
@@ -78,7 +78,7 @@ showContent: false
 * 
 * Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.).
 
-Please refer to the [documentation](https://typedproject.github.io/ts-log-debug/) for more details.
+Please refer to the [documentation](https://typedproject.github.io/logger/) for more details.
 
 ## Installation
 

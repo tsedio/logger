@@ -4,7 +4,7 @@
 Clone your fork of the repository
 
 ```
-$ git clone https://github.com/YOUR_USERNAME/ts-log-debug.git
+$ git clone https://github.com/YOUR_USERNAME/logger.git
 ```
 
 Install npm dependencies

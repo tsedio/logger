@@ -7,7 +7,7 @@ otherTopics: true
 
 ```bash
 npm install -g typescript
-npm install ts-log-debug
+npm install @tsed/logger
 npm install source-map-support
 ```
 
@@ -58,7 +58,7 @@ logger.appenders
 
 ## Shutdown
 
-Shutdown return a Promise that will be resolved when ts-log-debug has closed all appenders and finished writing log events.
+Shutdown return a Promise that will be resolved when logger has closed all appenders and finished writing log events.
 Use this when your programme exits to make sure all your logs are written to files, sockets are closed, etc.
 
 ```typescript

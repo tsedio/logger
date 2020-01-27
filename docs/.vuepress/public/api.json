@@ -1,5 +1,5 @@
 {
-  "version": "5.1.1",
+  "version": "5.1.2",
   "scope": "@tsed",
   "symbolTypes": [
     {
@@ -474,7 +474,6 @@
           "symbolLabel": "Function",
           "symbolCode": "F",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -486,7 +485,6 @@
           "symbolLabel": "Function",
           "symbolCode": "F",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -498,7 +496,6 @@
           "symbolLabel": "Function",
           "symbolCode": "F",
           "status": [
-            "private",
             "stable"
           ]
         },

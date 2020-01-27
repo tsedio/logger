@@ -13,7 +13,7 @@ module.exports = {
       typings: "lib/index.d.ts",
       repository,
       bugs,
-      homepage: `https://github.com/TypedProject/ts-log-debug/packages/${pkgName}`,
+      homepage: `https://github.com/TypedProject/logger/packages/${pkgName}`,
       author,
       contributors,
       license,
@@ -24,7 +24,7 @@ module.exports = {
   },
   doc: {
     publish: true,
-    url: "https://github.com/TypedProject/ts-log-debug.git",
+    url: "https://github.com/TypedProject/logger.git",
     branch: "gh-pages",
     cname: "logger.tsed.io"
   },

@@ -27,6 +27,6 @@ This example defines three appenders named `stdout`, `stderr` and `file`.
 
 ## Core Appenders
 
-The following appenders are included with Ts.LogDebug.
+The following appenders are included with Ts.Logger.
 
 <ApiList query="symbolName.indexOf('Appender') > -1 && symbolType === 'class'" />

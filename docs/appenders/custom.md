@@ -1,6 +1,6 @@
 # Custom Appender
 
-Ts.LogDebug can load appenders from outside the core appenders by using @@Appender@@ decorator. 
+Ts.Logger can load appenders from outside the core appenders by using @@Appender@@ decorator. 
 The type config value is used as a require path if no matching appender can be found. 
 For example, the following configuration will create an appender with decorators:
 

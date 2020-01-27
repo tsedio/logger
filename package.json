@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TypedProject/ts-log-debug.git"
+    "url": "https://github.com/TypedProject/logger.git"
   },
   "keywords": [
     "ts",
@@ -41,9 +41,9 @@
   "author": "Romain Lenzotti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TypedProject/ts-log-debug/issues"
+    "url": "https://github.com/TypedProject/logger/issues"
   },
-  "homepage": "https://github.com/TypedProject//ts-log-debug",
+  "homepage": "https://github.com/TypedProject//logger",
   "dependencies": {
     "lerna": "3.18.4"
   },
@@ -86,7 +86,7 @@
     "travis-deploy-once": "^5.0.0",
     "ts-node": "^8.0.3",
     "tslint": "^5.13.1",
-    "typescript": "3.7.5",
+    "typescript": "3.5.3",
     "tsconfig-paths": "3.9.0",
     "vue-analytics": "5.17.2",
     "vuepress-theme-tsed": "2.5.4"
