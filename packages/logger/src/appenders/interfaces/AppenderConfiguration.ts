@@ -9,6 +9,7 @@ export interface IAppenderConfiguration {
   filename?: string;
   layout?: IBasicLayoutConfiguration;
   maxLogSize?: number;
+  pattern?: string;
   backups?: number;
   levels?: string[];
 
