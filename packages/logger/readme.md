@@ -77,13 +77,6 @@ logger.appenders
     })
 ```
 
-
-## Contributors
-Please read [contributing guidelines here](https://tsed.io/CONTRIBUTING.html)
-
-<a href="https://github.com/TypedProject/ts-express-decorators/graphs/contributors"><img src="https://opencollective.com/tsed/contributors.svg?width=890" /></a>
-
-
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
