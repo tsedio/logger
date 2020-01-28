@@ -131,8 +131,7 @@ export class FileAppender extends BaseAppender {
     let stream = null;
     if (pattern) {
       stream = new streams.DateRollingFileStream(file, pattern, options);
-    }
-    {
+    } else {
       stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
     }
     stream.on("error", (err: any) => {
