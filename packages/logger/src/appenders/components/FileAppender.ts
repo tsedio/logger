@@ -63,9 +63,25 @@ const eol = Os.EOL || "\n";
  * });
  * logger.debug('I will be logged in all-the-logs.log');
  * ```
- * > This will result in one current log file (all-the-logs.log). When that reaches 10Mb in size, it will be renamed and compressed to all-the-logs.log.1.gz and a new file opened called all-the-logs.log. When all-the-logs.log reaches 10Mb again, then all-the-logs.log.1.gz will be renamed to all-the-logs.log.2.gz, and so on.
  *
- * @private
+ * :::
+ * This will result in one current log file (all-the-logs.log). When that reaches 10Mb in size, it will be renamed and compressed to all-the-logs.log.1.gz and a new file opened called all-the-logs.log. When all-the-logs.log reaches 10Mb again, then all-the-logs.log.1.gz will be renamed to all-the-logs.log.2.gz, and so on.
+ * :::
+ *
+ * ## Example with date rolling
+ *
+ * ```typescript
+ * import { Logger } from 'ts-log-debug';
+ * export const logger = new Logger('Log Example');
+ *
+ * logger.appenders
+ * .set('file', {
+ *   type: 'file',
+ *   filename: `${__dirname}/../logs/myfile.log`,
+ *   pattern: '.yyyy-MM-dd'
+ * });
+ * ```
+ *
  */
 @Appender({name: "file", defaultLayout: "basic"})
 export class FileAppender extends BaseAppender {
@@ -103,14 +119,14 @@ export class FileAppender extends BaseAppender {
   }
 
   private build() {
-    let {filename: file, maxLogSize: logSize, backups: numBackups} = this.config;
+    let {filename: file, maxLogSize: logSize, backups: numBackups, pattern} = this.config;
 
     file = Path.normalize(file!);
     numBackups = numBackups === undefined ? 5 : numBackups;
     // there has to be at least one backup if logSize has been specified
     numBackups = numBackups === 0 ? 1 : numBackups;
 
-    this.writer = this.openTheStream(file, logSize, numBackups, this.config);
+    this.writer = this.openTheStream(file, logSize, numBackups, pattern, this.config);
     // On SIGHUP, close and reopen all files. This allows this appender to work with
     // logrotate. Note that if you are using logrotate, you should not set
     // `logSize`.
@@ -127,8 +143,13 @@ export class FileAppender extends BaseAppender {
    * @param options
    * @returns {streams.RollingFileStream}
    */
-  private openTheStream(file: string, fileSize: number | undefined, numFiles: number, options: any) {
-    const stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
+  private openTheStream(file: string, fileSize: number | undefined, numFiles: number, pattern: string | undefined, options: any) {
+    let stream = null;
+    if (pattern) {
+      stream = new streams.DateRollingFileStream(file, pattern, options);
+    } else {
+      stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
+    }
     stream.on("error", (err: any) => {
       console.error("FileAppender - Writing to file %s, error happened ", file, err);
     });
