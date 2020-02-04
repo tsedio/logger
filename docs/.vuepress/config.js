@@ -45,6 +45,7 @@ module.exports = {
                 items: [
                   { link: '/appenders/console.html', text: 'Console', items: [] },
                   { link: '/appenders/file.html', text: 'File', items: [] },
+                  { link: '/appenders/file-date.html', text: 'File date', items: [] },
                   { link: '/appenders/stdout.html', text: 'Stdout', items: [] },
                   { link: '/appenders/stderr.html', text: 'Stderr', items: [] }
                 ]
@@ -97,6 +98,7 @@ module.exports = {
               children: [
                 'console',
                 'file',
+                'file-date',
                 'stdout',
                 'stderr'
               ]
@@ -141,6 +143,7 @@ module.exports = {
         otherTopics: [
           '/appenders/console',
           '/appenders/file',
+          '/appenders/file-date',
           '/appenders/stdout',
           '/appenders/stderr',
           '/layouts/basic',

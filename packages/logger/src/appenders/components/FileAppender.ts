@@ -63,9 +63,25 @@ const eol = Os.EOL || "\n";
  * });
  * logger.debug('I will be logged in all-the-logs.log');
  * ```
- * > This will result in one current log file (all-the-logs.log). When that reaches 10Mb in size, it will be renamed and compressed to all-the-logs.log.1.gz and a new file opened called all-the-logs.log. When all-the-logs.log reaches 10Mb again, then all-the-logs.log.1.gz will be renamed to all-the-logs.log.2.gz, and so on.
  *
- * @private
+ * :::
+ * This will result in one current log file (all-the-logs.log). When that reaches 10Mb in size, it will be renamed and compressed to all-the-logs.log.1.gz and a new file opened called all-the-logs.log. When all-the-logs.log reaches 10Mb again, then all-the-logs.log.1.gz will be renamed to all-the-logs.log.2.gz, and so on.
+ * :::
+ *
+ * ## Example with date rolling
+ *
+ * ```typescript
+ * import { Logger } from 'ts-log-debug';
+ * export const logger = new Logger('Log Example');
+ *
+ * logger.appenders
+ * .set('file', {
+ *   type: 'file',
+ *   filename: `${__dirname}/../logs/myfile.log`,
+ *   pattern: '.yyyy-MM-dd'
+ * });
+ * ```
+ *
  */
 @Appender({name: "file", defaultLayout: "basic"})
 export class FileAppender extends BaseAppender {

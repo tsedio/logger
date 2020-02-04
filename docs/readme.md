@@ -23,11 +23,11 @@ testimonial:
   details: Ts.Logger is a Node.js and TypeScript logger with multi chanel support and configurable.
 features:
 - title: Colored
-  details: Colored console logging to stdout or stderr.
+  details: <a href="/appenders/console.html">Colored</a> console logging to <a href="/appenders/stdout">stdout</a> or <a href="/appenders/stderr">stderr</a>.
 - title: Multi chanel
-  details: File appender, with configurable log rolling based on file size.
+  details: <a href="/appenders/file.htm">File appender</a>, with configurable log rolling based on file size or <a href="/appenders/file-date.html">date</a>.
 - title: Extensible
-  details: Use decorators to declare your own appenders and layouts logger.
+  details: Use decorators to declare your own <a href="/appenders">appenders</a> and <a href="/layouts">layouts</a> logger.
 contributors:
  title : Our<br /><b>Contributors</b>
  button:
