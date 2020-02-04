@@ -47,7 +47,8 @@ module.exports = {
                   { link: '/appenders/file.html', text: 'File', items: [] },
                   { link: '/appenders/file-date.html', text: 'File date', items: [] },
                   { link: '/appenders/stdout.html', text: 'Stdout', items: [] },
-                  { link: '/appenders/stderr.html', text: 'Stderr', items: [] }
+                  { link: '/appenders/stderr.html', text: 'Stderr', items: [] },
+                  { link: '/appenders/smtp.html', text: 'Smtp', items: [] }
                 ]
               },
               {
@@ -100,7 +101,8 @@ module.exports = {
                 'file',
                 'file-date',
                 'stdout',
-                'stderr'
+                'stderr',
+                'smtp'
               ]
             },
             {
@@ -146,6 +148,7 @@ module.exports = {
           '/appenders/file-date',
           '/appenders/stdout',
           '/appenders/stderr',
+          '/appenders/smtp',
           '/layouts/basic',
           '/layouts/colored',
           '/layouts/dummy',
