@@ -23,7 +23,7 @@ const TTCC_CONVERSION_PATTERN = "%r %p %c - %m%n";
  *  - %% %
  *  - %n newline
  *  - %z pid
- *  - %x{<tokenname>} add dynamic tokens to your log. Tokens are specified in the tokens parameter
+ *  - %x{[tokenname]} add dynamic tokens to your log. Tokens are specified in the tokens parameter
  * You can use %[ and %] to define a colored block.
  *
  * Tokens are specified as simple key:value objects.
