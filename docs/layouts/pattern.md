@@ -23,8 +23,8 @@ Fields can be any of:
 * `%% % -` for when you want a literal `%` in your output,
 * `%n` newline,
 * `%z` process id (from process.pid),
-* `%x{<tokenname>}` add dynamic tokens to your log. Tokens are specified in the tokens parameter,
-* `%X{<tokenname>}` add values from the Logger context. Tokens are keys into the context values,
+* `%x{[tokenname]}` add dynamic tokens to your log. Tokens are specified in the tokens parameter,
+* `%X{[tokenname]}` add values from the Logger context. Tokens are keys into the context values,
 * `%[` start a colored block (color will be taken from the log level, similar to coloredLayout),
 * `%]` end a colored block.
 
