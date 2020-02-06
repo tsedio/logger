@@ -46,7 +46,7 @@ test/*.js.map
 /dist
 /docs/api
 /docs/api/**/*.md
-
+/docs/.vuepress/dist
 # Test
 /stdout
 /stderr
