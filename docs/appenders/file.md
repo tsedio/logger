@@ -24,6 +24,7 @@ implementation (see also node.js core file streams):
 - **compress** - boolean (default false) - compress the backup files during rolling (backup files will have .gz extension)
 
 ## Example
+
 ```typescript
 import {Logger} from "@tsed/logger";
 
