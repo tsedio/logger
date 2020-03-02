@@ -50,6 +50,7 @@ test/*.js.map
 # Test
 /stdout
 /stderr
+/docs/.vuepress/dist
 
 .DS_Store
 .nyc_output
