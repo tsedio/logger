@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Ts.Logger - A Node.js and TypeScript multi chanel logger',
+  title: '@tsed/logger - A Node.js and TypeScript multi chanel logger',
   description: 'A Node.js and TypeScript multi chanel logger',
   serviceWorker: false,
   theme: 'tsed',
