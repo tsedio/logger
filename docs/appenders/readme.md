@@ -10,13 +10,13 @@ import {Logger} from "@tsed/logger";
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .push({
+  .set({
       type: "stdout", level: ["debug", "info", "trace"]
   })
-  .push({
+  .set({
       type: "stderr", level: ["error", "fatal", "warn"]
   })
-  .push({
+  .set({
       type: "file", filename: "logfile.log"
   });
 ```

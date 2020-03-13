@@ -55,11 +55,11 @@ import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 logger.appenders
-    .push({
+    .set({
         type: "stdout",
         levels: ["debug", "info", "trace"]
     })
-    .push({
+    .set({
         type: "stderr",
         levels: ["fatal", "error", "warn"],
         layout: {
@@ -67,7 +67,7 @@ logger.appenders
           pattern: "%d %p %c %X{user} %m%n"
         }
     })
-    .push({
+    .set({
         type: "file",
         filename: `${__dirname}/app.log`,
         layout:{
