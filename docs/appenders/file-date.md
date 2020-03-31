@@ -4,7 +4,7 @@ This is a file appender that rolls log files based on a configurable time, rathe
 
 ## Configuration
 
-- **type** - `dateFile`
+- **type** - `file`
 - **filename** - `string` - the path of the file where you want your logs written.
 - **pattern** - `string` (optional, defaults to `.yyyy-MM-dd`) - the pattern to use to determine when to roll the logs.
 - **layout** - (optional, defaults to basic layout) - see [layouts](layouts.md)
@@ -28,8 +28,9 @@ import {Logger} from "@tsed/logger";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("everything", {
-  type: 'dateFile', 
-  filename: 'all-the-logs.log' 
+  type: 'file', 
+  filename: 'all-the-logs.log',
+  pattern: '.yyyy-MM-dd'
 });
 
 logger.debug('I will be logged in all-the-logs.log');
@@ -44,7 +45,7 @@ import {Logger} from "@tsed/logger";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("everything", { 
-  type: 'dateFile', 
+  type: 'file', 
   filename: 'all-the-logs.log', 
   pattern: '.yyyy-MM-dd-hh', 
   compress: true 
