@@ -351,10 +351,21 @@ describe("Logger", () => {
     });
   });
 
+  describe("shutdown()", () => {
+    it("should stop logger", async () => {
+      logger = new Logger();
+      logger.name = "loggerName";
+      logger.start();
+      logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
+
+      await logger.shutdown();
+    });
+  });
+
   describe("when appender doesn't exists", () => {
     it("should throw an error", () => {
       // @ts-ignore
-      assert.throws(() => logger.appenders.push({type: "unknow"}), "");
+      assert.throws(() => logger.appenders.push({type: "unknown"}), "");
     });
   });
 });

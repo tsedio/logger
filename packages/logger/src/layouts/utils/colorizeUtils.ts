@@ -28,3 +28,7 @@ export function colorizeEnd(style: any) {
 export function colorize(str: string, style: any) {
   return colorizeStart(style) + str + colorizeEnd(style);
 }
+
+export function removeColors(str: string) {
+  return str.replace(/\[\d+m|\\u\d+b/gi, "");
+}

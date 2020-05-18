@@ -1,24 +1,31 @@
+import * as Util from "util";
 import {BaseLayout} from "../class/BaseLayout";
 import {LogEvent} from "../../core/LogEvent";
 import {Layout} from "../decorators/layout";
-import * as Util from "util";
+import {removeColors} from "../utils/colorizeUtils";
 
-/**
- *
- * @private
- */
 @Layout({name: "json"})
 export class JsonLayout extends BaseLayout {
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
-    const log = {
+    const log: any = {
       startTime: loggingEvent.startTime,
       categoryName: loggingEvent.categoryName,
-      level: loggingEvent.level.toString(),
-      data: loggingEvent.data,
-      context: loggingEvent.context
+      level: loggingEvent.level.toString()
     };
 
-    log.data = log.data.map(data => (Util.format as any)(...[].concat(data as any)));
+    log.data = loggingEvent.data.reduce((data, current) => {
+      if (typeof current === "object") {
+        Object.assign(log, current);
+
+        if (current.data) {
+          return [].concat(data, current.data);
+        }
+
+        return data;
+      }
+
+      return [...data, removeColors(Util.format(current))];
+    }, []);
 
     return JSON.stringify(log) + (this.config["separator"] || "");
   }
