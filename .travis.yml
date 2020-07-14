@@ -2,10 +2,11 @@ language: node_js
 cache: yarn
 
 node_js:
-  - '12'
-  - '10'
+  - 14
+  - 12
+  - 10
 
-script: yarn test && yarn travis:coveralls
+script: yarn test && (yarn coveralls || true)
 
 jobs:
   include:
@@ -13,7 +14,7 @@ jobs:
       name: 'Deploy packages'
       node_js: 12
       if: (NOT type IN (pull_request)) AND (branch = production)
-      script: yarn semantic-release && yarn docs:publish
+      script: yarn release && yarn docs:publish && yarn examples:publish
 
 branches:
   except:
