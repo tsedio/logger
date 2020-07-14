@@ -1,6 +1,6 @@
 {
   "name": "ts-log-debug",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "description": "A multi channel logger written in TypeScript.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -29,7 +29,7 @@
     "build:doc": "tsc --build tsconfig.doc.json"
   },
   "dependencies": {
-    "@tsed/logger": "5.5.1"
+    "@tsed/logger": "5.5.2"
   },
   "peerDependencies": {
     "source-map-support": "^0.5.16"
