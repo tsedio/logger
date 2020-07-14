@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-smtp",
-  "version": "5.5.0",
+  "version": "5.5.1",
   "description": "SMTP appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -29,7 +29,7 @@
     "build:doc": "tsc --build tsconfig.doc.json"
   },
   "dependencies": {
-    "@tsed/logger": "5.5.0",
+    "@tsed/logger": "5.5.1",
     "nodemailer": "^6.4.2"
   },
   "devDependencies": {},
