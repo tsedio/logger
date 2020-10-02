@@ -22,7 +22,7 @@ $log.name = "APP";
 
 $log.debug("Some debug messages");
 ```
-Will be procude the following log output:
+The following log output will be produced:
 ```
 [2017-06-17 11:43:37.987] [DEBUG] [APP] - Some debug messages
 ```
@@ -58,8 +58,8 @@ logger.appenders
 
 ## Shutdown
 
-Shutdown return a Promise that will be resolved when logger has closed all appenders and finished writing log events.
-Use this when your programme exits to make sure all your logs are written to files, sockets are closed, etc.
+Shutdown returns a Promise that will be resolved when the logger has closed all appenders and finished writing log events.
+Use this when your program exits to make sure all your logs are written to files, and sockets are closed, etc.
 
 ```typescript
 import {Logger} from "@tsed/logger";
