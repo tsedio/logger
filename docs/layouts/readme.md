@@ -23,5 +23,5 @@ This configuration replaces the stdout appender's default colored layout with ba
 :::
 ## Built-in Layouts
 
-<ApiList query="symbolName.match(/Layout$/) && symbolType === 'class'" />
+<ApiList query="symbolName: Layout AND symbolType: class" />
 
