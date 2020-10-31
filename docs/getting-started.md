@@ -1,6 +1,4 @@
 ---
-prev: /docs/configuration.md
-next: /docs/controllers.html
 otherTopics: true
 ---
 # Getting started
@@ -23,7 +21,7 @@ $log.name = "APP";
 
 $log.debug("Some debug messages");
 ```
-Will be procude the following log output:
+Will be produce the following log output:
 ```
 [2017-06-17 11:43:37.987] [DEBUG] [APP] - Some debug messages
 ```
