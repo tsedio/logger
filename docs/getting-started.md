@@ -1,5 +1,6 @@
 ---
-sidebar: auto
+prev: /docs/configuration.md
+next: /docs/controllers.html
 otherTopics: true
 ---
 # Getting started

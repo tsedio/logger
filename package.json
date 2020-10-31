@@ -50,6 +50,7 @@
     "nodemailer": "^6.4.2"
   },
   "devDependencies": {
+    "@tsed/markdown-it-symbols": "3.3.0",
     "@tsed/monorepo-utils": "1.11.0",
     "@typedproject/ts-doc": "4.0.10",
     "@types/chai": "^4.1.7",
@@ -77,7 +78,7 @@
     "tsconfig-paths": "3.9.0",
     "tslint": "^5.13.1",
     "typescript": "3.5.3",
-    "vue": "2.6.12",
+    "vue": "2.6.11",
     "vuepress": "1.7.1",
     "vue-analytics": "5.22.1",
     "vuepress-theme-tsed": "3.3.0"
@@ -96,9 +97,6 @@
     "packages": [
       "packages/*"
     ]
-  },
-  "resolutions": {
-    "watchpack": "1.6.1"
   },
   "monorepo": {
     "productionBranch": "production",

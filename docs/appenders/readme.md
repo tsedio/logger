@@ -29,4 +29,4 @@ This example defines three appenders named `stdout`, `stderr` and `file`.
 
 The following appenders are included with Ts.Logger.
 
-<ApiList query="symbolName.indexOf('Appender') > -1 && symbolType === 'class'" />
+<ApiList query="symbolName: Appender AND symbolType: class" />

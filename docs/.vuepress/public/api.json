@@ -1,5 +1,5 @@
 {
-  "version": "5.3.0",
+  "version": "5.5.3",
   "scope": "@tsed",
   "symbolTypes": [
     {
@@ -68,6 +68,18 @@
   "modules": {
     "@tsed/logger": {
       "symbols": [
+        {
+          "path": "/api/logger/_default",
+          "symbolName": "_default",
+          "module": "@tsed/logger",
+          "symbolType": "default",
+          "symbolLabel": "",
+          "symbolCode": "",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
         {
           "path": "/api/logger/core/LogEvent",
           "symbolName": "LogEvent",
@@ -143,7 +155,6 @@
           "symbolCode": "C",
           "status": [
             "private",
-            "private",
             "stable"
           ]
         },
@@ -155,7 +166,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -168,7 +178,6 @@
           "symbolCode": "C",
           "status": [
             "private",
-            "private",
             "stable"
           ]
         },
@@ -180,7 +189,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
             "private",
             "stable"
           ]
@@ -204,6 +212,30 @@
           "symbolLabel": "Interface",
           "symbolCode": "I",
           "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/logger/appenders/interfaces/Partial",
+          "symbolName": "Partial",
+          "module": "@tsed/logger",
+          "symbolType": "type",
+          "symbolLabel": "Type alias",
+          "symbolCode": "T",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/logger/appenders/interfaces/PartialAppenderConfiguration",
+          "symbolName": "PartialAppenderConfiguration",
+          "module": "@tsed/logger",
+          "symbolType": "type",
+          "symbolLabel": "Type alias",
+          "symbolCode": "T",
+          "status": [
+            "private",
             "stable"
           ]
         },
@@ -272,7 +304,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -284,7 +315,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -296,7 +326,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -308,8 +337,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
-            "private",
             "stable"
           ]
         },
@@ -321,7 +348,6 @@
           "symbolLabel": "Class",
           "symbolCode": "C",
           "status": [
-            "private",
             "stable"
           ]
         },
@@ -335,7 +361,6 @@
           "status": [
             "return",
             "authors",
-            "private",
             "stable"
           ]
         },
@@ -499,6 +524,17 @@
           ]
         },
         {
+          "path": "/api/logger/layouts/utils/removeColors",
+          "symbolName": "removeColors",
+          "module": "@tsed/logger",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "stable"
+          ]
+        },
+        {
           "path": "/api/logger/layouts/utils/timestampLevelAndCategory",
           "symbolName": "timestampLevelAndCategory",
           "module": "@tsed/logger",
@@ -628,6 +664,22 @@
         }
       ],
       "name": "@tsed/logger"
+    },
+    "@tsed/smtp": {
+      "symbols": [
+        {
+          "path": "/api/smtp/SmtpAppender",
+          "symbolName": "SmtpAppender",
+          "module": "@tsed/smtp",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "stable"
+          ]
+        }
+      ],
+      "name": "@tsed/smtp"
     }
   }
 }
