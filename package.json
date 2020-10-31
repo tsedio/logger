@@ -50,8 +50,8 @@
     "nodemailer": "^6.4.2"
   },
   "devDependencies": {
-    "@tsed/monorepo-utils": "1.8.3",
-    "@typedproject/ts-doc": "4.0.6",
+    "@tsed/monorepo-utils": "1.11.0",
+    "@typedproject/ts-doc": "4.0.10",
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "7.1.0",
     "@types/mocha": "^5.2.6",
@@ -77,10 +77,10 @@
     "tsconfig-paths": "3.9.0",
     "tslint": "^5.13.1",
     "typescript": "3.5.3",
-    "vue": "2.6.11",
-    "vuepress": "1.4.0",
-    "vue-analytics": "5.17.2",
-    "vuepress-theme-tsed": "2.8.3"
+    "vue": "2.6.12",
+    "vuepress": "1.7.1",
+    "vue-analytics": "5.22.1",
+    "vuepress-theme-tsed": "3.3.0"
   },
   "husky": {
     "hooks": {
