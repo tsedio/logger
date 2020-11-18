@@ -70,7 +70,7 @@
     "mocha": "7.1.0",
     "nyc": "^13.3.0",
     "prettier": "^1.13.5",
-    "semantic-release": "^15.13.18",
+    "semantic-release": "^17.2.3",
     "sinon": "^7.2.7",
     "sinon-chai": "^3.3.0",
     "source-map-support": "0.5.16",
