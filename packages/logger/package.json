@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger",
-  "version": "5.5.3",
+  "version": "5.5.4",
   "description": "A multi channel logger written in TypeScript.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -35,6 +35,6 @@
     "streamroller": "^1.0.3",
     "tslib": "2.0.3"
   },
-  "peerDependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "peerDependencies": {}
 }
