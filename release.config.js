@@ -1,6 +1,6 @@
 module.exports = {
   branches: [
-    "master",
+    "production",
     {name: "alpha", prerelease: true, channel: "alpha"},
     {name: "beta", prerelease: true, channel: "beta"},
     {name: "rc", prerelease: true, channel: "rc"}

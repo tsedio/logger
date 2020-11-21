@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@tsed/logger": "5.5.3",
-    "nodemailer": "^6.4.2"
+    "nodemailer": "^6.4.16"
   },
   "devDependencies": {},
   "peerDependencies": {}
