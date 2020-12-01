@@ -46,7 +46,7 @@
     "lerna": "3.22.1",
     "nodemailer": "^6.4.16",
     "semver": "^7.3.2",
-    "streamroller": "^1.0.3",
+    "streamroller": "^2.2.4",
     "tslib": "2.0.3"
   },
   "devDependencies": {
