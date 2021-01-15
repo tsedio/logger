@@ -52,7 +52,7 @@
   "devDependencies": {
     "@tsed/markdown-it-symbols": "3.5.5",
     "@tsed/monorepo-utils": "1.11.0",
-    "@typedproject/ts-doc": "4.0.10",
+    "@typedproject/ts-doc": "4.0.13",
     "@types/chai": "^4.2.14",
     "@types/chai-as-promised": "7.1.3",
     "@types/mocha": "^8.0.4",
