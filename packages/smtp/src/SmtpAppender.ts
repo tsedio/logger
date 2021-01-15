@@ -88,14 +88,14 @@ export class SmtpAppender extends BaseAppender {
   }
 
   protected sendBuffer() {
-    const {config, logEventBuffer, layout, subjectLayout, transport} = this;
+    const {config, logEventBuffer, subjectLayout, transport} = this;
 
     if (logEventBuffer.length > 0) {
       const firstEvent = logEventBuffer[0];
       let body = "";
       const count = logEventBuffer.length;
       while (logEventBuffer.length > 0) {
-        body += `${layout(logEventBuffer.shift(), config.timezoneOffset)}\n`;
+        body += `${this.layout(logEventBuffer.shift(), config.timezoneOffset)}\n`;
       }
 
       const msg: any = {
