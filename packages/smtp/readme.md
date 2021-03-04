@@ -10,6 +10,12 @@
 [![img](https://david-dm.org/TypedProject/logger/peer-status.svg)](https://david-dm.org/TypedProject/logger/#info=peerDependenciess)
 [![Known Vulnerabilities](https://snyk.io/test/github/TypedProject/logger/badge.svg)](https://snyk.io/test/github/TypedProject/ts-express-decorators)
 
+<p style="text-align: center" align="center">
+ <a href="https://tsed.io" target="_blank"><img src="https://tsed.io/tsed-og.png" width="200" alt="Ts.ED logo"/></a>
+</p>
+
+A package of Ts.ED logger framework.
+
 ## Features
 
 Sends log events as emails. If you use this appender, you should also call shutdown when your application closes so that any remaining emails can be sent. Many of the configuration options below are passed through to nodemailer, so you should read their docs to get the most out of this appender.
