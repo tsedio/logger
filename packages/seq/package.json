@@ -1,0 +1,46 @@
+{
+  "name": "@tsed/logger-seq",
+  "version": "5.5.5",
+  "description": "Seq appender module for @tsed/logger",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "private": false,
+  "author": {
+    "name": "Romain Lenzotti"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TypedProject/logger.git"
+  },
+  "keywords": [
+    "ts",
+    "log",
+    "debug",
+    "typescript",
+    "trace",
+    "seq"
+  ],
+  "bugs": {
+    "url": "https://github.com/TypedProject/logger/issues"
+  },
+  "homepage": "https://github.com/TypedProject/logger",
+  "scripts": {
+    "build": "tsc --build tsconfig.compile.json"
+  },
+  "dependencies": {
+    "@tsed/logger": "5.5.5"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/bunyan-seq": "^0.2.2",
+    "bunyan": "^1.8.14",
+    "bunyan-seq": "^0.4.0"
+  },
+  "peerDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/bunyan-seq": "^0.2.2",
+    "bunyan": "^1.8.15",
+    "bunyan-seq": "^0.6.0"
+  }
+}
