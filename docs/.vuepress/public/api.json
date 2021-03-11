@@ -1,5 +1,5 @@
 {
-  "version": "5.5.3",
+  "version": "5.7.0",
   "scope": "@tsed",
   "symbolTypes": [
     {
@@ -66,6 +66,22 @@
     }
   ],
   "modules": {
+    "@tsed/logentries": {
+      "symbols": [
+        {
+          "path": "/api/logentries/LogEntriesAppender",
+          "symbolName": "LogEntriesAppender",
+          "module": "@tsed/logentries",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "stable"
+          ]
+        }
+      ],
+      "name": "@tsed/logentries"
+    },
     "@tsed/logger": {
       "symbols": [
         {
@@ -664,6 +680,657 @@
         }
       ],
       "name": "@tsed/logger"
+    },
+    "@tsed/rabbitmq": {
+      "symbols": [
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/_default",
+          "symbolName": "_default",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "default",
+          "symbolLabel": "",
+          "symbolCode": "",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/RabbitMQAppender",
+          "symbolName": "RabbitMQAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/core/LogEvent",
+          "symbolName": "LogEvent",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/core/LogLevel",
+          "symbolName": "LogLevel",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/core/levels",
+          "symbolName": "levels",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/class/IAppenderOptions",
+          "symbolName": "IAppenderOptions",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/class/IBaseAppender",
+          "symbolName": "IBaseAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/class/BaseAppender",
+          "symbolName": "BaseAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/components/ConsoleAppender",
+          "symbolName": "ConsoleAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/components/FileAppender",
+          "symbolName": "FileAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/components/StderrAppender",
+          "symbolName": "StderrAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/components/StdoutAppender",
+          "symbolName": "StdoutAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/decorators/Appender",
+          "symbolName": "Appender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "decorator",
+          "symbolLabel": "Decorator",
+          "symbolCode": "@",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/interfaces/IAppenderConfiguration",
+          "symbolName": "IAppenderConfiguration",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/interfaces/Partial",
+          "symbolName": "Partial",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "type",
+          "symbolLabel": "Type alias",
+          "symbolCode": "T",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/interfaces/PartialAppenderConfiguration",
+          "symbolName": "PartialAppenderConfiguration",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "type",
+          "symbolLabel": "Type alias",
+          "symbolCode": "T",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/registries/IAppenderProvider",
+          "symbolName": "IAppenderProvider",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/appenders/registries/AppendersRegistry",
+          "symbolName": "AppendersRegistry",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "const",
+          "symbolLabel": "Constant",
+          "symbolCode": "K",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/class/BaseLayout",
+          "symbolName": "BaseLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/class/LayoutReplacer",
+          "symbolName": "LayoutReplacer",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/class/Layouts",
+          "symbolName": "Layouts",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/components/BasicLayout",
+          "symbolName": "BasicLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/components/ColoredLayout",
+          "symbolName": "ColoredLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/components/DummyLayout",
+          "symbolName": "DummyLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/components/JsonLayout",
+          "symbolName": "JsonLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/components/MessagePassThroughLayout",
+          "symbolName": "MessagePassThroughLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/components/PatternLayout",
+          "symbolName": "PatternLayout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "return",
+            "authors",
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/constants/LOG_COLORS",
+          "symbolName": "LOG_COLORS",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "enum",
+          "symbolLabel": "Enum",
+          "symbolCode": "E",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/decorators/Layout",
+          "symbolName": "Layout",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "decorator",
+          "symbolLabel": "Decorator",
+          "symbolCode": "@",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/interfaces/TokenHandler",
+          "symbolName": "TokenHandler",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "type",
+          "symbolLabel": "Type alias",
+          "symbolCode": "T",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/interfaces/TokensHandlers",
+          "symbolName": "TokensHandlers",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/interfaces/IBasicLayoutConfiguration",
+          "symbolName": "IBasicLayoutConfiguration",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/interfaces/IReplacers",
+          "symbolName": "IReplacers",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/registries/ILayoutProvider",
+          "symbolName": "ILayoutProvider",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/registries/LayoutsRegistry",
+          "symbolName": "LayoutsRegistry",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "const",
+          "symbolLabel": "Constant",
+          "symbolCode": "K",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/truncate",
+          "symbolName": "truncate",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/pad",
+          "symbolName": "pad",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/truncateAndPad",
+          "symbolName": "truncateAndPad",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/colorizeStart",
+          "symbolName": "colorizeStart",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/colorizeEnd",
+          "symbolName": "colorizeEnd",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/colorize",
+          "symbolName": "colorize",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/removeColors",
+          "symbolName": "removeColors",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/layouts/utils/timestampLevelAndCategory",
+          "symbolName": "timestampLevelAndCategory",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/class/Logger",
+          "symbolName": "Logger",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/class/ILoggerAppender",
+          "symbolName": "ILoggerAppender",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/class/LoggerAppenders",
+          "symbolName": "LoggerAppenders",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/ITableSettings",
+          "symbolName": "ITableSettings",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "interface",
+          "symbolLabel": "Interface",
+          "symbolCode": "I",
+          "status": [
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/charRepeater",
+          "symbolName": "charRepeater",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/buildStartLine",
+          "symbolName": "buildStartLine",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/buildEndLine",
+          "symbolName": "buildEndLine",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/buildLine",
+          "symbolName": "buildLine",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/buildLineData",
+          "symbolName": "buildLineData",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        },
+        {
+          "path": "/api/rabbitmq/node_modules/@tsed/logger/logger/utils/drawTable",
+          "symbolName": "drawTable",
+          "module": "@tsed/rabbitmq",
+          "symbolType": "function",
+          "symbolLabel": "Function",
+          "symbolCode": "F",
+          "status": [
+            "private",
+            "stable"
+          ]
+        }
+      ],
+      "name": "@tsed/rabbitmq"
+    },
+    "@tsed/seq": {
+      "symbols": [
+        {
+          "path": "/api/seq/SeqAppender",
+          "symbolName": "SeqAppender",
+          "module": "@tsed/seq",
+          "symbolType": "class",
+          "symbolLabel": "Class",
+          "symbolCode": "C",
+          "status": [
+            "stable"
+          ]
+        }
+      ],
+      "name": "@tsed/seq"
     },
     "@tsed/smtp": {
       "symbols": [

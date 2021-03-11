@@ -1,0 +1,36 @@
+{
+  "name": "@tsed/logger-rabbitmq",
+  "version": "5.6.0",
+  "description": "RabbitMQ appender module for @tsed/logger",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "private": false,
+  "author": {
+    "name": "Romain Lenzotti"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TypedProject/logger.git"
+  },
+  "keywords": [
+    "ts",
+    "log",
+    "debug",
+    "typescript",
+    "trace",
+    "seq"
+  ],
+  "bugs": {
+    "url": "https://github.com/TypedProject/logger/issues"
+  },
+  "homepage": "https://github.com/TypedProject/logger",
+  "scripts": {
+    "build": "tsc --build tsconfig.compile.json"
+  },
+  "dependencies": {
+    "@types/amqplib": "^0.5.17",
+    "@tsed/logger": "5.6.0",
+    "amqplib": "0.7.1"
+  }
+}

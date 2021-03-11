@@ -93,6 +93,10 @@ module.exports = {
                     link: '/appenders/logentries.md'
                   },
                   {
+                    text: 'RabbitMQ',
+                    link: '/appenders/rabbitmq.md'
+                  },
+                  {
                     text: 'Seq',
                     link: '/appenders/seq.md'
                   },
@@ -147,6 +151,7 @@ module.exports = {
               { title: 'Stdout', path: '/appenders/stdout' },
               { title: 'StdErr', path: '/appenders/stderr' },
               { title: 'LogEntries', path: '/appenders/logentries' },
+              { title: 'RabbitMQ', path: '/appenders/rabbitmq' },
               { title: 'Seq', path: '/appenders/seq' },
               { title: 'Smtp', path: '/appenders/smtp' },
               { title: 'Custom appender', path: '/appenders/custom' }
@@ -181,6 +186,7 @@ module.exports = {
           '/appenders/stdout',
           '/appenders/stderr',
           '/appenders/logentries',
+          '/appenders/rabbitmq',
           '/appenders/seq',
           '/appenders/smtp',
           '/layouts/basic',
