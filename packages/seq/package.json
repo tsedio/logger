@@ -32,15 +32,9 @@
     "@tsed/logger": "5.6.0"
   },
   "devDependencies": {
-    "@types/bunyan": "^1.8.6",
-    "@types/bunyan-seq": "^0.2.2",
-    "bunyan": "^1.8.14",
-    "bunyan-seq": "^0.4.0"
+    "seq-logging": "0.5.0"
   },
   "peerDependencies": {
-    "@types/bunyan": "^1.8.6",
-    "@types/bunyan-seq": "^0.2.2",
-    "bunyan": "^1.8.15",
-    "bunyan-seq": "^0.6.0"
+
   }
 }

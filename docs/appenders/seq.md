@@ -1,9 +1,9 @@
 # Seq Appender
 
-Sends log events to a [Seq](https://www.npmjs.com/package/bunyan-seq) server.
+Sends log events to a [Seq](https://www.npmjs.com/package/seq-logging) server.
 
 ```bash
-npm install --save @tsed/seq bunyan bunyan-seq @types/bunyan @types/bunyan-seq
+npm install --save @tsed/seq
 ```
 
 ## Configuration
@@ -12,7 +12,7 @@ npm install --save @tsed/seq bunyan bunyan-seq @types/bunyan @types/bunyan-seq
 * `options.url` - The url log server
 * `options.apiKey` - The apiKey
 
-See all available options for Seq [here](https://www.npmjs.com/package/bunyan-seq).
+See all available options for Seq [here](https://www.npmjs.com/package/seq-logging).
 
 ## Example
 
@@ -26,7 +26,7 @@ logger.appenders.set("stdout", {
   type: "seq",
   level: ["info"],
   options: {
-    url: 'http://localhost:5341',
+    serverUrl: 'http://localhost:5341',
     apiKey: "the token"
     // other Seq options
   }
