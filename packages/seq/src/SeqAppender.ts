@@ -29,7 +29,7 @@ export class SeqAppender extends BaseAppender {
   write(loggingEvent: LogEvent) {
     const level = loggingEvent.level.toString().toLowerCase();
 
-    if (level !== "OFF") {
+    if (level !== "off") {
       const [current, ...data] = loggingEvent.data;
 
       const additionalProps = [...loggingEvent.context.entries()].reduce((props, [key, value]) => {
