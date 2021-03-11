@@ -18,7 +18,7 @@ export interface IBaseAppender {
 
   reopen?(): any;
 
-  shutdown?(complete: any): any;
+  shutdown?(): Promise<any> | any | void;
 }
 
 /**
