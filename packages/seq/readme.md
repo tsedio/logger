@@ -29,7 +29,7 @@ Sends log events to a Seq server.
 ## Installation
 
 ```
-npm install --save @tsed/seq bunyan bunyan-seq @types/bunyan @types/bunyan-seq
+npm install --save @tsed/seq
 ```
 
 ## Configuration
@@ -38,7 +38,7 @@ npm install --save @tsed/seq bunyan bunyan-seq @types/bunyan @types/bunyan-seq
 * `options.url` - The url log server
 * `options.apiKey` - The apiKey
 
-See all available options for Seq [here](https://www.npmjs.com/package/bunyan-seq).
+See all available options for Seq [here](https://www.npmjs.com/package/se-loggin).
 
 ## Example
 
@@ -52,7 +52,7 @@ logger.appenders.set("stdout", {
   type: "seq",
   level: ["info"],
   options: {
-    url: 'http://localhost:5341',
+    serverUrl: 'http://localhost:5341',
     apiKey: "the token"
     // other Seq options
   }
