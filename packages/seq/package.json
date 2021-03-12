@@ -29,10 +29,12 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "dependencies": {
-    "@tsed/logger": "5.10.0"
-  },
-  "devDependencies": {
     "seq-logging": "0.5.0"
   },
-  "peerDependencies": {}
+  "devDependencies": {
+    "@tsed/logger": "5.10.0"
+  },
+  "peerDependencies": {
+    "@tsed/logger": "^5.10.0"
+  }
 }

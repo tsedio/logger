@@ -29,9 +29,12 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "dependencies": {
-    "@tsed/logger": "5.10.0",
     "r7insight_node": "2.1.0"
   },
-  "devDependencies": {},
-  "peerDependencies": {}
+  "devDependencies": {
+    "@tsed/logger": "5.10.0"
+  },
+  "peerDependencies": {
+    "@tsed/logger": "^5.10.0"
+  }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@tsed/logger-logentries",
+  "name": "@tsed/logger-logstash-http",
   "version": "5.10.0",
-  "description": "LogEntries appender module for @tsed/logger",
+  "description": "Logstash HTTP appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "private": false,
@@ -19,7 +19,8 @@
     "debug",
     "typescript",
     "trace",
-    "logentries"
+    "logstash",
+    "http"
   ],
   "bugs": {
     "url": "https://github.com/TypedProject/logger/issues"
@@ -29,7 +30,8 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "dependencies": {
-    "le_node": "^1.8.0"
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "@tsed/logger": "5.10.0"

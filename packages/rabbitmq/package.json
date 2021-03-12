@@ -29,10 +29,13 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "dependencies": {
-    "@tsed/logger": "5.10.0",
     "@types/amqplib": "^0.5.17",
     "amqplib": "0.7.1"
   },
-  "devDependencies": {},
-  "peerDependencies": {}
+  "devDependencies": {
+    "@tsed/logger": "5.10.0"
+  },
+  "peerDependencies": {
+    "@tsed/logger": "^5.10.0"
+  }
 }

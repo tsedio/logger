@@ -97,6 +97,14 @@ module.exports = {
                     link: '/appenders/logentries.md'
                   },
                   {
+                    text: 'LogStash HTTP',
+                    link: '/appenders/logstash-http.md'
+                  },
+                  {
+                    text: 'LogStash UDP',
+                    link: '/appenders/logstash-udp.md'
+                  },
+                  {
                     text: 'Loggly',
                     link: '/appenders/loggly.md'
                   },
@@ -160,6 +168,8 @@ module.exports = {
               { title: 'StdErr', path: '/appenders/stderr' },
               { title: 'Insight', path: '/appenders/insight' },
               { title: 'LogEntries', path: '/appenders/logentries' },
+              { title: 'LogStash HTTP', path: '/appenders/logstash-http' },
+              { title: 'LogStash UDP', path: '/appenders/logstash-udp' },
               { title: 'Loggly', path: '/appenders/loggly' },
               { title: 'RabbitMQ', path: '/appenders/rabbitmq' },
               { title: 'Seq', path: '/appenders/seq' },
@@ -197,6 +207,8 @@ module.exports = {
           '/appenders/stderr',
           '/appenders/insight',
           '/appenders/logentries',
+          '/appenders/logstash-http',
+          '/appenders/logstash-udp',
           '/appenders/loggly',
           '/appenders/rabbitmq',
           '/appenders/seq',
