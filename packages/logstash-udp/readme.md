@@ -1,4 +1,4 @@
-# @tsed/logger-logstash-http
+# @tsed/logger-logstash-udp
 
 [![Build Status](https://travis-ci.org/TypedProject/logger.svg?branch=master)](https://travis-ci.org/TypedProject/logger)
 [![Coverage Status](https://coveralls.io/repos/github/TypedProject/logger/badge.svg?branch=master)](https://coveralls.io/github/TypedProject/logger?branch=master)
@@ -17,31 +17,31 @@ A package of Ts.ED logger framework.
 
 ## Features
 
-The logstash appenders for [Ts.ED Logger](https://logger.tsed.io) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers. 
-This appender uses HTTP to send the events (there is another logstash appender that uses [UDP](https://logger.tsed.io/appenders/logstash-udp.html)).
+The logstash appenders for [Ts.ED Logger](https://logger.tsed.io).
+
+The logstash-udp appender supports sending log events to a [Logstash](https://www.elastic.co/products/logstash) server. 
+It uses the node.js core UDP support, and so requires no extra dependencies. 
+Remember to call `logger.shutdown` in your application if you want the UDP socket closed cleanly.
 
 ## Installation
 
 ```bash
-npm install --save @tsed/logger-logstash-http
+npm install --save @tsed/logger-logstash-udp
 ```
 
 ## Configuration
 
-* `type` - `logstash-http`
-* `options.url` - `string` - logFaces receiver servlet URL
-* `options.application` - `string` (optional) - used to identify your application's logs
-* `options.logChannel` - `string` (optional) - also used to identify your application's logs [but in a more specific way]
-* `options.logType` - `string` (optional) - used for the `type` field in the logstash data
-* `options.timeout` - `integer` (optional, defaults to 5000ms) - the timeout for the HTTP request.
-
-This appender will also pick up Logger context values from the events, and add them as `p_` values in the logFaces event. See the example below for more details.
+* `type` - `logstash-udp`
+* `options.host` - `string` - hostname (or IP-address) of the logstash server
+* `options.port` - `integer` - port of the logstash server
+* `options.layout` - (optional, defaults to dummyLayout) - used for the message field of the logstash data (see layouts)
+* `options.extraDataProvider` - function (optional, defaults to put the second param of log to fields) - used to enhance the object sent to Logstash via UDP. this will be passed the log event and should return an object.
 
 ## Example
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-logstash-http";
+import "@tsed/logger-logstash-udp";
 
 const logger = new Logger("loggerName");
 
@@ -49,20 +49,79 @@ logger.appenders.set("stdout", {
   type: "loggly", 
   level: ["info"],
   options: {
-    url: 'http://localhost:9200/_bulk', 
-    application: 'logstash-tsed', 
-    logType: 'application', 
-    logChannel: 'node'
+    host: 'log.server',
+    port: 12345
   }
 });
 
-logger.context.set('requestId', '123');
-logger.info('some interesting log message');
-logger.error('something has gone wrong');
+logger.info("important log message", { cheese: 'gouda', biscuits: 'hobnob' });
 ```
 
-This example will result in two log events being sent to your `localhost:9200`. 
-Both events will have a `context.requestId` property with a value of `123`.
+This will result in a JSON message being sent to log.server:12345 over UDP, with the following format:
+
+```javascript
+{
+  '@version': '1',
+  '@timestamp': '2014-04-22T23:03:14.111Z',
+  'host': 'yourHostname',
+  'level': 'INFO',
+  'category': 'default',
+  'message': 'important log message',
+  'fields': {
+    'biscuits': 'hobnob',
+    'cheese': 'gouda'
+  }
+}
+```
+
+### use extraDataProvider
+
+```javascript
+import {Logger} from "@tsed/logger";
+import "@tsed/logger-logstash-udp";
+
+const logger = new Logger("loggerName");
+
+logger.appenders.set("stdout", {
+  type: "loggly",
+  level: ["info"],
+  options: {
+    host: 'log.server',
+    port: 12345,
+    extraDataProvider: loggingEvent => ({
+      host: 'anotherHostname',  // this will replace the default real host
+      clientIp: '1.2.3.4', // this will be added
+      fields: {
+        tag: 'myTag', // this will be added to the fields
+        pid: loggingEvent.pid, // this will be added to the fields
+        cheese: 'defaultCheese' // this will be added to the fields but will not be replaced in this example
+      }
+    })
+  }
+});
+
+logger.info("important log message", { cheese: 'gouda', biscuits: 'hobnob' });
+```
+This will result in a JSON message being sent to log.server:12345 over UDP, with the following format:
+
+```javascript
+{
+  '@version': '1',
+  '@timestamp': '2014-04-22T23:03:14.111Z',
+  'host': 'anotherHostname',
+  'level': 'INFO',
+  'category': 'default',
+  'message': 'important log message',
+  'clientIp': '1.2.3.4',
+  'fields': {
+    'cheese': 'defaultCheese',
+    'tag': 'myTag',
+    'pid': 123
+  }
+}
+```
+
+So, if not using the default `extraDataProvider`, you have to put the second param of the log to the fields yourself if you want.
 
 ## Backers
 

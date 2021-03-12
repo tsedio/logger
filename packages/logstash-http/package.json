@@ -1,7 +1,7 @@
 {
   "name": "@tsed/logger-logstash-http",
-  "version": "5.9.0",
-  "description": "Loggly appender module for @tsed/logger",
+  "version": "5.10.0",
+  "description": "Logstash HTTP appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "private": false,
@@ -19,7 +19,8 @@
     "debug",
     "typescript",
     "trace",
-    "loggly"
+    "logstash",
+    "http"
   ],
   "bugs": {
     "url": "https://github.com/TypedProject/logger/issues"
@@ -30,9 +31,12 @@
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
-    "@tsed/logger": "5.9.0",
     "axios": "^0.21.1"
   },
-  "devDependencies": {},
-  "peerDependencies": {}
+  "devDependencies": {
+    "@tsed/logger": "5.10.0"
+  },
+  "peerDependencies": {
+    "@tsed/logger": "^5.10.0"
+  }
 }

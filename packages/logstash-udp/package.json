@@ -1,7 +1,7 @@
 {
-  "name": "@tsed/logger-logentries",
+  "name": "@tsed/logger-logstash-udp",
   "version": "5.10.0",
-  "description": "LogEntries appender module for @tsed/logger",
+  "description": "Logstash UDP appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "private": false,
@@ -19,7 +19,8 @@
     "debug",
     "typescript",
     "trace",
-    "logentries"
+    "logstash",
+    "udp"
   ],
   "bugs": {
     "url": "https://github.com/TypedProject/logger/issues"
@@ -29,7 +30,7 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "dependencies": {
-    "le_node": "^1.8.0"
+
   },
   "devDependencies": {
     "@tsed/logger": "5.10.0"
