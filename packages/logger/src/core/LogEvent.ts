@@ -1,8 +1,5 @@
-/**
- * @module core
- */
-/** */
 import {LogLevel} from "./LogLevel";
+import {LogContext} from "./LogContext";
 
 export class LogEvent {
   /**
@@ -13,7 +10,8 @@ export class LogEvent {
    * @param {Array} _data objects to log
    * @param _context
    */
-  constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context: any) {}
+  constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context: LogContext) {
+  }
 
   private _startTime = new Date();
 
@@ -41,7 +39,7 @@ export class LogEvent {
     this._data = data;
   }
 
-  public get context(): Map<string, any> {
+  public get context(): LogContext {
     return this._context;
   }
 

@@ -4,7 +4,7 @@
 /** */
 
 export class LogLevel {
-  constructor(private level: number, private levelStr: string) {
+  constructor(readonly level: number, readonly levelStr: string) {
     this.level = level;
     this.levelStr = levelStr;
   }

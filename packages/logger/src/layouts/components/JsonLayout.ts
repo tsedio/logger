@@ -8,6 +8,7 @@ import {removeColors} from "../utils/colorizeUtils";
 export class JsonLayout extends BaseLayout {
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
     const log: any = {
+      ...loggingEvent.context.toJSON(),
       startTime: loggingEvent.startTime,
       categoryName: loggingEvent.categoryName,
       level: loggingEvent.level.toString()
