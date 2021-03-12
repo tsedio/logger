@@ -1,14 +1,19 @@
 # LogEntries Appender
 
-Sends log events to a [LogEntries](https://www.npmjs.com/package/le_node) server.
+Sends log events to a [LogEntries](https://logentries.com/) server.
+
+::: warning Deprecated
+`le_node` module is deprecated by is author in favor of `r7insight_node`.
+Please use [Insight appender](/appenders/insight.md) instead of.
+:::
 
 ```bash
-npm install --save @tsed/logger-logentries le_node
+npm install --save @tsed/logger-logentries
 ```
 
 ## Configuration
 
-* `type` - `smtp`
+* `type` - `logentries`
 * `options.token` - LogEntries token
 
 See all available options for LogEntries [here](https://www.npmjs.com/package/le_node).

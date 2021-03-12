@@ -89,6 +89,10 @@ module.exports = {
                 link: '/plugins',
                 items: [
                   {
+                    text: 'Insight',
+                    link: '/appenders/insight.md'
+                  },
+                  {
                     text: 'LogEntries',
                     link: '/appenders/logentries.md'
                   },
@@ -150,6 +154,7 @@ module.exports = {
               { title: 'File date', path: '/appenders/file-date' },
               { title: 'Stdout', path: '/appenders/stdout' },
               { title: 'StdErr', path: '/appenders/stderr' },
+              { title: 'Insight', path: '/appenders/insight' },
               { title: 'LogEntries', path: '/appenders/logentries' },
               { title: 'RabbitMQ', path: '/appenders/rabbitmq' },
               { title: 'Seq', path: '/appenders/seq' },
@@ -185,6 +190,7 @@ module.exports = {
           '/appenders/file-date',
           '/appenders/stdout',
           '/appenders/stderr',
+          '/appenders/insight',
           '/appenders/logentries',
           '/appenders/rabbitmq',
           '/appenders/seq',
