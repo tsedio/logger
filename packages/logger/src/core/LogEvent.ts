@@ -37,6 +37,10 @@ export class LogEvent {
     return this._data;
   }
 
+  public set data(data: any[]) {
+    this._data = data;
+  }
+
   public get context(): Map<string, any> {
     return this._context;
   }

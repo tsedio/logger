@@ -77,6 +77,9 @@ frameworks:
 - title: RabbitMQ
   href: https://www.rabbitmq.com/
   src: https://www.rabbitmq.com/img/logo-rabbitmq.svg
+- title: Loggly
+  href: https://www.loggly.com/
+  src: https://www.loggly.com/wp-content/themes/loggly-2019/img/layout/loggly-logo-grey.png 
 ---
 ::: slot hero-brand
 <span class="block sm:inline mb-10 sm:mb-0 sm:text-bold text-7xl sm:text-5xl font-medium"><span class="text-blue">Ts</span>.Logger</span><br/>

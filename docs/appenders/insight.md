@@ -1,4 +1,4 @@
-# LogEntries Appender
+# Insight Appender
 
 Sends log events to a [Insight](https://www.rapid7.com/products/) server.
 
