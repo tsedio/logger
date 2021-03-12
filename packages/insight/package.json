@@ -1,7 +1,7 @@
 {
-  "name": "@tsed/logger-rabbitmq",
+  "name": "@tsed/logger-insight",
   "version": "5.8.0",
-  "description": "RabbitMQ appender module for @tsed/logger",
+  "description": "Insight appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "private": false,
@@ -19,7 +19,7 @@
     "debug",
     "typescript",
     "trace",
-    "rabbitmq"
+    "insight"
   ],
   "bugs": {
     "url": "https://github.com/TypedProject/logger/issues"
@@ -30,8 +30,7 @@
   },
   "dependencies": {
     "@tsed/logger": "5.8.0",
-    "@types/amqplib": "^0.5.17",
-    "amqplib": "0.7.1"
+    "r7insight_node": "2.1.0"
   },
   "devDependencies": {},
   "peerDependencies": {}

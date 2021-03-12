@@ -1,4 +1,4 @@
-# @tsed/logger-logentries
+# @tsed/logger-insight
 
 [![Build Status](https://travis-ci.org/TypedProject/logger.svg?branch=master)](https://travis-ci.org/TypedProject/logger)
 [![Coverage Status](https://coveralls.io/repos/github/TypedProject/logger/badge.svg?branch=master)](https://coveralls.io/github/TypedProject/logger?branch=master)
@@ -17,39 +17,36 @@ A package of Ts.ED logger framework.
 
 ## Features
 
-Sends log events to a [LogEntries](https://logentries.com/) server.
-
-## Deprecated
-
-`le_node` module is deprecated by is author in favor of `r7insight_node`.
-Please use [Insight appender](https://www.npmjs.com/package/@tsed/logger-insight) instead of.
+Sends log events to an [Insight](https://www.rapid7.com/products/) server.
 
 ## Installation
 
 ```
-npm install --save @tsed/logger-logentries
+npm install --save @tsed/logger-insight
 ```
 
 ## Configuration
 
-* `type` - `logentries`
-* `options.token` - LogEntries token
+* `type` - `insight`
+* `options.token` - Insight token
+* `options.region` - The region of ingestion endpoint to be used. Examples: `eu`, `us` etc.
 
-See all available options for LogEntries [here](https://www.npmjs.com/package/le_node).
+See all available options for LogEntries [here](https://www.npmjs.com/package/r7insight_node).
 
 ## Example
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-logentries"
+import "@tsed/logger-insight"
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "logentries", 
+  type: "insight", 
   level: ["info"],
   options: {
-    token: "the token"
+    token: "the token",
+    region: "eu"
     // other options of logentries
   }
 });

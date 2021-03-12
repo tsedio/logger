@@ -29,12 +29,9 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "dependencies": {
-    "@tsed/logger": "5.8.0"
-  },
-  "devDependencies": {
+    "@tsed/logger": "5.8.0",
     "le_node": "^1.8.0"
   },
-  "peerDependencies": {
-    "le_node": "^1.8.0"
-  }
+  "devDependencies": {},
+  "peerDependencies": {}
 }
