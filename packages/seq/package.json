@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-seq",
-  "version": "5.11.0",
+  "version": "5.12.0",
   "description": "Seq appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -32,7 +32,7 @@
     "seq-logging": "0.5.0"
   },
   "devDependencies": {
-    "@tsed/logger": "5.11.0"
+    "@tsed/logger": "5.12.0"
   },
   "peerDependencies": {
     "@tsed/logger": "^5.10.0"
