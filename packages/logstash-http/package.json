@@ -1,0 +1,38 @@
+{
+  "name": "@tsed/logger-logstash-http",
+  "version": "5.9.0",
+  "description": "Loggly appender module for @tsed/logger",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "private": false,
+  "author": {
+    "name": "Romain Lenzotti"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TypedProject/logger.git"
+  },
+  "keywords": [
+    "ts",
+    "log",
+    "debug",
+    "typescript",
+    "trace",
+    "loggly"
+  ],
+  "bugs": {
+    "url": "https://github.com/TypedProject/logger/issues"
+  },
+  "homepage": "https://github.com/TypedProject/logger",
+  "scripts": {
+    "build": "tsc --build tsconfig.compile.json"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@tsed/logger": "5.9.0",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {}
+}
