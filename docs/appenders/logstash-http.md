@@ -27,7 +27,7 @@ import "@tsed/logger-logstash-http";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "loggly", 
+  type: "logstash-http", 
   level: ["info"],
   options: {
     url: 'http://localhost:9200/_bulk', 

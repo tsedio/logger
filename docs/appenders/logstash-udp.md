@@ -27,7 +27,7 @@ import "@tsed/logger-logstash-udp";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "loggly", 
+  type: "logstash-udp", 
   level: ["info"],
   options: {
     host: 'log.server',
