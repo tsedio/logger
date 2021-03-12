@@ -79,7 +79,10 @@ frameworks:
   src: https://www.rabbitmq.com/img/logo-rabbitmq.svg
 - title: Loggly
   href: https://www.loggly.com/
-  src: https://www.loggly.com/wp-content/themes/loggly-2019/img/layout/loggly-logo-grey.png 
+  src: https://www.loggly.com/wp-content/themes/loggly-2019/img/layout/loggly-logo-grey.png
+- title: LogStash
+  href: https://www.elastic.co/fr/logstash
+  src: https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt280217a63b82a734/5bbdaacf63ed239936a7dd56/elastic-logo.svg
 ---
 ::: slot hero-brand
 <span class="block sm:inline mb-10 sm:mb-0 sm:text-bold text-7xl sm:text-5xl font-medium"><span class="text-blue">Ts</span>.Logger</span><br/>
