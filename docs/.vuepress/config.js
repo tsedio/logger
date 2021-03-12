@@ -117,6 +117,10 @@ module.exports = {
                     link: '/appenders/seq.md'
                   },
                   {
+                    text: 'Slack',
+                    link: '/appenders/slack.md'
+                  },
+                  {
                     text: 'Smtp',
                     link: '/appenders/smtp.md'
                   }
@@ -173,6 +177,7 @@ module.exports = {
               { title: 'Loggly', path: '/appenders/loggly' },
               { title: 'RabbitMQ', path: '/appenders/rabbitmq' },
               { title: 'Seq', path: '/appenders/seq' },
+              { title: 'Slack', path: '/appenders/slack' },
               { title: 'Smtp', path: '/appenders/smtp' },
               { title: 'Custom appender', path: '/appenders/custom' }
             ]
@@ -212,6 +217,7 @@ module.exports = {
           '/appenders/loggly',
           '/appenders/rabbitmq',
           '/appenders/seq',
+          '/appenders/slack',
           '/appenders/smtp',
           '/layouts/basic',
           '/layouts/colored',

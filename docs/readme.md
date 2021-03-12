@@ -30,24 +30,36 @@ contributors:
     width: 45
     bgColor: white
 backers:
- type: cols
- title: Our <b>Backers</b>
- description: Thank you to all our backers who contributes to our project! 🙏
  cta:
-   label: Become Backers
+   label: Become backer
    url: https://opencollective.com/tsed#backers
 sponsors:
- type: cols
  classes:
- title: Our <b>Sponsors / Partners</b>
- description: Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
- image:
-   src: /sponsors.svg
-   href: http://www.freepik.com
-   title: Designed by pch.vector / Freepik
+ title: Support us
+ description: Ts.ED is under MIT-license and is an open-source project. Many thanks to our sponsors, partners and backers who contribute to promote and support our project!
  cta:
-   label: Become a sponsor
-   url: /support.html
+   label: Become sponsor
+   url: /support.html 
+ items:
+  - title: Premium sponsors
+    class: w-1/2 sm:w-1/6 px-5 py-3
+    style:
+      maxHeight: 150px
+    items:
+      - title: Medayo
+        href: https://www.medayo.com
+        src: https://images.opencollective.com/medayo/1ef2d6b/logo/256.png
+  - title: They use it
+    class: w-1/3 sm:w-1/6 px-5 py-3
+    style:
+      maxHeight: 80px
+    items:
+      - title: Artips
+        href: https://artips.fr
+        src: /they-use-it/artips.png
+      - title: Yumi.us
+        src: https://yumi.us/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6bc09fed-4612-4aa0-9192-225a0b3c7a30%2FYumi-logo-circle.png?table=block&id=1a875820-287a-4a97-aa40-ba3c8f3de9ae&width=250&userId=&cache=v2
+        href: https://yumi.us/
 showContent: false
 frameworks:
 - title: TypeScript
@@ -83,6 +95,9 @@ frameworks:
 - title: LogStash
   href: https://www.elastic.co/fr/logstash
   src: https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt280217a63b82a734/5bbdaacf63ed239936a7dd56/elastic-logo.svg
+- title: Slack
+  href: https://slack.com/
+  src: /slack.svg
 ---
 ::: slot hero-brand
 <span class="block sm:inline mb-10 sm:mb-0 sm:text-bold text-7xl sm:text-5xl font-medium"><span class="text-blue">Ts</span>.Logger</span><br/>
@@ -105,12 +120,4 @@ What is it ?
 Ts.Logger is a Node.js and TypeScript logger with multi channel support and configurable.
 :::
 
-<div class="w-full max-w-site mx-auto px-5 py-5 md:py-10">
-
-<p class="text-center font-normal text-xl m-auto max-w-lg">There are some of the libraries and the technologies that we use or supports with this <strong>framework</strong></p>
-
-<div class="mt-5 pt-5">
-<Frameworks />
-</div>
-
-</div>
+<HomeBody />

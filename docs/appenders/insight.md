@@ -18,12 +18,12 @@ See all available options for Insight [here](https://www.npmjs.com/package/r7ins
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-logentries"
+import "@tsed/logger-insight"
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "logentries",
+  type: "insight",
   level: ["info"],
   options: {
     token: "the token",

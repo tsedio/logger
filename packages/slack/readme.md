@@ -1,4 +1,4 @@
-# @tsed/logger-logstash-http
+# @tsed/logger-slack
 
 [![Build Status](https://travis-ci.org/TypedProject/logger.svg?branch=master)](https://travis-ci.org/TypedProject/logger)
 [![Coverage Status](https://coveralls.io/repos/github/TypedProject/logger/badge.svg?branch=master)](https://coveralls.io/github/TypedProject/logger?branch=master)
@@ -17,52 +17,40 @@ A package of Ts.ED logger framework.
 
 ## Features
 
-The logstash appenders for [Ts.ED Logger](https://logger.tsed.io) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers. 
-This appender uses HTTP to send the events (there is another logstash appender that uses [UDP](https://logger.tsed.io/appenders/logstash-udp.html)).
+Sends log events to a [slack](https://slack.com) channel. 
 
 ## Installation
 
 ```bash
-npm install --save @tsed/logger-logstash-http
+npm install --save @tsed/logger-slack
 ```
 
 ## Configuration
 
-* `type` - `logstash-http`
-* `options.url` - `string` - logFaces receiver servlet URL
-* `options.application` - `string` (optional) - used to identify your application's logs
-* `options.logChannel` - `string` (optional) - also used to identify your application's logs [but in a more specific way]
-* `options.logType` - `string` (optional) - used for the `type` field in the logstash data
-* `options.timeout` - `integer` (optional, defaults to 5000ms) - the timeout for the HTTP request.
-
-This appender will also pick up Logger context values from the events, and add them as `p_` values in the logFaces event. See the example below for more details.
+* `type` - `slack`
+* `options.token` - `string` - your Slack API token (see the slack and slack-node docs)
+* `options.channel_id` - `string` - the channel to send log messages
+* `options.icon_url` - `string` (optional) - the icon to use for the message
+* `options.username` - `string` - the username to display with the message
 
 ## Example
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-logstash-http";
+import "@tsed/logger-slack";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "logstash-http", 
-  level: ["info"],
+  type: "slack", 
+  level: ["error"],
   options: {
-    url: 'http://localhost:9200/_bulk', 
-    application: 'logstash-tsed', 
-    logType: 'application', 
-    logChannel: 'node'
+    token: "abc123def",
+    channel_id: "prod-alerts",
+    username: "our_application"
   }
 });
-
-logger.context.set('requestId', '123');
-logger.info('some interesting log message');
-logger.error('something has gone wrong');
 ```
-
-This example will result in two log events being sent to your `localhost:9200`. 
-Both events will have a `context.requestId` property with a value of `123`.
 
 ## Backers
 
