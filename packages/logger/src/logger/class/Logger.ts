@@ -4,6 +4,7 @@ import {drawTable, ITableSettings} from "../utils/tableUtils";
 import {LogEvent} from "../../core/LogEvent";
 import {levels, LogLevel} from "../../core/LogLevel";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
+import {LogContext} from "../../core/LogContext";
 
 export class Logger {
   /**
@@ -32,9 +33,9 @@ export class Logger {
   /**
    *
    */
-  private _context: Map<any, any> = new Map();
+  private _context: LogContext = new LogContext();
 
-  get context(): Map<any, any> {
+  get context(): LogContext {
     return this._context;
   }
 
