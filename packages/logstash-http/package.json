@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-logstash-http",
-  "version": "5.12.0",
+  "version": "5.12.1",
   "description": "Logstash HTTP appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -34,7 +34,7 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
-    "@tsed/logger": "5.12.0"
+    "@tsed/logger": "5.12.1"
   },
   "peerDependencies": {
     "@tsed/logger": "^5.10.0"
