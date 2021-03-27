@@ -1,5 +1,5 @@
 import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
-import seq, {SeqEvent, SeqLogLevel} from "seq-logging";
+import {Logger, SeqEvent, SeqLogLevel} from "seq-logging";
 
 const LEVEL_NAMES: Record<string, SeqLogLevel> = {
   ALL: "Verbose",
@@ -13,11 +13,11 @@ const LEVEL_NAMES: Record<string, SeqLogLevel> = {
 
 @Appender({name: "seq"})
 export class SeqAppender extends BaseAppender {
-  private logger: seq.Logger;
+  private logger: Logger;
 
   build() {
     if ($log.level !== "OFF") {
-      this.logger = new seq.Logger({
+      this.logger = new Logger({
         onError(e) {
           console.error("[Seq] Log batch failed\n", e);
         },
