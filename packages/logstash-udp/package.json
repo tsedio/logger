@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-logstash-udp",
-  "version": "5.12.2",
+  "version": "5.13.0",
   "description": "Logstash UDP appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -30,7 +30,7 @@
     "build": "tsc --build tsconfig.compile.json"
   },
   "devDependencies": {
-    "@tsed/logger": "5.12.2"
+    "@tsed/logger": "5.13.0"
   },
   "peerDependencies": {
     "@tsed/logger": "^5.10.0"
