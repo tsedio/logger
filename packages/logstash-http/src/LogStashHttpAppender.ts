@@ -28,8 +28,13 @@ export class LogStashHttpAppender extends BaseAppender {
     if ($log.level !== "OFF") {
       this.client = axios.create({
         baseURL: this.config.options.url,
+        auth: this.config.options.auth,
         timeout: this.config.options.timeout || 5000,
-        headers: {"Content-Type": "application/x-ndjson"},
+        params: this.config.params,
+        headers: {
+          ...this.config.options.headers || {},
+          "Content-Type": "application/x-ndjson"
+        },
         withCredentials: true,
       });
     }
@@ -51,7 +56,7 @@ export class LogStashHttpAppender extends BaseAppender {
           message: format(loggingEvent.data),
           context: loggingEvent.context.toJSON(),
           level: loggingEvent.level.level / 100,
-          level_name: loggingEvent.level.levelStr,
+          level_name: level,
           channel: logChannel,
           datetime: (new Date(loggingEvent.startTime)).toISOString(),
           extra: {},
