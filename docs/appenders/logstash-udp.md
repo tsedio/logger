@@ -1,4 +1,4 @@
-# Loggly Appender
+# LogStash UDP Appender
 
 The logstash appenders for [Ts.ED Logger](https://logger.tsed.io).
 

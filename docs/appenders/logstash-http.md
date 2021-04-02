@@ -1,4 +1,4 @@
-# Loggly Appender
+# LogStash HTTP Appender
 
 The logstash appenders for [Ts.ED Logger](https://logger.tsed.io) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers.
 This appender uses HTTP to send the events (there is another logstash appender that uses [UDP](/appenders/logstash-udp.md)).
