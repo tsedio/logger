@@ -42,5 +42,29 @@ logger.info('some interesting log message');
 logger.error('something has gone wrong');
 ```
 
+Enable date log rolling:
+
+```typescript
+import {Logger} from "@tsed/logger";
+import "@tsed/logger-logstash-http";
+
+const logger = new Logger("loggerName");
+
+logger.appenders.set("stdout", {
+  type: "logstash-http", 
+  level: ["info"],
+  options: {
+    url: 'http://localhost:9200/_bulk', 
+    application: () => 'logstash-tsed-' + moment().format('YYYY.MM.DD'), 
+    logType: 'application', 
+    logChannel: 'node'
+  }
+});
+
+logger.context.set('requestId', '123');
+logger.info('some interesting log message');
+logger.error('something has gone wrong');
+```
+
 This example will result in two log events being sent to your `localhost:9200`.
 Both events will have a `context.requestId` property with a value of `123`.

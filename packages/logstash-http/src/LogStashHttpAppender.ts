@@ -48,7 +48,7 @@ export class LogStashHttpAppender extends BaseAppender {
       const logstashEvent = [
         {
           index: {
-            _index: application,
+            _index: typeof application === "function" ? application() : application,
             _type: logType,
           },
         },
