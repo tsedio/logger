@@ -45,6 +45,8 @@ export class LogStashHttpAppender extends BaseAppender {
     const level = loggingEvent.level.toString().toLowerCase();
 
     if (level !== "off") {
+      const isMessage = loggingEvent.data.length && typeof loggingEvent.data[0] !== "object";
+
       const logstashEvent = [
         {
           index: {
@@ -53,7 +55,8 @@ export class LogStashHttpAppender extends BaseAppender {
           },
         },
         {
-          message: format(loggingEvent.data),
+          ...isMessage ? loggingEvent.data[0] : {},
+          message: isMessage ? format(loggingEvent.data) : undefined,
           context: loggingEvent.context.toJSON(),
           level: loggingEvent.level.level / 100,
           level_name: level,
