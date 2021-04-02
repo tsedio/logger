@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-insight",
-  "version": "5.13.0",
+  "version": "5.13.1",
   "description": "Insight appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -32,7 +32,7 @@
     "r7insight_node": "2.1.0"
   },
   "devDependencies": {
-    "@tsed/logger": "5.13.0"
+    "@tsed/logger": "5.13.1"
   },
   "peerDependencies": {
     "@tsed/logger": "^5.10.0"
