@@ -55,14 +55,13 @@ export class LogStashHttpAppender extends BaseAppender {
           },
         },
         {
-          ...isMessage ? loggingEvent.data[0] : {},
+          ...!isMessage ? loggingEvent.data[0] : {},
           message: isMessage ? format(loggingEvent.data) : undefined,
           context: loggingEvent.context.toJSON(),
           level: loggingEvent.level.level / 100,
           level_name: level,
           channel: logChannel,
-          datetime: (new Date(loggingEvent.startTime)).toISOString(),
-          extra: {},
+          datetime: (new Date(loggingEvent.startTime)).toISOString()
         },
       ];
 

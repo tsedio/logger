@@ -37,7 +37,7 @@ export class LogStashUdpAppender extends BaseAppender {
     if (level !== "off") {
       const isMessage = loggingEvent.data.length && typeof loggingEvent.data[0] !== "object";
       const oriLogObject = {
-        ...isMessage ? loggingEvent.data[0] : {},
+        ...!isMessage ? loggingEvent.data[0] : {},
         "@version": defaultVersion,
         "@timestamp": (new Date(loggingEvent.startTime)).toISOString(),
         "host": os.hostname(),
