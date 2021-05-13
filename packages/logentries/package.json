@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-logentries",
-  "version": "5.13.2",
+  "version": "5.13.3",
   "description": "LogEntries appender module for @tsed/logger",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -32,7 +32,7 @@
     "le_node": "^1.8.0"
   },
   "devDependencies": {
-    "@tsed/logger": "5.13.2"
+    "@tsed/logger": "5.13.3"
   },
   "peerDependencies": {
     "@tsed/logger": "^5.10.0"
