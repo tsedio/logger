@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TypedProject/logger.git"
+    "url": "git+https://github.com/tsedio/logger.git"
   },
   "keywords": [
     "ts",
@@ -22,9 +22,9 @@
     "logentries"
   ],
   "bugs": {
-    "url": "https://github.com/TypedProject/logger/issues"
+    "url": "https://github.com/tsedio/logger/issues"
   },
-  "homepage": "https://github.com/TypedProject/logger",
+  "homepage": "https://github.com/tsedio/logger",
   "scripts": {
     "build": "tsc --build tsconfig.compile.json"
   },
