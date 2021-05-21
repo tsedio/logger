@@ -34,6 +34,7 @@ npm install --save @tsed/logger-logstash-http
 * `options.logChannel` - `string` (optional) - also used to identify your application's logs [but in a more specific way]
 * `options.logType` - `string` (optional) - used for the `type` field in the logstash data
 * `options.timeout` - `integer` (optional, defaults to 5000ms) - the timeout for the HTTP request.
+* `options.maxBuffer` - `integer` (optional, defaults to 0) - Group bulk request by the maxBuffer number. By Default the buffer is disabled.
 
 This appender will also pick up Logger context values from the events, and add them as `p_` values in the logFaces event. See the example below for more details.
 
