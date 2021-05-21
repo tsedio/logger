@@ -24,13 +24,15 @@ function format(logData: any) {
 export class LogStashHttpAppender extends BaseAppender {
   private client: ReturnType<typeof axios.create>;
 
+  #buffer: string[] = [];
+
   build() {
     if ($log.level !== "OFF") {
       this.client = axios.create({
         baseURL: this.config.options.url,
         auth: this.config.options.auth,
         timeout: this.config.options.timeout || 5000,
-        params: this.config.params,
+        params: this.config.options.params,
         headers: {
           ...this.config.options.headers || {},
           "Content-Type": "application/x-ndjson"
@@ -65,10 +67,31 @@ export class LogStashHttpAppender extends BaseAppender {
         },
       ];
 
-      const logstashJSON = `${JSON.stringify(logstashEvent[0])}\n${JSON.stringify(logstashEvent[1])}\n`;
+      this.send(`${JSON.stringify(logstashEvent[0])}\n${JSON.stringify(logstashEvent[1])}`);
+    }
+  }
 
-      // send to server
-      this.client.post("", logstashJSON)
+  send(bulk: string) {
+
+    const {bufferMax = 0} = this.config.options;
+    this.#buffer.push(bulk);
+
+    if (bufferMax <= this.#buffer.length) {
+      this.#buffer.push(bulk);
+      return this.flush();
+    }
+  }
+
+  flush() {
+    // send to server
+    const buffer = this.#buffer;
+    this.#buffer = [];
+
+    if (buffer.length) {
+      const bulk = buffer.join("\n");
+      const {url} = this.config.options;
+
+      return this.client.post("", bulk + "\n")
         .catch((error) => {
           if (error.response) {
             console.error(`Ts.ED Logger.logstash-http Appender error posting to ${url}: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
@@ -77,5 +100,9 @@ export class LogStashHttpAppender extends BaseAppender {
           console.error(`Ts.ED Logger.logstash-http Appender error: ${error.message}`);
         });
     }
+  }
+
+  shutdown() {
+    return this.flush();
   }
 }
