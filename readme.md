@@ -9,7 +9,7 @@
 [![Build Status](https://travis-ci.org/tsedio/logger.svg?branch=master)](https://travis-ci.org/tsedio/logger)
 [![PR Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tsedio/logger/blob/master/CONTRIBUTING.md)
 [![Coverage Status](https://coveralls.io/repos/github/tsedio/logger/badge.svg?branch=production)](https://coveralls.io/github/tsedio/logger?branch=production)
-[![npm version](https://badge.fury.io/js/logger.svg)](https://badge.fury.io/js/logger)
+[![npm version](https://badge.fury.io/js/%40tsed%2Flogger.svg)](https://badge.fury.io/js/%40tsed%2Flogger)
 [![Known Vulnerabilities](https://snyk.io/test/github/tsedio/logger/badge.svg)](https://snyk.io/test/github/tsedio/logger)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![backers](https://opencollective.com/tsed/tiers/badge.svg)](https://opencollective.com/tsed)
