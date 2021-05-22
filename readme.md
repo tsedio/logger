@@ -7,6 +7,7 @@
    <h1>Ts.ED Logger</h1>
  
 [![Build Status](https://travis-ci.org/tsedio/logger.svg?branch=master)](https://travis-ci.org/tsedio/logger)
+[![PR Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tsedio/logger/blob/master/CONTRIBUTING.md)
 [![Coverage Status](https://coveralls.io/repos/github/tsedio/logger/badge.svg?branch=production)](https://coveralls.io/github/tsedio/logger?branch=production)
 [![npm version](https://badge.fury.io/js/logger.svg)](https://badge.fury.io/js/logger)
 [![Known Vulnerabilities](https://snyk.io/test/github/tsedio/logger/badge.svg)](https://snyk.io/test/github/tsedio/logger)
