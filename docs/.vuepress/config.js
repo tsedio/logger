@@ -30,7 +30,7 @@ module.exports = {
     shortTitle: 'Ts.Logger',
     htmlTitle: '<span class=\'text-blue\'>Ts</span>.Logger',
     version: require('../../package').version,
-    teams: require('../../teams'),
+    team: require('../../team.json'),
     licenseType: 'MIT',
     author: 'Lenzotti Romain',
     copyrightDates: {
@@ -42,7 +42,8 @@ module.exports = {
     openCollective: 'https://api.tsed.io/rest/opencollective',
     gitterUrl: 'https://gitter.im/Tsed-io/community',
     stackoverflowUrl: 'https://stackoverflow.com/search?q=tsed',
-    sponsorUrl: 'https://opencollective.com/tsed',
+    sponsorUrl: 'https://tsed.io/support.html',
+    twitterUrl: 'https://twitter.com/TsED_io',
     editLinks: true,
     docsDir: 'docs',
     sidebar: 'auto',
@@ -69,164 +70,174 @@ module.exports = {
         nav: [
           {
             text: 'Getting started',
+            title: `Getting started | ${ title }`,
             link: '/getting-started.html'
           },
           {
             text: 'Appenders',
+            title: `Appenders | ${ title }`,
             link: '/appenders/index.html'
           },
           {
             text: 'Layouts',
+            title: `Layouts | ${ title }`,
             link: '/layouts/index.html'
           },
           {
-            icon: 'bx bx-dots-horizontal-rounded text-lg',
-            link: '/docs/controllers.html',
-            title: `More`,
+            title: `Warehouse | ${ title }`,
+            text: 'Warehouse',
+            link: 'https://tsed.io/warehouse/',
             items: [
               {
-                text: 'Plugins',
-                link: '/plugins',
-                items: [
-                  {
-                    text: 'Insight',
-                    link: '/appenders/insight.md'
-                  },
-                  {
-                    text: 'LogEntries',
-                    link: '/appenders/logentries.md'
-                  },
-                  {
-                    text: 'LogStash HTTP',
-                    link: '/appenders/logstash-http.md'
-                  },
-                  {
-                    text: 'LogStash UDP',
-                    link: '/appenders/logstash-udp.md'
-                  },
-                  {
-                    text: 'Loggly',
-                    link: '/appenders/loggly.md'
-                  },
-                  {
-                    text: 'RabbitMQ',
-                    link: '/appenders/rabbitmq.md'
-                  },
-                  {
-                    text: 'Seq',
-                    link: '/appenders/seq.md'
-                  },
-                  {
-                    text: 'Slack',
-                    link: '/appenders/slack.md'
-                  },
-                  {
-                    text: 'Smtp',
-                    link: '/appenders/smtp.md'
-                  }
-                ]
+                text: 'Explore plugins',
+                link: 'https://tsed.io/warehouse/'
               },
               {
-                text: 'Extra',
-                items: [
-                  {
-                    text: 'Ts.ED',
-                    link: 'http://tsed.io'
-                  },
-                  {
-                    text: 'Ts.ED CLI',
-                    link: 'http://cli.tsed.io'
-                  },
-                  {
-                    text: 'Api reference',
-                    link: '/api.html'
-                  },
-                  {
-                    text: 'Contributes',
-                    link: '/tutorials/contributing.md'
-                  },
-                  {
-                    text: 'License',
-                    link: '/tutorials/licence.md'
-                  }
-                ]
+                text: 'Insight',
+                link: '/appenders/insight.md'
+              },
+              {
+                text: 'LogEntries',
+                link: '/appenders/logentries.md'
+              },
+              {
+                text: 'LogStash HTTP',
+                link: '/appenders/logstash-http.md'
+              },
+              {
+                text: 'LogStash UDP',
+                link: '/appenders/logstash-udp.md'
+              },
+              {
+                text: 'Loggly',
+                link: '/appenders/loggly.md'
+              },
+              {
+                text: 'RabbitMQ',
+                link: '/appenders/rabbitmq.md'
+              },
+              {
+                text: 'Seq',
+                link: '/appenders/seq.md'
+              },
+              {
+                text: 'Slack',
+                link: '/appenders/slack.md'
+              },
+              {
+                text: 'Smtp',
+                link: '/appenders/smtp.md'
+              }
+            ]
+          },
+          {
+            icon: 'bx bx-dots-horizontal-rounded text-lg',
+            title: `Extras`,
+            items: [
+              {
+                text: 'Ts.ED',
+                link: 'http://tsed.io'
+              },
+              {
+                text: 'Ts.ED CLI',
+                link: 'http://cli.tsed.io'
+              },
+              {
+                text: 'Team',
+                link: 'https://tsed.io/team.md'
+              },
+              {
+                text: 'Contributes',
+                link: '/tutorials/contributing.md'
+              },
+              {
+                text: 'Support',
+                link: 'https://tsed.io/support.md'
+              },
+              {
+                text: 'License',
+                link: '/tutorials/licence.md'
+              },
+              {
+                text: 'Api reference',
+                link: '/api.html'
               }
             ]
           }
-        ],
-        sidebar: [
-          {
-            title: 'Getting started',   // required
-            path: '/getting-started.html',
-            collapsable: true // optional, defaults to true
-          },
-          {
-            title: 'Appenders',
-            collapsable: true,
-            children: [
-              { title: 'Configuration', path: '/appenders/' },
-              { title: 'Console', path: '/appenders/console' },
-              { title: 'File', path: '/appenders/file' },
-              { title: 'File date', path: '/appenders/file-date' },
-              { title: 'Stdout', path: '/appenders/stdout' },
-              { title: 'StdErr', path: '/appenders/stderr' },
-              { title: 'Insight', path: '/appenders/insight' },
-              { title: 'LogEntries', path: '/appenders/logentries' },
-              { title: 'LogStash HTTP', path: '/appenders/logstash-http' },
-              { title: 'LogStash UDP', path: '/appenders/logstash-udp' },
-              { title: 'Loggly', path: '/appenders/loggly' },
-              { title: 'RabbitMQ', path: '/appenders/rabbitmq' },
-              { title: 'Seq', path: '/appenders/seq' },
-              { title: 'Slack', path: '/appenders/slack' },
-              { title: 'Smtp', path: '/appenders/smtp' },
-              { title: 'Custom appender', path: '/appenders/custom' }
-            ]
-          },
-          {
-            title: 'Layouts',
-            collapsable: true,
-            children: [
-              { title: 'Configuration', path: '/layouts/' },
-              '/layouts/basic',
-              '/layouts/colored',
-              '/layouts/dummy',
-              '/layouts/message-pass-through',
-              '/layouts/json',
-              '/layouts/pattern'
-            ]
-          },
-          {
-            title: "Extras",
-            children: [
-              "/api",
-              "/contributing",
-              "/license"
-            ]
-          }
-        ],
-        otherTopics: [
-          '/appenders/console',
-          '/appenders/file',
-          '/appenders/file-date',
-          '/appenders/stdout',
-          '/appenders/stderr',
-          '/appenders/insight',
-          '/appenders/logentries',
-          '/appenders/logstash-http',
-          '/appenders/logstash-udp',
-          '/appenders/loggly',
-          '/appenders/rabbitmq',
-          '/appenders/seq',
-          '/appenders/slack',
-          '/appenders/smtp',
-          '/layouts/basic',
-          '/layouts/colored',
-          '/layouts/dummy',
-          '/layouts/message-pass-through',
-          '/layouts/json',
-          '/layouts/pattern'
         ]
-      }
+      },
+      sidebar: [
+        {
+          title: 'Getting started',   // required
+          path: '/getting-started.html',
+          collapsable: true // optional, defaults to true
+        },
+        {
+          title: 'Appenders',
+          collapsable: true,
+          children: [
+            { title: 'Configuration', path: '/appenders/' },
+            { title: 'Console', path: '/appenders/console' },
+            { title: 'File', path: '/appenders/file' },
+            { title: 'File date', path: '/appenders/file-date' },
+            { title: 'Stdout', path: '/appenders/stdout' },
+            { title: 'StdErr', path: '/appenders/stderr' },
+            { title: 'Insight', path: '/appenders/insight' },
+            { title: 'LogEntries', path: '/appenders/logentries' },
+            { title: 'LogStash HTTP', path: '/appenders/logstash-http' },
+            { title: 'LogStash UDP', path: '/appenders/logstash-udp' },
+            { title: 'Loggly', path: '/appenders/loggly' },
+            { title: 'RabbitMQ', path: '/appenders/rabbitmq' },
+            { title: 'Seq', path: '/appenders/seq' },
+            { title: 'Slack', path: '/appenders/slack' },
+            { title: 'Smtp', path: '/appenders/smtp' },
+            { title: 'Custom appender', path: '/appenders/custom' }
+          ]
+        },
+        {
+          title: 'Layouts',
+          collapsable: true,
+          children: [
+            { title: 'Configuration', path: '/layouts/' },
+            '/layouts/basic',
+            '/layouts/colored',
+            '/layouts/dummy',
+            '/layouts/message-pass-through',
+            '/layouts/json',
+            '/layouts/pattern'
+          ]
+        },
+        {
+          title: 'Extras',
+          children: [
+            '/api',
+            '/contributing',
+            '/license'
+          ]
+        }
+      ],
+      otherTopics: [
+        '/appenders/console',
+        '/appenders/file',
+        '/appenders/file-date',
+        '/appenders/stdout',
+        '/appenders/stderr',
+        '/appenders/insight',
+        '/appenders/logentries',
+        '/appenders/logstash-http',
+        '/appenders/logstash-udp',
+        '/appenders/loggly',
+        '/appenders/rabbitmq',
+        '/appenders/seq',
+        '/appenders/slack',
+        '/appenders/smtp',
+        '/layouts/basic',
+        '/layouts/colored',
+        '/layouts/dummy',
+        '/layouts/message-pass-through',
+        '/layouts/json',
+        '/layouts/pattern'
+      ]
     },
     plugins: [
       [
