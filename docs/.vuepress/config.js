@@ -40,7 +40,7 @@ module.exports = {
     repo: 'tsedio/logger',
     githubProxyUrl: 'https://api.tsed.io/rest/github/tsedio/logger',
     openCollective: 'https://api.tsed.io/rest/opencollective',
-    gitterUrl: 'https://gitter.im/Tsed-io/community',
+    slackUrl: "https://api.tsed.io/rest/slack/tsedio/tsed",
     stackoverflowUrl: 'https://stackoverflow.com/search?q=tsed',
     sponsorUrl: 'https://tsed.io/support.html',
     twitterUrl: 'https://twitter.com/TsED_io',

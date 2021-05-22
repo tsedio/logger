@@ -8,8 +8,9 @@ meta:
    content: Ts.Logger nodejs typescript logger javascript decorators
 gettingStartedText: Getting started
 gettingStartedUrl: /getting-started.html
-messengerText: Gitter
-messengerUrl: https://gitter.im/Tsed-io/community
+messengerText: Discussions
+messengerIcon: bxl-slack
+messengerUrl: https://api.tsed.io/rest/slack/tsedio/tsed
 features:
 - title: Colored
   icon: bxs-color-fill
