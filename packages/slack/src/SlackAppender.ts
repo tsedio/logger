@@ -1,12 +1,13 @@
 import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
 
-const slack = require("slack");
+import {WebClient} from "@slack/web-api";
 
 @Appender({name: "slack"})
 export class SlackAppender extends BaseAppender {
   write(loggingEvent: LogEvent) {
     const {token, channel_id, icon_url, username} = this.config.options;
     const level = loggingEvent.level.toString().toLowerCase();
+    const web = new WebClient(token);
 
     if (level !== "off") {
       const data = {
@@ -17,11 +18,13 @@ export class SlackAppender extends BaseAppender {
         username
       };
 
-      slack.chat.postMessage(data, (err: Error) => {
-        if (err) {
+      (async () => {
+        try { await web.chat.postMessage(data); }
+        catch (err) {
           console.error("Ts.ED Logger:slack - Error sending log to slack: ", err);
         }
-      });
+      }
+      )();
     }
   }
 }
