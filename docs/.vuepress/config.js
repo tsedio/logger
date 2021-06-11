@@ -243,7 +243,7 @@ module.exports = {
               items: [
                 {
                   label: 'Our team',
-                  url: '/team.html'
+                  url: 'https://tsed.io/team.html'
                 },
                 {
                   label: 'Contact us',
@@ -256,11 +256,11 @@ module.exports = {
               items: [
                 {
                   label: 'Resources',
-                  url: '/tutorials/index.html'
+                  url: 'https://tsed.io/tutorials/index.html'
                 },
                 {
                   label: 'Chat with us',
-                  url: 'https://gitter.im/Tsed-io/community'
+                  url: 'https://api.tsed.io/rest/slack/tsedio/tsed'
                 },
                 {
                   label: 'Contribution guide',
@@ -277,7 +277,7 @@ module.exports = {
                 },
                 {
                   label: 'Sponsoring & donations',
-                  url: '/support.html'
+                  url: 'https://tsed.io/support.html'
                 }
               ]
             }
