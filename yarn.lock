@@ -2356,10 +2356,10 @@
   resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-2.15.0.tgz#0e1a1f0b72d6ae5e655228913befe617a5407dad"
   integrity sha512-0l8P4k6bcRqwxzy8piMoDdS3fqgTw2gMO0xyI/woIqHm7yhbpmrleh2OAmc0bi5SJrrZv1aDUyeyeFoYP8B53g==
 
-"@tsed/markdown-it-symbols@3.8.0":
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-3.8.0.tgz#bae6055c39ca82aba3c3add7085d763f6d6b8193"
-  integrity sha512-6hkbKLVSPU2Zr2DIQztwXp1Xc3vMAI6icSt3Uf93w4Q9xr8BCltMNbO97RZADjyc655wnNfPMMd/DYdweMx/bA==
+"@tsed/markdown-it-symbols@^3.14.2":
+  version "3.14.2"
+  resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-3.14.2.tgz#03581a5d2f094333da9e0b1515e14f93c453c8a4"
+  integrity sha512-YbWPoUPXuEEt6vszTuPHVjKN/9RAHFERhbnV0WNeb2FDB7WkGgl1vik+uplWyg5Ax/KiogcLGmE6dNhfhlq9xg==
 
 "@tsed/monorepo-utils@1.18.2":
   version "1.18.2"
@@ -2383,10 +2383,10 @@
     read-package-json "2.1.2"
     semver "7.3.2"
 
-"@tsed/vuepress-common@3.14.1":
-  version "3.14.1"
-  resolved "https://registry.yarnpkg.com/@tsed/vuepress-common/-/vuepress-common-3.14.1.tgz#e9925f77bb6dfee7cf122c199d2155f37fbb9993"
-  integrity sha512-f+jw1VYaYFCxwksd59AG+lwTUDJbadezCIF+oAemcjF77kiUMvuDfeoBShToJRmZRWzaH3X45kUJbeempYOubg==
+"@tsed/vuepress-common@3.14.3":
+  version "3.14.3"
+  resolved "https://registry.yarnpkg.com/@tsed/vuepress-common/-/vuepress-common-3.14.3.tgz#3d0439976a9e5f9b9faef96355802209003f1dd8"
+  integrity sha512-GINhXnFbXg4JmFjSLnNlnZrmASf0ioNLTyYOSRzIn2qqperc2xJ3xok7rSbgxUp76yMeAp3swpJmmR8Vx7If4Q==
   dependencies:
     "@docsearch/css" "1.0.0-alpha.28"
     "@docsearch/js" "1.0.0-alpha.28"
@@ -2408,10 +2408,10 @@
     v-tooltip "^2.1.2"
     vue-lazy-hydration "^2.0.0-beta.4"
 
-"@tsed/vuepress-tailwind-config@3.14.1":
-  version "3.14.1"
-  resolved "https://registry.yarnpkg.com/@tsed/vuepress-tailwind-config/-/vuepress-tailwind-config-3.14.1.tgz#8f808fec2f4b45585653b1e9da642409b218a67d"
-  integrity sha512-HgQoIQ+WmQB0O54wRD/7yh3OTkGA1dHMZBqC4PpmvO/xdS6jlep8AHM9SgDM70Voeck8RvQhNCLnIdOSIe9Fhw==
+"@tsed/vuepress-tailwind-config@3.14.3":
+  version "3.14.3"
+  resolved "https://registry.yarnpkg.com/@tsed/vuepress-tailwind-config/-/vuepress-tailwind-config-3.14.3.tgz#330c40f5f4672d1919e913d9d9b7335ebfd99d9f"
+  integrity sha512-XDIh5yCtFUHIDbBq917+GBt4AUGQGqYl2Vw7Md9t1qRLNJufDnBxEtyUNNaYK9B6k1bVpD6zwz3G6G6650HxXg==
   dependencies:
     tailwindcss "1.9.6"
 
@@ -15069,18 +15069,18 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-tsed@3.14.1:
-  version "3.14.1"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-tsed/-/vuepress-theme-tsed-3.14.1.tgz#e7a4afbe6110a08218c1a74ac299d37a4da12376"
-  integrity sha512-0jbtI/xPk6/5Vclq8yM9YhrdUTHkr4hmS7dakofszLRY7BLwTQNev2KKI4FtAK6iolrjJQmzk5qwmdIgHwKWHw==
+vuepress-theme-tsed@^3.14.3:
+  version "3.14.3"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-tsed/-/vuepress-theme-tsed-3.14.3.tgz#82bb7d66d3220445be917992af42c10540e70075"
+  integrity sha512-biePSSZyKQVW9c0/bF7g8k2yLhfFTfDIlbWuJZvmLv7aqddvu36b+WH+Jq8xIhFG8W7s2WUlxJpweP3gyANE+Q==
   dependencies:
     "@docsearch/css" "1.0.0-alpha.28"
     "@docsearch/js" "1.0.0-alpha.28"
     "@sass-collective/sass-rem" "^1.4.1"
     "@silvanite/vuepress-plugin-tailwind" "^1.3.0"
     "@tsed/markdown-it-symbols" "2.15.0"
-    "@tsed/vuepress-common" "3.14.1"
-    "@tsed/vuepress-tailwind-config" "3.14.1"
+    "@tsed/vuepress-common" "3.14.3"
+    "@tsed/vuepress-tailwind-config" "3.14.3"
     "@vuepress/plugin-active-header-links" "1.7.1"
     "@vuepress/plugin-medium-zoom" "^1.8.0"
     "@vuepress/plugin-nprogress" "1.7.1"
@@ -15108,7 +15108,7 @@ vuepress-theme-tsed@3.14.1:
     vuepress-plugin-container "^2.0.2"
     vuepress-plugin-smooth-scroll "^0.0.10"
 
-vuepress@1.8.2:
+vuepress@^1.8.2:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.8.2.tgz#97e8bf979630611fc7b621fc4cc35b798ee5e847"
   integrity sha512-BU1lUDwsA3ghf7a9ga4dsf0iTc++Z/l7BR1kUagHWVBHw7HNRgRDfAZBDDQXhllMILVToIxaTifpne9mSi94OA==
