@@ -1,5 +1,7 @@
 # Seq Appender
 
+<Banner src="https://blog.datalust.co/content/images/2018/09/Seq-380px-1.png" height="200" href="https://datalust.co/seq"></Banner>
+
 Sends log events to a [Seq](https://www.npmjs.com/package/seq-logging) server.
 
 ```bash

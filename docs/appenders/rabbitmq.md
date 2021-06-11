@@ -1,5 +1,7 @@
 # RabbitMQ Appender
 
+<Banner src="/rabbitmq.svg" height="100" href="https://www.rabbitmq.com/"></Banner>
+
 Push log events to a [RabbitMQ](https://www.rabbitmq.com/).
 
 ```bash

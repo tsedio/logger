@@ -1,5 +1,7 @@
 # Slack Appender
 
+<Banner src="/slack.svg" height="100" href="https://slack.com/"></Banner>
+
 Sends log events to a [slack](https://slack.com) channel.
 
 ```bash

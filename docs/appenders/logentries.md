@@ -1,5 +1,7 @@
 # LogEntries Appender
 
+<Banner src="/logentries.svg" height="120" href="https://logentries.com/"></Banner>
+
 Sends log events to a [LogEntries](https://logentries.com/) server.
 
 ::: warning Deprecated

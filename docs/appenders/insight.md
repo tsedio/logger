@@ -1,5 +1,7 @@
 # Insight Appender
 
+<Banner src="/rapid7.svg" height="150" href="https://www.rapid7.com/products/"></Banner>
+
 Sends log events to a [Insight](https://www.rapid7.com/products/) server.
 
 ```bash

@@ -1,5 +1,7 @@
 # LogStash UDP Appender
 
+<Banner src="/elastic-logstash.svg" height="140" href="https://www.elastic.co/fr/logstash"></Banner>
+
 The logstash appenders for [Ts.ED Logger](https://logger.tsed.io).
 
 The logstash-udp appender supports sending log events to a [Logstash](https://www.elastic.co/products/logstash) server.

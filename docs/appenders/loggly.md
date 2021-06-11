@@ -1,5 +1,7 @@
 # Loggly Appender
 
+<Banner src="/loggly.svg" height="150" href="https://www.loggly.com/"></Banner>
+
 Sends logging events to [Loggly](https://www.loggly.com), optionally adding tags.
 This appender uses [node-loggly-bulk](https://www.npmjs.com/package/node-loggly-bulk).
 Consult the docs for node-loggly-bulk, or loggly itself, if you want more information on the configuration options below.
