@@ -71,6 +71,10 @@ export class LayoutReplacer {
   public formatMessage = (loggingEvent: LogEvent): string => {
     return (Util.format as any)(...loggingEvent.data);
   };
+
+  public formatJson = (loggingEvent: LogEvent): string => {
+    return JSON.stringify(loggingEvent.data);
+  };
   /**
    *
    * @returns {string|string}
@@ -165,6 +169,7 @@ export class LayoutReplacer {
       d: this.formatAsDate,
       h: this.hostname,
       m: this.formatMessage,
+      j: this.formatJson,
       n: this.endOfLine,
       p: this.logLevel,
       r: this.startTime,

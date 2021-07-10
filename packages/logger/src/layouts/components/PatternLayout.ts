@@ -6,7 +6,7 @@ import {LogEvent} from "../../core/LogEvent";
 import {IBasicLayoutConfiguration, TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
 import {Layout} from "../decorators/layout";
 
-const regex = /%(-?[0-9]+)?(\.?[0-9]+)?([[\]cdhmnprzxy%])(\{([^}]+)\})?|([^%]+)/;
+const regex = /%(-?[0-9]+)?(\.?[0-9]+)?([[\]cdhmnpjrzxy%])(\{([^}]+)\})?|([^%]+)/;
 const TTCC_CONVERSION_PATTERN = "%r %p %c - %m%n";
 
 /**
@@ -19,6 +19,7 @@ const TTCC_CONVERSION_PATTERN = "%r %p %c - %m%n";
  *  - %c log category
  *  - %h hostname
  *  - %m log data
+ *  - %j log data as JSON
  *  - %d date in constious formats
  *  - %% %
  *  - %n newline
@@ -43,16 +44,16 @@ const TTCC_CONVERSION_PATTERN = "%r %p %c - %m%n";
  */
 @Layout({name: "pattern"})
 export class PatternLayout extends BaseLayout {
-  private _replacers: IReplacers;
-  private tokens: TokensHandlers;
-  private pattern: string;
+  readonly #replacers: IReplacers;
+  readonly #tokens: TokensHandlers;
+  readonly #pattern: string;
 
   constructor(config: IBasicLayoutConfiguration) {
     super(config);
 
-    this.pattern = (config && config.pattern) || TTCC_CONVERSION_PATTERN;
-    this.tokens = config && config.tokens!;
-    this._replacers = new LayoutReplacer(this.tokens, this.config.timezoneOffset).build();
+    this.#pattern = (config && config.pattern) || TTCC_CONVERSION_PATTERN;
+    this.#tokens = config && config.tokens!;
+    this.#replacers = new LayoutReplacer(this.#tokens, this.config.timezoneOffset).build();
   }
 
   /**
@@ -64,7 +65,7 @@ export class PatternLayout extends BaseLayout {
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
     let formattedString = "";
     let result;
-    let searchString = this.pattern;
+    let searchString = this.#pattern;
 
     /* eslint no-cond-assign:0 */
     while ((result = regex.exec(searchString)) !== null) {
@@ -90,6 +91,6 @@ export class PatternLayout extends BaseLayout {
   }
 
   private replaceToken = (conversionCharacter: string, loggingEvent: any, specifier: any) => {
-    return this._replacers[conversionCharacter](loggingEvent, specifier);
+    return this.#replacers[conversionCharacter](loggingEvent, specifier);
   };
 }
