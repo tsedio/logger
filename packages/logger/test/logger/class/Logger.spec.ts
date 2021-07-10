@@ -170,14 +170,6 @@ describe("Logger", () => {
     });
   });
 
-  describe("createStack()", () => {
-    it("should return the stack trace", () => {
-      const stack = Logger.createStack();
-
-      expect(stack).to.deep.eq("");
-    });
-  });
-
   describe("trace()", () => {
     let arg: any;
     before(() => {
