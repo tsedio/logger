@@ -15,7 +15,7 @@ const eol = Os.EOL || "\n";
 /**
  * ## File Appender
  *
- * The file appender writes log events to a file. It supports an optional maximum file size, and will keep a configurable number of backups. When using the file appender, you should also call ts-log-debug.shutdown() when your application terminates, to ensure that any remaining asynchronous writes have finished. Although the file appender uses the streamroller library, this is included as a dependency of ts-log-debug so you do not need to include it yourself.
+ * The file appender writes log events to a file. It supports an optional maximum file size, and will keep a configurable number of backups. When using the file appender, you should also call `logger.shutdown()` when your application terminates, to ensure that any remaining asynchronous writes have finished. Although the file appender uses the streamroller library, this is included as a dependency of ts-log-debug so you do not need to include it yourself.
  *
  * ## Configuration
  *
@@ -35,7 +35,7 @@ const eol = Os.EOL || "\n";
  * ## Example
  *
  * ```typescript
- * import {Logger} from "ts-log-debug";
+ * import {Logger} from "@tsed/logger";
  *
  * const logger = new Logger("loggerName");
  *
@@ -50,7 +50,7 @@ const eol = Os.EOL || "\n";
  * ## Example with log rolling (and compressed backups)
  *
  * ```typescript
- * import {Logger} from "ts-log-debug";
+ * import {Logger} from "@tsed/logger";
  *
  * const logger = new Logger("loggerName");
  *
@@ -71,8 +71,8 @@ const eol = Os.EOL || "\n";
  * ## Example with date rolling
  *
  * ```typescript
- * import { Logger } from 'ts-log-debug';
- * export const logger = new Logger('Log Example');
+ * import { Logger } from "@tsed/logger";
+ * export const logger = new Logger("Log Example");
  *
  * logger.appenders
  * .set('file', {

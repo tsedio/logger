@@ -19,7 +19,7 @@ import {BaseAppender} from "../class/BaseAppender";
  * ## Example
  *
  * ```typescript
- * import {Logger} from "ts-log-debug";
+ * import {Logger} from "@tsed/logger";
  *
  * const logger = new Logger("loggerName");
  *
