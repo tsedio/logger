@@ -26,7 +26,24 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Run test
-        run: yarn test && (yarn coveralls || true)
+        run: yarn test:coverage
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: run-${{ matrix.test_number }}
+          parallel: true
+
+  coveralls:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
+
   build:
     runs-on: ubuntu-latest
 
