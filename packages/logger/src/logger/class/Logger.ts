@@ -1,6 +1,5 @@
 import {LoggerAppenders} from "./LoggerAppenders";
 import {drawTable, ITableSettings} from "../utils/tableUtils";
-
 import {LogEvent} from "../../core/LogEvent";
 import {levels, LogLevel} from "../../core/LogLevel";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
@@ -53,21 +52,10 @@ export class Logger {
    */
   public static createStack(): string {
     const stack: string = new Error().stack!.replace("Error\n", "");
-    const array: string[] = stack.split("\n");
 
-    /* istanbul ignore else */
-    if (array[0].indexOf("Logger.") > -1) {
-      // remove current function
-      array.splice(0, 1);
-    }
-
-    /* istanbul ignore else */
-    if (array[0].indexOf("Logger.") > -1) {
-      // remove caller
-      array.splice(0, 1);
-    }
-
-    return array.join("\n");
+    return stack.split("\n")
+      .filter((line, index) => index >= 2)
+      .join("\n");
   }
 
   public isLevelEnabled(otherLevel: string | LogLevel) {
