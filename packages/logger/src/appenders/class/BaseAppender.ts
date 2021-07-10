@@ -24,11 +24,11 @@ export interface IBaseAppender {
 /**
  * ## BaseAppender
  *
- * ts-log-debug can load appenders from outside the core appenders. The type config value is used as a require path if no matching appender can be found. For example, the following configuration will create an appender with decorators:
+ * `@tsed/logger` can load appenders from outside the core appenders. The type config value is used as a require path if no matching appender can be found. For example, the following configuration will create an appender with decorators:
  *
  * ```typescript
  * // consoleAppender.ts
- * import {Appender, BaseAppender, LogEvent} from "ts-log-debug";
+ * import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
  * const consoleLog = console.log.bind(console);
  *
  * @ Appender({name: "console2"})
@@ -42,7 +42,7 @@ export interface IBaseAppender {
  * This appender can be use like this:
  *
  * ```typescript
- * import {Logger} from "ts-log-debug";
+ * import {Logger} from "@tsed/logger";
  * import "./consoleAppender.ts"
  *
  * const logger = new Logger("loggerName");
