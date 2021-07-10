@@ -11,7 +11,7 @@
     "test:lint": "tslint --project tsconfig.json",
     "test:lint:fix": "tslint --project tsconfig.json --fix",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "build": "monorepo build",
+    "build": "monorepo build --verbose",
     "sync:packages": "monorepo sync packages",
     "docs:serve": "yarn api:build && yarn vuepress:serve",
     "docs:build": "yarn api:build && yarn vuepress:build",
@@ -47,7 +47,7 @@
     "nodemailer": "^6.4.16",
     "semver": "^7.3.2",
     "streamroller": "^1.0.3",
-    "tslib": "2.1.0"
+    "tslib": "2.3.0"
   },
   "devDependencies": {
     "@tsed/markdown-it-symbols": "^3.14.2",
@@ -73,6 +73,7 @@
     "semantic-release": "^17.2.4",
     "sinon": "^9.2.1",
     "sinon-chai": "^3.3.0",
+    "microbundle": "0.13.0",
     "source-map-support": "0.5.19",
     "ts-node": "^9.0.0",
     "tsconfig-paths": "3.9.0",

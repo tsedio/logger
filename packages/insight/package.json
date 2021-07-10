@@ -2,13 +2,18 @@
   "name": "@tsed/logger-insight",
   "version": "5.15.0",
   "description": "Insight appender module for @tsed/logger",
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "private": false,
   "author": {
     "name": "Romain Lenzotti"
   },
   "license": "MIT",
+  "source": "./src/index.ts",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.js",
+    "default": "./lib/index.modern.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tsedio/logger.git"
@@ -26,10 +31,11 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "scripts": {
-    "build": "tsc --build tsconfig.compile.json"
+    "build": "microbundle --target node --no-compress --format modern,cjs --tsconfig ./tsconfig.compile.json"
   },
   "dependencies": {
-    "r7insight_node": "2.1.0"
+    "r7insight_node": "2.1.0",
+    "tslib": "2.3.0"
   },
   "devDependencies": {
     "@tsed/logger": "5.15.0"
