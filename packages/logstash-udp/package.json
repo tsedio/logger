@@ -2,8 +2,13 @@
   "name": "@tsed/logger-logstash-udp",
   "version": "5.15.0",
   "description": "Logstash UDP appender module for @tsed/logger",
+  "source": "./src/index.ts",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.js",
+    "default": "./lib/index.modern.js"
+  },
   "private": false,
   "author": {
     "name": "Romain Lenzotti"
@@ -27,13 +32,15 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "scripts": {
-    "build": "tsc --build tsconfig.compile.json"
+    "build": "microbundle --target node --no-compress --format modern,cjs --tsconfig ./tsconfig.compile.json"
+  },
+  "dependencies": {
+    "tslib": "2.3.0"
   },
   "devDependencies": {
     "@tsed/logger": "5.15.0"
   },
   "peerDependencies": {
     "@tsed/logger": "^5.10.0"
-  },
-  "dependencies": {}
+  }
 }

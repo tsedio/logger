@@ -2,8 +2,13 @@
   "name": "@tsed/logger-smtp",
   "version": "5.15.0",
   "description": "SMTP appender module for @tsed/logger",
+  "source": "./src/index.ts",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.js",
+    "default": "./lib/index.modern.js"
+  },
   "private": false,
   "author": {
     "name": "Romain Lenzotti"
@@ -25,11 +30,11 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "scripts": {
-    "build": "tsc --build tsconfig.compile.json",
-    "build:doc": "tsc --build tsconfig.doc.json"
+    "build": "microbundle --target node --no-compress --format modern,cjs --tsconfig ./tsconfig.compile.json"
   },
   "dependencies": {
-    "nodemailer": "^6.5.0"
+    "nodemailer": "^6.5.0",
+    "tslib": "2.3.0"
   },
   "devDependencies": {
     "@tsed/logger": "5.15.0"

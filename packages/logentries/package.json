@@ -2,8 +2,13 @@
   "name": "@tsed/logger-logentries",
   "version": "5.15.0",
   "description": "LogEntries appender module for @tsed/logger",
+  "source": "./src/index.ts",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.js",
+    "default": "./lib/index.modern.js"
+  },
   "private": false,
   "author": {
     "name": "Romain Lenzotti"
@@ -26,10 +31,11 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "scripts": {
-    "build": "tsc --build tsconfig.compile.json"
+    "build": "microbundle --target node --no-compress --format modern,cjs --tsconfig ./tsconfig.compile.json"
   },
   "dependencies": {
-    "le_node": "^1.8.0"
+    "le_node": "^1.8.0",
+    "tslib": "2.3.0"
   },
   "devDependencies": {
     "@tsed/logger": "5.15.0"

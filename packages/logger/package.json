@@ -2,13 +2,18 @@
   "name": "@tsed/logger",
   "version": "5.15.0",
   "description": "A multi channel logger written in TypeScript.",
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "private": false,
   "author": {
     "name": "Romain Lenzotti"
   },
   "license": "MIT",
+  "source": "./src/index.ts",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.js",
+    "default": "./lib/index.modern.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tsedio/logger.git"
@@ -25,8 +30,7 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "scripts": {
-    "build": "tsc --build tsconfig.compile.json",
-    "build:doc": "tsc --build tsconfig.doc.json"
+    "build": "microbundle --target node --no-compress --format modern,cjs --tsconfig ./tsconfig.compile.json"
   },
   "dependencies": {
     "colors": "^1.3.3",
@@ -34,7 +38,7 @@
     "lodash": "^4.17.21",
     "semver": "^7.3.2",
     "streamroller": "^1.0.3",
-    "tslib": "2.1.0"
+    "tslib": "2.3.0"
   },
   "devDependencies": {},
   "peerDependencies": {}
