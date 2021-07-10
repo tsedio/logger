@@ -23,14 +23,14 @@ describe("PatternLayout", () => {
         }
       });
 
-      const context = new Map();
+      const context: any = new Map();
       context.set("user", "romain");
       logEvent = new LogEvent("category", levels().DEBUG, ["data"], context);
       logEvent._startTime = new Date("2017-06-18 22:29:38.234");
       result = layout.transform(logEvent);
     });
 
-    it("should return a formated string", () => {
+    it("should return a formatted string", () => {
       expect(result).to.eq("2017-06-18T22:29:38.234 DEBUG category romain DEBUG - data\n");
     });
   });
@@ -47,14 +47,14 @@ describe("PatternLayout", () => {
         }
       });
 
-      const context = new Map();
+      const context: any = new Map();
       context.set("user", "romain");
       const logEvent = new LogEvent("multiple.levels.of.tests", levels().DEBUG, [new Error("test")], context);
       (logEvent as any)._startTime = new Date("2017-06-18 22:29:38.234");
       result = layout.transform(logEvent);
     });
 
-    it("should return a formated string", () => {
+    it("should return a formatted string", () => {
       expect(result).to.contain("Error: test");
     });
   });
@@ -63,14 +63,14 @@ describe("PatternLayout", () => {
     before(() => {
       tokens = {
         testString: "testStringToken",
-        testFunction: function() {
+        testFunction: function () {
           return "testFunctionToken";
         },
-        fnThatUsesLogEvent: function(logEvent: any) {
+        fnThatUsesLogEvent: function (logEvent: any) {
           return logEvent.level.toString();
         }
       };
-      const context = new Map();
+      const context: any = new Map();
       context.set("user", "romain");
       logEvent = new LogEvent("multiple.levels.of.tests", levels().DEBUG, ["this is a test"], context);
       logEvent._startTime = new Date("2017-06-18 22:29:38.234");
@@ -96,6 +96,10 @@ describe("PatternLayout", () => {
 
     it("%p should output the log level", () => {
       testPattern(tokens, "%p", "DEBUG");
+    });
+
+    it("%j should output the json formatted data", () => {
+      testPattern(tokens, "%j", "[\"this is a test\"]");
     });
 
     it("%c should output the log category", () => {

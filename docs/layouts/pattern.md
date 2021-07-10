@@ -19,6 +19,7 @@ Fields can be any of:
 * `%c` log category,
 * `%h` hostname,
 * `%m` log data,
+* `%j` log data as JSON,
 * `%d` date, formatted - default is `ISO8601`, format options are: `ISO8601`, `ISO8601_WITH_TZ_OFFSET`, `ABSOLUTE`, `DATE`, or any string compatible with the date-format library. e.g. `%d{DATE}, %d{yyyy/MM/dd-hh.mm.ss}`,
 * `%% % -` for when you want a literal `%` in your output,
 * `%n` newline,
