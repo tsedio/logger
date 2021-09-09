@@ -7,7 +7,7 @@ This is a file appender that rolls log files based on a configurable time, rathe
 - **type** - `file`
 - **filename** - `string` - the path of the file where you want your logs written.
 - **pattern** - `string` (optional, defaults to `.yyyy-MM-dd`) - the pattern to use to determine when to roll the logs.
-- **layout** - (optional, defaults to basic layout) - see [layouts](layouts.md)
+- **layout** - (optional, defaults to basic layout) - see [layouts](/layouts.md)
 
 Any other configuration parameters will be passed to the underlying [streamroller](https://github.com/nomiddlename/streamroller) implementation (see also node.js core file streams):
 - **encoding** - `string` (default "utf-8")
