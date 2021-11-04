@@ -1,5 +1,4 @@
 export * from "./components/ConsoleAppender";
-export * from "./components/FileAppender";
 export * from "./components/StderrAppender";
 export * from "./components/StdoutAppender";
 

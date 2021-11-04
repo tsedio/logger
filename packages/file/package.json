@@ -1,7 +1,7 @@
 {
-  "name": "@tsed/logger",
+  "name": "@tsed/logger-file",
   "version": "5.17.0",
-  "description": "A multi channel logger written in TypeScript.",
+  "description": "File appender module for @tsed/logger",
   "private": false,
   "author": {
     "name": "Romain Lenzotti"
@@ -23,7 +23,8 @@
     "log",
     "debug",
     "typescript",
-    "trace"
+    "trace",
+    "insight"
   ],
   "bugs": {
     "url": "https://github.com/tsedio/logger/issues"
@@ -33,11 +34,13 @@
     "build": "microbundle --target node --no-compress --format modern,cjs --tsconfig ./tsconfig.compile.json"
   },
   "dependencies": {
-    "colors": "^1.3.3",
-    "date-format": "^3.0.0",
-    "semver": "^7.3.2",
+    "streamroller": "^1.0.3",
     "tslib": "2.3.0"
   },
-  "devDependencies": {},
-  "peerDependencies": {}
+  "devDependencies": {
+    "@tsed/logger": "5.17.0"
+  },
+  "peerDependencies": {
+    "@tsed/logger": "^5.10.0"
+  }
 }

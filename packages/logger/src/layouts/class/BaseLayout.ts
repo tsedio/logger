@@ -1,8 +1,8 @@
 import {LogEvent} from "../../core/LogEvent";
-import {IBasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
+import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
 
 export abstract class BaseLayout {
-  constructor(protected config: IBasicLayoutConfiguration) {}
+  constructor(protected config: BasicLayoutConfiguration) {}
 
   abstract transform(loggingEvent: LogEvent, timezoneOffset?: number): string;
 }

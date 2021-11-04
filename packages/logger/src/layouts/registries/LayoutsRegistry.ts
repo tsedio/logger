@@ -1,6 +1,6 @@
-export interface ILayoutProvider {
+export interface LayoutProvider {
   provide: any;
   instance?: any;
 }
 
-export const LayoutsRegistry: Map<string, ILayoutProvider> = new Map<string, ILayoutProvider>();
+export const LayoutsRegistry: Map<string, LayoutProvider> = new Map<string, LayoutProvider>();

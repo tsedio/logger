@@ -1,13 +1,9 @@
-/**
- * @module appenders
- */
-/** */
-import {IBasicLayoutConfiguration} from "../../layouts/interfaces/BasicLayoutConfiguration";
+import {BasicLayoutConfiguration} from "../../layouts/interfaces/BasicLayoutConfiguration";
 
-export interface IAppenderConfiguration {
+export interface AppenderConfiguration {
   type: string;
   filename?: string;
-  layout?: IBasicLayoutConfiguration;
+  layout?: BasicLayoutConfiguration;
   maxLogSize?: number;
   pattern?: string;
   backups?: number;
@@ -18,4 +14,4 @@ export interface IAppenderConfiguration {
 
 export type Partial<T> = {[P in keyof T]?: T[P]};
 
-export type PartialAppenderConfiguration = Partial<IAppenderConfiguration>;
+export type PartialAppenderConfiguration = Partial<AppenderConfiguration>;

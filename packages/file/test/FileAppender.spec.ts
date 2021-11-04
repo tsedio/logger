@@ -1,15 +1,12 @@
 import * as Sinon from "sinon";
-
-const streams = require("streamroller");
-
-import {FileAppender} from "../../../src/appenders/components/FileAppender";
-import {levels, LogEvent} from "../../../src";
 import {expect} from "chai";
+import {levels, LogEvent} from "@tsed/logger";
+import {FileAppender} from "../src";
 
 describe("FileAppender", () => {
   it("should log something", () => {
     // GIVEN
-    const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
+    const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
     const appender = new FileAppender({type: "console", filename: "log.log"});
 
     const writeStub = Sinon.stub((appender as any).writer, "write");
@@ -29,7 +26,7 @@ describe("FileAppender", () => {
 
   it("Date rolling (should log something)", () => {
     // GIVEN
-    const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
+    const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
     const appender = new FileAppender({type: "console", filename: "log.log", pattern: ".yyyy-MM-dd"});
 
     const writeStub = Sinon.stub((appender as any).writer, "write");

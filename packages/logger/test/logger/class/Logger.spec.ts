@@ -1,9 +1,4 @@
-import {Layout, Logger} from "../../../src/index";
-import {Appender} from "../../../src/appenders/decorators/appender";
-import {BaseAppender} from "../../../src/appenders/class/BaseAppender";
-import {BaseLayout} from "../../../src/layouts/class/BaseLayout";
-import {LogEvent} from "../../../src/core/LogEvent";
-import {LogLevel} from "../../../src/core/LogLevel";
+import {Appender, BaseAppender, BaseLayout, Layout, LogEvent, Logger, LogLevel} from "@tsed/logger";
 import * as Sinon from "sinon";
 import {assert, expect} from "chai";
 

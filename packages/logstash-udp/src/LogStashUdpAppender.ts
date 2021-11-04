@@ -3,14 +3,39 @@ import * as util from "util";
 import * as dgram from "dgram";
 import * as os from "os";
 
-const _ = require("lodash");
-
 const defaultVersion = 1;
+
+function isObject(o: any) {
+  return Object.prototype.toString.call(o) === "[object Object]";
+}
+
+function isPlainObject(o: any) {
+  let ctor: any, prot: any;
+
+  if (!isObject(o)) {
+    return false;
+  }
+
+  // If has modified constructor
+  ctor = o.constructor;
+  if (ctor === undefined) {
+    return true;
+  }
+
+  // If has modified prototype
+  prot = ctor.prototype;
+  if (!isObject(prot) || !prot.hasOwnProperty("isPrototypeOf")) {
+    return false;
+  }
+
+  // Most likely a plain Object
+  return true;
+}
 
 const defaultExtraDataProvider = (loggingEvent: LogEvent) => {
   if (loggingEvent.data.length > 1) {
     const secondEvData = loggingEvent.data[1];
-    if (_.isPlainObject(secondEvData)) {
+    if (isPlainObject(secondEvData)) {
       return {fields: secondEvData};
     }
   }
@@ -25,7 +50,7 @@ export class LogStashUdpAppender extends BaseAppender {
   build() {
     if ($log.level !== "OFF") {
       this.udp = dgram.createSocket("udp4");
-      this.extraDataProvider = _.isFunction(this.config.options.extraDataProvider)
+      this.extraDataProvider = typeof this.config.options.extraDataProvider === "function"
         ? this.config.options.extraDataProvider
         : defaultExtraDataProvider;
     }
@@ -46,7 +71,7 @@ export class LogStashUdpAppender extends BaseAppender {
         "message": isMessage ? this.layout(loggingEvent) : undefined
       };
       const extraLogObject = this.extraDataProvider(loggingEvent) || {};
-      const logObject = _.assign(oriLogObject, extraLogObject);
+      const logObject = {...oriLogObject, ...extraLogObject};
 
       this.sendLog(logObject);
     }

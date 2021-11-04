@@ -6,7 +6,7 @@ export interface TokensHandlers {
   [key: string]: any | TokenHandler;
 }
 
-export interface IBasicLayoutConfiguration {
+export interface BasicLayoutConfiguration {
   type: string;
   pattern?: string;
   tokens?: TokensHandlers;

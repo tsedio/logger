@@ -7,6 +7,12 @@ to ensure that any remaining asynchronous writes have finished.
 Although the file appender uses the [streamroller](https://github.com/nomiddlename/streamroller) library, this is included as a dependency of ts-log-debug so you do not 
 need to include it yourself.
 
+## Installation
+
+```bash
+npm install --save @tsed/logger-file
+```
+
 ## Configuration
 
 - **type** - `file`
@@ -27,6 +33,7 @@ implementation (see also node.js core file streams):
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import "@tsed/logger-file";
 
 const logger = new Logger("loggerName");
 
@@ -44,6 +51,7 @@ This example will result in a single log file (all-the-logs.log) containing the 
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import "@tsed/logger-file";
 
 const logger = new Logger("loggerName");
 
@@ -64,7 +72,8 @@ When `all-the-logs.log` reaches 10Mb again, then all-the-logs.log.1.gz will be r
 ## Example with date rolling
 
 ```typescript
-import { Logger } from 'ts-log-debug';
+import { Logger } from '@tsed/logger-file';
+import "@tsed/logger-file";
 export const logger = new Logger('Log Example');
 
 logger.appenders
@@ -72,5 +81,5 @@ logger.appenders
   type: 'file',
   filename: `${__dirname}/../logs/myfile.log`,
   pattern: '.yyyy-MM-dd'
-});``
-``
+});
+```
