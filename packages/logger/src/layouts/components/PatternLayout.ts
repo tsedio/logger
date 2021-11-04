@@ -3,7 +3,7 @@ import {BaseLayout} from "../class/BaseLayout";
 import {IReplacers} from "../interfaces/Replacers";
 import {LayoutReplacer} from "../class/LayoutReplacer";
 import {LogEvent} from "../../core/LogEvent";
-import {IBasicLayoutConfiguration, TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
+import {BasicLayoutConfiguration, TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
 import {Layout} from "../decorators/layout";
 
 const regex = /%(-?[0-9]+)?(\.?[0-9]+)?([[\]cdhmnpjrzxy%])(\{([^}]+)\})?|([^%]+)/;
@@ -48,7 +48,7 @@ export class PatternLayout extends BaseLayout {
   readonly #tokens: TokensHandlers;
   readonly #pattern: string;
 
-  constructor(config: IBasicLayoutConfiguration) {
+  constructor(config: BasicLayoutConfiguration) {
     super(config);
 
     this.#pattern = (config && config.pattern) || TTCC_CONVERSION_PATTERN;

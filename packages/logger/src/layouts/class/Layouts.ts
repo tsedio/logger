@@ -1,9 +1,9 @@
 import {LayoutsRegistry} from "../registries/LayoutsRegistry";
-import {IBasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
+import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
 import {BaseLayout} from "./BaseLayout";
 
 export class Layouts {
-  static get(name: string | any, config: IBasicLayoutConfiguration): BaseLayout {
+  static get(name: string | any, config: BasicLayoutConfiguration): BaseLayout {
     if (typeof name !== "string") {
       name = name.$name;
     }

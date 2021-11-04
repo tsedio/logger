@@ -1,7 +1,3 @@
-/**
- * @module appenders
- */
-/** */
 import {AppendersRegistry} from "../registries/AppendersRegistry";
 import {IAppenderOptions} from "../class/BaseAppender";
 

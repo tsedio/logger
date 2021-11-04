@@ -1,16 +1,16 @@
 import {AppendersRegistry} from "../../appenders/registries/AppendersRegistry";
 import {BaseAppender} from "../../appenders/class/BaseAppender";
 import {LogLevel} from "../../core/LogLevel";
-import {IAppenderConfiguration} from "../../appenders/interfaces/AppenderConfiguration";
+import {AppenderConfiguration} from "../../appenders/interfaces/AppenderConfiguration";
 
-export interface ILoggerAppender {
+export interface LoggerAppender {
   name: string;
   instance: any;
-  config: IAppenderConfiguration;
+  config: AppenderConfiguration;
 }
 
 export class LoggerAppenders {
-  private _appenders: Map<string, ILoggerAppender> = new Map();
+  private _appenders: Map<string, LoggerAppender> = new Map();
   private _lvls: Map<string, any> = new Map<string, any>();
 
   get size() {
@@ -29,9 +29,9 @@ export class LoggerAppenders {
   /**
    * The `get() method returns a specified element from a loggerAppenders.
    * @param name Required. The configuration of the element to return from the Map object.
-   * @returns {ILoggerAppender}
+   * @returns {LoggerAppender}
    */
-  get(name: string): ILoggerAppender {
+  get(name: string): LoggerAppender {
     return this._appenders.get(name)!;
   }
 
@@ -41,7 +41,7 @@ export class LoggerAppenders {
    * @param config Required. The config of the element to add to the loggerAppenders object.
    * @returns {LoggerAppender}
    */
-  set(name: string, config: IAppenderConfiguration): LoggerAppenders {
+  set(name: string, config: AppenderConfiguration): LoggerAppenders {
     if (!AppendersRegistry.has(config.type)) {
       const error = new Error(`Appender ${config.type} doesn't exists. Check your configuration:\n${JSON.stringify(config)}\n`);
       error.name = "UNKNOW_APPENDER";
@@ -82,7 +82,7 @@ export class LoggerAppenders {
    * @param callback Function to execute for each element.
    * @param thisArg Value to use as this when executing callback.
    */
-  forEach(callback: (value: ILoggerAppender, key: string, map: Map<string, ILoggerAppender>) => void, thisArg?: any): void {
+  forEach(callback: (value: LoggerAppender, key: string, map: Map<string, LoggerAppender>) => void, thisArg?: any): void {
     this._appenders.forEach(callback, thisArg);
   }
 

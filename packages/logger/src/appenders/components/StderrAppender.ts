@@ -1,7 +1,3 @@
-/**
- * @module appenders
- */
-/** */
 import {LogEvent} from "../../core/LogEvent";
 import {Appender} from "../decorators/appender";
 import {BaseAppender} from "../class/BaseAppender";

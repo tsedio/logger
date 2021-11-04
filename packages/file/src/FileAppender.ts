@@ -1,13 +1,6 @@
-/**
- * @module appenders
- */
-/** */
-
-import {Appender} from "../decorators/appender";
-import {LogEvent} from "../../core/LogEvent";
+import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
 import * as Path from "path";
 import * as Os from "os";
-import {BaseAppender} from "../class/BaseAppender";
 
 const streams = require("streamroller");
 const eol = Os.EOL || "\n";

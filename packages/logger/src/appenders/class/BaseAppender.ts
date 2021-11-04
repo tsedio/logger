@@ -1,10 +1,6 @@
-/**
- * @module appenders
- */
-/** */
 import {LogEvent} from "../../core/LogEvent";
 import {Layouts} from "../../layouts/class/Layouts";
-import {IAppenderConfiguration, PartialAppenderConfiguration} from "../interfaces/AppenderConfiguration";
+import {AppenderConfiguration, PartialAppenderConfiguration} from "../interfaces/AppenderConfiguration";
 
 export interface IAppenderOptions {
   name: string;
@@ -61,7 +57,7 @@ export abstract class BaseAppender implements IBaseAppender {
 
   [key: string]: any;
 
-  constructor(private _config: IAppenderConfiguration) {
+  constructor(private _config: AppenderConfiguration) {
     this.configure(_config);
 
     if (this["build"]) {
@@ -69,7 +65,7 @@ export abstract class BaseAppender implements IBaseAppender {
     }
   }
 
-  get config(): IAppenderConfiguration {
+  get config(): AppenderConfiguration {
     return this._config;
   }
 

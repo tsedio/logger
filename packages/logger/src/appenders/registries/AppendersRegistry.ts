@@ -1,10 +1,6 @@
-/**
- * @module appenders
- */
-/** */
-export interface IAppenderProvider {
+export interface AppenderProvider {
   provide: any;
   instance?: any;
 }
 
-export const AppendersRegistry: Map<string, IAppenderProvider> = new Map<string, IAppenderProvider>();
+export const AppendersRegistry: Map<string, AppenderProvider> = new Map<string, AppenderProvider>();
