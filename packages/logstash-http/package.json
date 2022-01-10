@@ -36,13 +36,13 @@
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "tslib": "2.3.0"
   },
   "devDependencies": {
     "@tsed/logger": "6.0.0"
   },
   "peerDependencies": {
-    "@tsed/logger": "^5.10.0"
+    "@tsed/logger": ">=6.0.0"
   }
 }
