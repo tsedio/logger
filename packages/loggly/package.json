@@ -42,6 +42,6 @@
     "@tsed/logger": "6.0.0"
   },
   "peerDependencies": {
-    "@tsed/logger": "^5.10.0"
+    "@tsed/logger": ">=6.0.0"
   }
 }
