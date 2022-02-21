@@ -1,8 +1,9 @@
 import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
-import * as Path from "path";
+import {normalize} from "path";
 import * as Os from "os";
+// @ts-ignore
+import * as streams from "streamroller";
 
-const streams = require("streamroller");
 const eol = Os.EOL || "\n";
 
 /**
@@ -114,7 +115,7 @@ export class FileAppender extends BaseAppender {
   private build() {
     let {filename: file, maxLogSize: logSize, backups: numBackups, pattern} = this.config;
 
-    file = Path.normalize(file!);
+    file = normalize(file!);
     numBackups = numBackups === undefined ? 5 : numBackups;
     // there has to be at least one backup if logSize has been specified
     numBackups = numBackups === 0 ? 1 : numBackups;
@@ -133,6 +134,7 @@ export class FileAppender extends BaseAppender {
    * @param file
    * @param fileSize
    * @param numFiles
+   * @param pattern
    * @param options
    * @returns {streams.RollingFileStream}
    */
