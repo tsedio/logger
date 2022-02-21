@@ -1,7 +1,6 @@
 import {Appender, BaseAppender, BaseLayout, Layouts, LogEvent, MessagePassThroughLayout, PartialAppenderConfiguration} from "@tsed/logger";
-
-const mailer = require("nodemailer");
-const os = require("os");
+import mailer from "nodemailer";
+import os from "os";
 
 function getTransportOptions(config: any) {
   let options: any = {};

@@ -1,15 +1,13 @@
-import {LogEvent} from "../../core/LogEvent";
 import * as Os from "os";
+import * as Util from "util";
+// @ts-ignore
+import * as dateFormat from "date-format";
+import {LogEvent} from "../../core/LogEvent";
 import {LOG_COLORS} from "../constants/logColors";
 import {colorizeEnd, colorizeStart} from "../utils/colorizeUtils";
 import {IReplacers} from "../interfaces/Replacers";
 import {TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
-import * as Util from "util";
 
-/**
- *
- */
-const dateFormat = require("date-format");
 const eol = Os.EOL || "\n";
 
 export class LayoutReplacer {

@@ -1,5 +1,6 @@
 import {$log, Appender, LogEvent, BaseAppender} from "@tsed/logger";
-const LogEntries = require("le_node");
+// @ts-ignore
+import LogEntries from "le_node";
 
 @Appender({name: "logentries"})
 export class LogEntriesAppender extends BaseAppender {

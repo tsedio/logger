@@ -2,9 +2,9 @@ import {PatternLayout} from "../../../src/layouts/components/PatternLayout";
 import {LogEvent} from "../../../src/core/LogEvent";
 import {levels} from "../../../src/core/LogLevel";
 import {expect} from "chai";
-
-const os = require("os");
-const dateFormat = require("date-format");
+import * as os from "os";
+// @ts-ignore
+import * as dateFormat from "date-format";
 
 const EOL = os.EOL || "\n";
 
