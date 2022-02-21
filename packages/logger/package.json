@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger",
-  "version": "6.0.2",
+  "version": "6.1.0",
   "description": "A multi channel logger written in TypeScript.",
   "private": false,
   "author": {
