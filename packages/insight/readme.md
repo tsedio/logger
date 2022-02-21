@@ -27,9 +27,9 @@ npm install --save @tsed/logger-insight
 
 ## Configuration
 
-* `type` - `insight`
-* `options.token` - Insight token
-* `options.region` - The region of ingestion endpoint to be used. Examples: `eu`, `us` etc.
+- `type` - `insight`
+- `options.token` - Insight token
+- `options.region` - The region of ingestion endpoint to be used. Examples: `eu`, `us` etc.
 
 See all available options for LogEntries [here](https://www.npmjs.com/package/r7insight_node).
 
@@ -37,12 +37,12 @@ See all available options for LogEntries [here](https://www.npmjs.com/package/r7
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-insight"
+import "@tsed/logger-insight";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "insight", 
+  type: "insight",
   level: ["info"],
   options: {
     token: "the token",
@@ -57,7 +57,6 @@ logger.appenders.set("stdout", {
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
 
 <a href="https://opencollective.com/tsed#backers" target="_blank"><img src="https://opencollective.com/tsed/tiers/backer.svg?width=890"></a>
-
 
 ## Sponsors
 

@@ -11,16 +11,19 @@ function numKeys(obj: any) {
 }
 
 function processTags(msgListArgs: any[]) {
-  const msgList = (msgListArgs.length === 1 ? [msgListArgs[0]] : msgListArgs);
+  const msgList = msgListArgs.length === 1 ? [msgListArgs[0]] : msgListArgs;
 
-  return msgList.reduce((accumulate, element) => {
-    if (isAnyObject(element) && Array.isArray(element.tags) && numKeys(element) === 1) {
-      accumulate.additionalTags = accumulate.additionalTags.concat(element.tags);
-    } else {
-      accumulate.deTaggedData.push(element);
-    }
-    return accumulate;
-  }, {deTaggedData: [], additionalTags: []});
+  return msgList.reduce(
+    (accumulate, element) => {
+      if (isAnyObject(element) && Array.isArray(element.tags) && numKeys(element) === 1) {
+        accumulate.additionalTags = accumulate.additionalTags.concat(element.tags);
+      } else {
+        accumulate.deTaggedData.push(element);
+      }
+      return accumulate;
+    },
+    {deTaggedData: [], additionalTags: []}
+  );
 }
 
 @Appender({name: "loggly"})
@@ -55,7 +58,7 @@ export class LogglyAppender extends BaseAppender {
           msg: msg,
           level,
           category: loggingEvent.categoryName,
-          hostname: os.hostname().toString(),
+          hostname: os.hostname().toString()
         },
         additionalTags,
         (error) => {

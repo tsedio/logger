@@ -11,13 +11,16 @@ const logger = new Logger("loggerName");
 
 logger.appenders
   .set({
-      type: "stdout", level: ["debug", "info", "trace"]
+    type: "stdout",
+    level: ["debug", "info", "trace"]
   })
   .set({
-      type: "stderr", level: ["error", "fatal", "warn"]
+    type: "stderr",
+    level: ["error", "fatal", "warn"]
   })
   .set({
-      type: "file", filename: "logfile.log"
+    type: "file",
+    filename: "logfile.log"
   });
 ```
 

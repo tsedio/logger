@@ -15,8 +15,8 @@ npm install --save @tsed/logger-logentries
 
 ## Configuration
 
-* `type` - `logentries`
-* `options.token` - LogEntries token
+- `type` - `logentries`
+- `options.token` - LogEntries token
 
 See all available options for LogEntries [here](https://www.npmjs.com/package/le_node).
 
@@ -24,7 +24,7 @@ See all available options for LogEntries [here](https://www.npmjs.com/package/le
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-logentries"
+import "@tsed/logger-logentries";
 
 const logger = new Logger("loggerName");
 

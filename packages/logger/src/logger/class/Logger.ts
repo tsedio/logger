@@ -53,7 +53,8 @@ export class Logger {
   public static createStack(): string {
     const stack: string = new Error().stack!.replace("Error\n", "");
 
-    return stack.split("\n")
+    return stack
+      .split("\n")
       .filter((line, index) => index >= 2)
       .join("\n");
   }
@@ -141,8 +142,8 @@ export class Logger {
 
     const promises = this.appenders
       .toArray()
-      .filter(appender => !!appender.instance.shutdown)
-      .map(appender => appender.instance.shutdown());
+      .filter((appender) => !!appender.instance.shutdown)
+      .map((appender) => appender.instance.shutdown());
 
     return Promise.all(promises);
   }

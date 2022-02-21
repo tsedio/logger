@@ -10,8 +10,7 @@ export class LogEvent {
    * @param {Array} _data objects to log
    * @param _context
    */
-  constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context: LogContext) {
-  }
+  constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context: LogContext) {}
 
   private _startTime = new Date();
 

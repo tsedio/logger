@@ -1,4 +1,5 @@
-# Contributing 
+# Contributing
+
 ## Setup
 
 Clone your fork of the repository

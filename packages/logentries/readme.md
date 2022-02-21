@@ -32,8 +32,8 @@ npm install --save @tsed/logger-logentries
 
 ## Configuration
 
-* `type` - `logentries`
-* `options.token` - LogEntries token
+- `type` - `logentries`
+- `options.token` - LogEntries token
 
 See all available options for LogEntries [here](https://www.npmjs.com/package/le_node).
 
@@ -41,12 +41,12 @@ See all available options for LogEntries [here](https://www.npmjs.com/package/le
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-logentries"
+import "@tsed/logger-logentries";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "logentries", 
+  type: "logentries",
   level: ["info"],
   options: {
     token: "the token"
@@ -60,7 +60,6 @@ logger.appenders.set("stdout", {
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
 
 <a href="https://opencollective.com/tsed#backers" target="_blank"><img src="https://opencollective.com/tsed/tiers/backer.svg?width=890"></a>
-
 
 ## Sponsors
 

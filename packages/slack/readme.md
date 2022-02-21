@@ -17,7 +17,7 @@ A package of Ts.ED logger framework.
 
 ## Features
 
-Sends log events to a [slack](https://slack.com) channel. 
+Sends log events to a [slack](https://slack.com) channel.
 
 ## Installation
 
@@ -27,11 +27,11 @@ npm install --save @tsed/logger-slack
 
 ## Configuration
 
-* `type` - `slack`
-* `options.token` - `string` - your Slack API token (see the slack and slack-node docs)
-* `options.channel_id` - `string` - the channel to send log messages
-* `options.icon_url` - `string` (optional) - the icon to use for the message
-* `options.username` - `string` - the username to display with the message
+- `type` - `slack`
+- `options.token` - `string` - your Slack API token (see the slack and slack-node docs)
+- `options.channel_id` - `string` - the channel to send log messages
+- `options.icon_url` - `string` (optional) - the icon to use for the message
+- `options.username` - `string` - the username to display with the message
 
 ## Example
 
@@ -42,7 +42,7 @@ import "@tsed/logger-slack";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "slack", 
+  type: "slack",
   level: ["error"],
   options: {
     token: "abc123def",
@@ -57,7 +57,6 @@ logger.appenders.set("stdout", {
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
 
 <a href="https://opencollective.com/tsed#backers" target="_blank"><img src="https://opencollective.com/tsed/tiers/backer.svg?width=890"></a>
-
 
 ## Sponsors
 

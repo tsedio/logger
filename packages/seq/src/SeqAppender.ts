@@ -8,7 +8,7 @@ const LEVEL_NAMES: Record<string, SeqLogLevel> = {
   INFO: "Information",
   WARN: "Warning",
   ERROR: "Error",
-  FATAL: "Fatal",
+  FATAL: "Fatal"
 };
 
 @Appender({name: "seq"})
@@ -21,7 +21,7 @@ export class SeqAppender extends BaseAppender {
         onError(e) {
           console.error("[Seq] Log batch failed\n", e);
         },
-        ...this.config.options,
+        ...this.config.options
       });
     }
   }
@@ -35,7 +35,7 @@ export class SeqAppender extends BaseAppender {
       const additionalProps = [...loggingEvent.context.entries()].reduce((props, [key, value]) => {
         return {
           ...props,
-          [key]: value,
+          [key]: value
         };
       }, {});
 
@@ -45,8 +45,8 @@ export class SeqAppender extends BaseAppender {
         properties: {
           ...(this.config.options.additionalProps || {}),
           ...additionalProps,
-          data,
-        },
+          data
+        }
       };
 
       if (typeof current === "string") {
@@ -61,7 +61,7 @@ export class SeqAppender extends BaseAppender {
         seqEntry.properties = {
           ...seqEntry.properties,
           ...errorProps,
-          ...props,
+          ...props
         };
 
         seqEntry.exception = stack ? stack : errStack;

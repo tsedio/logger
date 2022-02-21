@@ -1,6 +1,6 @@
 # Dummy layout
 
-* type - `dummy`
+- type - `dummy`
 
 This layout only outputs the first value in the log event's data.
 
@@ -11,12 +11,13 @@ import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
-logger.appenders
-  .set("std-log", {
-      type: "console", layout: {type: "dummy"}, level: ["debug", "info", "trace"]
-  });
+logger.appenders.set("std-log", {
+  type: "console",
+  layout: {type: "dummy"},
+  level: ["debug", "info", "trace"]
+});
 
-logger.debug('Cheese is too ripe! Cheese was: ', cheeseName);
+logger.debug("Cheese is too ripe! Cheese was: ", cheeseName);
 ```
 
 This will output:

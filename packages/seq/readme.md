@@ -33,9 +33,9 @@ npm install --save @tsed/seq
 
 ## Configuration
 
-* `type` - `seq`
-* `options.url` - The url log server
-* `options.apiKey` - The apiKey
+- `type` - `seq`
+- `options.url` - The url log server
+- `options.apiKey` - The apiKey
 
 See all available options for Seq [here](https://www.npmjs.com/package/se-loggin).
 
@@ -43,7 +43,7 @@ See all available options for Seq [here](https://www.npmjs.com/package/se-loggin
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-seq"
+import "@tsed/logger-seq";
 
 const logger = new Logger("loggerName");
 
@@ -51,7 +51,7 @@ logger.appenders.set("stdout", {
   type: "seq",
   level: ["info"],
   options: {
-    serverUrl: 'http://localhost:5341',
+    serverUrl: "http://localhost:5341",
     apiKey: "the token"
     // other Seq options
   }
@@ -63,7 +63,6 @@ logger.appenders.set("stdout", {
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
 
 <a href="https://opencollective.com/tsed#backers" target="_blank"><img src="https://opencollective.com/tsed/tiers/backer.svg?width=890"></a>
-
 
 ## Sponsors
 

@@ -13,15 +13,17 @@ import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
-logger.appenders
-  .set("std-log", {
-      type: "stdout", layout: {type: "basic"}, level: ["debug", "info", "trace"]
-  });
+logger.appenders.set("std-log", {
+  type: "stdout",
+  layout: {type: "basic"},
+  level: ["debug", "info", "trace"]
+});
 ```
+
 ::: tip
 This configuration replaces the stdout appender's default colored layout with basic layout.
 :::
+
 ## Built-in Layouts
 
 <ApiList query="symbolName: Layout AND symbolType: class" />
-

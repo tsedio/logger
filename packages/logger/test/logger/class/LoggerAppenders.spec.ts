@@ -47,23 +47,17 @@ describe("LoggerAppenders", () => {
       it("when cleared should have no appenders", () => {
         cachedAppenders.clear();
         result = cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(result)
-          .to.be.an("array")
-          .lengthOf(0);
+        expect(result).to.be.an("array").lengthOf(0);
       });
       it("when deleted should have no appenders", () => {
         cachedAppenders.delete("custom");
         result = cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(result)
-          .to.be.an("array")
-          .lengthOf(0);
+        expect(result).to.be.an("array").lengthOf(0);
       });
       it("when deleted should have no appenders", () => {
         cachedAppenders.set("custom2", {type: "test2", levels: ["debug"]});
         result = cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(result)
-          .to.be.an("array")
-          .lengthOf(2);
+        expect(result).to.be.an("array").lengthOf(2);
       });
     });
   });
@@ -93,17 +87,13 @@ describe("LoggerAppenders", () => {
       appenders.forEach((o: any) => result.push(o));
     });
     it("should return all elements", () => {
-      expect(result)
-        .to.be.an("array")
-        .and.length(1);
+      expect(result).to.be.an("array").and.length(1);
     });
   });
 
   describe("toArray()", () => {
     it("should return all elements", () => {
-      expect(appenders.toArray())
-        .to.be.an("array")
-        .and.length(1);
+      expect(appenders.toArray()).to.be.an("array").and.length(1);
     });
   });
 

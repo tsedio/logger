@@ -12,11 +12,12 @@ import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
-logger.appenders
-  .set("std-log", {
-      type: "console", layout: {type: "messagePassThrough"}, level: ["debug", "info", "trace"]
-  });
-logger.debug('Log something');
+logger.appenders.set("std-log", {
+  type: "console",
+  layout: {type: "messagePassThrough"},
+  level: ["debug", "info", "trace"]
+});
+logger.debug("Log something");
 ```
 
 This will output:

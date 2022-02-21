@@ -19,8 +19,7 @@ export class SlackAppender extends BaseAppender {
         };
         await web.chat.postMessage(data);
       }
-    }
-    catch (err) {
+    } catch (err) {
       console.error("Ts.ED Logger:slack - Error sending log to slack: ", err);
     }
   }

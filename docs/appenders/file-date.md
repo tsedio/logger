@@ -10,6 +10,7 @@ This is a file appender that rolls log files based on a configurable time, rathe
 - **layout** - (optional, defaults to basic layout) - see [layouts](/layouts.md)
 
 Any other configuration parameters will be passed to the underlying [streamroller](https://github.com/nomiddlename/streamroller) implementation (see also node.js core file streams):
+
 - **encoding** - `string` (default "utf-8")
 - **mode**- `integer` (default 0o644 - [node.js file modes](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_file_modes))
 - **flags** - `string` (default 'a')
@@ -28,28 +29,29 @@ import {Logger} from "@tsed/logger";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("everything", {
-  type: 'file', 
-  filename: 'all-the-logs.log',
-  pattern: '.yyyy-MM-dd'
+  type: "file",
+  filename: "all-the-logs.log",
+  pattern: ".yyyy-MM-dd"
 });
 
-logger.debug('I will be logged in all-the-logs.log');
+logger.debug("I will be logged in all-the-logs.log");
 ```
 
 This example will result in files being rolled every day. The initial file will be `all-the-logs.log`, with the daily backups being `all-the-logs.log.2017-04-30`, etc.
 
 ## Example with hourly log rolling (and compressed backups)
+
 ```javascript
 import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
-logger.appenders.set("everything", { 
-  type: 'file', 
-  filename: 'all-the-logs.log', 
-  pattern: '.yyyy-MM-dd-hh', 
-  compress: true 
-})
+logger.appenders.set("everything", {
+  type: "file",
+  filename: "all-the-logs.log",
+  pattern: ".yyyy-MM-dd-hh",
+  compress: true
+});
 ```
-This will result in one current log file (`all-the-logs.log`). Every hour this file will be compressed and renamed to `all-the-logs.log.2017-04-30-08.gz` (for example) and a new `all-the-logs.log` created.
 
+This will result in one current log file (`all-the-logs.log`). Every hour this file will be compressed and renamed to `all-the-logs.log.2017-04-30-08.gz` (for example) and a new `all-the-logs.log` created.

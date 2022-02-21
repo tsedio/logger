@@ -63,9 +63,7 @@ describe("Logger", () => {
     });
 
     it("should have a data", () => {
-      expect(arg.data)
-        .to.be.an("array")
-        .and.to.deep.eq(["test"]);
+      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
@@ -105,9 +103,7 @@ describe("Logger", () => {
     });
 
     it("should have a data", () => {
-      expect(arg.data)
-        .to.be.an("array")
-        .and.to.deep.eq(["test"]);
+      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
@@ -147,9 +143,7 @@ describe("Logger", () => {
     });
 
     it("should have a data", () => {
-      expect(arg.data)
-        .to.be.an("array")
-        .and.to.deep.eq(["test"]);
+      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
@@ -189,9 +183,7 @@ describe("Logger", () => {
     });
 
     it("should have a data", () => {
-      expect(arg.data)
-        .to.be.an("array")
-        .and.length(2);
+      expect(arg.data).to.be.an("array").and.length(2);
     });
 
     it("should have a startTime", () => {
@@ -231,9 +223,7 @@ describe("Logger", () => {
     });
 
     it("should have a data", () => {
-      expect(arg.data)
-        .to.be.an("array")
-        .and.to.deep.eq(["test"]);
+      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {
@@ -273,9 +263,7 @@ describe("Logger", () => {
     });
 
     it("should have a data", () => {
-      expect(arg.data)
-        .to.be.an("array")
-        .and.to.deep.eq(["test"]);
+      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
     });
 
     it("should have a startTime", () => {

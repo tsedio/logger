@@ -1,6 +1,5 @@
 import {Logger} from "../../../src";
 
-
 describe("Logger integration", () => {
   it("should log only on trace", () => {
     const logger = new Logger("test");
@@ -20,7 +19,6 @@ describe("Logger integration", () => {
         layout,
         level: ["trace", "fatal", "error", "warn"]
       });
-
 
     logger.info("===");
   });

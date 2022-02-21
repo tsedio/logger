@@ -11,13 +11,13 @@ npm install --save @tsed/logger-logstash-http
 
 ## Configuration
 
-* `type` - `logstash-http`
-* `options.url` - `string` - logFaces receiver servlet URL
-* `options.application` - `string` (optional) - used to identify your application's logs
-* `options.logChannel` - `string` (optional) - also used to identify your application's logs [but in a more specific way]
-* `options.logType` - `string` (optional) - used for the `type` field in the logstash data
-* `options.timeout` - `integer` (optional, defaults to 5000ms) - the timeout for the HTTP request.
-* `options.maxBuffer` - `integer` (optional, defaults to 0) - Group bulk request by the maxBuffer number. By Default the buffer is disabled.
+- `type` - `logstash-http`
+- `options.url` - `string` - logFaces receiver servlet URL
+- `options.application` - `string` (optional) - used to identify your application's logs
+- `options.logChannel` - `string` (optional) - also used to identify your application's logs [but in a more specific way]
+- `options.logType` - `string` (optional) - used for the `type` field in the logstash data
+- `options.timeout` - `integer` (optional, defaults to 5000ms) - the timeout for the HTTP request.
+- `options.maxBuffer` - `integer` (optional, defaults to 0) - Group bulk request by the maxBuffer number. By Default the buffer is disabled.
 
 This appender will also pick up Logger context values from the events, and add them as `p_` values in the logFaces event. See the example below for more details.
 
@@ -30,19 +30,19 @@ import "@tsed/logger-logstash-http";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "logstash-http", 
+  type: "logstash-http",
   level: ["info"],
   options: {
-    url: 'http://localhost:9200/_bulk', 
-    application: 'logstash-tsed', 
-    logType: 'application', 
-    logChannel: 'node'
+    url: "http://localhost:9200/_bulk",
+    application: "logstash-tsed",
+    logType: "application",
+    logChannel: "node"
   }
 });
 
-logger.context.set('requestId', '123');
-logger.info('some interesting log message');
-logger.error('something has gone wrong');
+logger.context.set("requestId", "123");
+logger.info("some interesting log message");
+logger.error("something has gone wrong");
 ```
 
 Enable date log rolling:
@@ -54,19 +54,19 @@ import "@tsed/logger-logstash-http";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
-  type: "logstash-http", 
+  type: "logstash-http",
   level: ["info"],
   options: {
-    url: 'http://localhost:9200/_bulk', 
-    application: () => 'logstash-tsed-' + moment().format('YYYY.MM.DD'), 
-    logType: 'application', 
-    logChannel: 'node'
+    url: "http://localhost:9200/_bulk",
+    application: () => "logstash-tsed-" + moment().format("YYYY.MM.DD"),
+    logType: "application",
+    logChannel: "node"
   }
 });
 
-logger.context.set('requestId', '123');
-logger.info('some interesting log message');
-logger.error('something has gone wrong');
+logger.context.set("requestId", "123");
+logger.info("some interesting log message");
+logger.error("something has gone wrong");
 ```
 
 This example will result in two log events being sent to your `localhost:9200`.
