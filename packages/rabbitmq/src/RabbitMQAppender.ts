@@ -24,7 +24,7 @@ export class RabbitMQAppender extends BaseAppender {
       ...this.config.options,
       protocol: "amqp",
       frameMax: 0,
-      heartbeat: 0,
+      heartbeat: 0
     };
   }
 

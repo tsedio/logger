@@ -25,15 +25,7 @@
     "typeRoots": ["./node_modules/@types"]
   },
   "linterOptions": {
-    "exclude": [
-      "docs",
-      "integration",
-      "examples/**"
-    ]
+    "exclude": ["docs", "integration", "examples/**"]
   },
-  "exclude": [
-    "docs",
-    "integration",
-    "examples/**"
-  ]
+  "exclude": ["docs", "integration", "examples/**"]
 }

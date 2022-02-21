@@ -50,9 +50,8 @@ export class LogStashUdpAppender extends BaseAppender {
   build() {
     if ($log.level !== "OFF") {
       this.udp = dgram.createSocket("udp4");
-      this.extraDataProvider = typeof this.config.options.extraDataProvider === "function"
-        ? this.config.options.extraDataProvider
-        : defaultExtraDataProvider;
+      this.extraDataProvider =
+        typeof this.config.options.extraDataProvider === "function" ? this.config.options.extraDataProvider : defaultExtraDataProvider;
     }
   }
 
@@ -62,13 +61,13 @@ export class LogStashUdpAppender extends BaseAppender {
     if (level !== "off") {
       const isMessage = loggingEvent.data.length && typeof loggingEvent.data[0] !== "object";
       const oriLogObject = {
-        ...!isMessage ? loggingEvent.data[0] : {},
+        ...(!isMessage ? loggingEvent.data[0] : {}),
         "@version": defaultVersion,
-        "@timestamp": (new Date(loggingEvent.startTime)).toISOString(),
-        "host": os.hostname(),
-        "level": loggingEvent.level.levelStr.toUpperCase(),
-        "category": loggingEvent.categoryName,
-        "message": isMessage ? this.layout(loggingEvent) : undefined
+        "@timestamp": new Date(loggingEvent.startTime).toISOString(),
+        host: os.hostname(),
+        level: loggingEvent.level.levelStr.toUpperCase(),
+        category: loggingEvent.categoryName,
+        message: isMessage ? this.layout(loggingEvent) : undefined
       };
       const extraLogObject = this.extraDataProvider(loggingEvent) || {};
       const logObject = {...oriLogObject, ...extraLogObject};

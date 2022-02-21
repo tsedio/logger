@@ -64,7 +64,7 @@ export function buildEndLine(fields: any, settings: ITableSettings) {
 export function buildLine(fields: any, settings: ITableSettings, char = "─") {
   let line = "";
 
-  Object.keys(fields).forEach(key => {
+  Object.keys(fields).forEach((key) => {
     line += "│";
     line += charRepeater(fields[key] + 2 * settings.padding!, char);
   });
@@ -79,7 +79,7 @@ export function buildLine(fields: any, settings: ITableSettings, char = "─") {
 export function buildLineData(scope: any, fields: any, settings: ITableSettings) {
   let line = "";
 
-  Object.keys(fields).forEach(key => {
+  Object.keys(fields).forEach((key) => {
     line += "│ ";
     line += scope[key];
     line += charRepeater(fields[key] + 2 * (settings.padding! - 1) - scope[key].length, " ");
@@ -102,17 +102,17 @@ export function drawTable(list: any[], settings: ITableSettings = {}): string {
   if (settings.header === undefined) {
     settings.header = {};
 
-    Object.keys(list[0]).forEach(key => (settings.header![key] = key));
+    Object.keys(list[0]).forEach((key) => (settings.header![key] = key));
   }
 
   const fields: any = {};
 
   // Calculate width for each column
 
-  Object.keys(settings.header).forEach(key => (fields[key] = settings.header![key].length));
+  Object.keys(settings.header).forEach((key) => (fields[key] = settings.header![key].length));
 
-  list.forEach(route => {
-    Object.keys(fields).forEach(key => (fields[key] = Math.max(("" + route[key]).length, fields[key])));
+  list.forEach((route) => {
+    Object.keys(fields).forEach((key) => (fields[key] = Math.max(("" + route[key]).length, fields[key])));
   });
 
   let output = "";
@@ -120,7 +120,7 @@ export function drawTable(list: any[], settings: ITableSettings = {}): string {
   output += buildStartLine(fields, settings) + "\n";
   output += buildLineData(settings.header, fields, settings) + "\n";
 
-  list.forEach(scope => {
+  list.forEach((scope) => {
     output += buildLine(fields, settings) + "\n";
     output += buildLineData(scope, fields, settings) + "\n";
   });

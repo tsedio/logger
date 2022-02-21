@@ -55,11 +55,11 @@ import "@tsed/logger-file";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("everything", {
-    type: 'file', 
-    filename: 'all-the-logs.log'
+  type: "file",
+  filename: "all-the-logs.log"
 });
 
-logger.debug('I will be logged in all-the-logs.log');
+logger.debug("I will be logged in all-the-logs.log");
 ```
 
 This example will result in a single log file (all-the-logs.log) containing the log messages.
@@ -73,11 +73,11 @@ import "@tsed/logger-file";
 const logger = new Logger("loggerName");
 
 logger.appenders.set("everything", {
-    type: 'file', 
-    filename: 'all-the-logs.log',
-    maxLogSize: 10485760,
-    backups: 3,
-    compress: true
+  type: "file",
+  filename: "all-the-logs.log",
+  maxLogSize: 10485760,
+  backups: 3,
+  compress: true
 });
 ```
 
@@ -89,16 +89,15 @@ When `all-the-logs.log` reaches 10Mb again, then all-the-logs.log.1.gz will be r
 ## Example with date rolling
 
 ```typescript
-import { Logger } from '@tsed/logger-file';
+import {Logger} from "@tsed/logger-file";
 import "@tsed/logger-file";
-export const logger = new Logger('Log Example');
+export const logger = new Logger("Log Example");
 
-logger.appenders
-  .set('file', {
-    type: 'file',
-    filename: `${__dirname}/../logs/myfile.log`,
-    pattern: '.yyyy-MM-dd'
-  });
+logger.appenders.set("file", {
+  type: "file",
+  filename: `${__dirname}/../logs/myfile.log`,
+  pattern: ".yyyy-MM-dd"
+});
 ```
 
 ## Backers
@@ -106,7 +105,6 @@ logger.appenders
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
 
 <a href="https://opencollective.com/tsed#backers" target="_blank"><img src="https://opencollective.com/tsed/tiers/backer.svg?width=890"></a>
-
 
 ## Sponsors
 

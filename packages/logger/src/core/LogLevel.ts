@@ -1,4 +1,3 @@
-
 export class LogLevel {
   constructor(readonly level: number, readonly levelStr: string) {
     this.level = level;

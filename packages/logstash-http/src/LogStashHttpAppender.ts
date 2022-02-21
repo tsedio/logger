@@ -4,7 +4,7 @@ import axios from "axios";
 
 function wrapErrorsWithInspect(items: any[]) {
   return items.map((item) => {
-    if ((item instanceof Error) && item.stack) {
+    if (item instanceof Error && item.stack) {
       return {
         inspect: function () {
           return `${util.format(item)}\n${item.stack}`;
@@ -17,7 +17,7 @@ function wrapErrorsWithInspect(items: any[]) {
 }
 
 function format(logData: any) {
-  return util.format.apply(util, wrapErrorsWithInspect(logData));
+  return util.format(...wrapErrorsWithInspect(logData));
 }
 
 @Appender({name: "logstash-http"})
@@ -34,10 +34,10 @@ export class LogStashHttpAppender extends BaseAppender {
         timeout: this.config.options.timeout || 5000,
         params: this.config.options.params,
         headers: {
-          ...this.config.options.headers || {},
+          ...(this.config.options.headers || {}),
           "Content-Type": "application/x-ndjson"
         },
-        withCredentials: true,
+        withCredentials: true
       });
     }
   }
@@ -53,18 +53,18 @@ export class LogStashHttpAppender extends BaseAppender {
         {
           index: {
             _index: typeof application === "function" ? application() : application,
-            _type: logType,
-          },
+            _type: logType
+          }
         },
         {
-          ...!isMessage ? loggingEvent.data[0] : {},
+          ...(!isMessage ? loggingEvent.data[0] : {}),
           message: isMessage ? format(loggingEvent.data) : undefined,
           context: loggingEvent.context.toJSON(),
           level: loggingEvent.level.level / 100,
           level_name: level,
           channel: logChannel,
-          datetime: (new Date(loggingEvent.startTime)).toISOString()
-        },
+          datetime: new Date(loggingEvent.startTime).toISOString()
+        }
       ];
 
       this.send(`${JSON.stringify(logstashEvent[0])}\n${JSON.stringify(logstashEvent[1])}`);
@@ -72,7 +72,6 @@ export class LogStashHttpAppender extends BaseAppender {
   }
 
   send(bulk: string) {
-
     const {bufferMax = 0} = this.config.options;
     this.#buffer.push(bulk);
 
@@ -91,14 +90,15 @@ export class LogStashHttpAppender extends BaseAppender {
       const bulk = buffer.join("\n");
       const {url} = this.config.options;
 
-      return this.client.post("", bulk + "\n")
-        .catch((error) => {
-          if (error.response) {
-            console.error(`Ts.ED Logger.logstash-http Appender error posting to ${url}: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
-            return;
-          }
-          console.error(`Ts.ED Logger.logstash-http Appender error: ${error.message}`);
-        });
+      return this.client.post("", bulk + "\n").catch((error) => {
+        if (error.response) {
+          console.error(
+            `Ts.ED Logger.logstash-http Appender error posting to ${url}: ${error.response.status} - ${JSON.stringify(error.response.data)}`
+          );
+          return;
+        }
+        console.error(`Ts.ED Logger.logstash-http Appender error: ${error.message}`);
+      });
     }
   }
 

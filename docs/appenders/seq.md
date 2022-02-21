@@ -10,9 +10,9 @@ npm install --save @tsed/seq
 
 ## Configuration
 
-* `type` - `seq`
-* `options.url` - The url log server
-* `options.apiKey` - The apiKey
+- `type` - `seq`
+- `options.url` - The url log server
+- `options.apiKey` - The apiKey
 
 See all available options for Seq [here](https://www.npmjs.com/package/seq-logging).
 
@@ -20,7 +20,7 @@ See all available options for Seq [here](https://www.npmjs.com/package/seq-loggi
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "@tsed/logger-seq"
+import "@tsed/logger-seq";
 
 const logger = new Logger("loggerName");
 
@@ -28,7 +28,7 @@ logger.appenders.set("stdout", {
   type: "seq",
   level: ["info"],
   options: {
-    serverUrl: 'http://localhost:5341',
+    serverUrl: "http://localhost:5341",
     apiKey: "the token"
     // other Seq options
   }

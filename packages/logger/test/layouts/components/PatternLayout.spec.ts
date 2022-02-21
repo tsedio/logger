@@ -99,7 +99,7 @@ describe("PatternLayout", () => {
     });
 
     it("%j should output the json formatted data", () => {
-      testPattern(tokens, "%j", "[\"this is a test\"]");
+      testPattern(tokens, "%j", '["this is a test"]');
     });
 
     it("%c should output the log category", () => {

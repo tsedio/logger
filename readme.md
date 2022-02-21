@@ -28,15 +28,14 @@
 
 <hr />
 
-
 > A multi channel logger written in TypeScript.
 
 ## Features
 
-* Colored console logging to stdout or stderr,
-* File appender, with configurable log rolling based on file size or date
-* Configurable log message layout/patterns
-* Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.)
+- Colored console logging to stdout or stderr,
+- File appender, with configurable log rolling based on file size or date
+- Configurable log message layout/patterns
+- Different log levels for different log categories (make some parts of your app log as DEBUG, others only ERRORS, etc.)
 
 Please refer to the [documentation](https://tsedio.github.io/logger/) for more details.
 
@@ -63,37 +62,40 @@ $log.name = "APP";
 
 $log.debug("Some debug messages");
 ```
+
 Will be produce the following log output:
+
 ```
 [2017-06-17 11:43:37.987] [DEBUG] [APP] - Some debug messages
 ```
 
 Create your custom logger:
+
 ```typescript
 import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 logger.appenders
-    .set({
-        type: "stdout",
-        levels: ["debug", "info", "trace"]
-    })
-    .set({
-        type: "stderr",
-        levels: ["fatal", "error", "warn"],
-        layout: {
-          type: "pattern",
-          pattern: "%d %p %c %X{user} %m%n"
-        }
-    })
-    .set({
-        type: "file",
-        filename: `${__dirname}/app.log`,
-        layout:{
-            type: "json",
-            separator: ","
-        }
-    })
+  .set({
+    type: "stdout",
+    levels: ["debug", "info", "trace"]
+  })
+  .set({
+    type: "stderr",
+    levels: ["fatal", "error", "warn"],
+    layout: {
+      type: "pattern",
+      pattern: "%d %p %c %X{user} %m%n"
+    }
+  })
+  .set({
+    type: "file",
+    filename: `${__dirname}/app.log`,
+    layout: {
+      type: "json",
+      separator: ","
+    }
+  });
 ```
 
 ## Backers
@@ -101,7 +103,6 @@ logger.appenders
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/tsed#backer)]
 
 <a href="https://opencollective.com/tsed#backers" target="_blank"><img src="https://opencollective.com/tsed/tiers/backer.svg?width=890"></a>
-
 
 ## Sponsors
 

@@ -22,7 +22,7 @@ describe("JsonLayout", () => {
       // @ts-ignore
       expect(result).to.eq(
         JSON.stringify({
-          "user":"romain",
+          user: "romain",
           startTime: logEvent.startTime,
           categoryName: "category",
           level: "DEBUG",
@@ -38,10 +38,17 @@ describe("JsonLayout", () => {
 
       const context = new LogContext();
       context.set("user", "romain");
-      const logEvent = new LogEvent("category", levels().DEBUG, [{
-        test: "test",
-        data: ["hello"]
-      }], context);
+      const logEvent = new LogEvent(
+        "category",
+        levels().DEBUG,
+        [
+          {
+            test: "test",
+            data: ["hello"]
+          }
+        ],
+        context
+      );
       // @ts-ignore
       logEvent._startTime = new Date("2017-06-18 22:29:38.234");
       const result = layout.transform(logEvent);
@@ -49,7 +56,7 @@ describe("JsonLayout", () => {
       // @ts-ignore
       expect(result).to.eq(
         JSON.stringify({
-          "user":"romain",
+          user: "romain",
           startTime: logEvent.startTime,
           categoryName: "category",
           level: "DEBUG",
@@ -77,7 +84,7 @@ describe("JsonLayout", () => {
     it("should return a formatted string", () => {
       expect(result).to.eq(
         JSON.stringify({
-          "user":"romain",
+          user: "romain",
           startTime: logEvent._startTime,
           categoryName: "category",
           level: "DEBUG",

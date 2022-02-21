@@ -10,11 +10,11 @@ npm install --save @tsed/logger-slack
 
 ## Configuration
 
-* `type` - `slack`
-* `options.token` - `string` - your Slack API token (see the (slack web api docs)[https://slack.dev/node-slack-sdk/web-api])
-* `options.channel_id` - `string` - the channel to send log messages
-* `options.icon_url` - `string` (optional) - the icon to use for the message
-* `options.username` - `string` - the username to display with the message
+- `type` - `slack`
+- `options.token` - `string` - your Slack API token (see the (slack web api docs)[https://slack.dev/node-slack-sdk/web-api])
+- `options.channel_id` - `string` - the channel to send log messages
+- `options.icon_url` - `string` (optional) - the icon to use for the message
+- `options.username` - `string` - the username to display with the message
 
 ## Example
 

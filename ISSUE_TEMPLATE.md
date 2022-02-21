@@ -2,15 +2,15 @@
 
 ## Informations
 
-Type | Version
----|---
-Bug/Improvement/Question | 2.x
+| Type                     |  Version |
+| ------------------------ | -------- |
+| Bug/Improvement/Question | 2.x      |
 
-****
+---
 
 ## Description
-A few sentences describing the overall goals of the issue.
 
+A few sentences describing the overall goals of the issue.
 
 ## Todos
 

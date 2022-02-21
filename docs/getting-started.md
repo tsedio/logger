@@ -1,7 +1,9 @@
 ---
 otherTopics: true
 ---
+
 # Getting started
+
 ## Installation
 
 ```bash
@@ -21,7 +23,9 @@ $log.name = "APP";
 
 $log.debug("Some debug messages");
 ```
+
 Will be produce the following log output:
+
 ```
 [2017-06-17 11:43:37.987] [DEBUG] [APP] - Some debug messages
 ```
@@ -33,26 +37,26 @@ import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 logger.appenders
-    .set("std-log", {
-        type: "stdout",
-        levels: ["debug", "info", "trace"]
-    })
-    .set("error-log", {
-        type: "stderr",
-        levels: ["fatal", "error", "warn"],
-        layout: {
-          type: "pattern",
-          pattern: "%d %p %c %X{user} %m%n"
-        }
-    })
-    .set("all-log-file", {
-        type: "file",
-        filename: `${__dirname}/app.log`,
-        layout:{
-            type: "json",
-            separator: ","
-        }
-    });
+  .set("std-log", {
+    type: "stdout",
+    levels: ["debug", "info", "trace"]
+  })
+  .set("error-log", {
+    type: "stderr",
+    levels: ["fatal", "error", "warn"],
+    layout: {
+      type: "pattern",
+      pattern: "%d %p %c %X{user} %m%n"
+    }
+  })
+  .set("all-log-file", {
+    type: "file",
+    filename: `${__dirname}/app.log`,
+    layout: {
+      type: "json",
+      separator: ","
+    }
+  });
 ```
 
 ## Shutdown
@@ -64,9 +68,7 @@ Use this when your programme exits to make sure all your logs are written to fil
 import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
-logger
-  .shutdown()
-  .then(() => {
-     console.log("Complete")
-  });
+logger.shutdown().then(() => {
+  console.log("Complete");
+});
 ```

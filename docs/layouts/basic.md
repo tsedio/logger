@@ -1,6 +1,6 @@
 # Basic layout
 
-* type - `basic`
+- type - `basic`
 
 Basic layout will output the timestamp, level, category, followed by the formatted log event data.
 
@@ -11,11 +11,12 @@ import {Logger} from "@tsed/logger";
 
 const logger = new Logger("loggerName");
 
-logger.appenders
-  .set("std-log", {
-      type: "stdout", layout: {type: "basic"}, level: ["debug", "info", "trace"]
-  });
-logger.debug('Log something');
+logger.appenders.set("std-log", {
+  type: "stdout",
+  layout: {type: "basic"},
+  level: ["debug", "info", "trace"]
+});
+logger.debug("Log something");
 ```
 
 This will output:

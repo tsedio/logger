@@ -92,7 +92,7 @@ export class LoggerAppenders {
    */
   toArray() {
     const array: any[] = [];
-    this._appenders.forEach(o => array.push(o));
+    this._appenders.forEach((o) => array.push(o));
     return array;
   }
 
@@ -108,10 +108,10 @@ export class LoggerAppenders {
     }
 
     const list = this.toArray()
-      .filter(appender =>
+      .filter((appender) =>
         appender.config.levels ? appender.config.levels.find((level: string) => level.toUpperCase() === loggingLevel.toString()) : true
       )
-      .map(appender => appender.instance);
+      .map((appender) => appender.instance);
 
     this._lvls.set(loggingLevel.toString(), list);
 
