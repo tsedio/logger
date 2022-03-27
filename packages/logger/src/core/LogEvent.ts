@@ -5,12 +5,17 @@ export class LogEvent {
   /**
    * Models a logging event.
    * @constructor
-   * @param {String} _categoryName name of category
-   * @param {LogLevel} _level level of message
-   * @param {Array} _data objects to log
-   * @param _context
+   * @param categoryName
+   * @param level
+   * @param data
+   * @param context
    */
-  constructor(private _categoryName: string, private _level: LogLevel, private _data: any[], private _context: LogContext) {}
+  constructor(
+    public readonly categoryName: string,
+    public readonly level: LogLevel,
+    public data: any[],
+    public readonly context: LogContext
+  ) {}
 
   private _startTime = new Date();
 
@@ -18,28 +23,15 @@ export class LogEvent {
     return this.data && this.data[0] && this.data[0].time ? this.data[0].time : this._startTime;
   }
 
-  public get categoryName(): string {
-    return this._categoryName;
-  }
-
-  public get level(): LogLevel {
-    return this._level;
-  }
-
+  /**
+   * @deprecated
+   */
   public get formatedLevel(): string {
+    return this.formattedLevel;
+  }
+
+  public get formattedLevel(): string {
     return (this.level.toString() + "     ").slice(0, 5);
-  }
-
-  public get data(): any[] {
-    return this._data;
-  }
-
-  public set data(data: any[]) {
-    this._data = data;
-  }
-
-  public get context(): LogContext {
-    return this._context;
   }
 
   public get cluster(): any {

@@ -9,7 +9,7 @@ export function timestampLevelAndCategory(loggingEvent: LogEvent, colour: any, t
     Util.format(
       "[%s] [%s] [%s] - ",
       dateFormat.asString(loggingEvent.startTime, timezoneOffset),
-      loggingEvent.formatedLevel,
+      loggingEvent.formattedLevel,
       loggingEvent.categoryName
     ),
     colour
