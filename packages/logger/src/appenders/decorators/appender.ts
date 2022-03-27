@@ -1,7 +1,7 @@
 import {AppendersRegistry} from "../registries/AppendersRegistry";
-import {IAppenderOptions} from "../class/BaseAppender";
+import {AppenderOptions} from "../class/BaseAppender";
 
-export function Appender(options: IAppenderOptions) {
+export function Appender(options: AppenderOptions) {
   return (target: any) => {
     target.prototype.appenderOptions = options;
     target.$name = options.name;

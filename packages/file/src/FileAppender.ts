@@ -97,10 +97,8 @@ export class FileAppender extends BaseAppender {
   public shutdown(): Promise<any> {
     process.removeListener("SIGHUP", this.listener);
 
-    return new Promise((resolve, reject) => {
-      this.writer.write("", "utf-8", () => {
-        this.writer.end(resolve);
-      });
+    return new Promise((resolve) => {
+      this.writer.end("", "utf-8", resolve);
     });
   }
 
@@ -145,9 +143,11 @@ export class FileAppender extends BaseAppender {
     } else {
       stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
     }
+
     stream.on("error", (err: any) => {
       console.error("FileAppender - Writing to file %s, error happened ", file, err);
     });
+
     return stream;
   }
 }
