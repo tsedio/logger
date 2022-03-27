@@ -2,7 +2,7 @@ import {LogEvent} from "../../core/LogEvent";
 import {Layouts} from "../../layouts/class/Layouts";
 import {AppenderConfiguration, PartialAppenderConfiguration} from "../interfaces/AppenderConfiguration";
 
-export interface IAppenderOptions {
+export interface AppenderOptions {
   name: string;
   defaultLayout?: string;
 }
@@ -52,30 +52,27 @@ export interface IBaseAppender {
  *
  */
 export abstract class BaseAppender implements IBaseAppender {
-  private _layout: any;
-  private appenderOptions: IAppenderOptions = {name: ""};
+  #layout: any;
+
+  public appenderOptions: AppenderOptions = {name: ""};
 
   [key: string]: any;
 
-  constructor(private _config: AppenderConfiguration) {
-    this.configure(_config);
+  constructor(public readonly config: AppenderConfiguration) {
+    this.configure(config);
 
     if (this["build"]) {
       this["build"]();
     }
   }
 
-  get config(): AppenderConfiguration {
-    return this._config;
-  }
-
   configure(config: PartialAppenderConfiguration) {
-    Object.assign(this._config, config);
+    Object.assign(this.config, config);
 
-    this._layout = Layouts.get(this.appenderOptions.defaultLayout || "colored", this._config);
+    this.#layout = Layouts.get(this.appenderOptions.defaultLayout || "colored", this.config);
 
-    if (this._config.layout) {
-      this._layout = Layouts.get(this._config.layout.type, this._config.layout);
+    if (this.config.layout) {
+      this.#layout = Layouts.get(this.config.layout.type, this.config.layout);
     }
     return this;
   }
@@ -85,7 +82,7 @@ export abstract class BaseAppender implements IBaseAppender {
    * @param args
    */
   layout(...args: any[]): string {
-    return this._layout.transform(...args);
+    return this.#layout.transform(...args);
   }
 
   abstract write(loggingEvent: LogEvent): any;
