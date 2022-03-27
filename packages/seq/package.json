@@ -40,8 +40,8 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
-    "seq-logging": "0.5.0",
-    "tslib": "2.3.0"
+    "seq-logging": "1.1.1",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
     "@tsed/logger": "6.1.0"

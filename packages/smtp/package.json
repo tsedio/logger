@@ -39,8 +39,8 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
-    "nodemailer": "^6.5.0",
-    "tslib": "2.3.0"
+    "nodemailer": "^6.7.3",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
     "@tsed/logger": "6.1.0",

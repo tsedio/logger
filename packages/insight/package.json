@@ -40,8 +40,8 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
-    "r7insight_node": "2.1.0",
-    "tslib": "2.3.0"
+    "r7insight_node": "3.2.1",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
     "@tsed/logger": "6.1.0"
