@@ -71,7 +71,7 @@ describe("Logger", () => {
     });
 
     it("should have a formatedLevel", () => {
-      expect(arg.formatedLevel).to.eq("DEBUG");
+      expect(arg.formattedLevel).to.eq("DEBUG");
     });
 
     it("should have a context", () => {
@@ -111,7 +111,7 @@ describe("Logger", () => {
     });
 
     it("should have a formatedLevel", () => {
-      expect(arg.formatedLevel).to.eq("INFO ");
+      expect(arg.formattedLevel).to.eq("INFO ");
     });
 
     it("should have a context", () => {
@@ -150,8 +150,8 @@ describe("Logger", () => {
       expect(arg.startTime).instanceof(Date);
     });
 
-    it("should have a formatedLevel", () => {
-      expect(arg.formatedLevel).to.eq("WARN ");
+    it("should have a formattedLevel", () => {
+      expect(arg.formattedLevel).to.eq("WARN ");
     });
 
     it("should have a context", () => {
@@ -190,8 +190,8 @@ describe("Logger", () => {
       expect(arg.startTime).instanceof(Date);
     });
 
-    it("should have a formatedLevel", () => {
-      expect(arg.formatedLevel).to.eq("TRACE");
+    it("should have a formattedLevel", () => {
+      expect(arg.formattedLevel).to.eq("TRACE");
     });
 
     it("should have a context", () => {
@@ -231,7 +231,7 @@ describe("Logger", () => {
     });
 
     it("should have a formatedLevel", () => {
-      expect(arg.formatedLevel).to.eq("ERROR");
+      expect(arg.formattedLevel).to.eq("ERROR");
     });
 
     it("should have a context", () => {
@@ -271,7 +271,7 @@ describe("Logger", () => {
     });
 
     it("should have a formatedLevel", () => {
-      expect(arg.formatedLevel).to.eq("FATAL");
+      expect(arg.formattedLevel).to.eq("FATAL");
     });
 
     it("should have a context", () => {
