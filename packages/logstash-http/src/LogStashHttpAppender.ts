@@ -43,7 +43,7 @@ export class LogStashHttpAppender extends BaseAppender {
   }
 
   write(loggingEvent: LogEvent) {
-    const {url, application, logType, logChannel} = this.config.options;
+    const {application, logType, logChannel} = this.config.options;
     const level = loggingEvent.level.toString().toLowerCase();
 
     if (level !== "off") {
