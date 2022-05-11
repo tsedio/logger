@@ -117,7 +117,7 @@ export class FileAppender extends BaseAppender {
     numBackups = numBackups === undefined ? 5 : numBackups;
     // there has to be at least one backup if logSize has been specified
     numBackups = numBackups === 0 ? 1 : numBackups;
-
+    this.config.maxSize = logSize; // this needs to be added as streamroller uses maxSize while tsed is using maxLogSize as logSize
     this.writer = this.openTheStream(file, logSize, numBackups, pattern, this.config);
     // On SIGHUP, close and reopen all files. This allows this appender to work with
     // logrotate. Note that if you are using logrotate, you should not set
@@ -138,7 +138,9 @@ export class FileAppender extends BaseAppender {
    */
   private openTheStream(file: string, fileSize: number | undefined, numFiles: number, pattern: string | undefined, options: any) {
     let stream = null;
-    if (pattern) {
+    if (pattern && fileSize && file) {
+      stream = new streams.RollingFileWriteStream(file, options); // Since the whole object is present in options, pattern would be taken from it.
+    } else if (pattern) {
       stream = new streams.DateRollingFileStream(file, pattern, options);
     } else {
       stream = new streams.RollingFileStream(file, fileSize, numFiles, options);
