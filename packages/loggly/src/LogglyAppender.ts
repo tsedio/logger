@@ -49,13 +49,12 @@ export class LogglyAppender extends BaseAppender {
       // Replace the data property with the deTaggedData
       loggingEvent.data = deTaggedData;
 
-      const msg = this.layout(loggingEvent);
-
       this.openRequests += 1;
 
       this.logger.log(
         {
-          msg: msg,
+          data: this.getData(),
+          msg: this.getMessage(),
           level,
           category: loggingEvent.categoryName,
           hostname: os.hostname().toString()
@@ -63,7 +62,7 @@ export class LogglyAppender extends BaseAppender {
         additionalTags,
         (error) => {
           if (error) {
-            console.error("TsLogger.logglyAppender - error occurred: ", error);
+            console.error("Ts.ED Logger.logglyAppender - error occurred: ", error);
           }
 
           this.openRequests -= 1;

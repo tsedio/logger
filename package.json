@@ -44,7 +44,7 @@
   "dependencies": {
     "colors": "1.4.0",
     "date-format": "^4.0.6",
-    "lerna": "4.0.0",
+    "lerna": "^5.0.0",
     "nodemailer": "^6.7.3",
     "semver": "^7.3.5",
     "streamroller": "^3.0.6",
