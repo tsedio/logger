@@ -3,36 +3,42 @@ import {Appender} from "../../../src";
 import {BaseAppender} from "../../../src/appenders/class/BaseAppender";
 import {LogEvent} from "../../../src/core/LogEvent";
 import {levels} from "../../../src/core/LogLevel";
-import {assert, expect} from "chai";
 
 @Appender({name: "test2"})
 class TestAppender extends BaseAppender {
-  write(loggingEvent: LogEvent) {}
+  write(loggingEvent: LogEvent) {
+  }
 }
 
 describe("LoggerAppenders", () => {
   let appenders: any;
-  before(() => {
+  beforeAll(() => {
     appenders = new LoggerAppenders();
     appenders.set("custom", {type: "test2", levels: ["debug"]});
   });
 
   describe("byLogLevel()", () => {
     let result: any;
-    before(() => {
+    beforeAll(() => {
       result = appenders.byLogLevel(levels().DEBUG);
     });
 
     describe("when appender exists", () => {
       it("should returns all appenders for a given level", () => {
-        expect(result).to.be.an("array");
-        expect(result[0]).instanceof(TestAppender);
+        expect(Array.isArray(result)).toEqual(true);
+        expect(result[0]).toBeInstanceOf(TestAppender);
       });
     });
 
     describe("when appender doesn't exists", () => {
       it("should throw an error", () => {
-        assert.throws(() => appenders.set("unknow", {type: "unknow"}), "");
+        let error: any;
+        try {
+          appenders.set("unknow", {type: "unknow"});
+        } catch (er) {
+          error = er;
+        }
+        expect(error.message).toContain("Appender unknow doesn't exists. Check your configuration");
       });
     });
 
@@ -47,77 +53,77 @@ describe("LoggerAppenders", () => {
       it("when cleared should have no appenders", () => {
         cachedAppenders.clear();
         result = cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(result).to.be.an("array").lengthOf(0);
+        expect(result).toHaveLength(0);
       });
       it("when deleted should have no appenders", () => {
         cachedAppenders.delete("custom");
         result = cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(result).to.be.an("array").lengthOf(0);
+        expect(result).toHaveLength(0);
       });
       it("when deleted should have no appenders", () => {
         cachedAppenders.set("custom2", {type: "test2", levels: ["debug"]});
         result = cachedAppenders.byLogLevel(levels().DEBUG);
-        expect(result).to.be.an("array").lengthOf(2);
+        expect(result).toHaveLength(2);
       });
     });
   });
 
   describe("has()", () => {
     it("should return true", () => {
-      expect(appenders.has("custom")).to.be.true;
+      expect(appenders.has("custom")).toBe(true);
     });
     it("should return false", () => {
-      expect(appenders.has("custom2")).to.be.false;
+      expect(appenders.has("custom2")).toBe(false);
     });
   });
 
   describe("get()", () => {
     it("should return configuration", () => {
-      expect(!!appenders.get("custom")).to.be.true;
+      expect(!!appenders.get("custom")).toBe(true);
     });
     it("should return false", () => {
-      expect(!!appenders.get("custom2")).to.be.false;
+      expect(!!appenders.get("custom2")).toBe(false);
     });
   });
 
   describe("forEach()", () => {
     let result: any;
-    before(() => {
+    beforeAll(() => {
       result = [];
       appenders.forEach((o: any) => result.push(o));
     });
     it("should return all elements", () => {
-      expect(result).to.be.an("array").and.length(1);
+      expect(result).toHaveLength(1);
     });
   });
 
   describe("toArray()", () => {
     it("should return all elements", () => {
-      expect(appenders.toArray()).to.be.an("array").and.length(1);
+      expect(appenders.toArray()).toHaveLength(1);
     });
   });
 
   describe("delete()", () => {
-    before(() => {
+    beforeAll(() => {
       appenders.set("custom2", {type: "test2", levels: ["debug"]});
     });
 
     it("should return configuration", () => {
-      expect(appenders.delete("custom2")).to.be.true;
+      expect(appenders.delete("custom2")).toBe(true);
     });
   });
 
   describe("clear()", () => {
-    before(() => {
+    beforeAll(() => {
       appenders.clear();
     });
 
-    after(() => {
+    afterAll(() => {
       appenders.set("custom", {type: "test2", levels: ["debug"]});
     });
 
     it("should return configuration", () => {
-      expect(appenders.size).to.eq(0);
+      expect(appenders.size).toEqual(0);
     });
   });
 });

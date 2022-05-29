@@ -1,46 +1,39 @@
-import * as Sinon from "sinon";
-import {expect} from "chai";
 import {levels, LogEvent} from "@tsed/logger";
 import {FileAppender} from "../src";
 
 describe("FileAppender", () => {
-  it("should log something", () => {
+  afterEach(() => jest.resetAllMocks());
+  it("should log something", async () => {
     // GIVEN
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
     const appender = new FileAppender({type: "console", filename: "log.log"});
 
-    const writeStub = Sinon.stub((appender as any).writer, "write");
+    const writeStub = jest.spyOn((appender as any).writer, "write").mockReturnValue(undefined);
 
     appender.write(logEvent);
 
     // WHEN
-    appender.shutdown();
-    appender.reopen();
+    await appender.shutdown();
+    await appender.reopen();
 
     // THEN
-    writeStub.should.have.been.called;
-    expect(writeStub.getCall(0).args[0]).to.contains("[DEBUG] [test]");
-
-    writeStub.restore();
+    expect(writeStub).toHaveBeenCalledWith(expect.stringContaining("[DEBUG] [test]"), "utf8");
   });
 
-  it("Date rolling (should log something)", () => {
+  it("Date rolling (should log something)", async () => {
     // GIVEN
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
     const appender = new FileAppender({type: "console", filename: "log.log", pattern: ".yyyy-MM-dd"});
 
-    const writeStub = Sinon.stub((appender as any).writer, "write");
+    const writeStub = jest.spyOn((appender as any).writer, "write");
 
     appender.write(logEvent);
 
     // WHEN
-    appender.shutdown();
-    appender.reopen();
+    await appender.shutdown();
+    await appender.reopen();
 
     // THEN
-    writeStub.should.have.been.called;
-    expect(writeStub.getCall(0).args[0]).to.contains("[DEBUG] [test]");
-
-    writeStub.restore();
+    expect(writeStub).toHaveBeenCalledWith(expect.stringContaining("[DEBUG] [test]"), "utf8");
   });
 });

@@ -1,6 +1,5 @@
 import {LogEvent} from "../../src/core/LogEvent";
 import {levels, LogContext} from "@tsed/logger";
-import {expect} from "chai";
 
 describe("LogEvent", () => {
   it("should create a new logevent (data)", () => {
@@ -13,10 +12,10 @@ describe("LogEvent", () => {
       new LogContext()
     );
 
-    expect(event.getData()).to.deep.eq({
+    expect(event.getData()).toEqual({
       "test": "test"
     });
-    expect(event.getMessage()).to.deep.eq(undefined);
+    expect(event.getMessage()).toBeUndefined();
   });
 
   it("should create a new logevent (message)", () => {
@@ -27,7 +26,7 @@ describe("LogEvent", () => {
       new LogContext()
     );
 
-    expect(event.getData()).to.deep.eq({});
-    expect(event.getMessage()).to.deep.eq(["message"]);
+    expect(event.getData()).toEqual({});
+    expect(event.getMessage()).toEqual(["message"]);
   });
 });

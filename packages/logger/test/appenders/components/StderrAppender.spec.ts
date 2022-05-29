@@ -1,23 +1,16 @@
 import {StderrAppender} from "../../../src/appenders/components/StderrAppender";
 import {levels, LogEvent} from "../../../src";
-import * as Sinon from "sinon";
 
 describe("StderrAppender", () => {
-  let logEvent: any, appender: any;
-  before(() => {
-    logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
-    appender = new StderrAppender({type: "console"});
-    Sinon.stub(appender, "log");
+  it("should log something", () => {
+    const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
+    const appender = new StderrAppender({type: "console"});
+
+    jest.spyOn(appender, "log").mockReturnValue(undefined);
 
     appender.write(logEvent);
-  });
 
-  after(() => {
-    appender.log.restore();
-  });
-
-  it("should log something", () => {
-    appender.log.should.have.been.calledOnce;
-    appender.log.should.have.been.calledWithMatch("[DEBUG] [test] -");
+    expect((appender as any).log).toBeCalledTimes(1);
+    expect((appender as any).log).toHaveBeenCalledWith(expect.stringContaining("[DEBUG] [test] -"));
   });
 });
