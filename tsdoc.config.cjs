@@ -6,12 +6,5 @@ module.exports = {
   baseUrl: "/api",
   jsonOutputDir: "<rootDir>/docs/.vuepress/public",
   scope: "@tsed",
-  modules: {
-    logger: {
-      appenders: "logger/appenders",
-      core: "logger/core",
-      layouts: "logger/layouts",
-      logger: "logger/logger"
-    }
-  }
+  modules: {}
 };

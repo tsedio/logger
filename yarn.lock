@@ -3072,10 +3072,10 @@
   resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-3.20.4.tgz#150708290db4880cf752a1aab717b8c602c65d04"
   integrity sha512-c6E8P5Z6BHq79I//lSfmNxOSdEvqZ+WPKrc3BMcxE8/qjIq/czWruSvaVYya5ihiSJqZvHdmJWP8plJbENUcYA==
 
-"@tsed/monorepo-utils@1.20.2":
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/@tsed/monorepo-utils/-/monorepo-utils-1.20.2.tgz#c01cd7d7e472db2f49b08551cf6b8067f25fbcd0"
-  integrity sha512-TORgf6YM/vSw197IydgS9K6d4pZXC6FvZZDtE2q5XRmd5iBh0MoQOEkC2FgDo+A8exXmE5WToH5F3Gt9FQnvcQ==
+"@tsed/monorepo-utils@^1.21.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@tsed/monorepo-utils/-/monorepo-utils-1.21.0.tgz#d9de48de56fa3225b7e75b57c3cbc074385ca30a"
+  integrity sha512-9RnJCJGVrtcV3x4/AZxL0nWVzeb768aHbg+YZOawsP30NTaxmJjT6cZOWXydPFAx3MwcAlYdnSsuky6hAIf6jQ==
   dependencies:
     "@typescript-eslint/typescript-estree" "5.12.0"
     axios "0.21.1"
@@ -3094,6 +3094,21 @@
     normalize-path "3.0.0"
     read-package-json "2.1.2"
     semver "7.3.2"
+
+"@tsed/ts-doc@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@tsed/ts-doc/-/ts-doc-4.1.0.tgz#623d6f52f6ed44b501577b4df9fee64b27ef7723"
+  integrity sha512-AJ/e0nojaMEHfCF/duZszuzuz/gM8wJkKtNsg6voI9mLg+wGRg4h7vvoefZ9QpPcbeJfNWDiMFzAFAblcuUKKg==
+  dependencies:
+    chalk "3.0.0"
+    ejs "2.7.1"
+    fancy-log "1.3.3"
+    fs-extra "8.1.0"
+    glob "7.1.6"
+    globby "8.0.2"
+    listr "^0.14.3"
+    normalize-path "3.0.0"
+    read-pkg-up "7.0.0"
 
 "@tsed/vuepress-common@3.14.3":
   version "3.14.3"
@@ -3126,21 +3141,6 @@
   integrity sha512-XDIh5yCtFUHIDbBq917+GBt4AUGQGqYl2Vw7Md9t1qRLNJufDnBxEtyUNNaYK9B6k1bVpD6zwz3G6G6650HxXg==
   dependencies:
     tailwindcss "1.9.6"
-
-"@typedproject/ts-doc@4.0.13":
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/@typedproject/ts-doc/-/ts-doc-4.0.13.tgz#6b1ae07112a64fbe603c167bc202e55c161b9089"
-  integrity sha512-4TCdSCadk4IomdSqMDCiXjj2xuUpYW4FUsmoE8JEanL5HvXdaz4ZSQWvIZ2JRPN0LU5rKfXnV5R9E6n13ONwiw==
-  dependencies:
-    chalk "3.0.0"
-    ejs "2.7.1"
-    fancy-log "1.3.3"
-    fs-extra "8.1.0"
-    glob "7.1.6"
-    globby "8.0.2"
-    listr "^0.14.3"
-    normalize-path "3.0.0"
-    read-pkg-up "7.0.0"
 
 "@types/amqplib@^0.8.2":
   version "0.8.2"
