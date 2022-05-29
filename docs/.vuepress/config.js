@@ -40,9 +40,9 @@ module.exports = {
     repo: "tsedio/logger",
     githubProxyUrl: "https://api.tsed.io/rest/github/tsedio/logger",
     openCollective: "https://api.tsed.io/rest/opencollective",
-    slackUrl: "https://api.tsed.io/rest/slack/tsedio/tsed",
+    slackUrl: "https://tsed.io/pricing.html",
     stackoverflowUrl: "https://stackoverflow.com/search?q=tsed",
-    sponsorUrl: "https://tsed.io/support.html",
+    sponsorUrl: "https://tsed.io/sponsors.html",
     twitterUrl: "https://twitter.com/TsED_io",
     editLinks: true,
     docsDir: "docs",
@@ -152,7 +152,7 @@ module.exports = {
               },
               {
                 text: "Support",
-                link: "https://tsed.io/support.md"
+                link: "https://tsed.io/sponsors.md"
               },
               {
                 text: "License",
@@ -256,7 +256,7 @@ module.exports = {
                 },
                 {
                   label: "Chat with us",
-                  url: "https://api.tsed.io/rest/slack/tsedio/tsed"
+                  url: "https://tsed.io/pricing.html"
                 },
                 {
                   label: "Contribution guide",
@@ -268,12 +268,16 @@ module.exports = {
               title: "Support",
               items: [
                 {
+                  label: "Pricing",
+                  url:  "https://tsed.io/pricing.html"
+                },
+                {
                   label: "Issues",
                   url: "https://github.com/tsedio/tsed/issues"
                 },
                 {
                   label: "Sponsoring & donations",
-                  url: "https://tsed.io/support.html"
+                  url: "https://tsed.io/sponsors.html"
                 }
               ]
             }
