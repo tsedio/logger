@@ -41,4 +41,16 @@ export class LogEvent {
   public get pid() {
     return this.context.get("pid");
   }
+
+  public isMessage() {
+    return this.data.length && typeof this.data[0] !== "object";
+  }
+
+  public getData() {
+    return !this.isMessage() ? this.data[0] : {};
+  }
+
+  public getMessage() {
+    return this.isMessage() ? this.data : undefined;
+  }
 }
