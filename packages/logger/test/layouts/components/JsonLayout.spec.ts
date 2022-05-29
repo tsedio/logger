@@ -1,7 +1,6 @@
 import {LogEvent} from "../../../src/core/LogEvent";
 import {levels} from "../../../src/core/LogLevel";
 import {JsonLayout} from "../../../src/layouts/components/JsonLayout";
-import {expect} from "chai";
 import {LogContext} from "../../../src";
 
 describe("JsonLayout", () => {
@@ -20,15 +19,13 @@ describe("JsonLayout", () => {
       const result = layout.transform(logEvent);
 
       // @ts-ignore
-      expect(result).to.eq(
-        JSON.stringify({
-          user: "romain",
-          startTime: logEvent.startTime,
-          categoryName: "category",
-          level: "DEBUG",
-          data: ["data"]
-        }) + ","
-      );
+      expect(result).toEqual(JSON.stringify({
+        user: "romain",
+        startTime: logEvent.startTime,
+        categoryName: "category",
+        level: "DEBUG",
+        data: ["data"]
+      }) + ",");
     });
     it("should return a formatted object", () => {
       const layout = new JsonLayout({
@@ -54,22 +51,20 @@ describe("JsonLayout", () => {
       const result = layout.transform(logEvent);
 
       // @ts-ignore
-      expect(result).to.eq(
-        JSON.stringify({
-          user: "romain",
-          startTime: logEvent.startTime,
-          categoryName: "category",
-          level: "DEBUG",
-          test: "test",
-          data: ["hello"]
-        }) + ","
-      );
+      expect(result).toEqual(JSON.stringify({
+        user: "romain",
+        startTime: logEvent.startTime,
+        categoryName: "category",
+        level: "DEBUG",
+        test: "test",
+        data: ["hello"]
+      }) + ",");
     });
   });
 
   describe("when separator isn't given", () => {
     let logEvent: any, layout: any, result: any;
-    before(() => {
+    beforeAll(() => {
       layout = new JsonLayout({
         type: "json"
       });
@@ -82,15 +77,13 @@ describe("JsonLayout", () => {
     });
 
     it("should return a formatted string", () => {
-      expect(result).to.eq(
-        JSON.stringify({
-          user: "romain",
-          startTime: logEvent._startTime,
-          categoryName: "category",
-          level: "DEBUG",
-          data: ["data"]
-        })
-      );
+      expect(result).toEqual(JSON.stringify({
+        user: "romain",
+        startTime: logEvent._startTime,
+        categoryName: "category",
+        level: "DEBUG",
+        data: ["data"]
+      }));
     });
   });
 });

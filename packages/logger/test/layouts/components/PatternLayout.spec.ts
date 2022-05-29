@@ -1,7 +1,6 @@
 import {PatternLayout} from "../../../src/layouts/components/PatternLayout";
 import {LogEvent} from "../../../src/core/LogEvent";
 import {levels} from "../../../src/core/LogLevel";
-import {expect} from "chai";
 import * as os from "os";
 // @ts-ignore
 import * as dateFormat from "date-format";
@@ -12,7 +11,7 @@ describe("PatternLayout", () => {
   let logEvent: any, layout: any, result: any;
 
   describe("when have data", () => {
-    before(() => {
+    beforeAll(() => {
       layout = new PatternLayout({
         type: "pattern",
         pattern: "%d %p %c %x{user} %5.10p - %m%n",
@@ -31,13 +30,13 @@ describe("PatternLayout", () => {
     });
 
     it("should return a formatted string", () => {
-      expect(result).to.eq("2017-06-18T22:29:38.234 DEBUG category romain DEBUG - data\n");
+      expect(result).toEqual("2017-06-18T22:29:38.234 DEBUG category romain DEBUG - data\n");
     });
   });
 
   describe("when have an error", () => {
-    before(() => {
-      layout = new PatternLayout({
+    it("should return a formatted string", () => {
+      const layout = new PatternLayout({
         type: "pattern",
         pattern: "%d %p %c %x{user} %5.10p - %m%n",
         tokens: {
@@ -51,16 +50,14 @@ describe("PatternLayout", () => {
       context.set("user", "romain");
       const logEvent = new LogEvent("multiple.levels.of.tests", levels().DEBUG, [new Error("test")], context);
       (logEvent as any)._startTime = new Date("2017-06-18 22:29:38.234");
-      result = layout.transform(logEvent);
-    });
+      const result = layout.transform(logEvent);
 
-    it("should return a formatted string", () => {
-      expect(result).to.contain("Error: test");
+      expect(result).toEqual(expect.stringContaining("Error: test"));
     });
   });
   describe("layout test", () => {
     let tokens: any, testPattern: any;
-    before(() => {
+    beforeAll(() => {
       tokens = {
         testString: "testStringToken",
         testFunction: function () {
@@ -82,7 +79,7 @@ describe("PatternLayout", () => {
           tokens
         });
 
-        expect(layout.transform(logEvent)).to.eq(value);
+        expect(layout.transform(logEvent)).toEqual(value);
       };
     });
 

@@ -1,6 +1,4 @@
 import {Appender, BaseAppender, BaseLayout, Layout, LogEvent, Logger, LogLevel} from "@tsed/logger";
-import * as Sinon from "sinon";
-import {assert, expect} from "chai";
 
 @Layout({name: "test"})
 class TestLayout extends BaseLayout {
@@ -9,7 +7,7 @@ class TestLayout extends BaseLayout {
   }
 }
 
-const stub = Sinon.stub();
+const stub = jest.fn();
 
 @Appender({name: "test"})
 class TestAppender extends BaseAppender {
@@ -18,284 +16,151 @@ class TestAppender extends BaseAppender {
   }
 }
 
+function createLoggerFixture() {
+  const logger = new Logger();
+  logger.name = "loggerName";
+  logger.start();
+  logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
+
+  return {logger};
+}
+
 describe("Logger", () => {
-  let logger: Logger;
-  before(() => {
-    logger = new Logger();
-    logger.name = "loggerName";
-    logger.start();
-    logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
+  afterEach(() => {
+    stub.mockReset();
   });
-
-  it("should return log name", () => {
-    expect(logger.name).to.eq("loggerName");
-  });
-
-  it("should return context", () => {
-    expect(logger.context).instanceof(Map);
-  });
-
-  it("should return level", () => {
-    expect(logger.level).to.eq("ALL");
+  it("should return logger", () => {
+    const {logger} = createLoggerFixture();
+    expect(logger.name).toEqual("loggerName");
+    expect(logger.context).toBeInstanceOf(Map);
+    expect(logger.level).toEqual("ALL");
   });
 
   describe("debug()", () => {
-    let arg: any;
-    before(() => {
-      logger.debug("test");
-      arg = stub.getCall(0).args[0];
-    });
-    after(() => {
-      stub.reset();
-    });
-
     it("should call layout", () => {
-      stub.should.have.been.calledOnce;
-    });
+      const {logger} = createLoggerFixture();
 
-    it("should have a categoryName", () => {
-      expect(arg.categoryName).to.eq("loggerName");
-    });
+      logger.debug("test");
 
-    it("should have a logLevel", () => {
-      expect(arg.level).instanceof(LogLevel);
-      expect(arg.level.toString()).to.equal("DEBUG");
-    });
-
-    it("should have a data", () => {
-      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
-    });
-
-    it("should have a startTime", () => {
-      expect(arg.startTime).instanceof(Date);
-    });
-
-    it("should have a formatedLevel", () => {
-      expect(arg.formattedLevel).to.eq("DEBUG");
-    });
-
-    it("should have a context", () => {
-      expect(arg.context).instanceof(Map);
+      const arg = stub.mock.calls[0][0];
+      expect(stub).toBeCalledTimes(1);
+      expect(arg.categoryName).toEqual("loggerName");
+      expect(arg.level).toBeInstanceOf(LogLevel);
+      expect(arg.level.toString()).toEqual("DEBUG");
+      expect(arg.data).toEqual(["test"]);
+      expect(arg.startTime).toBeInstanceOf(Date);
+      expect(arg.formattedLevel).toEqual("DEBUG");
+      expect(arg.context).toBeInstanceOf(Map);
     });
   });
 
   describe("info()", () => {
-    let arg: any;
-    before(() => {
-      logger.info("test");
-      arg = stub.getCall(0).args[0];
-    });
-    after(() => {
-      stub.reset();
-    });
-
     it("should call layout", () => {
-      stub.should.have.been.calledOnce;
-    });
+      const {logger} = createLoggerFixture();
+      logger.info("test");
 
-    it("should have a categoryName", () => {
-      expect(arg.categoryName).to.eq("loggerName");
-    });
+      const arg = stub.mock.calls[0][0];
 
-    it("should have a logLevel", () => {
-      expect(arg.level).instanceof(LogLevel);
-      expect(arg.level.toString()).to.equal("INFO");
-    });
-
-    it("should have a data", () => {
-      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
-    });
-
-    it("should have a startTime", () => {
-      expect(arg.startTime).instanceof(Date);
-    });
-
-    it("should have a formatedLevel", () => {
-      expect(arg.formattedLevel).to.eq("INFO ");
-    });
-
-    it("should have a context", () => {
-      expect(arg.context).instanceof(Map);
+      expect(stub).toBeCalledTimes(1);
+      expect(arg.categoryName).toEqual("loggerName");
+      expect(arg.level).toBeInstanceOf(LogLevel);
+      expect(arg.level.toString()).toEqual("INFO");
+      expect(arg.data).toEqual(["test"]);
+      expect(arg.startTime).toBeInstanceOf(Date);
+      expect(arg.formattedLevel).toEqual("INFO ");
+      expect(arg.context).toBeInstanceOf(Map);
     });
   });
 
   describe("warn()", () => {
-    let arg: any;
-    before(() => {
-      logger.warn("test");
-      arg = stub.getCall(0).args[0];
-    });
-    after(() => {
-      stub.reset();
-    });
-
     it("should call layout", () => {
-      stub.should.have.been.calledOnce;
-    });
+      const {logger} = createLoggerFixture();
+      logger.warn("test");
+      const arg = stub.mock.calls[0][0];
 
-    it("should have a categoryName", () => {
-      expect(arg.categoryName).to.eq("loggerName");
-    });
-
-    it("should have a logLevel", () => {
-      expect(arg.level).instanceof(LogLevel);
-      expect(arg.level.toString()).to.equal("WARN");
-    });
-
-    it("should have a data", () => {
-      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
-    });
-
-    it("should have a startTime", () => {
-      expect(arg.startTime).instanceof(Date);
-    });
-
-    it("should have a formattedLevel", () => {
-      expect(arg.formattedLevel).to.eq("WARN ");
-    });
-
-    it("should have a context", () => {
-      expect(arg.context).instanceof(Map);
+      expect(stub).toBeCalledTimes(1);
+      expect(arg.categoryName).toEqual("loggerName");
+      expect(arg.level).toBeInstanceOf(LogLevel);
+      expect(arg.level.toString()).toEqual("WARN");
+      expect(arg.data).toEqual(["test"]);
+      expect(arg.startTime).toBeInstanceOf(Date);
+      expect(arg.formattedLevel).toEqual("WARN ");
+      expect(arg.context).toBeInstanceOf(Map);
     });
   });
 
   describe("trace()", () => {
-    let arg: any;
-    before(() => {
-      logger.trace("test");
-      arg = stub.getCall(0).args[0];
-    });
-    after(() => {
-      stub.reset();
-    });
-
     it("should call layout", () => {
-      stub.should.have.been.calledOnce;
-    });
+      const {logger} = createLoggerFixture();
+      logger.trace("test");
+      const arg = stub.mock.calls[0][0];
 
-    it("should have a categoryName", () => {
-      expect(arg.categoryName).to.eq("loggerName");
-    });
-
-    it("should have a logLevel", () => {
-      expect(arg.level).instanceof(LogLevel);
-      expect(arg.level.toString()).to.equal("TRACE");
-    });
-
-    it("should have a data", () => {
-      expect(arg.data).to.be.an("array").and.length(2);
-    });
-
-    it("should have a startTime", () => {
-      expect(arg.startTime).instanceof(Date);
-    });
-
-    it("should have a formattedLevel", () => {
-      expect(arg.formattedLevel).to.eq("TRACE");
-    });
-
-    it("should have a context", () => {
-      expect(arg.context).instanceof(Map);
+      expect(stub).toBeCalledTimes(1);
+      expect(arg.categoryName).toEqual("loggerName");
+      expect(arg.level).toBeInstanceOf(LogLevel);
+      expect(arg.level.toString()).toEqual("TRACE");
+      expect(arg.data).toHaveLength(2);
+      expect(arg.startTime).toBeInstanceOf(Date);
+      expect(arg.formattedLevel).toEqual("TRACE");
+      expect(arg.context).toBeInstanceOf(Map);
     });
   });
 
   describe("error()", () => {
-    let arg: any;
-    before(() => {
-      logger.error("test");
-      arg = stub.getCall(0).args[0];
-    });
-    after(() => {
-      stub.reset();
-    });
-
     it("should call layout", () => {
-      stub.should.have.been.calledOnce;
-    });
+      const {logger} = createLoggerFixture();
+      logger.error("test");
 
-    it("should have a categoryName", () => {
-      expect(arg.categoryName).to.eq("loggerName");
-    });
+      const arg = stub.mock.calls[0][0];
 
-    it("should have a logLevel", () => {
-      expect(arg.level).instanceof(LogLevel);
-      expect(arg.level.toString()).to.equal("ERROR");
-    });
-
-    it("should have a data", () => {
-      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
-    });
-
-    it("should have a startTime", () => {
-      expect(arg.startTime).instanceof(Date);
-    });
-
-    it("should have a formatedLevel", () => {
-      expect(arg.formattedLevel).to.eq("ERROR");
-    });
-
-    it("should have a context", () => {
-      expect(arg.context).instanceof(Map);
+      expect(stub).toBeCalledTimes(1);
+      expect(arg.categoryName).toEqual("loggerName");
+      expect(arg.level).toBeInstanceOf(LogLevel);
+      expect(arg.level.toString()).toEqual("ERROR");
+      expect(arg.data).toEqual(["test"]);
+      expect(arg.startTime).toBeInstanceOf(Date);
+      expect(arg.formattedLevel).toEqual("ERROR");
+      expect(arg.context).toBeInstanceOf(Map);
     });
   });
 
   describe("fatal()", () => {
-    let arg: any;
-    before(() => {
-      logger.fatal("test");
-      arg = stub.getCall(0).args[0];
-    });
-    after(() => {
-      stub.reset();
-    });
-
     it("should call layout", () => {
-      stub.should.have.been.calledOnce;
-    });
+      const {logger} = createLoggerFixture();
+      logger.fatal("test");
 
-    it("should have a categoryName", () => {
-      expect(arg.categoryName).to.eq("loggerName");
-    });
+      const arg = stub.mock.calls[0][0];
 
-    it("should have a logLevel", () => {
-      expect(arg.level).instanceof(LogLevel);
-      expect(arg.level.toString()).to.equal("FATAL");
-    });
-
-    it("should have a data", () => {
-      expect(arg.data).to.be.an("array").and.to.deep.eq(["test"]);
-    });
-
-    it("should have a startTime", () => {
-      expect(arg.startTime).instanceof(Date);
-    });
-
-    it("should have a formatedLevel", () => {
-      expect(arg.formattedLevel).to.eq("FATAL");
-    });
-
-    it("should have a context", () => {
-      expect(arg.context).instanceof(Map);
+      expect(stub).toBeCalledTimes(1);
+      expect(arg.categoryName).toEqual("loggerName");
+      expect(arg.level).toBeInstanceOf(LogLevel);
+      expect(arg.level.toString()).toEqual("FATAL");
+      expect(arg.data).toEqual(["test"]);
+      expect(arg.startTime).toBeInstanceOf(Date);
+      expect(arg.formattedLevel).toEqual("FATAL");
+      expect(arg.context).toBeInstanceOf(Map);
     });
   });
 
   describe("stop()", () => {
-    before(() => {
+    beforeAll(() => {
+      const {logger} = createLoggerFixture();
       logger.stop();
       logger.fatal("test");
       logger.start();
     });
-    after(() => {
-      stub.reset();
+    afterAll(() => {
+      stub.mockReset();
     });
 
     it("should call layout", () => {
-      stub.should.not.have.been.called;
+      expect(stub).not.toBeCalled();
     });
   });
 
   describe("printTable()", () => {
-    before(() => {
+    it("should call layout", () => {
+      const {logger} = createLoggerFixture();
       logger.printTable(
         [
           {
@@ -324,19 +189,13 @@ describe("Logger", () => {
           }
         }
       );
-    });
-    after(() => {
-      stub.reset();
-    });
-
-    it("should call layout", () => {
-      stub.should.been.called;
+      expect(stub).toBeCalled();
     });
   });
 
   describe("shutdown()", () => {
     it("should stop logger", async () => {
-      logger = new Logger();
+      const logger = new Logger();
       logger.name = "loggerName";
       logger.start();
       logger.appenders.set("custom", {type: "test", layout: {type: "test"}});
@@ -347,8 +206,16 @@ describe("Logger", () => {
 
   describe("when appender doesn't exists", () => {
     it("should throw an error", () => {
-      // @ts-ignore
-      assert.throws(() => logger.appenders.push({type: "unknown"}), "");
+      const logger = new Logger();
+
+      let error;
+      try {
+        logger.appenders.set("unknown", {} as any);
+      } catch (er) {
+        error = er;
+      }
+
+      expect(error.message).toContain("Appender undefined doesn't exists. Check your configuration");
     });
   });
 });

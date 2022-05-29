@@ -1,9 +1,7 @@
 import {BaseAppender, LogEvent} from "../../../src";
 import {levels} from "../../../src/core/LogLevel";
-import * as Sinon from "sinon";
-import {expect} from "chai";
 
-const buildStub = Sinon.stub();
+const buildStub = jest.fn();
 
 class TestAppender extends BaseAppender {
   write(loggingEvent: LogEvent) {
@@ -16,21 +14,16 @@ class TestAppender extends BaseAppender {
 }
 
 describe("BaseAppender", () => {
-  let logEvent: any;
-  let testAppender: any;
-  before(() => {
-    logEvent = new LogEvent("test", levels().DEBUG, [""], new Map());
-    testAppender = new TestAppender({type: "console"});
-    testAppender.write(logEvent);
-  });
 
-  describe("build()", () => {
-    it("should have been called", () => buildStub.should.have.been.calledOnce);
-  });
 
   describe("config()", () => {
     it("should return configuration", () => {
-      expect(testAppender.config).to.deep.eq({type: "console"});
+      const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
+      const testAppender = new TestAppender({type: "console"});
+      testAppender.write(logEvent);
+
+      expect(buildStub).toBeCalledTimes(1);
+      expect(testAppender.config).toEqual({type: "console"});
     });
   });
 });
