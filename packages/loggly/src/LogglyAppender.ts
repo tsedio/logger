@@ -53,8 +53,8 @@ export class LogglyAppender extends BaseAppender {
 
       this.logger.log(
         {
-          data: this.getData(),
-          msg: this.getMessage(),
+          data: loggingEvent.getData(),
+          msg: loggingEvent.getMessage(),
           level,
           category: loggingEvent.categoryName,
           hostname: os.hostname().toString()
