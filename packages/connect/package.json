@@ -1,0 +1,51 @@
+{
+  "name": "@tsed/logger-connect",
+  "version": "6.1.4",
+  "description": "Connect Ts.ED logger with another logger that implement the expected interface",
+  "source": "./src/index.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "typings": "./lib/types/index.d.ts",
+  "exports": {
+    "types": "./lib/types/index.d.ts",
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.js",
+    "default": "./lib/esm/index.js"
+  },
+  "scripts": {
+    "build": "yarn barrels && yarn run build:esm && yarn run build:cjs",
+    "build:cjs": "tsc --build tsconfig.compile.json",
+    "build:esm": "tsc --build tsconfig.compile.esm.json",
+    "barrels": "yarn barrelsby --delete -d ./src -e \"\\.spec\\.ts\" -e \"__mock__\" -e \".benchmark.ts\""
+  },
+  "private": false,
+  "author": {
+    "name": "Romain Lenzotti"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsedio/logger.git"
+  },
+  "keywords": [
+    "ts",
+    "log",
+    "debug",
+    "typescript",
+    "trace",
+    "connect"
+  ],
+  "bugs": {
+    "url": "https://github.com/tsedio/logger/issues"
+  },
+  "homepage": "https://github.com/tsedio/logger",
+  "dependencies": {
+    "tslib": "2.3.1"
+  },
+  "devDependencies": {
+    "@tsed/logger": "6.1.4"
+  },
+  "peerDependencies": {
+    "@tsed/logger": ">=6.0.0"
+  }
+}

@@ -19,11 +19,11 @@ describe("BaseAppender", () => {
   describe("config()", () => {
     it("should return configuration", () => {
       const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
-      const testAppender = new TestAppender({type: "console"});
+      const testAppender = new TestAppender({type: "console", options: {}});
       testAppender.write(logEvent);
 
       expect(buildStub).toBeCalledTimes(1);
-      expect(testAppender.config).toEqual({type: "console"});
+      expect(testAppender.config).toEqual({type: "console", options: {}});
     });
   });
 });

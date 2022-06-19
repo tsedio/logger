@@ -95,7 +95,6 @@ export class Logger {
    * message and all additional used as substitution values similar to printf() (the arguments are all
    * passed to util.format()).
    * @param data
-   * @param args
    * @returns {any}
    */
   public error(...data: any[]): Logger {
@@ -135,7 +134,7 @@ export class Logger {
 
   /**
    *
-   * @returns {Promise<TAll[]>}
+   * @returns {Promise<any[]>}
    */
   public shutdown() {
     this.stop();

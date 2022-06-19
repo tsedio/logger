@@ -1,6 +1,6 @@
 import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
 import * as util from "util";
-import axios from "axios";
+import axios, {AxiosBasicCredentials} from "axios";
 
 function wrapErrorsWithInspect(items: any[]) {
   return items.map((item) => {
@@ -20,14 +20,26 @@ function format(logData: any) {
   return logData ? util.format(...wrapErrorsWithInspect(logData)) : logData;
 }
 
+export class LogStashHttpOptions {
+  url: string;
+  bufferMax: number;
+  application: Function | string;
+  logType: string;
+  logChannel: string;
+  auth?: AxiosBasicCredentials;
+  timeout?: number;
+  params?: Record<string, any>;
+  headers?: Record<string, any>;
+}
+
 @Appender({name: "logstash-http"})
-export class LogStashHttpAppender extends BaseAppender {
+export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
   private client: ReturnType<typeof axios.create>;
 
   #buffer: string[] = [];
 
   build() {
-    if ($log.level !== "OFF") {
+    if ($log.level !== "OFF" && this.config.options) {
       this.client = axios.create({
         baseURL: this.config.options.url,
         auth: this.config.options.auth,

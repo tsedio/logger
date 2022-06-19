@@ -15,6 +15,7 @@ describe("LoggerAppenders", () => {
   beforeAll(() => {
     appenders = new LoggerAppenders();
     appenders.set("custom", {type: "test2", levels: ["debug"]});
+    appenders.set("custom", {type: TestAppender, levels: ["debug"]});
   });
 
   describe("byLogLevel()", () => {

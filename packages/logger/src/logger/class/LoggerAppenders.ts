@@ -41,17 +41,25 @@ export class LoggerAppenders {
    * @param config Required. The config of the element to add to the loggerAppenders object.
    * @returns {LoggerAppender}
    */
-  set(name: string, config: AppenderConfiguration): LoggerAppenders {
-    if (!AppendersRegistry.has(config.type)) {
-      const error = new Error(`Appender ${config.type} doesn't exists. Check your configuration:\n${JSON.stringify(config)}\n`);
+  set(name: string, config: Omit<AppenderConfiguration, "options"> & {type: string | any; options?: any}): LoggerAppenders {
+    const type = typeof config.type === "string" ? config.type : (config.type as any)?.$name;
+    const opts = {
+      level: ["debug", "info", "trace", "error", "warn", "fatal"],
+      ...config,
+      type,
+      options: config.options || {}
+    };
+
+    if (!AppendersRegistry.has(opts.type)) {
+      const error = new Error(`Appender ${opts.type} doesn't exists. Check your configuration:\n${JSON.stringify(opts)}\n`);
       error.name = "UNKNOW_APPENDER";
       throw error;
     }
 
-    const klass = AppendersRegistry.get(config.type)!.provide;
-    const instance: BaseAppender = new klass(config);
+    const klass = AppendersRegistry.get(opts.type)!.provide;
+    const instance: BaseAppender = new klass(opts);
 
-    this._appenders.set(name, {name, instance, config});
+    this._appenders.set(name, {name, instance, config: opts});
     this._lvls.clear();
     return this;
   }

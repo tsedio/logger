@@ -4,7 +4,7 @@ import {levels, LogEvent} from "../../../src";
 describe("StderrAppender", () => {
   it("should log something", () => {
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
-    const appender = new StderrAppender({type: "console"});
+    const appender = new StderrAppender({type: "console", options: {}});
 
     jest.spyOn(appender, "log").mockReturnValue(undefined);
 
