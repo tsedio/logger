@@ -4,7 +4,7 @@ import {levels, LogEvent} from "../../../src";
 describe("StdoutAppender", () => {
   it("should log something", () => {
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
-    const appender = new StdoutAppender({type: "console"});
+    const appender = new StdoutAppender({type: "console", options: {}});
     jest.spyOn(appender, "log");
 
     appender.write(logEvent);

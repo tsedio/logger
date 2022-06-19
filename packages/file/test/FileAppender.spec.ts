@@ -6,7 +6,7 @@ describe("FileAppender", () => {
   it("should log something", async () => {
     // GIVEN
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
-    const appender = new FileAppender({type: "console", filename: "log.log"});
+    const appender = new FileAppender({type: "console", filename: "log.log", options: {}});
 
     const writeStub = jest.spyOn((appender as any).writer, "write").mockReturnValue(undefined);
 
@@ -23,7 +23,7 @@ describe("FileAppender", () => {
   it("Date rolling (should log something)", async () => {
     // GIVEN
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
-    const appender = new FileAppender({type: "console", filename: "log.log", pattern: ".yyyy-MM-dd"});
+    const appender = new FileAppender({type: "console", filename: "log.log", pattern: ".yyyy-MM-dd", options: {}});
 
     const writeStub = jest.spyOn((appender as any).writer, "write");
 

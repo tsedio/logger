@@ -7,7 +7,7 @@ export interface AppenderOptions {
   defaultLayout?: string;
 }
 
-export interface IBaseAppender {
+export interface BaseAppenderMethods {
   write(loggingEvent: LogEvent): any;
 
   build?(): any;
@@ -49,16 +49,15 @@ export interface IBaseAppender {
  *   });
  * ```
  *
- *
  */
-export abstract class BaseAppender implements IBaseAppender {
+export abstract class BaseAppender<Opts = any> implements BaseAppenderMethods {
   #layout: any;
 
-  public appenderOptions: AppenderOptions = {name: ""};
+  public appenderOptions: AppenderOptions;
 
   [key: string]: any;
 
-  constructor(public readonly config: AppenderConfiguration) {
+  constructor(public readonly config: AppenderConfiguration<Opts>) {
     this.configure(config);
 
     if (this["build"]) {
@@ -69,7 +68,7 @@ export abstract class BaseAppender implements IBaseAppender {
   configure(config: PartialAppenderConfiguration) {
     Object.assign(this.config, config);
 
-    this.#layout = Layouts.get(this.appenderOptions.defaultLayout || "colored", this.config);
+    this.#layout = Layouts.get(this.appenderOptions?.defaultLayout || "colored", this.config);
 
     if (this.config.layout) {
       this.#layout = Layouts.get(this.config.layout.type, this.config.layout);

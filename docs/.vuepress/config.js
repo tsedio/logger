@@ -177,6 +177,7 @@ module.exports = {
             children: [
               {title: "Configuration", path: "/appenders/"},
               {title: "Console", path: "/appenders/console"},
+              {title: "Connect", path: "/appenders/connect"},
               {title: "File", path: "/appenders/file"},
               {title: "File date", path: "/appenders/file-date"},
               {title: "Stdout", path: "/appenders/stdout"},
@@ -202,6 +203,7 @@ module.exports = {
               "/layouts/dummy",
               "/layouts/message-pass-through",
               "/layouts/json",
+              "/layouts/object",
               "/layouts/pattern"
             ]
           },
@@ -214,6 +216,7 @@ module.exports = {
           "/appenders/console",
           "/appenders/file",
           "/appenders/file-date",
+          "/appenders/connect",
           "/appenders/stdout",
           "/appenders/stderr",
           "/appenders/insight",
@@ -229,6 +232,7 @@ module.exports = {
           "/layouts/colored",
           "/layouts/dummy",
           "/layouts/message-pass-through",
+          "/layouts/object",
           "/layouts/json",
           "/layouts/pattern"
         ],

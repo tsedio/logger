@@ -1,6 +1,6 @@
 import {BasicLayoutConfiguration} from "../../layouts/interfaces/BasicLayoutConfiguration";
 
-export interface AppenderConfiguration {
+export interface AppenderConfiguration<Opts = any> {
   type: string;
   filename?: string;
   layout?: BasicLayoutConfiguration;
@@ -8,10 +8,9 @@ export interface AppenderConfiguration {
   pattern?: string;
   backups?: number;
   levels?: string[];
+  options: Opts;
 
   [key: string]: any;
 }
 
-export type Partial<T> = {[P in keyof T]?: T[P]};
-
-export type PartialAppenderConfiguration = Partial<AppenderConfiguration>;
+export type PartialAppenderConfiguration<Opts = any> = Partial<AppenderConfiguration<Opts>>;
