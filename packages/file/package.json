@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-file",
-  "version": "6.1.4",
+  "version": "6.2.0",
   "description": "File appender module for @tsed/logger",
   "private": false,
   "author": {
@@ -44,7 +44,7 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@tsed/logger": "6.1.4"
+    "@tsed/logger": "6.2.0"
   },
   "peerDependencies": {
     "@tsed/logger": ">=6.0.0"
