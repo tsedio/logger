@@ -2,7 +2,6 @@
   "name": "@tsed/logger-insight",
   "version": "6.2.0",
   "description": "Insight appender module for @tsed/logger",
-  "private": false,
   "author": {
     "name": "Romain Lenzotti"
   },
@@ -21,7 +20,7 @@
     "build": "yarn barrels && yarn run build:esm && yarn run build:cjs",
     "build:cjs": "tsc --build tsconfig.compile.json",
     "build:esm": "tsc --build tsconfig.compile.esm.json",
-    "barrels": "yarn barrelsby --delete -d ./src -e \"\\.spec\\.ts\" -e \"__mock__\" -e \".benchmark.ts\""
+    "barrels": "barrelsby --delete -d ./src -e \"\\.spec\\.ts\" -e \"__mock__\" -e \".benchmark.ts\""
   },
   "repository": {
     "type": "git",

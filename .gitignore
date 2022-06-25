@@ -2,7 +2,7 @@
 ### Node template
 # Logs
 logs
-*.log
+*.log*
 npm-debug.log*
 
 # Runtime data
@@ -54,3 +54,10 @@ test/*.js.map
 
 .DS_Store
 .nyc_output
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
