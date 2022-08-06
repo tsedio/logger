@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2019",
+    "target": "esnext",
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
@@ -13,19 +13,17 @@
     "strictNullChecks": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
-    "resolveJsonModule": true,
     "newLine": "LF",
-    "noEmit": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "composite": true,
+    "preserveConstEnums": true,
+    "inlineSources": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "lib": ["ES2019", "esnext.asynciterable"],
-    "typeRoots": ["./node_modules/@types"]
-  },
-  "linterOptions": {
-    "exclude": ["docs", "integration", "examples/**"]
-  },
-  "exclude": ["docs", "integration", "examples/**"]
+    "lib": ["ES2019", "esnext.asynciterable"]
+  }
 }

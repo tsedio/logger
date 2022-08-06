@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "rootDir": "./src",
+    "outDir": "./lib/esm",
+    "composite": true,
+    "noResolve": false,
+    "sourceMap": true,
+    "noEmit": false,
+    "inlineSources": true,
+    "declaration": true,
+    "declarationDir": "./lib/types"
+  },
+  "include": ["src"],
+  "exclude": [
+    "coverage",
+    "process.config.js",
+    "jest.config.js",
+    "node_modules",
+    "./public",
+    "lib",
+    "test"
+  ]
+}
