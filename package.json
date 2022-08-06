@@ -44,7 +44,6 @@
   "dependencies": {
     "colors": "1.4.0",
     "date-format": "^4.0.6",
-    "lerna": "^5.3.0",
     "nodemailer": "^6.7.3",
     "nx": "^14.5.4",
     "semver": "^7.3.5",
@@ -55,7 +54,7 @@
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.0.0",
     "@tsed/markdown-it-symbols": "^3.20.4",
-    "@tsed/monorepo-utils": "^1.21.0",
+    "@tsed/monorepo-utils": "^1.22.3",
     "@tsed/ts-doc": "^4.1.0",
     "@types/chai": "^4.3.0",
     "@types/chai-as-promised": "7.1.5",
