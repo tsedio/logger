@@ -16,7 +16,7 @@
     "docs:serve": "yarn api:build && yarn vuepress:serve",
     "docs:build": "yarn api:build && yarn vuepress:build",
     "docs:publish": "yarn docs:build && monorepo publish ghpages",
-    "api:build": "lerna run build && yarn tsdoc",
+    "api:build": "nx run-many --target=build && yarn tsdoc",
     "vuepress:build": "cross-env NODE_ENV=production vuepress build docs",
     "vuepress:serve": "vuepress dev docs",
     "prettier": "prettier '**/*.{ts,js,json,md,yml,yaml}' --write",
@@ -44,8 +44,9 @@
   "dependencies": {
     "colors": "1.4.0",
     "date-format": "^4.0.6",
-    "lerna": "^5.0.0",
+    "lerna": "^5.3.0",
     "nodemailer": "^6.7.3",
+    "nx": "^14.5.4",
     "semver": "^7.3.5",
     "streamroller": "^3.0.6",
     "tslib": "2.3.1"

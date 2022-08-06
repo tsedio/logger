@@ -5,11 +5,5 @@
     "packages/*"
   ],
   "version": "6.2.0",
-  "command": {
-    "bootstrap": {
-      "npmClientArgs": [
-        "--no-package-lock"
-      ]
-    }
-  }
+  "useNx": true
 }
