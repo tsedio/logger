@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-rabbitmq",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "description": "RabbitMQ appender module for @tsed/logger",
   "source": "./src/index.ts",
   "main": "./lib/cjs/index.js",
@@ -44,9 +44,9 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@tsed/logger": "6.2.0"
+    "@tsed/logger": "6.2.1"
   },
   "peerDependencies": {
-    "@tsed/logger": ">=6.0.0"
+    "@tsed/logger": "6.2.1"
   }
 }
