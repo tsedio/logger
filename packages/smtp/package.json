@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-smtp",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "description": "SMTP appender module for @tsed/logger",
   "source": "./src/index.ts",
   "main": "./lib/cjs/index.js",
@@ -42,10 +42,10 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@tsed/logger": "6.2.1",
+    "@tsed/logger": "6.2.2",
     "@types/nodemailer": "6.4.4"
   },
   "peerDependencies": {
-    "@tsed/logger": "6.2.1"
+    "@tsed/logger": "6.2.2"
   }
 }
