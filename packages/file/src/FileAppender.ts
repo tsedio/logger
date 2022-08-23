@@ -110,7 +110,7 @@ export class FileAppender extends BaseAppender {
     this.writer.write(this.layout(loggingEvent, this.config.timezoneOffset) + eol, "utf8");
   }
 
-  private build() {
+  build() {
     let {filename: file, maxLogSize: logSize, backups: numBackups, pattern} = this.config;
 
     file = normalize(file!);

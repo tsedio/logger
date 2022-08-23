@@ -59,6 +59,10 @@ export class LoggerAppenders {
     const klass = AppendersRegistry.get(opts.type)!.provide;
     const instance: BaseAppender = new klass(opts);
 
+    if ("build" in instance) {
+      instance.build();
+    }
+
     this._appenders.set(name, {name, instance, config: opts});
     this._lvls.clear();
     return this;
