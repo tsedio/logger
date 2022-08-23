@@ -14,12 +14,11 @@ class TestAppender extends BaseAppender {
 }
 
 describe("BaseAppender", () => {
-
-
   describe("config()", () => {
     it("should return configuration", () => {
       const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
       const testAppender = new TestAppender({type: "console", options: {}});
+      testAppender.build();
       testAppender.write(logEvent);
 
       expect(buildStub).toBeCalledTimes(1);

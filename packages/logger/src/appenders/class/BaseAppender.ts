@@ -59,10 +59,6 @@ export abstract class BaseAppender<Opts = any> implements BaseAppenderMethods {
 
   constructor(public readonly config: AppenderConfiguration<Opts>) {
     this.configure(config);
-
-    if (this["build"]) {
-      this["build"]();
-    }
   }
 
   configure(config: PartialAppenderConfiguration) {
