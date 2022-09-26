@@ -1,6 +1,7 @@
 import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
 import * as util from "util";
 import axios, {AxiosBasicCredentials} from "axios";
+import axiosRetry, {IAxiosRetryConfig} from "axios-retry";
 
 function wrapErrorsWithInspect(items: any[]) {
   return items.map((item) => {
@@ -30,13 +31,14 @@ export class LogStashHttpOptions {
   timeout?: number;
   params?: Record<string, any>;
   headers?: Record<string, any>;
+  retryOptions?: IAxiosRetryConfig;
 }
 
 @Appender({name: "logstash-http"})
 export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
   private client: ReturnType<typeof axios.create>;
 
-  #buffer: string[] = [];
+  #buffer: Record<string, any>[] = [];
 
   build() {
     if ($log.level !== "OFF" && this.config.options) {
@@ -51,21 +53,21 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
         },
         withCredentials: true
       });
+
+      axiosRetry(this.client, {
+        retries: 3,
+        retryDelay: axiosRetry.exponentialDelay,
+        ...this.config.options.retryOptions
+      });
     }
   }
 
   write(loggingEvent: LogEvent) {
-    const {application, logType, logChannel} = this.config.options;
+    const {logChannel} = this.config.options;
     const level = loggingEvent.level.toString().toLowerCase();
 
     if (level !== "off") {
       const logstashEvent = [
-        {
-          index: {
-            _index: typeof application === "function" ? application() : application,
-            _type: logType
-          }
-        },
         {
           ...loggingEvent.getData(),
           message: format(loggingEvent.getMessage()),
@@ -77,11 +79,11 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
         }
       ];
 
-      this.send(`${JSON.stringify(logstashEvent[0])}\n${JSON.stringify(logstashEvent[1])}`);
+      this.send(logstashEvent);
     }
   }
 
-  send(bulk: string) {
+  send(bulk: Record<string, any>) {
     const {bufferMax = 0} = this.config.options;
     this.#buffer.push(bulk);
 
@@ -97,10 +99,24 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     this.#buffer = [];
 
     if (buffer.length) {
-      const bulk = buffer.join("\n");
       const {url} = this.config.options;
+      const {application, logType} = this.config.options;
 
-      return this.client.post("", bulk + "\n").catch((error) => {
+      const header = JSON.stringify({
+        index: {
+          _index: typeof application === "function" ? application() : application,
+          _type: logType
+        }
+      });
+
+      const bulkData =
+        buffer
+          .flatMap((obj) => {
+            return [header, JSON.stringify(obj)];
+          }, [])
+          .join("\n") + "\n";
+
+      return this.client.post("", bulkData).catch((error) => {
         if (error.response) {
           console.error(
             `Ts.ED Logger.logstash-http Appender error posting to ${url}: ${error.response.status} - ${JSON.stringify(error.response.data)}`

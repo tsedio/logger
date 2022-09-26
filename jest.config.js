@@ -72,8 +72,7 @@ export default {
         'lazy': false,
         'noInterop': false
       }
-    }
-    ]
+    }]
   },
 
   modulePathIgnorePatterns: ['<rootDir>/packages/*/lib', '<rootDir>/dist'],
