@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-insight",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "description": "Insight appender module for @tsed/logger",
   "author": {
     "name": "Romain Lenzotti"
@@ -43,9 +43,9 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@tsed/logger": "6.3.0"
+    "@tsed/logger": "6.3.1"
   },
   "peerDependencies": {
-    "@tsed/logger": "6.3.0"
+    "@tsed/logger": "6.3.1"
   }
 }
