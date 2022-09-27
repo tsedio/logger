@@ -100,7 +100,7 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     // send to server
     const buffer = this.#buffer;
     this.#buffer = [];
-    if (buffer.length) {
+    if (!buffer.length) {
       return this;
     }
 
