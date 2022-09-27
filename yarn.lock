@@ -3119,10 +3119,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-connect@workspace:packages/connect"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3130,11 +3130,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-file@workspace:packages/file"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     streamroller: 3.0.6
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3142,11 +3142,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-insight@workspace:packages/insight"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     r7insight_node: 3.2.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3154,11 +3154,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logentries@workspace:packages/logentries"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     le_node: ^1.8.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3166,12 +3166,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-loggly@workspace:packages/loggly"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     "@types/node-loggly-bulk": ^2.2.1
     node-loggly-bulk: ^3.0.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3179,13 +3179,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-http@workspace:packages/logstash-http"
   dependencies:
-    "@tsed/logger": 6.2.2
-    "@types/axios": ^0.14.0
-    axios: ^0.26.1
+    "@tsed/logger": 6.3.0
+    axios: 0.27.2
     axios-retry: ^3.3.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3193,10 +3192,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-udp@workspace:packages/logstash-udp"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3204,12 +3203,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-rabbitmq@workspace:packages/rabbitmq"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     "@types/amqplib": ^0.8.2
     amqplib: 0.8.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3269,11 +3268,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-seq@workspace:packages/seq"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     seq-logging: 1.1.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3282,10 +3281,10 @@ __metadata:
   resolution: "@tsed/logger-slack@workspace:packages/slack"
   dependencies:
     "@slack/web-api": ^6.7.0
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
@@ -3293,16 +3292,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-smtp@workspace:packages/smtp"
   dependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
     "@types/nodemailer": 6.4.4
     nodemailer: ^6.7.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.2.2
+    "@tsed/logger": 6.3.0
   languageName: unknown
   linkType: soft
 
-"@tsed/logger@6.2.2, @tsed/logger@workspace:packages/logger":
+"@tsed/logger@6.3.0, @tsed/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@tsed/logger@workspace:packages/logger"
   dependencies:
@@ -3417,15 +3416,6 @@ __metadata:
     "@types/bluebird": "*"
     "@types/node": "*"
   checksum: 8b30e22cf890631637ad40fa8eda3323d3ca156c18f23a59c10befd96beab0c046f3f7c2c0a196fc36a669d848b09999ca1f5a0fa2620009656f028667e2bdb8
-  languageName: node
-  linkType: hard
-
-"@types/axios@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "@types/axios@npm:0.14.0"
-  dependencies:
-    axios: "*"
-  checksum: 12a230b9404055d81804cb57fe4739b2317111b28a39e2477b2513250e8b85725e6f6ce509fc2a9494a6da60facb8d80df875fcd747f62f6c3abebc7db60ae66
   languageName: node
   linkType: hard
 
@@ -5388,15 +5378,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:*":
-  version: 0.21.1
-  resolution: "axios@npm:0.21.1"
-  dependencies:
-    follow-redirects: ^1.10.0
-  checksum: c87915fa0b18c15c63350112b6b3563a3e2ae524d7707de0a73d2e065e0d30c5d3da8563037bc29d4cc1b7424b5a350cb7274fa52525c6c04a615fe561c6ab11
-  languageName: node
-  linkType: hard
-
 "axios@npm:0.20.0":
   version: 0.20.0
   resolution: "axios@npm:0.20.0"
@@ -5422,15 +5403,6 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.7
   checksum: 2a8a3787c05f2a0c9c3878f49782357e2a9f38945b93018fb0c4fd788171c43dceefbb577988628e09fea53952744d1ecebde234b561f1e703aa43e0a598a3ad
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.26.1":
-  version: 0.26.1
-  resolution: "axios@npm:0.26.1"
-  dependencies:
-    follow-redirects: ^1.14.8
-  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
   languageName: node
   linkType: hard
 
@@ -9704,7 +9676,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.10.0, follow-redirects@npm:^1.14.7, follow-redirects@npm:^1.14.8, follow-redirects@npm:^1.14.9":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.10.0, follow-redirects@npm:^1.14.7, follow-redirects@npm:^1.14.9":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:

@@ -29,6 +29,7 @@ export class LogStashHttpOptions {
   logChannel: string;
   auth?: AxiosBasicCredentials;
   timeout?: number;
+  delayToFlush?: number;
   params?: Record<string, any>;
   headers?: Record<string, any>;
   retryOptions?: IAxiosRetryConfig;
@@ -39,6 +40,7 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
   private client: ReturnType<typeof axios.create>;
 
   #buffer: Record<string, any>[] = [];
+  #timer: NodeJS.Timeout;
 
   build() {
     if ($log.level !== "OFF" && this.config.options) {
@@ -48,10 +50,8 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
         timeout: this.config.options.timeout || 5000,
         params: this.config.options.params,
         headers: {
-          ...(this.config.options.headers || {}),
-          "Content-Type": "application/x-ndjson"
-        },
-        withCredentials: true
+          ...(this.config.options.headers || {})
+        }
       });
 
       axiosRetry(this.client, {
@@ -67,25 +67,28 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     const level = loggingEvent.level.toString().toLowerCase();
 
     if (level !== "off") {
-      const logstashEvent = [
-        {
-          ...loggingEvent.getData(),
-          message: format(loggingEvent.getMessage()),
-          context: loggingEvent.context.toJSON(),
-          level: loggingEvent.level.level / 100,
-          level_name: level,
-          channel: logChannel,
-          datetime: new Date(loggingEvent.startTime).toISOString()
-        }
-      ];
+      const {time, ...props} = loggingEvent.getData();
 
-      this.send(logstashEvent);
+      this.send({
+        ...props,
+        message: format(loggingEvent.getMessage()),
+        context: loggingEvent.context.toJSON(),
+        level: loggingEvent.level.level / 100,
+        level_name: level,
+        channel: logChannel,
+        datetime: new Date(time || loggingEvent.startTime).toISOString()
+      });
     }
   }
 
   send(bulk: Record<string, any>) {
-    const {bufferMax = 0} = this.config.options;
+    const {bufferMax = 0, delayToFlush = 0} = this.config.options;
     this.#buffer.push(bulk);
+
+    if (delayToFlush) {
+      this.#timer && clearTimeout(this.#timer);
+      this.#timer = setTimeout(() => this.flush(), delayToFlush);
+    }
 
     if (bufferMax <= this.#buffer.length) {
       this.#buffer.push(bulk);
@@ -93,39 +96,52 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     }
   }
 
-  flush() {
+  async flush() {
     // send to server
     const buffer = this.#buffer;
     this.#buffer = [];
-
     if (buffer.length) {
-      const {url} = this.config.options;
-      const {application, logType} = this.config.options;
-
-      const header = JSON.stringify({
-        index: {
-          _index: typeof application === "function" ? application() : application,
-          _type: logType
-        }
-      });
-
-      const bulkData =
-        buffer
-          .flatMap((obj) => {
-            return [header, JSON.stringify(obj)];
-          }, [])
-          .join("\n") + "\n";
-
-      return this.client.post("", bulkData).catch((error) => {
-        if (error.response) {
-          console.error(
-            `Ts.ED Logger.logstash-http Appender error posting to ${url}: ${error.response.status} - ${JSON.stringify(error.response.data)}`
-          );
-          return;
-        }
-        console.error(`Ts.ED Logger.logstash-http Appender error: ${error.message}`);
-      });
+      return this;
     }
+
+    const {url} = this.config.options;
+    const {application, logType} = this.config.options;
+    const _index = typeof application === "function" ? application() : application;
+
+    const action = JSON.stringify({
+      index: {
+        _index,
+        _type: logType
+      }
+    });
+
+    const bulkData = buffer.flatMap((item) => [action, item]);
+    try {
+      await this.client({
+        url: "",
+        method: "POST",
+        data: this.serializeBulk(bulkData),
+        headers: {
+          "Content-Type": "application/x-ndjson"
+        }
+      });
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          `Ts.ED Logger.logstash-http Appender error posting to ${url}: ${error.response.status} - ${JSON.stringify(error.response.data)}`
+        );
+        return;
+      }
+      console.error(`Ts.ED Logger.logstash-http Appender error: ${error.message}`);
+    }
+  }
+
+  serializeBulk(array: Array<Record<string, any> | string>): string {
+    return array.reduce<string>((ndjson, obj) => {
+      const str = typeof obj === "string" ? obj : JSON.stringify(obj);
+
+      return ndjson + str + "\n";
+    }, "");
   }
 
   shutdown() {
