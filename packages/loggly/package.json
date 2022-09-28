@@ -41,7 +41,7 @@
   "dependencies": {
     "@types/node-loggly-bulk": "^2.2.1",
     "node-loggly-bulk": "^3.0.1",
-    "tslib": "2.3.1"
+    "tslib": "2.4.0"
   },
   "devDependencies": {
     "@tsed/logger": "6.3.2"

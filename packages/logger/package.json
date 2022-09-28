@@ -41,7 +41,7 @@
     "colors": "1.4.0",
     "date-format": "^4.0.6",
     "semver": "^7.3.5",
-    "tslib": "2.3.1"
+    "tslib": "2.4.0"
   },
   "devDependencies": {
     "typescript": "4.7.4"
