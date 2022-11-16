@@ -19753,15 +19753,15 @@ __metadata:
   linkType: hard
 
 "terser@npm:^4.1.2":
-  version: 4.6.3
-  resolution: "terser@npm:4.6.3"
+  version: 4.8.1
+  resolution: "terser@npm:4.8.1"
   dependencies:
     commander: ^2.20.0
     source-map: ~0.6.1
     source-map-support: ~0.5.12
   bin:
     terser: bin/terser
-  checksum: d3a656ce2a99acd469dc54e03233062c75de7c3850d719bc1b4cfdf6c3bb5d78b53317016030f5011badcf87e7d4f222a730b19d144a6d60acd5f4fb435b22be
+  checksum: b342819bf7e82283059aaa3f22bb74deb1862d07573ba5a8947882190ad525fd9b44a15074986be083fd379c58b9a879457a330b66dcdb77b485c44267f9a55a
   languageName: node
   linkType: hard
 
