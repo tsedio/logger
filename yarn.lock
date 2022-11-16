@@ -3119,10 +3119,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-connect@workspace:packages/connect"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3130,11 +3130,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-file@workspace:packages/file"
   dependencies:
-    "@tsed/logger": 6.3.1
-    streamroller: 3.0.6
+    "@tsed/logger": 6.3.2
+    streamroller: ^3.1.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3142,11 +3142,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-insight@workspace:packages/insight"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     r7insight_node: 3.2.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3154,11 +3154,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logentries@workspace:packages/logentries"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     le_node: ^1.8.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3166,12 +3166,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-loggly@workspace:packages/loggly"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     "@types/node-loggly-bulk": ^2.2.1
     node-loggly-bulk: ^3.0.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3179,12 +3179,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-http@workspace:packages/logstash-http"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     axios: 0.27.2
     axios-retry: ^3.3.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3192,10 +3192,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-udp@workspace:packages/logstash-udp"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3203,12 +3203,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-rabbitmq@workspace:packages/rabbitmq"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     "@types/amqplib": ^0.8.2
     amqplib: 0.8.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3268,11 +3268,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-seq@workspace:packages/seq"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     seq-logging: 1.1.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3281,10 +3281,10 @@ __metadata:
   resolution: "@tsed/logger-slack@workspace:packages/slack"
   dependencies:
     "@slack/web-api": ^6.7.0
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
@@ -3292,16 +3292,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-smtp@workspace:packages/smtp"
   dependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
     "@types/nodemailer": 6.4.4
     nodemailer: ^6.7.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.1
+    "@tsed/logger": 6.3.2
   languageName: unknown
   linkType: soft
 
-"@tsed/logger@6.3.1, @tsed/logger@workspace:packages/logger":
+"@tsed/logger@6.3.2, @tsed/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@tsed/logger@workspace:packages/logger"
   dependencies:
@@ -7722,6 +7722,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-format@npm:^4.0.14":
+  version: 4.0.14
+  resolution: "date-format@npm:4.0.14"
+  checksum: dfe5139df6af5759b9dd3c007b899b3f60d45a9240ffeee6314ab74e6ab52e9b519a44ccf285888bdd6b626c66ee9b4c8a523075fa1140617b5beb1cbb9b18d1
+  languageName: node
+  linkType: hard
+
 "dateformat@npm:^3.0.0":
   version: 3.0.3
   resolution: "dateformat@npm:3.0.3"
@@ -9780,7 +9787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:10.1.0, fs-extra@npm:^10.0.0, fs-extra@npm:^10.0.1, fs-extra@npm:^10.1.0":
+"fs-extra@npm:10.1.0, fs-extra@npm:^10.0.0, fs-extra@npm:^10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -19031,17 +19038,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"streamroller@npm:3.0.6":
-  version: 3.0.6
-  resolution: "streamroller@npm:3.0.6"
-  dependencies:
-    date-format: ^4.0.6
-    debug: ^4.3.4
-    fs-extra: ^10.0.1
-  checksum: 80728554978ca01f30a10adef2029aedd8aff936f6b709748dadf44f34becc4aa582223bfb97a1159a479f12668b3156377fa081e76ae4fc02e7a283491f706b
-  languageName: node
-  linkType: hard
-
 "streamroller@npm:^3.0.6":
   version: 3.1.1
   resolution: "streamroller@npm:3.1.1"
@@ -19050,6 +19046,17 @@ __metadata:
     debug: ^4.3.4
     fs-extra: ^10.1.0
   checksum: 8a30f0940ffcd9eca3f0a06a938adb3a7ba08fc1d1e694570ce3a922054735badf27de4539fb5b26c90f44368ba044a00203a7540b6955a481c8de83e9c00bb4
+  languageName: node
+  linkType: hard
+
+"streamroller@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "streamroller@npm:3.1.3"
+  dependencies:
+    date-format: ^4.0.14
+    debug: ^4.3.4
+    fs-extra: ^8.1.0
+  checksum: 47a6699740afe7ec88af92b24595b5b09c9866fedda92e3ed9e28d9267e3ebf23792ed00016d819764a3a0a2f1cd504c6cb7a4ff1ffad616b197b09f68a9bcf9
   languageName: node
   linkType: hard
 
