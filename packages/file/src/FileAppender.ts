@@ -2,7 +2,7 @@ import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
 import {normalize} from "path";
 import * as Os from "os";
 // @ts-ignore
-import * as streams from "streamroller";
+import streams from "streamroller";
 
 const eol = Os.EOL || "\n";
 
