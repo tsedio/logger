@@ -72,7 +72,7 @@ logger.appenders.set("std-log", {
   },
   level: ["debug", "info", "trace"]
 });
-logger.addContext("user", "charlie");
+logger.context.add("user", "charlie");
 logger.info("doing something.");
 ```
 
