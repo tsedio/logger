@@ -3119,10 +3119,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-connect@workspace:packages/connect"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3130,11 +3130,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-file@workspace:packages/file"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     streamroller: ^3.1.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3142,11 +3142,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-insight@workspace:packages/insight"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     r7insight_node: 3.2.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3154,11 +3154,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logentries@workspace:packages/logentries"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     le_node: ^1.8.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3166,12 +3166,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-loggly@workspace:packages/loggly"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     "@types/node-loggly-bulk": ^2.2.1
     node-loggly-bulk: ^3.0.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3179,12 +3179,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-http@workspace:packages/logstash-http"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     axios: 0.27.2
     axios-retry: ^3.3.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3192,10 +3192,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-udp@workspace:packages/logstash-udp"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3203,12 +3203,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-rabbitmq@workspace:packages/rabbitmq"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     "@types/amqplib": ^0.8.2
     amqplib: 0.8.0
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3229,7 +3229,7 @@ __metadata:
     "@types/mocha": ^9.1.0
     "@types/node": 17.0.23
     "@typescript-eslint/eslint-plugin": ^5.16.0
-    "@typescript-eslint/parser": ^5.16.0
+    "@typescript-eslint/parser": ^5.47.1
     barrelsby: 2.3.3
     colors: 1.4.0
     concurrently: ^7.0.0
@@ -3268,11 +3268,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-seq@workspace:packages/seq"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     seq-logging: 1.1.1
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3281,10 +3281,10 @@ __metadata:
   resolution: "@tsed/logger-slack@workspace:packages/slack"
   dependencies:
     "@slack/web-api": ^6.7.0
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
@@ -3292,16 +3292,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-smtp@workspace:packages/smtp"
   dependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
     "@types/nodemailer": 6.4.4
     nodemailer: ^6.7.3
     tslib: 2.3.1
   peerDependencies:
-    "@tsed/logger": 6.3.2
+    "@tsed/logger": 6.3.3
   languageName: unknown
   linkType: soft
 
-"@tsed/logger@6.3.2, @tsed/logger@workspace:packages/logger":
+"@tsed/logger@6.3.3, @tsed/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@tsed/logger@workspace:packages/logger"
   dependencies:
@@ -3961,20 +3961,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.16.0":
-  version: 5.26.0
-  resolution: "@typescript-eslint/parser@npm:5.26.0"
+"@typescript-eslint/parser@npm:^5.47.1":
+  version: 5.47.1
+  resolution: "@typescript-eslint/parser@npm:5.47.1"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.26.0
-    "@typescript-eslint/types": 5.26.0
-    "@typescript-eslint/typescript-estree": 5.26.0
+    "@typescript-eslint/scope-manager": 5.47.1
+    "@typescript-eslint/types": 5.47.1
+    "@typescript-eslint/typescript-estree": 5.47.1
     debug: ^4.3.4
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 3c13a989d1c5aa3d9050203ca53fa28642fe49b9f09b668b7c424f13bfc8352e0a57d2ae16c55cd9b4f9fb98d730a440b0270a94c827938579df8097f90bdfac
+  checksum: 36806686a2c5cc60558c09b13e885861aa21ec6250539d8d3d3c8abb90b321662e57dacec44915c87726a5a0d74187b58a65880a0613024eaeeb7ad0197a345d
   languageName: node
   linkType: hard
 
@@ -3985,6 +3985,16 @@ __metadata:
     "@typescript-eslint/types": 5.26.0
     "@typescript-eslint/visitor-keys": 5.26.0
   checksum: 56db69b8dc3502261c403c1217f32fb7e8244c1f192c3b486733ad8cd3e7672b365d2c6da7ec8ff40113c4da507c04f4e00b6104ca68579c19525cac828a631b
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/scope-manager@npm:5.47.1":
+  version: 5.47.1
+  resolution: "@typescript-eslint/scope-manager@npm:5.47.1"
+  dependencies:
+    "@typescript-eslint/types": 5.47.1
+    "@typescript-eslint/visitor-keys": 5.47.1
+  checksum: 73e2e2949b6e0122d89cfd44e1d24eda38d774899b834746700a4f1eb096effd1432c953f8be743a3ea3c7fc8fbf6e0882b11ee0f39b7ced6d8abf6a8665f1c8
   languageName: node
   linkType: hard
 
@@ -4011,6 +4021,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:5.47.1":
+  version: 5.47.1
+  resolution: "@typescript-eslint/types@npm:5.47.1"
+  checksum: 9b3df8661862a8927ec29d21d6b5826cae7dd8b4797b5b54d66289d8abcf46081453a5cbaf9cc0a5b6c8249ca381dda61c2623da2a704e47f9d86175639a8cea
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/typescript-estree@npm:5.26.0":
   version: 5.26.0
   resolution: "@typescript-eslint/typescript-estree@npm:5.26.0"
@@ -4026,6 +4043,24 @@ __metadata:
     typescript:
       optional: true
   checksum: 2cf147629474952725593da64827a7e4e39f79614019529d0d6e5b89236c55f3607c6b4a24f160dbc5978f4cfd60f96fcb573a770c2877f8e29d7552b40e2135
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:5.47.1":
+  version: 5.47.1
+  resolution: "@typescript-eslint/typescript-estree@npm:5.47.1"
+  dependencies:
+    "@typescript-eslint/types": 5.47.1
+    "@typescript-eslint/visitor-keys": 5.47.1
+    debug: ^4.3.4
+    globby: ^11.1.0
+    is-glob: ^4.0.3
+    semver: ^7.3.7
+    tsutils: ^3.21.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 803214a53fd4faf19b6b325dd4e8ddaa5bb1ebb9b52358d26ebeaeb86b431cea5bc09f3b43ca8abfdd3a72fdea667467a1abfda50cbad866696ec5739afae2ac
   languageName: node
   linkType: hard
 
@@ -4052,6 +4087,16 @@ __metadata:
     "@typescript-eslint/types": 5.26.0
     eslint-visitor-keys: ^3.3.0
   checksum: 4a5085d19e677f3b44ca4455bba85fd1a3be4d7d2e96bb22738a7497f6f4d16bfdee51059454a78b1e108d8e1593b1a31be40764a66448945118277cff5eff02
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:5.47.1":
+  version: 5.47.1
+  resolution: "@typescript-eslint/visitor-keys@npm:5.47.1"
+  dependencies:
+    "@typescript-eslint/types": 5.47.1
+    eslint-visitor-keys: ^3.3.0
+  checksum: b4d1f4daa67e962d22c41325d9dcb6b2efde1caf354a2edb5bf682b92ab8c6205435d0b12f39ce9771955250e26f2a6f03adabb37e62e5aac8225691a59ef153
   languageName: node
   linkType: hard
 
