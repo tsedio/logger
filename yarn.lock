@@ -3165,7 +3165,7 @@ __metadata:
   resolution: "@tsed/logger-connect@workspace:packages/connect"
   dependencies:
     "@tsed/logger": 6.3.4
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3177,7 +3177,7 @@ __metadata:
   dependencies:
     "@tsed/logger": 6.3.4
     streamroller: ^3.1.3
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3189,7 +3189,7 @@ __metadata:
   dependencies:
     "@tsed/logger": 6.3.4
     r7insight_node: 3.2.1
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3201,7 +3201,7 @@ __metadata:
   dependencies:
     "@tsed/logger": 6.3.4
     le_node: ^1.8.0
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3214,7 +3214,7 @@ __metadata:
     "@tsed/logger": 6.3.4
     "@types/node-loggly-bulk": ^2.2.1
     node-loggly-bulk: ^3.0.1
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3227,7 +3227,7 @@ __metadata:
     "@tsed/logger": 6.3.4
     axios: 0.27.2
     axios-retry: ^3.3.1
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3238,7 +3238,7 @@ __metadata:
   resolution: "@tsed/logger-logstash-udp@workspace:packages/logstash-udp"
   dependencies:
     "@tsed/logger": 6.3.4
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3251,7 +3251,7 @@ __metadata:
     "@tsed/logger": 6.3.4
     "@types/amqplib": ^0.8.2
     amqplib: 0.10.3
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3301,7 +3301,7 @@ __metadata:
     streamroller: ^3.0.6
     ts-node: ^10.8.0
     tsconfig-paths: ^4.0.0
-    tslib: 2.3.1
+    tslib: 2.5.0
     typescript: 4.7.4
     vue-analytics: 5.22.1
     vuepress: 1.9.8
@@ -3315,7 +3315,7 @@ __metadata:
   dependencies:
     "@tsed/logger": 6.3.4
     seq-logging: 1.1.1
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3327,7 +3327,7 @@ __metadata:
   dependencies:
     "@slack/web-api": ^6.7.0
     "@tsed/logger": 6.3.4
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3340,7 +3340,7 @@ __metadata:
     "@tsed/logger": 6.3.4
     "@types/nodemailer": 6.4.4
     nodemailer: ^6.7.3
-    tslib: 2.3.1
+    tslib: 2.5.0
   peerDependencies:
     "@tsed/logger": 6.3.4
   languageName: unknown
@@ -3353,7 +3353,7 @@ __metadata:
     colors: 1.4.0
     date-format: ^4.0.6
     semver: ^7.3.5
-    tslib: 2.3.1
+    tslib: 2.5.0
     typescript: 4.7.4
   languageName: unknown
   linkType: soft
@@ -20255,10 +20255,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.3.1":
-  version: 2.3.1
-  resolution: "tslib@npm:2.3.1"
-  checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
+"tslib@npm:2.5.0":
+  version: 2.5.0
+  resolution: "tslib@npm:2.5.0"
+  checksum: ae3ed5f9ce29932d049908ebfdf21b3a003a85653a9a140d614da6b767a93ef94f460e52c3d787f0e4f383546981713f165037dc2274df212ea9f8a4541004e1
   languageName: node
   linkType: hard
 
