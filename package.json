@@ -88,8 +88,8 @@
     "tsconfig-paths": "^4.0.0",
     "typescript": "4.7.4",
     "vue-analytics": "5.22.1",
-    "vuepress": "^1.9.7",
-    "vuepress-theme-tsed": "3.19.5"
+    "vuepress": "1.9.8",
+    "vuepress-theme-tsed": "3.20.6"
   },
   "directories": {
     "packages": "packages",

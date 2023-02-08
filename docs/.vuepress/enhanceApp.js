@@ -1,3 +1,4 @@
+import "./window-boot.js";
 import VueAnalytics from "vue-analytics";
 import VueTsED from "vuepress-theme-tsed/src/install";
 import "./styles/style.css";
