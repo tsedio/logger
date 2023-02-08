@@ -3176,7 +3176,7 @@ __metadata:
   resolution: "@tsed/logger-file@workspace:packages/file"
   dependencies:
     "@tsed/logger": 6.3.4
-    streamroller: ^3.1.3
+    streamroller: ^3.1.4
     tslib: 2.3.1
   peerDependencies:
     "@tsed/logger": 6.3.4
@@ -3298,7 +3298,7 @@ __metadata:
     semantic-release-slack-bot: ^3.5.3
     semver: ^7.3.5
     source-map-support: 0.5.21
-    streamroller: ^3.0.6
+    streamroller: ^3.1.4
     ts-node: ^10.8.0
     tsconfig-paths: ^4.0.0
     tslib: 2.3.1
@@ -7903,17 +7903,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-format@npm:^4.0.10, date-format@npm:^4.0.6":
-  version: 4.0.10
-  resolution: "date-format@npm:4.0.10"
-  checksum: 677c8e022a5efcead2c869d18b3b1a3b61df6c2c464545ec91e68ea890088dae7704e5822009af420ea8bb26325ffce01be599cc9f087879ea4aefc70a964c7b
-  languageName: node
-  linkType: hard
-
 "date-format@npm:^4.0.14":
   version: 4.0.14
   resolution: "date-format@npm:4.0.14"
   checksum: dfe5139df6af5759b9dd3c007b899b3f60d45a9240ffeee6314ab74e6ab52e9b519a44ccf285888bdd6b626c66ee9b4c8a523075fa1140617b5beb1cbb9b18d1
+  languageName: node
+  linkType: hard
+
+"date-format@npm:^4.0.6":
+  version: 4.0.10
+  resolution: "date-format@npm:4.0.10"
+  checksum: 677c8e022a5efcead2c869d18b3b1a3b61df6c2c464545ec91e68ea890088dae7704e5822009af420ea8bb26325ffce01be599cc9f087879ea4aefc70a964c7b
   languageName: node
   linkType: hard
 
@@ -19275,25 +19275,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"streamroller@npm:^3.0.6":
-  version: 3.1.1
-  resolution: "streamroller@npm:3.1.1"
-  dependencies:
-    date-format: ^4.0.10
-    debug: ^4.3.4
-    fs-extra: ^10.1.0
-  checksum: 8a30f0940ffcd9eca3f0a06a938adb3a7ba08fc1d1e694570ce3a922054735badf27de4539fb5b26c90f44368ba044a00203a7540b6955a481c8de83e9c00bb4
-  languageName: node
-  linkType: hard
-
-"streamroller@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "streamroller@npm:3.1.3"
+"streamroller@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "streamroller@npm:3.1.4"
   dependencies:
     date-format: ^4.0.14
     debug: ^4.3.4
     fs-extra: ^8.1.0
-  checksum: 47a6699740afe7ec88af92b24595b5b09c9866fedda92e3ed9e28d9267e3ebf23792ed00016d819764a3a0a2f1cd504c6cb7a4ff1ffad616b197b09f68a9bcf9
+  checksum: c7b48b806f48d0c692fd7594913c6541c68ef0f35b950dcef82664b988d59334b44a30ad1666c80efc4f25d4fdd6e45efa401e9ca945b586e0e87a4520bc9a71
   languageName: node
   linkType: hard
 
