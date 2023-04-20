@@ -33,6 +33,7 @@ export class LogStashHttpOptions {
   params?: Record<string, any>;
   headers?: Record<string, any>;
   retryOptions?: IAxiosRetryConfig;
+  debug?: boolean;
 }
 
 @Appender({name: "logstash-http"})
@@ -104,8 +105,7 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
       return this;
     }
 
-    const {url} = this.config.options;
-    const {application, logType} = this.config.options;
+    const {url, application, logType, debug} = this.config.options;
     const _index = typeof application === "function" ? application() : application;
 
     const action = JSON.stringify({
@@ -117,7 +117,7 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
 
     const bulkData = buffer.flatMap((item) => [action, item]);
     try {
-      await this.client({
+      const result = await this.client({
         url: "",
         method: "POST",
         data: this.serializeBulk(bulkData),
@@ -125,6 +125,10 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
           "Content-Type": "application/x-ndjson"
         }
       });
+
+      if (debug) {
+        console.debug(`Ts.ED Logger.logstash-http Appender ${url}: ${result.status} - ${JSON.stringify(result.data)}`);
+      }
     } catch (error) {
       if (error.response) {
         console.error(
