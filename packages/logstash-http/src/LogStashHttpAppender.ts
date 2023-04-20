@@ -25,6 +25,7 @@ export class LogStashHttpOptions {
   url: string;
   bufferMax: number;
   application: Function | string;
+  requireAlias?: boolean;
   logType: string;
   logChannel: string;
   auth?: AxiosBasicCredentials;
@@ -105,13 +106,14 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
       return this;
     }
 
-    const {url, application, logType, debug} = this.config.options;
+    const {url, application, logType, requireAlias, debug} = this.config.options;
     const _index = typeof application === "function" ? application() : application;
 
     const action = JSON.stringify({
       index: {
         _index,
-        _type: logType
+        _type: logType,
+        require_alias: requireAlias
       }
     });
 
