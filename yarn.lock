@@ -3327,7 +3327,7 @@ __metadata:
     nx: ^14.5.4
     prettier: 2.6.1
     semantic-release: ^19.0.5
-    semantic-release-slack-bot: ^3.5.3
+    semantic-release-slack-bot: ^4.0.1
     semver: ^7.3.5
     source-map-support: 0.5.21
     streamroller: ^3.1.5
@@ -18448,17 +18448,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release-slack-bot@npm:^3.5.3":
-  version: 3.5.3
-  resolution: "semantic-release-slack-bot@npm:3.5.3"
+"semantic-release-slack-bot@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "semantic-release-slack-bot@npm:4.0.1"
   dependencies:
     "@semantic-release/error": ^2.2.0
     micromatch: 4.0.2
     node-fetch: ^2.3.0
     slackify-markdown: ^4.3.0
   peerDependencies:
-    semantic-release: ">=11.0.0 <20.0.0"
-  checksum: 8bc40d1d28555082a82623cb6b623833456483fd92e7cb9f83379a9d45ccad07131d55431b242e503df9fcc5b08cd4aa12e6e8482f51352f06df5dfa65ad6c67
+    semantic-release: ">=11.0.0"
+  checksum: 8c8580dc0b7788650d8ca1ff9d657497932afbd7e67d2af76bac71b55bf82ca27c4db6f9f782fa671bc4a1943e646f29a37deae8d4b067e341e52bfc6a5aa38e
   languageName: node
   linkType: hard
 
