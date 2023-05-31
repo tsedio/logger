@@ -35,6 +35,7 @@ export class LogStashHttpOptions {
   headers?: Record<string, any>;
   retryOptions?: IAxiosRetryConfig;
   debug?: boolean;
+  httpsAgent?: any;
 }
 
 @Appender({name: "logstash-http"})
@@ -53,7 +54,8 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
         params: this.config.options.params,
         headers: {
           ...(this.config.options.headers || {})
-        }
+        },
+        httpsAgent: this.config.options.httpsAgent
       });
 
       axiosRetry(this.client, {
