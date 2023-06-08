@@ -2,6 +2,7 @@ import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
 import * as util from "util";
 import axios, {AxiosBasicCredentials} from "axios";
 import axiosRetry, {IAxiosRetryConfig} from "axios-retry";
+import {v4} from "uuid";
 
 function wrapErrorsWithInspect(items: any[]) {
   return items.map((item) => {
@@ -111,15 +112,14 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     const {url, application, logType, requireAlias, debug} = this.config.options;
     const _index = typeof application === "function" ? application() : application;
 
-    const action = JSON.stringify({
+    const bulkData = buffer.flatMap((item) => [JSON.stringify({
       index: {
         _index,
         _type: logType,
-        require_alias: requireAlias
+        require_alias: requireAlias,
+        _id: v4()
       }
-    });
-
-    const bulkData = buffer.flatMap((item) => [action, item]);
+    }), item]);
     try {
       const result = await this.client({
         url: "",
