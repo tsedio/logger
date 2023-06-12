@@ -40,7 +40,7 @@
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
     "streamroller": "^3.1.5",
-    "tslib": "2.3.1"
+    "tslib": "2.5.3"
   },
   "devDependencies": {
     "@tsed/logger": "6.6.2"
