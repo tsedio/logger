@@ -90,14 +90,13 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     const {bufferMax = 0, delayToFlush = 0} = this.config.options;
     this.#buffer.push(bulk);
 
+    if (!bufferMax || bufferMax <= this.#buffer.length) {
+      return this.flush();
+    }
+
     if (delayToFlush) {
       this.#timer && clearTimeout(this.#timer);
       this.#timer = setTimeout(() => this.flush(), delayToFlush);
-    }
-
-    if (bufferMax <= this.#buffer.length) {
-      this.#buffer.push(bulk);
-      return this.flush();
     }
   }
 
