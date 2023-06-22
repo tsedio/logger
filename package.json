@@ -47,7 +47,7 @@
     "date-format": "^4.0.6",
     "nodemailer": "^6.7.3",
     "nx": "^14.5.4",
-    "semver": "^7.3.5",
+    "semver": "^7.5.2",
     "streamroller": "^3.1.5",
     "tslib": "2.3.1"
   },
