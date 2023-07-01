@@ -3330,7 +3330,7 @@ __metadata:
     prettier: 2.6.1
     semantic-release: ^19.0.5
     semantic-release-slack-bot: ^3.5.3
-    semver: ^7.3.5
+    semver: ^7.5.3
     source-map-support: 0.5.21
     streamroller: ^3.1.5
     ts-node: ^10.8.0
@@ -3386,7 +3386,7 @@ __metadata:
   dependencies:
     colors: 1.4.0
     date-format: ^4.0.6
-    semver: ^7.3.5
+    semver: ^7.5.3
     tslib: 2.3.1
     typescript: 5.0.4
   languageName: unknown
@@ -18609,6 +18609,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 5eafe6102bea2a7439897c1856362e31cc348ccf96efd455c8b5bc2c61e6f7e7b8250dc26b8828c1d76a56f818a7ee907a36ae9fb37a599d3d24609207001d60
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.5.3":
+  version: 7.5.3
+  resolution: "semver@npm:7.5.3"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 9d58db16525e9f749ad0a696a1f27deabaa51f66e91d2fa2b0db3de3e9644e8677de3b7d7a03f4c15bc81521e0c3916d7369e0572dbde250d9bedf5194e2a8a7
   languageName: node
   linkType: hard
 
