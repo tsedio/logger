@@ -65,6 +65,10 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
         ...this.config.options.retryOptions
       });
     }
+
+    if (this.config.options.delayToFlush) {
+      this.#timer = setInterval(() => this.flush(), this.config.options.delayToFlush);
+    }
   }
 
   write(loggingEvent: LogEvent) {
@@ -90,13 +94,8 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     const {bufferMax = 0, delayToFlush = 0} = this.config.options;
     this.#buffer.push(bulk);
 
-    if (!bufferMax || bufferMax <= this.#buffer.length) {
+    if ((!bufferMax && !delayToFlush) || (bufferMax && bufferMax <= this.#buffer.length)) {
       return this.flush();
-    }
-
-    if (delayToFlush) {
-      this.#timer && clearTimeout(this.#timer);
-      this.#timer = setTimeout(() => this.flush(), delayToFlush);
     }
   }
 
@@ -111,14 +110,18 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     const {url, application, logType, requireAlias, debug} = this.config.options;
     const _index = typeof application === "function" ? application() : application;
 
-    const bulkData = buffer.flatMap((item) => [JSON.stringify({
-      index: {
-        _index,
-        _type: logType,
-        require_alias: requireAlias,
-        _id: v4()
-      }
-    }), item]);
+    const bulkData = buffer.flatMap((item) => [
+      JSON.stringify({
+        index: {
+          _index,
+          _type: logType,
+          require_alias: requireAlias,
+          _id: v4()
+        }
+      }),
+      item
+    ]);
+
     try {
       const result = await this.client({
         url: "",
@@ -152,6 +155,7 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
   }
 
   shutdown() {
+    this.#timer && clearInterval(this.#timer);
     return this.flush();
   }
 }
