@@ -30,8 +30,6 @@ export class SeqAppender extends BaseAppender {
     const level = loggingEvent.level.toString().toLowerCase();
 
     if (level !== "off") {
-      const [current, ...data] = loggingEvent.data;
-
       const additionalProps = [...loggingEvent.context.entries()].reduce((props, [key, value]) => {
         return {
           ...props,
@@ -44,15 +42,14 @@ export class SeqAppender extends BaseAppender {
         level: LEVEL_NAMES[loggingEvent.level.toString()] || "Information",
         properties: {
           ...(this.config.options.additionalProps || {}),
-          ...additionalProps,
-          data
+          ...additionalProps
         }
       };
 
-      if (typeof current === "string") {
-        seqEntry.messageTemplate = current.replace(/\[1m|\[22m/g, "");
+      if (loggingEvent.isMessage()) {
+        seqEntry.messageTemplate = loggingEvent.getData().replace(/\[1m|\[22m/g, "");
       } else {
-        let {message, msg, err, error, stack, v, ...props} = data[0];
+        let {message, msg, err, error, stack, v, ...props} = loggingEvent.getData();
 
         // Get the properties from the error
         let {message: errMessage, stack: errStack, ...errorProps} = err || error || {};
