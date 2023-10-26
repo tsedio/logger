@@ -3314,7 +3314,7 @@ __metadata:
     concurrently: ^7.0.0
     coveralls: ^3.1.1
     cross-env: 7.0.3
-    date-format: ^4.0.6
+    date-format: ^4.0.14
     entities: 1.1.2
     eslint: ^8.37.0
     eslint-config-prettier: 8.8.0
@@ -3385,7 +3385,7 @@ __metadata:
   resolution: "@tsed/logger@workspace:packages/logger"
   dependencies:
     colors: 1.4.0
-    date-format: ^4.0.6
+    date-format: ^4.0.14
     semver: ^7.5.3
     tslib: 2.6.2
     typescript: 5.0.4
@@ -7957,13 +7957,6 @@ __metadata:
   version: 4.0.14
   resolution: "date-format@npm:4.0.14"
   checksum: dfe5139df6af5759b9dd3c007b899b3f60d45a9240ffeee6314ab74e6ab52e9b519a44ccf285888bdd6b626c66ee9b4c8a523075fa1140617b5beb1cbb9b18d1
-  languageName: node
-  linkType: hard
-
-"date-format@npm:^4.0.6":
-  version: 4.0.10
-  resolution: "date-format@npm:4.0.10"
-  checksum: 677c8e022a5efcead2c869d18b3b1a3b61df6c2c464545ec91e68ea890088dae7704e5822009af420ea8bb26325ffce01be599cc9f087879ea4aefc70a964c7b
   languageName: node
   linkType: hard
 
