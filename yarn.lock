@@ -3325,7 +3325,7 @@ __metadata:
     is-ci: ^3.0.1
     jest: ^28.1.0
     lint-staged: ^12.3.7
-    nodemailer: ^6.7.3
+    nodemailer: ^6.9.8
     nx: ^14.5.4
     prettier: 2.6.1
     semantic-release: ^19.0.5
@@ -3372,8 +3372,8 @@ __metadata:
   resolution: "@tsed/logger-smtp@workspace:packages/smtp"
   dependencies:
     "@tsed/logger": 6.6.3
-    "@types/nodemailer": 6.4.4
-    nodemailer: ^6.7.3
+    "@types/nodemailer": 6.4.14
+    nodemailer: ^6.9.8
     tslib: 2.6.2
   peerDependencies:
     "@tsed/logger": 6.6.3
@@ -3811,12 +3811,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/nodemailer@npm:6.4.4":
-  version: 6.4.4
-  resolution: "@types/nodemailer@npm:6.4.4"
+"@types/nodemailer@npm:6.4.14":
+  version: 6.4.14
+  resolution: "@types/nodemailer@npm:6.4.14"
   dependencies:
     "@types/node": "*"
-  checksum: 16ed1bad2cd8471fd3b026471e234da33ba3b65935dc44b31be3145eff7bdb067eb4d08ec4b41d23339b988075299abc1a0c0fe77b99f04ca235827bca95af81
+  checksum: 5f61f01dd736b17f431d1e8b320322f86460604b45df947fc4bc8999d7c7719405e349f7abba86e4fb100a464a30b52615d00dac03d9cb37562ff04487ebd310
   languageName: node
   linkType: hard
 
@@ -15136,10 +15136,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.7.3":
-  version: 6.7.5
-  resolution: "nodemailer@npm:6.7.5"
-  checksum: d361a107b9eb264856852e32d3deb9bda1f69fdef6087ba20aaf58f98aacf4cd16c3633583ddbc1f23df25ad87c86bcca98511aaadfb447fe35a1e0eca6a7796
+"nodemailer@npm:^6.9.8":
+  version: 6.9.8
+  resolution: "nodemailer@npm:6.9.8"
+  checksum: 6499b93b7070a1b789ec00681ccbbf34180f127f1ce455b28201584b0974086a86be858062d41044df72ed7aba5649a40321a8e926367d2a1dfc0e65b7bf8838
   languageName: node
   linkType: hard
 

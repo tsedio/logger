@@ -45,7 +45,7 @@
   "dependencies": {
     "colors": "1.4.0",
     "date-format": "^4.0.6",
-    "nodemailer": "^6.7.3",
+    "nodemailer": "^6.9.8",
     "nx": "^14.5.4",
     "semver": "^7.5.3",
     "streamroller": "^3.1.5",
