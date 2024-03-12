@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "**/*",
+    ".eslintrc.js",
+    "**/vite.config.mts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

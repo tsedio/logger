@@ -6,21 +6,26 @@
     "name": "Romain Lenzotti"
   },
   "license": "MIT",
-  "source": "./src/index.ts",
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.js",
-  "typings": "./lib/types/index.d.ts",
+  "source": "./src/node/index.ts",
+  "main": "./lib/cjs/node/index.js",
+  "module": "./lib/esm/node/index.js",
+  "browser": "./lib/browser/logger.umd.js",
+  "typings": "./lib/types/node/index.d.ts",
   "exports": {
-    "types": "./lib/types/index.d.ts",
-    "import": "./lib/esm/index.js",
-    "require": "./lib/cjs/index.js",
-    "default": "./lib/esm/index.js"
+    ".": {
+      "types": "./lib/types/node/index.d.ts",
+      "browser": "./lib/browser/logger.umd.js",
+      "import": "./lib/esm/node/index.js",
+      "require": "./lib/cjs/node/index.js",
+      "default": "./lib/esm/node/index.js"
+    }
   },
   "scripts": {
-    "build": "yarn barrels && yarn run build:esm && yarn run build:cjs",
+    "build": "yarn barrels && yarn run build:esm && yarn run build:cjs && yarn run build:browser",
+    "build:browser": "vite build",
     "build:cjs": "tsc --build tsconfig.json",
     "build:esm": "tsc --build tsconfig.esm.json",
-    "barrels": "barrelsby --delete -d ./src -e \"\\.spec\\.ts\" -e \"__mock__\" -e \".benchmark.ts\""
+    "barrels": "yarn barrelsby --config .barrelsby.json"
   },
   "repository": {
     "type": "git",
@@ -44,6 +49,8 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "typescript": "5.4.2"
+    "barrelsby": "^2.8.1",
+    "typescript": "5.4.2",
+    "vite": "5.1.6"
   }
 }
