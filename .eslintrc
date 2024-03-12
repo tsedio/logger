@@ -3,9 +3,9 @@
   "extends": ["prettier", "plugin:@typescript-eslint/recommended"],
   "plugins": ["@typescript-eslint"],
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2023,
     "sourceType": "module",
-    "project": "./tsconfig.base.json"
+    "project": "./tsconfig.eslint.json"
   },
   "env": {
     "node": true,

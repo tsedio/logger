@@ -10,19 +10,6 @@ on:
       - production
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install and Check dependencies 🚀 + ✅
-        run: yarn install --immutable
   lint:
     runs-on: ubuntu-latest
     strategy:
@@ -93,7 +80,7 @@ jobs:
 
   deploy-packages:
     runs-on: ubuntu-latest
-    needs: [ test, build, lint, check ]
+    needs: [ test, build, lint ]
     if: ${{ github.event_name != 'pull_request' && (contains(github.ref, 'production') || contains(github.ref, 'alpha')  || contains(github.ref, 'beta') || contains(github.ref, 'rc')) }}
 
     strategy:

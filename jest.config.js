@@ -18,7 +18,7 @@ export default {
   coveragePathIgnorePatterns: ['index.ts', '/node_modules/'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
-    '^@tsed/logger(.*)$': '<rootDir>/packages/logger$1/src'
+    '^@tsed/logger$': '<rootDir>/packages/logger/src/node/index.ts',
   },
 
   // An object that configures minimum threshold enforcement for coverage results
