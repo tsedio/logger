@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-loggly",
-  "version": "6.6.3",
+  "version": "6.7.0",
   "description": "Loggly appender module for @tsed/logger",
   "source": "./src/index.ts",
   "main": "./lib/cjs/index.js",
@@ -44,9 +44,9 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "6.6.3"
+    "@tsed/logger": "6.7.0"
   },
   "peerDependencies": {
-    "@tsed/logger": "6.6.3"
+    "@tsed/logger": "6.7.0"
   }
 }

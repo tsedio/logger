@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-connect",
-  "version": "6.6.3",
+  "version": "6.7.0",
   "description": "Connect Ts.ED logger with another logger that implement the expected interface",
   "source": "./src/index.ts",
   "main": "./lib/cjs/index.js",
@@ -42,9 +42,9 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "6.6.3"
+    "@tsed/logger": "6.7.0"
   },
   "peerDependencies": {
-    "@tsed/logger": "6.6.3"
+    "@tsed/logger": "6.7.0"
   }
 }
