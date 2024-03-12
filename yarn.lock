@@ -4231,7 +4231,7 @@ __metadata:
     is-ci: "npm:^3.0.1"
     jest: "npm:^29.7.0"
     lint-staged: "npm:^15.2.2"
-    nodemailer: "npm:^6.9.8"
+    nodemailer: "npm:^6.9.9"
     nx: "npm:^18.0.8"
     prettier: "npm:3.2.5"
     semantic-release: "npm:^23.0.2"
@@ -4279,7 +4279,7 @@ __metadata:
   dependencies:
     "@tsed/logger": "npm:6.7.0"
     "@types/nodemailer": "npm:6.4.14"
-    nodemailer: "npm:^6.9.8"
+    nodemailer: "npm:^6.9.9"
     tslib: "npm:2.6.2"
   peerDependencies:
     "@tsed/logger": 6.7.0
@@ -17016,10 +17016,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.9.8":
-  version: 6.9.8
-  resolution: "nodemailer@npm:6.9.8"
-  checksum: 10/8c22b671bde4d507b6585758a323111aa2f7c97e0720fb91a645f1dee1da6661cdc4004bc42c63c95c712e7b1f7287518c623f9ac92e590f85b4d3f0f2ff7f65
+"nodemailer@npm:^6.9.9":
+  version: 6.9.12
+  resolution: "nodemailer@npm:6.9.12"
+  checksum: 10/464334c32f929ab3660e1f86637bf757139def8210ccf3899ae3847de4ddcd833f40bfa5058dcdec2cad87b5af66164d5299caba581ae3aafb6ba1c3fec3b561
   languageName: node
   linkType: hard
 
