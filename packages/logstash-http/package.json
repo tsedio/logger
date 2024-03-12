@@ -40,14 +40,14 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
-    "axios": "1.6.2",
-    "axios-retry": "^3.3.1",
+    "axios": "1.6.7",
+    "axios-retry": "^4.0.0",
     "tslib": "2.6.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@tsed/logger": "6.6.3",
-    "@types/uuid": "^9.0.1"
+    "@types/uuid": "^9.0.8"
   },
   "peerDependencies": {
     "@tsed/logger": "6.6.3"

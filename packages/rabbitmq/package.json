@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
-    "@types/amqplib": "^0.8.2",
+    "@types/amqplib": "^0.10.5",
     "amqplib": "0.10.3",
     "tslib": "2.6.2"
   },
