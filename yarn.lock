@@ -4221,7 +4221,7 @@ __metadata:
     coveralls: "npm:^3.1.1"
     cross-env: "npm:7.0.3"
     date-format: "npm:^4.0.14"
-    entities: "npm:1.1.2"
+    entities: "npm:4.5.0"
     eslint: "npm:^8.57.0"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-jest: "npm:27.9.0"
@@ -10000,7 +10000,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:1.1.2, entities@npm:^1.1.1, entities@npm:~1.1.1":
+"entities@npm:4.5.0, entities@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "entities@npm:4.5.0"
+  checksum: 10/ede2a35c9bce1aeccd055a1b445d41c75a14a2bb1cd22e242f20cf04d236cdcd7f9c859eb83f76885327bfae0c25bf03303665ee1ce3d47c5927b98b0e3e3d48
+  languageName: node
+  linkType: hard
+
+"entities@npm:^1.1.1, entities@npm:~1.1.1":
   version: 1.1.2
   resolution: "entities@npm:1.1.2"
   checksum: 10/4a707022f4e932060f03df2526be55d085a2576fe534421e5b22bc62abb0d1f04241c171f9981e3d7baa4f4160606cad72a2f7eb01b6a25e279e3f31a2be4bf2
@@ -10011,13 +10018,6 @@ __metadata:
   version: 2.0.0
   resolution: "entities@npm:2.0.0"
   checksum: 10/c9604a020df7ca88d226b97bbb7cae98f9c3e98e7b75f037c1ccde05811e2b672a0d84721d7249455cedc5fc109b2be17e77235a4f30fcbded073e057e7f1eaf
-  languageName: node
-  linkType: hard
-
-"entities@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "entities@npm:4.5.0"
-  checksum: 10/ede2a35c9bce1aeccd055a1b445d41c75a14a2bb1cd22e242f20cf04d236cdcd7f9c859eb83f76885327bfae0c25bf03303665ee1ce3d47c5927b98b0e3e3d48
   languageName: node
   linkType: hard
 
