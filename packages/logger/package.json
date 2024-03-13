@@ -18,6 +18,11 @@
       "import": "./lib/esm/node/index.js",
       "require": "./lib/cjs/node/index.js",
       "default": "./lib/esm/node/index.js"
+    },
+    "./browser": {
+      "types": "./lib/types/browser/index.d.ts",
+      "import": "./lib/browser/logger.mjs",
+      "browser": "./lib/browser/logger.umd.js"
     }
   },
   "scripts": {
