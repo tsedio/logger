@@ -6,17 +6,17 @@
     "name": "Romain Lenzotti"
   },
   "license": "MIT",
-  "source": "./src/node/index.ts",
-  "main": "./lib/cjs/node/index.js",
-  "module": "./lib/esm/node/index.js",
+  "source": "./src/index.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "browser": "./lib/browser/logger.umd.js",
-  "typings": "./lib/types/node/index.d.ts",
+  "typings": "./lib/types/index.d.ts",
   "exports": {
-    "types": "./lib/types/node/index.d.ts",
+    "types": "./lib/types/index.d.ts",
     "browser": "./lib/browser/logger.umd.js",
-    "import": "./lib/esm/node/index.js",
-    "require": "./lib/cjs/node/index.js",
-    "default": "./lib/esm/node/index.js"
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.js",
+    "default": "./lib/esm/index.js"
   },
   "scripts": {
     "build": "yarn barrels && yarn run build:esm && yarn run build:cjs && yarn run build:browser",

@@ -1,4 +1,4 @@
-import {Logger} from "./node";
+import {Logger} from "./index";
 
 describe("Logger integration", () => {
   it("should log only on trace", () => {

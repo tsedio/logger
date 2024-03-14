@@ -4,8 +4,6 @@ import {LayoutReplacer, Logger} from "../common/index";
 import "./appenders/StdoutAppender";
 import "./appenders/StderrAppender";
 
-export * from "../common/index";
-
 export const $log: Logger = new Logger("default");
 
 $log.appenders
