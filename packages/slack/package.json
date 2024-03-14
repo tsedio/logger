@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-slack",
-  "version": "6.7.2",
+  "version": "6.7.3",
   "description": "Slack appender module for @tsed/logger",
   "source": "./src/index.ts",
   "main": "./lib/cjs/index.js",
@@ -43,9 +43,9 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "6.7.2"
+    "@tsed/logger": "6.7.3"
   },
   "peerDependencies": {
-    "@tsed/logger": "6.7.2"
+    "@tsed/logger": "6.7.3"
   }
 }
