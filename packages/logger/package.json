@@ -12,18 +12,11 @@
   "browser": "./lib/browser/logger.umd.js",
   "typings": "./lib/types/node/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./lib/types/node/index.d.ts",
-      "browser": "./lib/browser/logger.umd.js",
-      "import": "./lib/esm/node/index.js",
-      "require": "./lib/cjs/node/index.js",
-      "default": "./lib/esm/node/index.js"
-    },
-    "./browser": {
-      "types": "./lib/types/browser/index.d.ts",
-      "import": "./lib/browser/logger.mjs",
-      "browser": "./lib/browser/logger.umd.js"
-    }
+    "types": "./lib/types/node/index.d.ts",
+    "browser": "./lib/browser/logger.umd.js",
+    "import": "./lib/esm/node/index.js",
+    "require": "./lib/cjs/node/index.js",
+    "default": "./lib/esm/node/index.js"
   },
   "scripts": {
     "build": "yarn barrels && yarn run build:esm && yarn run build:cjs && yarn run build:browser",
