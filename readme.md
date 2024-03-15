@@ -97,6 +97,9 @@ logger.appenders
     }
   });
 ```
+## Repository stats
+
+![Alt](https://repobeats.axiom.co/api/embed/1a7b80d5a5a473c37c4b1c3084e101001d15e14a.svg "Repobeats analytics image")
 
 ## Backers
 
