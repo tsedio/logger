@@ -1,7 +1,7 @@
+import {LogContext} from "../../core/LogContext";
 import {LogEvent} from "../../core/LogEvent";
 import {levels} from "../../core/LogLevel";
 import {JsonLayout} from "./JsonLayout";
-import {LogContext} from "../../core/LogContext";
 
 describe("JsonLayout", () => {
   describe("when separator is given", () => {
@@ -21,10 +21,10 @@ describe("JsonLayout", () => {
       // @ts-ignore
       expect(result).toEqual(
         JSON.stringify({
-          user: "romain",
           startTime: logEvent.startTime,
           categoryName: "category",
           level: "DEBUG",
+          user: "romain",
           data: ["data"]
         }) + ","
       );
@@ -55,10 +55,10 @@ describe("JsonLayout", () => {
       // @ts-ignore
       expect(result).toEqual(
         JSON.stringify({
-          user: "romain",
           startTime: logEvent.startTime,
           categoryName: "category",
           level: "DEBUG",
+          user: "romain",
           test: "test",
           data: ["hello"]
         }) + ","
@@ -83,10 +83,10 @@ describe("JsonLayout", () => {
     it("should return a formatted string", () => {
       expect(result).toEqual(
         JSON.stringify({
-          user: "romain",
           startTime: logEvent._startTime,
           categoryName: "category",
           level: "DEBUG",
+          user: "romain",
           data: ["data"]
         })
       );

@@ -4,10 +4,10 @@ import {removeColors} from "./colorizeUtils";
 
 export function logEventToObject(loggingEvent: LogEvent) {
   const log: any = {
-    ...loggingEvent.context.toJSON(),
     startTime: loggingEvent.startTime,
     categoryName: loggingEvent.categoryName,
-    level: loggingEvent.level.toString()
+    level: loggingEvent.level.toString(),
+    ...loggingEvent.context.toJSON()
   };
 
   log.data = loggingEvent.data.reduce((data, current) => {
