@@ -17,7 +17,7 @@ npm install --save @tsed/logger-connect
 import {$log} from "@tsed/logger";
 import "@tsed/logger-connect";
 
-$log.clear()
+$log.appenders.clear()
 $log.appenders.set("channel", {
   type: "connect",
   logger: {
