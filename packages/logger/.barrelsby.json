@@ -8,7 +8,6 @@
     "__mock__",
     "__mocks__",
     ".spec.ts",
-    "utils",
     "LayoutReplacer"
   ],
   "delete": true
