@@ -1,6 +1,6 @@
-import Util from "util";
 import {LogEvent} from "../../core/LogEvent";
 import {removeColors} from "./colorizeUtils";
+import {format} from "./StringUtils";
 
 export function logEventToObject(loggingEvent: LogEvent) {
   const log: any = {
@@ -21,7 +21,7 @@ export function logEventToObject(loggingEvent: LogEvent) {
       return data;
     }
 
-    return [...data, removeColors(Util.format(current))];
+    return [...data, removeColors(format(current))];
   }, []);
 
   return log;

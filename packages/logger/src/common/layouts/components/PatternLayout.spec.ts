@@ -4,7 +4,7 @@ import * as os from "os";
 // @ts-ignore
 import * as dateFormat from "date-format";
 import {PatternLayout} from "./PatternLayout";
-import {LayoutReplacer} from "../class/LayoutReplacer";
+import {LayoutReplacer} from "../../../node/layouts/LayoutReplacer";
 
 const EOL = os.EOL || "\n";
 LayoutReplacer.HOSTNAME = "hostname";

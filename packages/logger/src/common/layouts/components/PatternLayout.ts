@@ -1,7 +1,6 @@
 import {truncateAndPad} from "../utils/StringUtils";
 import {BaseLayout} from "../class/BaseLayout";
 import {IReplacers} from "../interfaces/Replacers";
-import {LayoutReplacer} from "../class/LayoutReplacer";
 import {LogEvent} from "../../core/LogEvent";
 import {BasicLayoutConfiguration, TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
 import {Layout} from "../decorators/layout";
@@ -48,12 +47,14 @@ export class PatternLayout extends BaseLayout {
   readonly #tokens: TokensHandlers;
   readonly #pattern: string;
 
+  static LayoutReplacer: any;
+
   constructor(config: BasicLayoutConfiguration) {
     super(config);
 
     this.#pattern = (config && config.pattern) || TTCC_CONVERSION_PATTERN;
     this.#tokens = config && config.tokens!;
-    this.#replacers = new LayoutReplacer(this.#tokens, this.config.timezoneOffset).build();
+    this.#replacers = new PatternLayout.LayoutReplacer(this.#tokens, this.config.timezoneOffset).build();
   }
 
   /**

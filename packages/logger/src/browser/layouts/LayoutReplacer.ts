@@ -1,11 +1,11 @@
 // @ts-ignore
 import * as dateFormat from "date-format";
-import {LogEvent} from "../../core/LogEvent";
-import {LOG_COLORS} from "../constants/logColors";
-import {colorizeEnd, colorizeStart} from "../utils/colorizeUtils";
-import {IReplacers} from "../interfaces/Replacers";
-import {TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
-import {format} from "../utils/StringUtils";
+import {LogEvent} from "../../common/core/LogEvent";
+import {LOG_COLORS} from "../../common/layouts/constants/logColors";
+import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUtils";
+import {IReplacers} from "../../common/layouts/interfaces/Replacers";
+import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration";
+import {format} from "../../common/layouts/utils/StringUtils";
 
 export class LayoutReplacer {
   static EOL = "\n";
@@ -131,7 +131,7 @@ export class LayoutReplacer {
    * @returns {string}
    */
   public pid = (loggingEvent?: LogEvent): string => {
-    return loggingEvent && loggingEvent.pid ? loggingEvent.pid.toString() : process.pid.toString();
+    return loggingEvent && loggingEvent.pid ? loggingEvent.pid.toString() : "";
   };
   /**
    *
