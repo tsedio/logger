@@ -1,6 +1,10 @@
 import {LogEvent} from "../../core/LogEvent";
 import {levels} from "../../core/LogLevel";
 import {BasicLayout} from "./BasicLayout";
+import {StringUtils} from "../utils/StringUtils";
+import {format} from "node:util";
+
+StringUtils.format = format;
 
 describe("BasicLayout", () => {
   it("should return a formated string", () => {

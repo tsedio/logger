@@ -2,11 +2,11 @@
 import * as dateFormat from "date-format";
 import {colorize} from "./colorizeUtils";
 import {LogEvent} from "../../core/LogEvent";
-import {format} from "./StringUtils";
+import {StringUtils} from "./StringUtils";
 
 export function timestampLevelAndCategory(loggingEvent: LogEvent, colour: any, timezoneOffset: number | undefined) {
   return colorize(
-    format(
+    StringUtils.format(
       "[%s] [%s] [%s] - ",
       dateFormat.asString(loggingEvent.startTime, timezoneOffset),
       loggingEvent.formattedLevel,

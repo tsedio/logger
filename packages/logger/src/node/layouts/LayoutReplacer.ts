@@ -1,3 +1,4 @@
+import Util from "node:util";
 // @ts-ignore
 import * as dateFormat from "date-format";
 import {LogEvent} from "../../common/core/LogEvent";
@@ -6,7 +7,6 @@ import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUti
 import {IReplacers} from "../../common/layouts/interfaces/Replacers";
 import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration";
 import Os from "os";
-import Util from "util";
 
 export class LayoutReplacer {
   static EOL = Os.EOL || "\n";

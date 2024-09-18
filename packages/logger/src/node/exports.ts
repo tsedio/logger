@@ -1,4 +1,5 @@
-import {Logger, PatternLayout} from "../common/index";
+import {format} from "node:util";
+import {Logger, PatternLayout, StringUtils} from "../common/index";
 import "./appenders/StdoutAppender";
 import "./appenders/StderrAppender";
 import {LayoutReplacer} from "./layouts/LayoutReplacer";
@@ -10,3 +11,4 @@ $log.appenders
   .set("stderr", {type: "stderr", levels: ["trace", "fatal", "error", "warn"]});
 
 PatternLayout.LayoutReplacer = LayoutReplacer;
+StringUtils.format = format;

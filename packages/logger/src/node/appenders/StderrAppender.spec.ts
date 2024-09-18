@@ -1,5 +1,8 @@
 import {StderrAppender} from "./StderrAppender";
-import {levels, LogEvent} from "../../common";
+import {levels, LogEvent, StringUtils} from "../../common";
+import {format} from "node:util";
+
+StringUtils.format = format;
 
 describe("StderrAppender", () => {
   it("should log something", () => {

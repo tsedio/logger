@@ -2,7 +2,7 @@ import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory";
 import {BaseLayout} from "../class/BaseLayout";
 import {LogEvent} from "../../core/LogEvent";
 import {Layout} from "../decorators/layout";
-import {format} from "../utils/StringUtils";
+import {StringUtils} from "../utils/StringUtils";
 
 @Layout({name: "basic"})
 export class BasicLayout extends BaseLayout {
@@ -16,6 +16,9 @@ export class BasicLayout extends BaseLayout {
    * @author Stephan Strittmatter
    */
   transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
-    return timestampLevelAndCategory(loggingEvent, undefined, timezoneOffset) + (format as any)(...[].concat(loggingEvent.data as any));
+    return (
+      timestampLevelAndCategory(loggingEvent, undefined, timezoneOffset) +
+      (StringUtils.format as any)(...[].concat(loggingEvent.data as any))
+    );
   }
 }
