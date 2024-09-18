@@ -2,6 +2,10 @@ import {ConsoleAppender} from "./ConsoleAppender";
 import {LogEvent} from "../../core/LogEvent";
 import {levels} from "../../core/LogLevel";
 import "../../layouts/components/ColoredLayout";
+import {StringUtils} from "../../layouts/utils/StringUtils";
+import {format} from "node:util";
+
+StringUtils.format = format;
 
 describe("ConsoleAppender", () => {
   it("should log something", () => {

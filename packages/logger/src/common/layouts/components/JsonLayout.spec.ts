@@ -2,6 +2,10 @@ import {LogEvent} from "../../core/LogEvent";
 import {levels} from "../../core/LogLevel";
 import {JsonLayout} from "./JsonLayout";
 import {LogContext} from "../../core/LogContext";
+import {StringUtils} from "../utils/StringUtils";
+import {format} from "node:util";
+
+StringUtils.format = format;
 
 describe("JsonLayout", () => {
   describe("when separator is given", () => {

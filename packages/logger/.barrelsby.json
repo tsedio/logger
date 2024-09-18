@@ -1,5 +1,15 @@
 {
-  "directory": ["./src/common", "./src/browser", "./src/node"],
-  "exclude": ["__mock__", "__mocks__", ".spec.ts"],
+  "directory": [
+    "./src/common",
+    "./src/browser",
+    "./src/node"
+  ],
+  "exclude": [
+    "__mock__",
+    "__mocks__",
+    ".spec.ts",
+    "utils",
+    "LayoutReplacer"
+  ],
   "delete": true
 }

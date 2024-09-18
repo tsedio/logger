@@ -5,7 +5,7 @@ import {LOG_COLORS} from "../../common/layouts/constants/logColors";
 import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUtils";
 import {IReplacers} from "../../common/layouts/interfaces/Replacers";
 import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration";
-import {format} from "../../common/layouts/utils/StringUtils";
+import {format} from "../utils/format";
 
 export class LayoutReplacer {
   static EOL = "\n";

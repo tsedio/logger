@@ -5,4 +5,3 @@
 export * from "./exports";
 export * from "./appenders/StderrAppender";
 export * from "./appenders/StdoutAppender";
-export * from "./layouts/LayoutReplacer";

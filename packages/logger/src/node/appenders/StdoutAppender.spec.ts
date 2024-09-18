@@ -2,6 +2,10 @@ import {levels, LogEvent} from "../../common";
 import {StdoutAppender} from "./StdoutAppender";
 import "./StdoutAppender";
 import "./StdoutAppender";
+import {format} from "node:util";
+import {StringUtils} from "../../common/layouts/utils/StringUtils";
+
+StringUtils.format = format;
 
 describe("StdoutAppender", () => {
   it("should log something", () => {

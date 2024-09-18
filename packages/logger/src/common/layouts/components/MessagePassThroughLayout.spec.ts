@@ -1,6 +1,10 @@
 import {LogEvent} from "../../core/LogEvent";
 import {levels} from "../../core/LogLevel";
 import {MessagePassThroughLayout} from "./MessagePassThroughLayout";
+import {StringUtils} from "../utils/StringUtils";
+import {format} from "node:util";
+
+StringUtils.format = format;
 
 describe("MessagePassThroughLayout", () => {
   it("should return a formatted string", () => {
