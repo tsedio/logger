@@ -11,7 +11,6 @@ export * from "./core/LogContext";
 export * from "./core/LogEvent";
 export * from "./core/LogLevel";
 export * from "./layouts/class/BaseLayout";
-export * from "./layouts/class/LayoutReplacer";
 export * from "./layouts/class/Layouts";
 export * from "./layouts/components/BasicLayout";
 export * from "./layouts/components/ColoredLayout";
