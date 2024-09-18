@@ -3,3 +3,4 @@
  */
 
 export * from "./exports";
+export * from "./utils/format";
