@@ -57,7 +57,7 @@
     "@swc/core": "^1.4.6",
     "@swc/jest": "0.2.36",
     "@tsed/markdown-it-symbols": "3.19.5",
-    "@tsed/monorepo-utils": "^2.1.1",
+    "@tsed/monorepo-utils": "2.3.5",
     "@tsed/ts-doc": "^4.1.0",
     "@types/jest": "^29.5.12",
     "@types/node": "20.11.26",

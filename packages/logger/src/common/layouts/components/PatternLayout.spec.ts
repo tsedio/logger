@@ -8,6 +8,7 @@ import {LayoutReplacer} from "../../../node/layouts/LayoutReplacer";
 
 const EOL = os.EOL || "\n";
 LayoutReplacer.HOSTNAME = "hostname";
+PatternLayout.LayoutReplacer = LayoutReplacer;
 
 describe("PatternLayout", () => {
   let logEvent: any, layout: any, result: any;
