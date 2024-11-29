@@ -1,0 +1,33 @@
+{
+  "sourceMaps": "inline",
+  "jsc": {
+    "target": "es2021",
+    "externalHelpers": true,
+    "keepClassNames": true,
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true,
+      "decorators": true,
+      "dynamicImport": true,
+      "privateMethod": true,
+      "exportDefaultFrom": true,
+      "importMeta": true,
+      "preserveAllComments": true
+    },
+    "transform": {
+      "hidden": {
+        "jest": true
+      },
+      "legacyDecorator": true,
+      "decoratorMetadata": true
+    }
+  },
+  "module": {
+    "type": "es6",
+    "strict": false,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  },
+  "isModule": true
+}

@@ -57,7 +57,7 @@
     "@swc/core": "^1.4.6",
     "@swc/jest": "0.2.36",
     "@tsed/markdown-it-symbols": "3.19.5",
-    "@tsed/monorepo-utils": "2.3.5",
+    "@tsed/monorepo-utils": "2.3.10",
     "@tsed/ts-doc": "^4.1.0",
     "@types/jest": "^29.5.12",
     "@types/node": "20.11.26",
@@ -94,7 +94,8 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "tools/*"
     ]
   },
   "monorepo": {
@@ -106,6 +107,12 @@
         "url": "https://github.com/tsedio/logger.git",
         "branch": "gh-pages",
         "cname": "logger.tsed.io"
+      },
+      {
+        "dir": "./docs/.vuepress/dist",
+        "url": "https://github.com/tsedio/logger.tsed.dev.git",
+        "branch": "gh-pages",
+        "cname": "logger.tsed.dev"
       }
     ]
   },
