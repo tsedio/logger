@@ -12,15 +12,13 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
+          cache: "yarn"
       - name: Install dependencies 🚀
         run: yarn install --immutable
       - name: Run lint 🔍
@@ -28,17 +26,13 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
+          cache: "yarn"
       - name: Install dependencies 🚀
         run: yarn install --immutable
       - name: Run test 🔍
@@ -63,16 +57,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
+          cache: "yarn"
       - name: Install dependencies 🚀
         run: yarn install --immutable
       - name: Build 🚧
@@ -83,16 +74,14 @@ jobs:
     needs: [ test, build, lint ]
     if: ${{ github.event_name != 'pull_request' && (contains(github.ref, 'production') || contains(github.ref, 'alpha')  || contains(github.ref, 'beta') || contains(github.ref, 'rc')) }}
 
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
+          cache: "yarn"
       - name: Install dependencies 🚀
         run: yarn install --immutable
       - name: Release packages 🔖
@@ -113,26 +102,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy-packages
     if: ${{ github.event_name != 'pull_request' && (contains(github.ref, 'production') || contains(github.ref, 'alpha')  || contains(github.ref, 'beta') || contains(github.ref, 'rc')) }}
-
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - uses: actions/download-artifact@v4
-        with:
-          name: packages
-      - name: Install dependencies 🚀
-        run: yarn install --immutable
-      - name: Publish pages 📝
-        env:
-          CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        run: yarn docs:publish
+      - name: "Trigger Website workflow"
+        run: |
+          curl -X POST  https://api.github.com/repos/tsedio/logger/actions/workflows/website.yml/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -H 'Authorization: Bearer ${{secrets.GH_TOKEN}}' \
+          --data '{"ref": "${{github.ref_name}}"}'
