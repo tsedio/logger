@@ -1,5 +1,5 @@
-import {LayoutsRegistry} from "../registries/LayoutsRegistry.js";
 import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration.js";
+import {LayoutsRegistry} from "../registries/LayoutsRegistry.js";
 import {BaseLayout} from "./BaseLayout.js";
 
 export class Layouts {

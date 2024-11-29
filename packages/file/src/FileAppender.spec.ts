@@ -1,4 +1,5 @@
 import {levels, LogEvent} from "@tsed/logger";
+
 import {FileAppender} from "./index.js";
 
 describe("FileAppender", () => {

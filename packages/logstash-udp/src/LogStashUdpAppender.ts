@@ -1,7 +1,7 @@
 import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
-import * as util from "util";
 import * as dgram from "dgram";
 import * as os from "os";
+import * as util from "util";
 
 const defaultVersion = 1;
 

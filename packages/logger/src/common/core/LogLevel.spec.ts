@@ -60,11 +60,11 @@ describe("LogLevel", () => {
       expect(LogLevel.getLevel(levels().ALL)).toEqual(levels().ALL);
     });
 
-    it("should return level (1)", () => {
+    it("should return level (2)", () => {
       expect(LogLevel.getLevel("all")).toEqual(levels().ALL);
     });
 
-    it("should return level (2)", () => {
+    it("should return level (3)", () => {
       expect(LogLevel.getLevel({toString: () => "all"})).toEqual(levels().ALL);
     });
   });

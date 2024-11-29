@@ -1,8 +1,9 @@
+import {format} from "node:util";
+
 import {LogEvent} from "../../core/LogEvent.js";
 import {levels} from "../../core/LogLevel.js";
-import {MessagePassThroughLayout} from "./MessagePassThroughLayout.js";
 import {StringUtils} from "../utils/StringUtils.js";
-import {format} from "node:util";
+import {MessagePassThroughLayout} from "./MessagePassThroughLayout.js";
 
 StringUtils.format = format;
 

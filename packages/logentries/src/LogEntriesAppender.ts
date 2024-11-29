@@ -1,4 +1,4 @@
-import {$log, Appender, LogEvent, BaseAppender} from "@tsed/logger";
+import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
 // @ts-ignore
 import LogEntries from "le_node";
 

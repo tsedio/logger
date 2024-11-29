@@ -1,6 +1,5 @@
-import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
-
 import {WebClient} from "@slack/web-api";
+import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
 
 @Appender({name: "slack"})
 export class SlackAppender extends BaseAppender {
