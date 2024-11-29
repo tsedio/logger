@@ -1,29 +1,33 @@
 {
   "name": "@tsed/logger",
-  "version": "6.7.8",
   "description": "A multi channel logger written in TypeScript.",
+  "type": "module",
+  "version": "6.7.8",
   "author": {
     "name": "Romain Lenzotti"
   },
   "license": "MIT",
   "source": "./src/index.ts",
-  "main": "./lib/cjs/index.js",
+  "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
   "browser": "./lib/browser/logger.umd.js",
   "typings": "./lib/types/index.d.ts",
   "exports": {
-    "types": "./lib/types/index.d.ts",
-    "browser": "./lib/browser/logger.umd.js",
-    "import": "./lib/esm/index.js",
-    "require": "./lib/cjs/index.js",
-    "default": "./lib/esm/index.js"
+    ".": {
+      "@tsed/source": "./src/index.ts",
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "browser": "./lib/browser/logger.umd.js",
+      "default": "./lib/esm/index.js"
+    }
   },
   "scripts": {
-    "build": "yarn barrels && yarn run build:esm && yarn run build:cjs && yarn run build:browser",
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage.thresholds.autoUpdate=true",
+    "build": "yarn barrels && yarn run build:ts && yarn run build:browser",
     "build:browser": "vite build",
-    "build:cjs": "tsc --build tsconfig.json",
-    "build:esm": "tsc --build tsconfig.esm.json",
-    "barrels": "yarn barrelsby --config .barrelsby.json"
+    "barrels": "barrels",
+    "build:ts": "tsc --build tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -47,8 +51,12 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "barrelsby": "^2.8.1",
-    "typescript": "5.4.2",
-    "vite": "5.1.6"
-  }
+    "@tsed/barrels": "6.0.2",
+    "@tsed/typescript": "workspace:*",
+    "@tsed/vitest": "workspace:*",
+    "typescript": "5.7.2",
+    "vite": "5.4.11",
+    "vitest": "^2.1.6"
+  },
+  "peerDependencies": {}
 }

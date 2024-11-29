@@ -1,5 +1,5 @@
-import {LogLevel} from "./LogLevel";
-import {LogContext} from "./LogContext";
+import {LogLevel} from "./LogLevel.js";
+import {LogContext} from "./LogContext.js";
 
 export class LogEvent {
   /**

@@ -1,4 +1,4 @@
-import {BasicLayoutConfiguration} from "../../layouts/interfaces/BasicLayoutConfiguration";
+import {BasicLayoutConfiguration} from "../../layouts/interfaces/BasicLayoutConfiguration.js";
 
 export interface AppenderConfiguration<Opts = any> {
   type: string;

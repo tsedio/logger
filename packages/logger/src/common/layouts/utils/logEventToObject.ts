@@ -1,6 +1,6 @@
-import {LogEvent} from "../../core/LogEvent";
-import {removeColors} from "./colorizeUtils";
-import {StringUtils} from "./StringUtils";
+import {LogEvent} from "../../core/LogEvent.js";
+import {removeColors} from "./colorizeUtils.js";
+import {StringUtils} from "./StringUtils.js";
 
 export function logEventToObject(loggingEvent: LogEvent) {
   const log: any = {

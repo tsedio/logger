@@ -1,15 +1,16 @@
+import {vi} from "vitest";
 import {Logger} from "@tsed/logger";
-import {ConnectAppender} from "./ConnectAppender";
+import {ConnectAppender} from "./ConnectAppender.js";
 
 describe("ConnectAppender", () => {
   it("should log something (from class)", () => {
     const externalLogger = {
-      debug: jest.fn(),
-      error: jest.fn(),
-      fatal: jest.fn(),
-      info: jest.fn(),
-      trace: jest.fn(),
-      warn: jest.fn()
+      debug: vi.fn(),
+      error: vi.fn(),
+      fatal: vi.fn(),
+      info: vi.fn(),
+      trace: vi.fn(),
+      warn: vi.fn()
     };
 
     const logger = new Logger("test");
@@ -70,12 +71,12 @@ describe("ConnectAppender", () => {
   });
   it("should log something (from name)", () => {
     const externalLogger = {
-      debug: jest.fn(),
-      error: jest.fn(),
-      fatal: jest.fn(),
-      info: jest.fn(),
-      trace: jest.fn(),
-      warn: jest.fn()
+      debug: vi.fn(),
+      error: vi.fn(),
+      fatal: vi.fn(),
+      info: vi.fn(),
+      trace: vi.fn(),
+      warn: vi.fn()
     };
 
     const logger = new Logger("test");

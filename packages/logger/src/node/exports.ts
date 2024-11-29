@@ -1,9 +1,9 @@
 import {format} from "node:util";
-import {Logger, PatternLayout} from "../common/index";
+import {Logger, PatternLayout} from "../common/index.js";
 import "./appenders/StdoutAppender";
 import "./appenders/StderrAppender";
-import {LayoutReplacer} from "./layouts/LayoutReplacer";
-import {StringUtils} from "../common/layouts/utils/StringUtils";
+import {LayoutReplacer} from "./layouts/LayoutReplacer.js";
+import {StringUtils} from "../common/layouts/utils/StringUtils.js";
 
 export const $log: Logger = new Logger("default");
 

@@ -1,4 +1,4 @@
-import {levels, LogLevel} from "./LogLevel";
+import {levels, LogLevel} from "./LogLevel.js";
 
 describe("LogLevel", () => {
   it("should define some levels", () => {

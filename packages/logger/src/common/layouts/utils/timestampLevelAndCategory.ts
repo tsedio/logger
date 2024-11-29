@@ -1,8 +1,8 @@
 // @ts-ignore
 import * as dateFormat from "date-format";
-import {colorize} from "./colorizeUtils";
-import {LogEvent} from "../../core/LogEvent";
-import {StringUtils} from "./StringUtils";
+import {colorize} from "./colorizeUtils.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {StringUtils} from "./StringUtils.js";
 
 export function timestampLevelAndCategory(loggingEvent: LogEvent, colour: any, timezoneOffset: number | undefined) {
   return colorize(

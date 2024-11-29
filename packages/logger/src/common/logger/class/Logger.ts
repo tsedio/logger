@@ -1,9 +1,9 @@
-import {LoggerAppenders} from "./LoggerAppenders";
-import {drawTable, ITableSettings} from "../utils/tableUtils";
-import {LogEvent} from "../../core/LogEvent";
-import {levels, LogLevel} from "../../core/LogLevel";
-import {BaseAppender} from "../../appenders/class/BaseAppender";
-import {LogContext} from "../../core/LogContext";
+import {LoggerAppenders} from "./LoggerAppenders.js";
+import {drawTable, ITableSettings} from "../utils/tableUtils.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {levels, LogLevel} from "../../core/LogLevel.js";
+import {BaseAppender} from "../../appenders/class/BaseAppender.js";
+import {LogContext} from "../../core/LogContext.js";
 
 export class Logger {
   /**

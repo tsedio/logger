@@ -9,9 +9,11 @@
     "./presets": "./presets/index.js"
   },
   "devDependencies": {
-    "vitest": "2.1.1"
+    "vitest": "2.1.6"
   },
   "scripts": {
     "generate": "node index.js"
-  }
+  },
+  "dependencies": {},
+  "peerDependencies": {}
 }

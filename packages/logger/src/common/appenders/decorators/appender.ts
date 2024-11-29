@@ -1,5 +1,5 @@
-import {AppendersRegistry} from "../registries/AppendersRegistry";
-import {AppenderOptions} from "../class/BaseAppender";
+import {AppendersRegistry} from "../registries/AppendersRegistry.js";
+import {AppenderOptions} from "../class/BaseAppender.js";
 
 export function Appender(options: AppenderOptions) {
   return (target: any) => {

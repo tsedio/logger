@@ -1,6 +1,6 @@
 {
   "name": "@tsed/typescript",
-  "version": "6.0.0-alpha.5",
+  "version": "6.7.8",
   "description": "Util to compile source",
   "type": "module",
   "private": true,
@@ -11,5 +11,8 @@
   },
   "scripts": {
     "build:references": "node ./index.js"
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
 }

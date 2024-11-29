@@ -1,6 +1,6 @@
-import {LogEvent} from "../../common/core/LogEvent";
-import {Appender} from "../../common/appenders/decorators/appender";
-import {BaseAppender} from "../../common/appenders/class/BaseAppender";
+import {LogEvent} from "../../common/core/LogEvent.js";
+import {Appender} from "../../common/appenders/decorators/appender.js";
+import {BaseAppender} from "../../common/appenders/class/BaseAppender.js";
 
 /**
  * ## Standard Output Appender

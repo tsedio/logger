@@ -1,8 +1,8 @@
-import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory";
-import {BaseLayout} from "../class/BaseLayout";
-import {LogEvent} from "../../core/LogEvent";
-import {Layout} from "../decorators/layout";
-import {StringUtils} from "../utils/StringUtils";
+import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory.js";
+import {BaseLayout} from "../class/BaseLayout.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {Layout} from "../decorators/layout.js";
+import {StringUtils} from "../utils/StringUtils.js";
 
 @Layout({name: "basic"})
 export class BasicLayout extends BaseLayout {

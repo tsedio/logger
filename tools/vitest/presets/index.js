@@ -1,25 +1,25 @@
 import swc from "unplugin-swc";
 import {defineConfig} from "vitest/config";
 
-import {resolveWorkspaceFiles} from "../plugins/resolveWorkspaceFiles.js";
-import {alias} from "./alias.js";
-
 export const presets = defineConfig({
   resolve: {
-    alias
+    conditions: ['@tsed/source'],
   },
   test: {
     globals: true,
     environment: "node",
-    exclude: ["**/templates/**"],
     coverage: {
       enabled: true,
-      provider: "v8",
       reporter: ["text", "json", "html"],
-      all: true,
       include: ["src/**/*.{tsx,ts}"],
       exclude: [
-        "**/templates/**",
+        "**/node_modules/**",
+        "**/@tsed/**",
+        "**/exports.ts",
+        "**/interfaces/**",
+        "**/*fixtures.ts",
+        "**/fixtures/**",
+        "**/__fixtures__/**",
         "**/*.spec.{ts,tsx}",
         "**/*.stories.{ts,tsx}",
         "**/*.d.ts",
@@ -31,16 +31,35 @@ export const presets = defineConfig({
     }
   },
   plugins: [
-    resolveWorkspaceFiles(),
     swc.vite({
-      //tsconfigFile: "./tsconfig.spec.json",
-      // Explicitly set the module type to avoid inheriting this value from a `.swcrc` config file
-      module: {type: "es6"},
+      sourceMaps: true,
+      inlineSourcesContent: true,
       jsc: {
+        target: "esnext",
+        externalHelpers: true,
+        keepClassNames: true,
+        parser: {
+          syntax: "typescript",
+          tsx: true,
+          decorators: true,
+          dynamicImport: true,
+          importMeta: true,
+          preserveAllComments: true
+        },
         transform: {
-          useDefineForClassFields: false
+          useDefineForClassFields: false,
+          legacyDecorator: true,
+          decoratorMetadata: true
         }
-      }
+      },
+      module: {
+        type: "es6",
+        strictMode: true,
+        lazy: false,
+        noInterop: false
+      },
+      minify: false,
+      isModule: true
     })
   ]
 });

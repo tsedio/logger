@@ -4,11 +4,6 @@
     "./src/browser",
     "./src/node"
   ],
-  "exclude": [
-    "__mock__",
-    "__mocks__",
-    ".spec.ts",
-    "LayoutReplacer"
-  ],
+  "exclude": ["**/__mock__", "**/__mocks__", "**/*.spec.ts"],
   "delete": true
 }

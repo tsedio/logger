@@ -1,6 +1,6 @@
-import {LogEvent} from "../../core/LogEvent";
-import {Layouts} from "../../layouts/class/Layouts";
-import {AppenderConfiguration, PartialAppenderConfiguration} from "../interfaces/AppenderConfiguration";
+import {LogEvent} from "../../core/LogEvent.js";
+import {Layouts} from "../../layouts/class/Layouts.js";
+import type {AppenderConfiguration, PartialAppenderConfiguration} from "../interfaces/AppenderConfiguration.js";
 
 export interface AppenderOptions {
   name: string;

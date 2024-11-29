@@ -1,14 +1,14 @@
 import {levels, LogEvent} from "@tsed/logger";
-import {FileAppender} from "../src";
+import {FileAppender} from "./index.js";
 
 describe("FileAppender", () => {
-  afterEach(() => jest.resetAllMocks());
+  afterEach(() => vi.resetAllMocks());
   it("should log something", async () => {
     // GIVEN
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
     const appender = new FileAppender({type: "console", filename: "log.log", options: {}} as any);
     appender.build();
-    const writeStub = jest.spyOn((appender as any).writer, "write").mockReturnValue(undefined);
+    const writeStub = vi.spyOn((appender as any).writer, "write").mockReturnValue(undefined);
 
     appender.write(logEvent);
 
@@ -25,7 +25,7 @@ describe("FileAppender", () => {
     const logEvent = new LogEvent("test", levels().DEBUG, [""], new Map() as any);
     const appender = new FileAppender({type: "console", filename: "log.log", pattern: ".yyyy-MM-dd", options: {}} as any);
     appender.build();
-    const writeStub = jest.spyOn((appender as any).writer, "write");
+    const writeStub = vi.spyOn((appender as any).writer, "write");
 
     appender.write(logEvent);
 

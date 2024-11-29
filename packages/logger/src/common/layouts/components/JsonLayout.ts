@@ -1,7 +1,7 @@
-import {BaseLayout} from "../class/BaseLayout";
-import {LogEvent} from "../../core/LogEvent";
-import {Layout} from "../decorators/layout";
-import {logEventToObject} from "../utils/logEventToObject";
+import {BaseLayout} from "../class/BaseLayout.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {Layout} from "../decorators/layout.js";
+import {logEventToObject} from "../utils/logEventToObject.js";
 
 @Layout({name: "json"})
 export class JsonLayout extends BaseLayout {
