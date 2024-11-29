@@ -1,5 +1,5 @@
-import {BaseLayout} from "../class/BaseLayout.js";
 import {LogEvent} from "../../core/LogEvent.js";
+import {BaseLayout} from "../class/BaseLayout.js";
 import {Layout} from "../decorators/layout.js";
 
 @Layout({name: "dummy"})

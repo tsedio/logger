@@ -1,9 +1,10 @@
+import {format} from "node:util";
+
+import {LogContext} from "../../core/LogContext.js";
 import {LogEvent} from "../../core/LogEvent.js";
 import {levels} from "../../core/LogLevel.js";
-import {JsonLayout} from "./JsonLayout.js";
-import {LogContext} from "../../core/LogContext.js";
 import {StringUtils} from "../utils/StringUtils.js";
-import {format} from "node:util";
+import {JsonLayout} from "./JsonLayout.js";
 
 StringUtils.format = format;
 

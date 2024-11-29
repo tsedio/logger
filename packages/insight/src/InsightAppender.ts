@@ -1,4 +1,4 @@
-import {$log, Appender, LogEvent, BaseAppender} from "@tsed/logger";
+import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
 import Insight from "r7insight_node";
 
 @Appender({name: "insight"})

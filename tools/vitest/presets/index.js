@@ -3,7 +3,7 @@ import {defineConfig} from "vitest/config";
 
 export const presets = defineConfig({
   resolve: {
-    conditions: ['@tsed/source'],
+    conditions: ["@tsed/source"]
   },
   test: {
     globals: true,

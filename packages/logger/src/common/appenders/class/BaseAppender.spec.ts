@@ -1,9 +1,11 @@
-import {vi} from "vitest";
-import {levels} from "../../core/LogLevel.js";
-import {BaseAppender} from "./BaseAppender.js";
-import {LogEvent} from "../../core/LogEvent.js";
 import "../../layouts/components/ColoredLayout.js";
 import "../../layouts/components/DummyLayout.js";
+
+import {vi} from "vitest";
+
+import {LogEvent} from "../../core/LogEvent.js";
+import {levels} from "../../core/LogLevel.js";
+import {BaseAppender} from "./BaseAppender.js";
 
 const buildStub = vi.fn();
 
@@ -25,7 +27,7 @@ describe("BaseAppender", () => {
       testAppender.build();
       testAppender.write(logEvent);
 
-      expect(buildStub).toBeCalledTimes(1);
+      expect(buildStub).toHaveBeenCalledTimes(1);
       expect(testAppender.config).toEqual({type: "console", options: {}});
     });
   });

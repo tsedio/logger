@@ -1,5 +1,6 @@
-import {vi} from "vitest";
 import {Logger} from "@tsed/logger";
+import {vi} from "vitest";
+
 import {ConnectAppender} from "./ConnectAppender.js";
 
 describe("ConnectAppender", () => {

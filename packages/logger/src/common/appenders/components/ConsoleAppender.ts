@@ -1,6 +1,6 @@
 import {LogEvent} from "../../core/LogEvent.js";
-import {Appender} from "../decorators/appender.js";
 import {BaseAppender} from "../class/BaseAppender.js";
+import {Appender} from "../decorators/appender.js";
 
 /**
  * ## Console Appender

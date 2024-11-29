@@ -1,7 +1,7 @@
 import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
-import * as util from "util";
 import axios, {AxiosBasicCredentials} from "axios";
 import axiosRetry, {IAxiosRetryConfig} from "axios-retry";
+import * as util from "util";
 import {v4} from "uuid";
 
 function wrapErrorsWithInspect(items: any[]) {

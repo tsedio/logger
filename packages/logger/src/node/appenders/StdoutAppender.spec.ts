@@ -1,10 +1,13 @@
-import {vi} from "vitest";
-import {levels, LogEvent} from "../../common/index.js";
-import {StdoutAppender} from "./StdoutAppender.js";
 import "./StdoutAppender";
 import "./StdoutAppender";
+
 import {format} from "node:util";
+
+import {vi} from "vitest";
+
+import {levels, LogEvent} from "../../common/index.js";
 import {StringUtils} from "../../common/layouts/utils/StringUtils.js";
+import {StdoutAppender} from "./StdoutAppender.js";
 
 StringUtils.format = format;
 
@@ -16,6 +19,6 @@ describe("StdoutAppender", () => {
 
     appender.write(logEvent);
 
-    expect((appender as any).log).toBeCalledWith(expect.stringContaining("[DEBUG] [test] -"));
+    expect((appender as any).log).toHaveBeenCalledWith(expect.stringContaining("[DEBUG] [test] -"));
   });
 });

@@ -1,12 +1,13 @@
-import {BaseAppender} from "../../appenders/class/BaseAppender.js";
-import {LogEvent} from "../../core/LogEvent.js";
-import {levels} from "../../core/LogLevel.js";
-import {Appender} from "../../appenders/decorators/appender.js";
-import {LoggerAppenders} from "./LoggerAppenders.js";
 import "../../layouts/components/ColoredLayout";
 import "../../appenders/components/ConsoleAppender";
 import "../../../node/appenders/StdoutAppender";
 import "../../../node/appenders/StderrAppender";
+
+import {BaseAppender} from "../../appenders/class/BaseAppender.js";
+import {Appender} from "../../appenders/decorators/appender.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {levels} from "../../core/LogLevel.js";
+import {LoggerAppenders} from "./LoggerAppenders.js";
 
 @Appender({name: "test2"})
 class TestAppender extends BaseAppender {
@@ -64,7 +65,7 @@ describe("LoggerAppenders", () => {
         result = cachedAppenders.byLogLevel(levels().DEBUG);
         expect(result).toHaveLength(0);
       });
-      it("when deleted should have no appenders", () => {
+      it("when deleted should have no appenders(2)", () => {
         cachedAppenders.set("custom2", {type: "test2", levels: ["debug"]});
         result = cachedAppenders.byLogLevel(levels().DEBUG);
         expect(result).toHaveLength(2);

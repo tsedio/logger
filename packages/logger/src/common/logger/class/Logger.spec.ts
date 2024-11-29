@@ -1,11 +1,12 @@
-import {Layout} from "../../layouts/decorators/layout.js";
-import {BaseLayout} from "../../layouts/class/BaseLayout.js";
-import {LogEvent} from "../../core/LogEvent.js";
-import {Appender} from "../../appenders/decorators/appender.js";
-import {BaseAppender} from "../../appenders/class/BaseAppender.js";
-import {Logger} from "./Logger.js";
-import {LogLevel} from "../../core/LogLevel.js";
 import "../../layouts/components/ColoredLayout";
+
+import {BaseAppender} from "../../appenders/class/BaseAppender.js";
+import {Appender} from "../../appenders/decorators/appender.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {LogLevel} from "../../core/LogLevel.js";
+import {BaseLayout} from "../../layouts/class/BaseLayout.js";
+import {Layout} from "../../layouts/decorators/layout.js";
+import {Logger} from "./Logger.js";
 
 @Layout({name: "test"})
 class TestLayout extends BaseLayout {
@@ -50,7 +51,7 @@ describe("Logger", () => {
       logger.debug("test");
 
       const arg = stub.mock.calls[0][0];
-      expect(stub).toBeCalledTimes(1);
+      expect(stub).toHaveBeenCalledTimes(1);
       expect(arg.categoryName).toEqual("loggerName");
       expect(arg.level).toBeInstanceOf(LogLevel);
       expect(arg.level.toString()).toEqual("DEBUG");
@@ -68,7 +69,7 @@ describe("Logger", () => {
 
       const arg = stub.mock.calls[0][0];
 
-      expect(stub).toBeCalledTimes(1);
+      expect(stub).toHaveBeenCalledTimes(1);
       expect(arg.categoryName).toEqual("loggerName");
       expect(arg.level).toBeInstanceOf(LogLevel);
       expect(arg.level.toString()).toEqual("INFO");
@@ -85,7 +86,7 @@ describe("Logger", () => {
       logger.warn("test");
       const arg = stub.mock.calls[0][0];
 
-      expect(stub).toBeCalledTimes(1);
+      expect(stub).toHaveBeenCalledTimes(1);
       expect(arg.categoryName).toEqual("loggerName");
       expect(arg.level).toBeInstanceOf(LogLevel);
       expect(arg.level.toString()).toEqual("WARN");
@@ -102,7 +103,7 @@ describe("Logger", () => {
       logger.trace("test");
       const arg = stub.mock.calls[0][0];
 
-      expect(stub).toBeCalledTimes(1);
+      expect(stub).toHaveBeenCalledTimes(1);
       expect(arg.categoryName).toEqual("loggerName");
       expect(arg.level).toBeInstanceOf(LogLevel);
       expect(arg.level.toString()).toEqual("TRACE");
@@ -120,7 +121,7 @@ describe("Logger", () => {
 
       const arg = stub.mock.calls[0][0];
 
-      expect(stub).toBeCalledTimes(1);
+      expect(stub).toHaveBeenCalledTimes(1);
       expect(arg.categoryName).toEqual("loggerName");
       expect(arg.level).toBeInstanceOf(LogLevel);
       expect(arg.level.toString()).toEqual("ERROR");
@@ -138,7 +139,7 @@ describe("Logger", () => {
 
       const arg = stub.mock.calls[0][0];
 
-      expect(stub).toBeCalledTimes(1);
+      expect(stub).toHaveBeenCalledTimes(1);
       expect(arg.categoryName).toEqual("loggerName");
       expect(arg.level).toBeInstanceOf(LogLevel);
       expect(arg.level.toString()).toEqual("FATAL");
@@ -161,7 +162,7 @@ describe("Logger", () => {
     });
 
     it("should call layout", () => {
-      expect(stub).not.toBeCalled();
+      expect(stub).not.toHaveBeenCalled();
     });
   });
 
@@ -196,7 +197,7 @@ describe("Logger", () => {
           }
         }
       );
-      expect(stub).toBeCalled();
+      expect(stub).toHaveBeenCalled();
     });
   });
 

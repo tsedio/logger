@@ -1,10 +1,11 @@
-import {LogEvent} from "../../core/LogEvent.js";
-import {levels} from "../../core/LogLevel.js";
-import * as os from "os";
 // @ts-ignore
 import * as dateFormat from "date-format";
-import {PatternLayout} from "./PatternLayout.js";
+import * as os from "os";
+
 import {LayoutReplacer} from "../../../node/layouts/LayoutReplacer.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {levels} from "../../core/LogLevel.js";
+import {PatternLayout} from "./PatternLayout.js";
 
 const EOL = os.EOL || "\n";
 LayoutReplacer.HOSTNAME = "hostname";

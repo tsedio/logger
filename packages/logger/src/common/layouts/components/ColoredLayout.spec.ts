@@ -1,8 +1,9 @@
+import {format} from "node:util";
+
 import {LogEvent} from "../../core/LogEvent.js";
 import {levels} from "../../core/LogLevel.js";
-import {ColoredLayout} from "./ColoredLayout.js";
 import {StringUtils} from "../utils/StringUtils.js";
-import {format} from "node:util";
+import {ColoredLayout} from "./ColoredLayout.js";
 
 StringUtils.format = format;
 

@@ -41,7 +41,7 @@ export class RabbitMQAppender extends BaseAppender {
         .catch((e) => {
           // debug("connect failed.");
           this.waitingToConnect = false;
-          console.error(e); // eslint-disable-line
+          console.error(e);
         });
     }
   }

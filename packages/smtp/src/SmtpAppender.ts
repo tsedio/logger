@@ -123,7 +123,7 @@ export class SmtpAppender extends BaseAppender {
       }
       transport.sendMail(msg, (error: any) => {
         if (error) {
-          console.error("logger.smtpAppender - Error happened", error); // eslint-disable-line
+          console.error("logger.smtpAppender - Error happened", error);
         }
         transport.close();
         this.unsentCount -= count;

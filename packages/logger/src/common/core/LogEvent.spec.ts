@@ -1,6 +1,6 @@
+import {LogContext} from "./LogContext.js";
 import {LogEvent} from "./LogEvent.js";
 import {levels} from "./LogLevel.js";
-import {LogContext} from "./LogContext.js";
 
 describe("LogEvent", () => {
   it("should create a new logevent (data)", () => {

@@ -1,9 +1,9 @@
 import {LogEvent} from "../../core/LogEvent.js";
-import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory.js";
+import {BaseLayout} from "../class/BaseLayout.js";
 import {LOG_COLORS} from "../constants/logColors.js";
 import {Layout} from "../decorators/layout.js";
-import {BaseLayout} from "../class/BaseLayout.js";
 import {StringUtils} from "../utils/StringUtils.js";
+import {timestampLevelAndCategory} from "../utils/timestampLevelAndCategory.js";
 
 @Layout({name: "colored"})
 export class ColoredLayout extends BaseLayout {

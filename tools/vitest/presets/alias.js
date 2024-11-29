@@ -18,16 +18,10 @@ function deps(pkg, pkgs, set = new Set()) {
 }
 
 function findPackages() {
-  const pkgs = globbySync(
-    [
-      "packages/*/package.json",
-      "!**/node_modules/**"
-    ],
-    {
-      cwd: root,
-      absolute: true
-    }
-  ).map((file) => ({
+  const pkgs = globbySync(["packages/*/package.json", "!**/node_modules/**"], {
+    cwd: root,
+    absolute: true
+  }).map((file) => ({
     path: file,
     name: basename(dirname(file)),
     pkg: JSON.parse(readFileSync(file, {encoding: "utf8"}))

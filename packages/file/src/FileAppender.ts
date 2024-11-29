@@ -1,6 +1,6 @@
 import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
-import {normalize} from "path";
 import * as Os from "os";
+import {normalize} from "path";
 // @ts-ignore
 import streams from "streamroller";
 

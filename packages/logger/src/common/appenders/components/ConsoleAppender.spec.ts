@@ -1,10 +1,13 @@
+import "../../layouts/components/ColoredLayout";
+
 import {format} from "node:util";
+
 import {vi} from "vitest";
-import {ConsoleAppender} from "./ConsoleAppender.js";
+
 import {LogEvent} from "../../core/LogEvent.js";
 import {levels} from "../../core/LogLevel.js";
-import "../../layouts/components/ColoredLayout";
 import {StringUtils} from "../../layouts/utils/StringUtils.js";
+import {ConsoleAppender} from "./ConsoleAppender.js";
 
 StringUtils.format = format;
 

@@ -1,8 +1,9 @@
+import {format} from "node:util";
+
 import {LogEvent} from "../../core/LogEvent.js";
 import {levels} from "../../core/LogLevel.js";
-import {BasicLayout} from "./BasicLayout.js";
 import {StringUtils} from "../utils/StringUtils.js";
-import {format} from "node:util";
+import {BasicLayout} from "./BasicLayout.js";
 
 StringUtils.format = format;
 
