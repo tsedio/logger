@@ -1,12 +1,12 @@
 import Util from "node:util";
+import Os from "node:os";
 // @ts-ignore
 import * as dateFormat from "date-format";
-import {LogEvent} from "../../common/core/LogEvent";
-import {LOG_COLORS} from "../../common/layouts/constants/logColors";
-import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUtils";
-import {IReplacers} from "../../common/layouts/interfaces/Replacers";
-import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration";
-import Os from "os";
+import {LogEvent} from "../../common/core/LogEvent.js";
+import {LOG_COLORS} from "../../common/layouts/constants/logColors.js";
+import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUtils.js";
+import {IReplacers} from "../../common/layouts/interfaces/Replacers.js";
+import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration.js";
 
 export class LayoutReplacer {
   static EOL = Os.EOL || "\n";

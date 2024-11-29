@@ -1,26 +1,29 @@
 {
   "name": "@tsed/logger-file",
-  "version": "6.7.8",
   "description": "File appender module for @tsed/logger",
+  "type": "module",
+  "version": "6.7.8",
   "author": {
     "name": "Romain Lenzotti"
   },
   "license": "MIT",
   "source": "./src/index.ts",
-  "main": "./lib/cjs/index.js",
+  "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
   "typings": "./lib/types/index.d.ts",
   "exports": {
-    "types": "./lib/types/index.d.ts",
-    "import": "./lib/esm/index.js",
-    "require": "./lib/cjs/index.js",
-    "default": "./lib/esm/index.js"
+    ".": {
+      "@tsed/source": "./src/index.ts",
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/esm/index.js"
+    }
   },
   "scripts": {
-    "build": "yarn barrels && yarn run build:esm && yarn run build:cjs",
-    "build:cjs": "tsc --build tsconfig.json",
-    "build:esm": "tsc --build tsconfig.esm.json",
-    "barrels": "barrelsby --delete -d ./src -e \"\\.spec\\.ts\" -e \"__mock__\" -e \".benchmark.ts\""
+    "build": "yarn run build:ts",
+    "build:ts": "tsc --build tsconfig.json",
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage.thresholds.autoUpdate=true"
   },
   "repository": {
     "type": "git",
@@ -43,7 +46,9 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "6.7.8"
+    "@tsed/logger": "6.7.8",
+    "@tsed/typescript": "workspace:*",
+    "typescript": "5.7.2"
   },
   "peerDependencies": {
     "@tsed/logger": "6.7.8"

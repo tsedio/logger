@@ -6,37 +6,40 @@
   },
   "references": [
     {
-      "path": "./packages/logger"
+      "path": "./packages/logger/tsconfig.json"
     },
     {
-      "path": "./packages/connect"
+      "path": "./packages/connect/tsconfig.json"
     },
     {
-      "path": "./packages/file"
+      "path": "./packages/file/tsconfig.json"
     },
     {
-      "path": "./packages/insight"
+      "path": "./packages/insight/tsconfig.json"
     },
     {
-      "path": "./packages/logentries"
+      "path": "./packages/logentries/tsconfig.json"
     },
     {
-      "path": "./packages/loggly"
+      "path": "./packages/loggly/tsconfig.json"
     },
     {
-      "path": "./packages/logstash-http"
+      "path": "./packages/logstash-http/tsconfig.json"
     },
     {
-      "path": "./packages/logstash-udp"
+      "path": "./packages/logstash-udp/tsconfig.json"
     },
     {
-      "path": "./packages/rabbitmq"
+      "path": "./packages/rabbitmq/tsconfig.json"
     },
     {
-      "path": "./packages/slack"
+      "path": "./packages/seq/tsconfig.json"
     },
     {
-      "path": "./packages/smtp"
+      "path": "./packages/slack/tsconfig.json"
+    },
+    {
+      "path": "./packages/smtp/tsconfig.json"
     }
   ]
 }

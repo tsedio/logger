@@ -1,8 +1,8 @@
-import {BaseAppender} from "../../appenders/class/BaseAppender";
-import {LogEvent} from "../../core/LogEvent";
-import {levels} from "../../core/LogLevel";
-import {Appender} from "../../appenders/decorators/appender";
-import {LoggerAppenders} from "./LoggerAppenders";
+import {BaseAppender} from "../../appenders/class/BaseAppender.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {levels} from "../../core/LogLevel.js";
+import {Appender} from "../../appenders/decorators/appender.js";
+import {LoggerAppenders} from "./LoggerAppenders.js";
 import "../../layouts/components/ColoredLayout";
 import "../../appenders/components/ConsoleAppender";
 import "../../../node/appenders/StdoutAppender";

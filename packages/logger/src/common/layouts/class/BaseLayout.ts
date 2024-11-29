@@ -1,5 +1,5 @@
-import {LogEvent} from "../../core/LogEvent";
-import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
+import {LogEvent} from "../../core/LogEvent.js";
+import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration.js";
 
 export abstract class BaseLayout {
   constructor(protected config: BasicLayoutConfiguration) {}

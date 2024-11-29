@@ -1,9 +1,9 @@
-import {truncateAndPad} from "../utils/StringUtils";
-import {BaseLayout} from "../class/BaseLayout";
-import {IReplacers} from "../interfaces/Replacers";
-import {LogEvent} from "../../core/LogEvent";
-import {BasicLayoutConfiguration, TokensHandlers} from "../interfaces/BasicLayoutConfiguration";
-import {Layout} from "../decorators/layout";
+import {truncateAndPad} from "../utils/StringUtils.js";
+import {BaseLayout} from "../class/BaseLayout.js";
+import {IReplacers} from "../interfaces/Replacers.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {BasicLayoutConfiguration, TokensHandlers} from "../interfaces/BasicLayoutConfiguration.js";
+import {Layout} from "../decorators/layout.js";
 
 const regex = /%(-?[0-9]+)?(\.?[0-9]+)?([[\]cdhmnpjrzxy%])(\{([^}]+)\})?|([^%]+)/;
 const TTCC_CONVERSION_PATTERN = "%r %p %c - %m%n";

@@ -1,10 +1,11 @@
-import {levels} from "../../core/LogLevel";
-import {BaseAppender} from "./BaseAppender";
-import {LogEvent} from "../../core/LogEvent";
-import "../../layouts/components/ColoredLayout";
-import "../../layouts/components/DummyLayout";
+import {vi} from "vitest";
+import {levels} from "../../core/LogLevel.js";
+import {BaseAppender} from "./BaseAppender.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import "../../layouts/components/ColoredLayout.js";
+import "../../layouts/components/DummyLayout.js";
 
-const buildStub = jest.fn();
+const buildStub = vi.fn();
 
 class TestAppender extends BaseAppender {
   write(loggingEvent: LogEvent) {

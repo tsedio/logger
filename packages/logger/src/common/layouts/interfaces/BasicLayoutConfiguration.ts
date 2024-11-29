@@ -1,4 +1,4 @@
-import {LogEvent} from "../../core/LogEvent";
+import {LogEvent} from "../../core/LogEvent.js";
 
 export type TokenHandler = (loggingEvent: LogEvent) => string;
 

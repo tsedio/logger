@@ -1,4 +1,4 @@
-import {LayoutsRegistry} from "../registries/LayoutsRegistry";
+import {LayoutsRegistry} from "../registries/LayoutsRegistry.js";
 
 export function Layout(options: {name: string}) {
   return (target: any) => {

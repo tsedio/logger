@@ -1,9 +1,7 @@
-src
 test
-tsconfig.compile.json
-tsconfig.esm.json
+coverage
 tsconfig.json
+tsconfig.*.json
+__mock__
 *.spec.js
-*.spec.js.map
-*.spec.d.ts
 *.tsbuildinfo

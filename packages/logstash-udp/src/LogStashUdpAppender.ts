@@ -92,7 +92,7 @@ export class LogStashUdpAppender extends BaseAppender {
       buffer = Buffer.from(JSON.stringify(logObject));
     }
 
-    this.udp.send(buffer, 0, buffer.length, port, host, (err: Error) => {
+    this.udp.send(buffer as never, 0, buffer.length, port, host, (err: Error) => {
       if (err) {
         console.error(`Ts.ED Logger.logstash-udp - ${host}:${port} Error: ${util.inspect(err)}.`);
       }

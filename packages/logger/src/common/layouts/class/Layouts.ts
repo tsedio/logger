@@ -1,6 +1,6 @@
-import {LayoutsRegistry} from "../registries/LayoutsRegistry";
-import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration";
-import {BaseLayout} from "./BaseLayout";
+import {LayoutsRegistry} from "../registries/LayoutsRegistry.js";
+import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration.js";
+import {BaseLayout} from "./BaseLayout.js";
 
 export class Layouts {
   static get(name: string | any, config: BasicLayoutConfiguration): BaseLayout {

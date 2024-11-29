@@ -1,6 +1,6 @@
-import {BaseLayout} from "../class/BaseLayout";
-import {LogEvent} from "../../core/LogEvent";
-import {Layout} from "../decorators/layout";
+import {BaseLayout} from "../class/BaseLayout.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {Layout} from "../decorators/layout.js";
 
 @Layout({name: "dummy"})
 export class DummyLayout extends BaseLayout {

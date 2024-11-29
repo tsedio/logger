@@ -1,6 +1,6 @@
-import {LogEvent} from "../../core/LogEvent";
-import {levels} from "../../core/LogLevel";
-import {DummyLayout} from "./DummyLayout";
+import {LogEvent} from "../../core/LogEvent.js";
+import {levels} from "../../core/LogLevel.js";
+import {DummyLayout} from "./DummyLayout.js";
 
 describe("DummyLayout", () => {
   it("should return a formated string", () => {

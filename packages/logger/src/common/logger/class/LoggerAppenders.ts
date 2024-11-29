@@ -1,7 +1,7 @@
-import {AppendersRegistry} from "../../appenders/registries/AppendersRegistry";
-import {BaseAppender} from "../../appenders/class/BaseAppender";
-import {LogLevel} from "../../core/LogLevel";
-import {AppenderConfiguration} from "../../appenders/interfaces/AppenderConfiguration";
+import {AppendersRegistry} from "../../appenders/registries/AppendersRegistry.js";
+import {BaseAppender} from "../../appenders/class/BaseAppender.js";
+import {LogLevel} from "../../core/LogLevel.js";
+import {AppenderConfiguration} from "../../appenders/interfaces/AppenderConfiguration.js";
 
 export interface LoggerAppender {
   name: string;

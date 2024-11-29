@@ -1,5 +1,3 @@
-import {BaseAppender} from "../class/BaseAppender";
-
 export interface AppenderProvider {
   provide: any;
   instance?: any;

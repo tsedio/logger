@@ -1,10 +1,10 @@
-import {Layout} from "../../layouts/decorators/layout";
-import {BaseLayout} from "../../layouts/class/BaseLayout";
-import {LogEvent} from "../../core/LogEvent";
-import {Appender} from "../../appenders/decorators/appender";
-import {BaseAppender} from "../../appenders/class/BaseAppender";
-import {Logger} from "./Logger";
-import {LogLevel} from "../../core/LogLevel";
+import {Layout} from "../../layouts/decorators/layout.js";
+import {BaseLayout} from "../../layouts/class/BaseLayout.js";
+import {LogEvent} from "../../core/LogEvent.js";
+import {Appender} from "../../appenders/decorators/appender.js";
+import {BaseAppender} from "../../appenders/class/BaseAppender.js";
+import {Logger} from "./Logger.js";
+import {LogLevel} from "../../core/LogLevel.js";
 import "../../layouts/components/ColoredLayout";
 
 @Layout({name: "test"})
@@ -14,7 +14,7 @@ class TestLayout extends BaseLayout {
   }
 }
 
-const stub = jest.fn();
+const stub = vi.fn();
 
 @Appender({name: "test"})
 class TestAppender extends BaseAppender {

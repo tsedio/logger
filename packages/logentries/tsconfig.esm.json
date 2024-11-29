@@ -1,34 +1,26 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@tsed/typescript/tsconfig.node.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "esnext",
-    "rootDir": "./src",
+    "rootDir": "src",
     "outDir": "./lib/esm",
-    "composite": true,
-    "noResolve": false,
-    "sourceMap": true,
-    "noEmit": false,
-    "emitDeclarationOnly": false,
-    "inlineSources": true,
+    "declarationDir": "./lib/types",
     "declaration": true,
-    "declarationDir": "./lib/types"
+    "composite": true,
+    "noEmit": false
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src", "src/**/*.json"],
   "exclude": [
-    "coverage",
-    "process.config.js",
-    "jest.config.js",
     "node_modules",
-    "./public",
+    "test",
     "lib",
-    "test"
-  ],
-  "references": [
-    {
-      "path": "../logger/tsconfig.json"
-    }
+    "benchmark",
+    "coverage",
+    "spec",
+    "**/*.benchmark.ts",
+    "**/*.spec.ts",
+    "keys",
+    "**/__mock__/**",
+    "webpack.config.js"
   ]
 }

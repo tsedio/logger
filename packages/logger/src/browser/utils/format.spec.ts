@@ -1,4 +1,4 @@
-import {format} from "./format";
+import {format} from "./format.js";
 
 describe("format()", () => {
   it("should use format string", () => {

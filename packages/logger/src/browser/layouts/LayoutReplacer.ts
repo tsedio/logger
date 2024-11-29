@@ -1,11 +1,11 @@
 // @ts-ignore
 import * as dateFormat from "date-format";
-import {LogEvent} from "../../common/core/LogEvent";
-import {LOG_COLORS} from "../../common/layouts/constants/logColors";
-import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUtils";
-import {IReplacers} from "../../common/layouts/interfaces/Replacers";
-import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration";
-import {format} from "../utils/format";
+import {LogEvent} from "../../common/core/LogEvent.js";
+import {LOG_COLORS} from "../../common/layouts/constants/logColors.js";
+import {colorizeEnd, colorizeStart} from "../../common/layouts/utils/colorizeUtils.js";
+import {IReplacers} from "../../common/layouts/interfaces/Replacers.js";
+import {TokensHandlers} from "../../common/layouts/interfaces/BasicLayoutConfiguration.js";
+import {format} from "../utils/format.js";
 
 export class LayoutReplacer {
   static EOL = "\n";

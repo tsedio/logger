@@ -62,4 +62,5 @@ test/*.js.map
 !.yarn/sdks
 !.yarn/versions
 
+tsconfig.*.tsbuildinfo
 .nx
