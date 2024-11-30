@@ -222,7 +222,7 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      {icon: "github", link: "https://github.com/tsedio/tsed"},
+      {icon: "github", link: "https://github.com/tsedio/logger"},
       {icon: "slack", link: "https://slack.tsed.io"},
       {icon: "twitter", link: "https://x.com/TsED_io"}
       // { icon: '', link: 'https://stackoverflow.com/search?q=tsed' },
