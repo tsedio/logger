@@ -1,5 +1,5 @@
-import "./appenders/StdoutAppender";
-import "./appenders/StderrAppender";
+import "./appenders/StdoutAppender.js";
+import "./appenders/StderrAppender.js";
 
 import {format} from "node:util";
 
