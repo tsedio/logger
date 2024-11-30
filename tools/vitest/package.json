@@ -9,6 +9,7 @@
     "./presets": "./presets/index.js"
   },
   "devDependencies": {
+    "globby": "14.0.2",
     "vitest": "2.1.6"
   },
   "scripts": {

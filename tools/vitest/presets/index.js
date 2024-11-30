@@ -1,8 +1,11 @@
 import swc from "unplugin-swc";
 import {defineConfig} from "vitest/config";
 
+import {alias} from "./alias.js";
+
 export const presets = defineConfig({
   resolve: {
+    alias,
     conditions: ["@tsed/source"]
   },
   test: {
@@ -10,7 +13,7 @@ export const presets = defineConfig({
     environment: "node",
     coverage: {
       enabled: true,
-      reporter: ["text", "json", "html"],
+      reporter: ["text", "json", "html", "lcov"],
       include: ["src/**/*.{tsx,ts}"],
       exclude: [
         "**/node_modules/**",

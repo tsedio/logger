@@ -13,7 +13,7 @@ If you want to be sure that all messages have been sent before your programme ex
 ## Configuration
 
 - `type` - `rabbitmq`
-- `layout` - `object` (optional, defaults to `messagePassThroughLayout`) - the layout to use for log events (see [Layouts](/docs/layouts/readme.md)).
+- `layout` - `object` (optional, defaults to `messagePassThroughLayout`) - the layout to use for log events (see [Layouts](/layouts/index.md)).
 - `options.host` - `string` (optional, defaults to `127.0.0.1`) - the location of the rabbitmq server
 - `options.port` - `integer` (optional, defaults to `5672`) - the port the rabbitmq server is listening on
 - `options.username` - `string` (optional, defaults to `guest`) - username to use when authenticating connection to rabbitmq

@@ -41,7 +41,7 @@ Sends log events as emails. If you use this appender, you should also call shutd
 - `subject` - `string` (optional, defaults to message from first log event in batch) - subject for email
 - `sender` - `string` (optional) - who the logs should be sent as
 - `html` - `boolean` (optional, defaults to `false`) - send the email as HTML instead of plain text
-- `layout` - `object` (optional, defaults to basicLayout) - see [layouts](https://logger.tsed.io/layouts.html)
+- `layout` - `object` (optional, defaults to basicLayout) - see [layouts](https://logger.tsed.dev/layouts.html)
 - `cc` - `string` (optional) - email addresses to send the carbon-copy logs to
 - `bcc` - `string` (optional) - email addresses to send the blind-carbon-copy logs to
 
