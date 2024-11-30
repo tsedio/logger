@@ -2,7 +2,7 @@
 
 <Banner src="/elastic-logstash.svg" height="140" href="https://www.elastic.co/fr/logstash"></Banner>
 
-The logstash appenders for [Ts.ED Logger](https://logger.tsed.io) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers.
+The logstash appenders for [Ts.ED Logger](https://logger.tsed.dev) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers.
 This appender uses HTTP to send the events (there is another logstash appender that uses [UDP](/appenders/logstash-udp.md)).
 
 ```bash

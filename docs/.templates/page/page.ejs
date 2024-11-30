@@ -1,0 +1,41 @@
+---
+meta:
+ - name: keywords
+   description: api typescript node.js documentation <%- symbol.symbolName %> <%- symbol.symbolType %>
+---
+
+<script setup>
+  import ApiIcon from "@tsed/vitepress-theme/atoms/api-icon/ApiIcon.vue";
+</script>
+
+<div class="flex space-x-3">
+    <ApiIcon type="<%- symbol.symbolType %>" class="mt-3" />
+    <div>
+        <h1><%- symbol.symbolName %></h1>
+        <div class="module-name"><%- symbol.module.moduleName %></div>
+    </div>
+</div>
+
+<%- components.symbolSummary(symbol) %>
+<% if(symbol.overview) { %>
+
+## Overview
+
+<%- components.codeHighlight(symbol.overview, symbol.symbolName) %>
+<% }
+
+if (hasParams) { %>
+<%- components.symbolParams(params, symbol.overview) %>
+<% }
+
+if (description) { %>
+<!-- Description -->
+## Description
+
+<%- description %>
+<% }
+
+if (symbol.members.length) { %>
+<!-- Members -->
+<%- components.symbolMembers(symbol) %>
+<% } %>

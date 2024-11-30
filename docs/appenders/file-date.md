@@ -1,13 +1,13 @@
 # Date Rolling File Appender
 
-This is a file appender that rolls log files based on a configurable time, rather than the file size. When using the date file appender, you should also call [logger.shutdown()](/getting-started.md) when your application terminates, to ensure that any remaining asynchronous writes have finished. Although the date file appender uses the [streamroller](https://github.com/nomiddlename/streamroller) library, this is included as a dependency of log4js so you do not need to include it yourself.
+This is a file appender that rolls log files based on a configurable time, rather than the file size. When using the date file appender, you should also call [logger.shutdown()](/introduction/getting-started.md) when your application terminates, to ensure that any remaining asynchronous writes have finished. Although the date file appender uses the [streamroller](https://github.com/nomiddlename/streamroller) library, this is included as a dependency of log4js so you do not need to include it yourself.
 
 ## Configuration
 
 - **type** - `file`
 - **filename** - `string` - the path of the file where you want your logs written.
 - **pattern** - `string` (optional, defaults to `.yyyy-MM-dd`) - the pattern to use to determine when to roll the logs.
-- **layout** - (optional, defaults to basic layout) - see [layouts](/layouts.md)
+- **layout** - (optional, defaults to basic layout) - see [layouts](/layouts/index.md)
 
 Any other configuration parameters will be passed to the underlying [streamroller](https://github.com/nomiddlename/streamroller) implementation (see also node.js core file streams):
 

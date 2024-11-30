@@ -1,10 +1,11 @@
 module.exports = {
   rootDir: process.cwd(),
-  packagesDir: "packages/",
-  scanPatterns: ["<rootDir>/packages/**/lib/**/*.d.ts", "!node_modules"],
-  outputDir: "<rootDir>/docs/api",
-  baseUrl: "/api",
-  jsonOutputDir: "<rootDir>/docs/.vuepress/public",
-  scope: "@tsed",
+  packagesDir: 'packages/',
+  scanPatterns: ['<rootDir>/packages/**/lib/types/**/*.d.ts', '!node_modules'],
+  outputDir: '<rootDir>/docs/api',
+  baseUrl: '/api',
+  jsonOutputDir: '<rootDir>/docs/public',
+  templatesDir: '<rootDir>/docs/.templates',
+  scope: '@tsed',
   modules: {}
-};
+}

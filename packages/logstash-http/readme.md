@@ -17,8 +17,8 @@ A package of Ts.ED logger framework.
 
 ## Features
 
-The logstash appenders for [Ts.ED Logger](https://logger.tsed.io) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers.
-This appender uses HTTP to send the events (there is another logstash appender that uses [UDP](https://logger.tsed.io/appenders/logstash-udp.html)).
+The logstash appenders for [Ts.ED Logger](https://logger.tsed.dev) send NDJSON formatted log events to [logstash](https://www.elastic.co/products/logstash) receivers.
+This appender uses HTTP to send the events (there is another logstash appender that uses [UDP](https://logger.tsed.dev/appenders/logstash-udp.html)).
 
 ## Installation
 
