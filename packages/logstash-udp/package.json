@@ -2,7 +2,7 @@
   "name": "@tsed/logger-logstash-udp",
   "description": "Logstash UDP appender module for @tsed/logger",
   "type": "module",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "source": "./src/index.ts",
   "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
@@ -44,11 +44,11 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "7.0.0",
+    "@tsed/logger": "7.0.1",
     "@tsed/typescript": "workspace:*",
     "typescript": "5.7.2"
   },
   "peerDependencies": {
-    "@tsed/logger": "7.0.0"
+    "@tsed/logger": "7.0.1"
   }
 }

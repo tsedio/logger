@@ -2526,12 +2526,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-connect@workspace:packages/connect"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2539,13 +2539,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-file@workspace:packages/file"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     streamroller: "npm:^3.1.5"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2553,13 +2553,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-insight@workspace:packages/insight"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     r7insight_node: "npm:3.2.1"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2567,13 +2567,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logentries@workspace:packages/logentries"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     le_node: "npm:^1.8.0"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2581,14 +2581,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-loggly@workspace:packages/loggly"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     "@types/node-loggly-bulk": "npm:^2.2.1"
     node-loggly-bulk: "npm:^3.0.1"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2596,7 +2596,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-http@workspace:packages/logstash-http"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     "@types/uuid": "npm:^9.0.8"
     axios: "npm:1.6.7"
@@ -2605,7 +2605,7 @@ __metadata:
     typescript: "npm:5.7.2"
     uuid: "npm:^9.0.1"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2613,12 +2613,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-udp@workspace:packages/logstash-udp"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2626,14 +2626,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-rabbitmq@workspace:packages/rabbitmq"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     "@types/amqplib": "npm:^0.10.5"
     amqplib: "npm:0.10.3"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2690,13 +2690,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-seq@workspace:packages/seq"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     seq-logging: "npm:1.1.2"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2705,12 +2705,12 @@ __metadata:
   resolution: "@tsed/logger-slack@workspace:packages/slack"
   dependencies:
     "@slack/web-api": "npm:^7.0.2"
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
@@ -2718,18 +2718,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-smtp@workspace:packages/smtp"
   dependencies:
-    "@tsed/logger": "npm:7.0.0"
+    "@tsed/logger": "npm:7.0.1"
     "@tsed/typescript": "workspace:*"
     "@types/nodemailer": "npm:6.4.14"
     nodemailer: "npm:^6.9.9"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.0
+    "@tsed/logger": 7.0.1
   languageName: unknown
   linkType: soft
 
-"@tsed/logger@npm:7.0.0, @tsed/logger@workspace:packages/logger":
+"@tsed/logger@npm:7.0.1, @tsed/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@tsed/logger@workspace:packages/logger"
   dependencies:
