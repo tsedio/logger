@@ -3,7 +3,7 @@ import {DefaultTheme} from "@tsed/vitepress-theme";
 import type {Theme} from "vitepress";
 import {h} from "vue";
 import HomeBanner from "@tsed/vitepress-theme/organisms/home/HomeBanner.vue";
-import HomePartners from "@tsed/vitepress-theme/organisms/home/HomePartners.vue";
+import HomeBeforeFeatures from "@tsed/vitepress-theme/organisms/home/HomeBeforeFeatures.vue";
 import HomeBody from "@tsed/vitepress-theme/organisms/home/HomeBody.vue";
 import HomeTerminal from "./components/HomeTerminal.vue";
 
@@ -18,7 +18,7 @@ export default {
           default: () =>
             h(HomeTerminal, null, {})
         }),
-      "home-features-before": () => h(HomePartners),
+      "home-features-before": () => h(HomeBeforeFeatures),
       "home-features-after": () => h(HomeBody)
     });
   }

@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "@tsed/logger"
   text: "A multi-channel logger."
-  tagline: "Manage your logs of your application"
+  tagline: "Manage your logs of your application with ease."
   actions:
     - theme: brand
       text: Getting started
@@ -13,7 +13,9 @@ hero:
     - theme: alt
       text: Become sponsor
       link: https://github.com/sponsors/Romakita
-
+testimonial:
+  title: "What the logger do?"
+  description: "The logger is a multi-channel logger that allows you to manage your logs of your application with ease. It supports multi destination like Console, Remote, File with configurable log rolling based on file size or date."
 features:
   - title: Multi channel
     icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bolt"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></svg>
@@ -84,27 +86,3 @@ partners:
     src: https://tsed.dev/partners/schnell.svg
     class: "max-w-[120px]"
 ---
-
-<script setup>
-import HomeContainer from "@tsed/vitepress-theme/organisms/home/HomeContainer.vue";
-import { VPTeamMembers } from "vitepress/theme";
-import team from "./team.json";
-
-const members = team.map((member) => {
-   return {
-     avatar: member.src,
-     name: member.title + " - " + member.job,
-     title: member.role,
-     links: [
-        { icon: "github", link: "https://github.com/" + member.github },
-        member.twitter && { icon: "twitter", link: "https://x.com/" + member.twitter }
-     ].filter(Boolean)
-   };
-});
-</script>
-
-<HomeContainer animate class="mx-0 px-0">
-   <div class="text-2xl sm:text-5xl text-center pb-5 mt-20">Team members</div>
-
-   <VPTeamMembers size="small" :members="members" />
-</HomeContainer>

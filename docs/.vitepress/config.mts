@@ -1,13 +1,14 @@
 import {defineConfig} from "vitepress";
 import {apiAnchor} from "@tsed/vitepress-theme/markdown/api-anchor/api-anchor.js";
 import pkg from "../../package.json";
+import team from "../team.json"
 import {getSidebar} from "./api.js";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Ts.ED Logger",
   lastUpdated: true,
-
+  description: "Ts.ED Logger is multi-channel logger compatible with Node.js, Bun.js and browser environment",
   sitemap: {
     hostname: "https://logger.tsed.io"
   },
@@ -34,6 +35,7 @@ export default defineConfig({
     apiUrl: "/api.json",
     apiRedirectUrl: "",
     repo: "tsedio/logger",
+    team,
     githubProxyUrl: "https://api.tsed.io/rest/github/tsedio/tsed",
     stargazerUrl: "https://api.tsed.io/rest/github/tsedio/logger",
     defaultStargazerValue: 64,

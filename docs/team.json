@@ -5,7 +5,7 @@
     "src": "https://avatars3.githubusercontent.com/u/1763311?v=4",
     "github": "Romakita",
     "twitter": "RomainLenzotti",
-    "website": "https://tsed.io",
+    "website": "https://tsed.dev",
     "country": "France",
     "city": "Paris",
     "role": "Framework Author"
@@ -90,6 +90,15 @@
     "github": "EinfachHans",
     "country": "Germany",
     "city": "Cologne",
+    "role": "Contributor"
+  },
+  {
+    "title": "Xavier Jamito",
+    "job": "Developer",
+    "src": "https://avatars.githubusercontent.com/u/17645632?v=4",
+    "github": "xavjamito",
+    "country": "Singapore",
+    "city": "Singapore",
     "role": "Contributor"
   }
 ]
