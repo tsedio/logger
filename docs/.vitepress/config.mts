@@ -10,16 +10,16 @@ export default defineConfig({
   lastUpdated: true,
   description: "Ts.ED Logger is multi-channel logger compatible with Node.js, Bun.js and browser environment",
   sitemap: {
-    hostname: "https://logger.tsed.io"
+    hostname: "https://logger.tsed.dev"
   },
 
   head: [
     // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/tsed.svg' }],
-    ["link", {rel: "icon", type: "image/png", href: "https://tsed.io/tsed-og.png"}],
+    ["link", {rel: "icon", type: "image/png", href: "https://tsed.dev/tsed-og.png"}],
     ["link", {rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon"}],
-    ["link", {rel: "icon", href: "https://tsed.io/favicon-32x32.png", type: "image/png", sizes: "32x32"}],
-    ["link", {rel: "icon", href: "https://tsed.io/favicon-16x16.png", type: "image/png", sizes: "16x16"}],
-    ["link", {rel: "icon", href: "https://tsed.io/apple-touch-icon.png", type: "image/x-icon", sizes: "180x180"}],
+    ["link", {rel: "icon", href: "https://tsed.dev/favicon-32x32.png", type: "image/png", sizes: "32x32"}],
+    ["link", {rel: "icon", href: "https://tsed.dev/favicon-16x16.png", type: "image/png", sizes: "16x16"}],
+    ["link", {rel: "icon", href: "https://tsed.dev/apple-touch-icon.png", type: "image/x-icon", sizes: "180x180"}],
     ["meta", {name: "theme-color", content: "#5f67ee"}],
     ["meta", {property: "og:type", content: "website"}],
     ["meta", {property: "og:locale", content: "en"}],
@@ -30,14 +30,14 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: "https://tsed.io/tsed.svg",
+    logo: "https://tsed.dev/tsed.svg",
     siteTitle: false,
     apiUrl: "/api.json",
     apiRedirectUrl: "",
     repo: "tsedio/logger",
     team,
-    githubProxyUrl: "https://api.tsed.io/rest/github/tsedio/tsed",
-    stargazerUrl: "https://api.tsed.io/rest/github/tsedio/logger",
+    githubProxyUrl: "https://api.tsed.dev/rest/github/tsedio/tsed",
+    stargazerUrl: "https://api.tsed.dev/rest/github/tsedio/logger",
     defaultStargazerValue: 64,
     editLink: {
       pattern: "https://github.com/tsedio/logger/edit/production/docs/:path"
@@ -225,7 +225,7 @@ export default defineConfig({
     },
     socialLinks: [
       {icon: "github", link: "https://github.com/tsedio/logger"},
-      {icon: "slack", link: "https://slack.tsed.io"},
+      {icon: "slack", link: "https://slack.tsed.dev"},
       {icon: "twitter", link: "https://x.com/TsED_io"}
       // { icon: '', link: 'https://stackoverflow.com/search?q=tsed' },
     ],
