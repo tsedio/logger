@@ -8,7 +8,7 @@
     "docs:preview": "vitepress preview ."
   },
   "dependencies": {
-    "@tsed/vitepress-theme": "1.5.0",
+    "@tsed/vitepress-theme": "1.5.4",
     "@vueuse/core": "10.11.0",
     "axios": "1.7.7",
     "lodash": "4.17.21",
