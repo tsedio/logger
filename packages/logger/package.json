@@ -10,24 +10,24 @@
   "source": "./src/index.ts",
   "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
-  "browser": "./lib/browser/logger.umd.js",
+  "browser": "./lib/esm/browser/index.js",
   "typings": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "@tsed/source": "./src/index.ts",
+      "tsed_source": "./src/index.ts",
       "types": "./lib/types/index.d.ts",
       "import": "./lib/esm/index.js",
-      "browser": "./lib/browser/logger.umd.js",
+      "browser": "./lib/esm/browser/index.js",
       "default": "./lib/esm/index.js"
     }
   },
   "scripts": {
     "test": "vitest run",
     "test:ci": "vitest run --coverage.thresholds.autoUpdate=true",
-    "build": "yarn barrels && yarn run build:ts && yarn run build:browser",
+    "build": "yarn barrels && yarn run build:ts",
     "build:browser": "vite build",
     "barrels": "barrels",
-    "build:ts": "tsc --build tsconfig.json"
+    "build:ts": "tsc --build tsconfig.esm.json"
   },
   "repository": {
     "type": "git",
@@ -54,8 +54,6 @@
     "@tsed/barrels": "6.0.2",
     "@tsed/typescript": "workspace:*",
     "@tsed/vitest": "workspace:*",
-    "typescript": "5.7.2",
-    "vite": "5.4.11",
-    "vitest": "^2.1.6"
+    "typescript": "5.7.2"
   }
 }

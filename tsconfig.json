@@ -1,45 +1,15 @@
 {
-  "extends": "./tsconfig.base.json",
-  "files": [],
   "compilerOptions": {
-    "noEmit": true
+    "baseUrl": "."
   },
+  "include": [],
   "references": [
     {
-      "path": "./packages/logger/tsconfig.json"
+      "path": "./tsconfig.node.json"
     },
     {
-      "path": "./packages/connect/tsconfig.json"
-    },
-    {
-      "path": "./packages/file/tsconfig.json"
-    },
-    {
-      "path": "./packages/insight/tsconfig.json"
-    },
-    {
-      "path": "./packages/logentries/tsconfig.json"
-    },
-    {
-      "path": "./packages/loggly/tsconfig.json"
-    },
-    {
-      "path": "./packages/logstash-http/tsconfig.json"
-    },
-    {
-      "path": "./packages/logstash-udp/tsconfig.json"
-    },
-    {
-      "path": "./packages/rabbitmq/tsconfig.json"
-    },
-    {
-      "path": "./packages/seq/tsconfig.json"
-    },
-    {
-      "path": "./packages/slack/tsconfig.json"
-    },
-    {
-      "path": "./packages/smtp/tsconfig.json"
+      "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "exclude": ["node_modules"]
 }

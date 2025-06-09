@@ -1,0 +1,29 @@
+{
+  "extends": "@tsed/typescript/tsconfig.node.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "sourceMap": true,
+    "paths": {
+      "@tsed/logger": [
+        "./packages/logger/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "./packages/*/src/**/*.ts",
+    "**/vite.config.mts"
+  ],
+  "exclude": [
+    "./docs/**",
+    "./packages/*/src/**/*.spec.ts",
+    "./packages/**/project-name/**/*.ts",
+    "**/__tests__/**/*.ts",
+    "**/__mock__/**/*.ts",
+    "**/helpers/**/*.ts",
+    "**/node_modules/**",
+    "**/lib/**",
+    "**/templates/**",
+    "**/barrels/**"
+  ]
+}
