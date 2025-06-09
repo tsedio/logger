@@ -1,7 +1,8 @@
-import {defineLoader} from "vitepress";
 import * as fs from "node:fs/promises";
-import {mapApiReferences} from "@tsed/vitepress-theme/composables/api/mappers/mapApiReferences";
+
 import type {ApiResponse} from "@tsed/vitepress-theme/composables/api/interfaces/Api";
+import {mapApiReferences} from "@tsed/vitepress-theme/composables/api/mappers/mapApiReferences";
+import {defineLoader} from "vitepress";
 
 export interface Data extends ApiResponse {
   // data type

@@ -15,6 +15,7 @@
     "**/vite.config.mts"
   ],
   "exclude": [
+    "./docs/**",
     "./packages/*/src/**/*.spec.ts",
     "./packages/*/*/src/**/*.spec.ts",
     "**/__tests__/**/*.ts",

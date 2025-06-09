@@ -25,6 +25,8 @@
     "**/*.ts"
   ],
   "exclude": [
+    "**/docs/**",
+    "**/node_modules/**",
     "dist",
     "**/lib/**",
     "**/generate_code/**",

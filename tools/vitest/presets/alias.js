@@ -18,7 +18,7 @@ function deps(pkg, pkgs, set = new Set()) {
 }
 
 function findPackages() {
-  const pkgs = globbySync(["packages/*/package.json", "packages/*/*/package.json", "!**/node_modules/**"], {
+  const pkgs = globbySync(["packages/*/*/package.json", "packages/*/*/package.json", "!**/node_modules/**"], {
     cwd: root,
     absolute: true
   }).map((file) => ({
