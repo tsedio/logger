@@ -2287,7 +2287,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2301,7 +2301,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2315,7 +2315,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2329,7 +2329,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2344,7 +2344,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2361,7 +2361,7 @@ __metadata:
     typescript: "npm:5.7.2"
     uuid: "npm:^9.0.1"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2374,7 +2374,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2389,7 +2389,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2452,7 +2452,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2466,7 +2466,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2481,7 +2481,7 @@ __metadata:
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
   peerDependencies:
-    "@tsed/logger": 7.0.2
+    "@tsed/logger": ">=7.0.0"
   languageName: unknown
   linkType: soft
 

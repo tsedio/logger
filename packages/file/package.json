@@ -2,7 +2,7 @@
   "name": "@tsed/logger-file",
   "description": "File appender module for @tsed/logger",
   "type": "module",
-  "version": "7.0.2",
+  "version": "7.0.3-rc.1",
   "author": {
     "name": "Romain Lenzotti"
   },
@@ -51,6 +51,6 @@
     "typescript": "5.7.2"
   },
   "peerDependencies": {
-    "@tsed/logger": "7.0.2"
+    "@tsed/logger": ">=7.0.0"
   }
 }
