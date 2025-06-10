@@ -2,7 +2,7 @@
   "name": "@tsed/logger-file",
   "description": "File appender module for @tsed/logger",
   "type": "module",
-  "version": "7.0.2",
+  "version": "7.0.3-rc.1",
   "author": {
     "name": "Romain Lenzotti"
   },
@@ -13,7 +13,7 @@
   "typings": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "@tsed/source": "./src/index.ts",
+      "tsed_source": "./src/index.ts",
       "types": "./lib/types/index.d.ts",
       "import": "./lib/esm/index.js",
       "default": "./lib/esm/index.js"
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "yarn run build:ts",
-    "build:ts": "tsc --build tsconfig.json",
+    "build:ts": "tsc --build tsconfig.esm.json",
     "test": "vitest run",
     "test:ci": "vitest run --coverage.thresholds.autoUpdate=true"
   },
@@ -46,11 +46,11 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "7.0.2",
+    "@tsed/logger": "workspace:*",
     "@tsed/typescript": "workspace:*",
     "typescript": "5.7.2"
   },
   "peerDependencies": {
-    "@tsed/logger": "7.0.2"
+    "@tsed/logger": ">=7.0.0"
   }
 }

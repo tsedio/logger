@@ -2,14 +2,14 @@
   "name": "@tsed/logger-slack",
   "description": "Slack appender module for @tsed/logger",
   "type": "module",
-  "version": "7.0.2",
+  "version": "7.0.3-rc.1",
   "source": "./src/index.ts",
   "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
   "typings": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "@tsed/source": "./src/index.ts",
+      "tsed_source": "./src/index.ts",
       "types": "./lib/types/index.d.ts",
       "import": "./lib/esm/index.js",
       "default": "./lib/esm/index.js"
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "yarn run build:ts",
-    "build:ts": "tsc --build tsconfig.json"
+    "build:ts": "tsc --build tsconfig.esm.json"
   },
   "author": {
     "name": "Romain Lenzotti"
@@ -44,11 +44,11 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@tsed/logger": "7.0.2",
+    "@tsed/logger": "workspace:*",
     "@tsed/typescript": "workspace:*",
     "typescript": "5.7.2"
   },
   "peerDependencies": {
-    "@tsed/logger": "7.0.2"
+    "@tsed/logger": ">=7.0.0"
   }
 }

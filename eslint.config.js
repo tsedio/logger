@@ -5,11 +5,10 @@ import pluginSimpleImportSort from "eslint-plugin-simple-import-sort";
 import vitest from "eslint-plugin-vitest";
 import pluginWorkspaces from "eslint-plugin-workspaces";
 import globals from "globals";
-import {join} from "node:path";
 
 export default [
   {
-    ignores: ["**/coverage", "**/lib", "**/dist", "processes.config.js", "**/snapshots", "**/templates", "**/docs/**", "**/docs-references/**"]
+    ignores: ["coverage", "dist", "processes.config.js", "**/templates", "docs/.vitepress/cache"]
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
@@ -19,8 +18,7 @@ export default [
       parser: typescriptParser,
       parserOptions: {
         ecmaVersion: "latest",
-        sourceType: "module",
-        tsconfigRootDir: join(import.meta.dirname, "tsconfig.eslint.json")
+        sourceType: "module"
       },
       globals: {
         ...globals.node
@@ -42,7 +40,6 @@ export default [
   },
   {
     files: ["**/*.spec.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"], // or any other pattern
-    ignores: ["docs/**", "docs-references/**"],
     plugins: {
       vitest
     },
@@ -50,7 +47,7 @@ export default [
       ...vitest.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
       "vitest/consistent-test-it": ["error", {fn: "it", withinDescribe: "it"}],
       "vitest/no-alias-methods": "error",
-      "vitest/expect-expect": "off"
+      "vitest/expect-expect": "warn"
     }
   },
   {

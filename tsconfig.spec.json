@@ -1,0 +1,35 @@
+{
+  "extends": "@tsed/typescript/tsconfig.node.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "composite": false,
+    "sourceMap": true,
+    "types": [
+      "vitest/globals",
+      "vitest/importMeta",
+      "vite/client",
+      "node",
+      "vitest"
+    ],
+    "paths": {
+      "@tsed/logger": [
+        "./packages/logger/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "vitest.*.mts",
+    "**/vitest.*.mts",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "**/docs/**",
+    "**/node_modules/**",
+    "dist",
+    "**/lib/**",
+    "**/templates/**",
+    "**/barrels/**",
+    "./packages/**/project-name/**/*.ts"
+  ]
+}
