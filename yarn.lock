@@ -2599,7 +2599,7 @@ __metadata:
     "@tsed/logger": "npm:7.0.2"
     "@tsed/typescript": "workspace:*"
     "@types/uuid": "npm:^9.0.8"
-    axios: "npm:1.6.7"
+    axios: "npm:1.10.0"
     axios-retry: "npm:^4.0.0"
     tslib: "npm:2.6.2"
     typescript: "npm:5.7.2"
@@ -4008,7 +4008,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.6.7, axios@npm:>=1.6.7, axios@npm:^1.6.5":
+"axios@npm:1.10.0":
+  version: 1.10.0
+  resolution: "axios@npm:1.10.0"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10/d43c80316a45611fd395743e15d16ea69a95f2b7f7095f2bb12cb78f9ca0a905194a02e52a3bf4e0db9f85fd1186d6c690410644c10ecd8bb0a468e57c2040e4
+  languageName: node
+  linkType: hard
+
+"axios@npm:>=1.6.7, axios@npm:^1.6.5":
   version: 1.6.7
   resolution: "axios@npm:1.6.7"
   dependencies:
