@@ -32,10 +32,6 @@ npm install @tsed/logger
 npm install source-map-support
 ```
 
-## Breaking change 3.x
-
-Since v3.x, the logger is completely rewritten to support new features. This new version is inspired by the excellent project [log4js](https://github.com/nomiddlename/log4js-node/).
-
 ## Quick start
 
 Minimalist version:
@@ -58,15 +54,17 @@ Create your custom logger:
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import {StdoutAppender, StderrAppender} from "@tsed/logger-std";
+import {FileAppender} from "@tsed/logger-file";
 
 const logger = new Logger("loggerName");
 logger.appenders
   .set({
-    type: "stdout",
+    type: StdoutAppender,
     levels: ["debug", "info", "trace"]
   })
   .set({
-    type: "stderr",
+    type: StderrAppender,
     levels: ["fatal", "error", "warn"],
     layout: {
       type: "pattern",
@@ -74,8 +72,8 @@ logger.appenders
     }
   })
   .set({
-    type: "file",
-    filename: `${__dirname}/app.log`,
+    type: FileAppender,
+    filename: `${import.meta.dirname}/app.log`,
     layout: {
       type: "json",
       separator: ","

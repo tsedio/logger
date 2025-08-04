@@ -10,24 +10,33 @@
   "source": "./src/index.ts",
   "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
-  "browser": "./lib/browser/logger.umd.js",
   "typings": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "@tsed/source": "./src/index.ts",
+      "tsed-source": "./src/index.ts",
       "types": "./lib/types/index.d.ts",
       "import": "./lib/esm/index.js",
-      "browser": "./lib/browser/logger.umd.js",
       "default": "./lib/esm/index.js"
+    },
+    "./layouts/*.js": {
+      "tsed-source": "./src/layouts/components/*.ts",
+      "types": "./lib/types/layouts/components/*.d.ts",
+      "import": "./lib/esm/layouts/components/*.js",
+      "default": "./lib/esm/layouts/components/*.js"
+    },
+    "./layouts/*": {
+      "tsed-source": "./src/layouts/components/*.ts",
+      "types": "./lib/types/layouts/components/*.d.ts",
+      "require": "./lib/esm/layouts/components/*.js",
+      "import": "./lib/esm/layouts/components/*"
     }
   },
   "scripts": {
     "test": "vitest run",
     "test:ci": "vitest run --coverage.thresholds.autoUpdate=true",
-    "build": "yarn barrels && yarn run build:ts && yarn run build:browser",
-    "build:browser": "vite build",
+    "build": "yarn barrels && yarn run build:ts",
     "barrels": "barrels",
-    "build:ts": "tsc --build tsconfig.json"
+    "build:ts": "tsc --build tsconfig.esm.json"
   },
   "repository": {
     "type": "git",
