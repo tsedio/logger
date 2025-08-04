@@ -15,12 +15,14 @@ This layout is the same as basic, except that the timestamp, level and category 
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import {StdoutAppender} from "@tsed/logger-std";
+import {ColoredLayout} from "@tsed/logger/layouts/ColoredLayout.js";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("std-log", {
-  type: "stdout",
-  layout: {type: "colored"},
+  type: StdoutAppender,
+  layout: ColoredLayout,
   level: ["debug", "info", "trace"]
 });
 logger.debug("Log something");

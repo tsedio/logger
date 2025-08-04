@@ -1,7 +1,6 @@
-import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import {$log, Appender, appender, BaseAppender, LogEvent} from "@tsed/logger";
 import Insight from "r7insight_node";
 
-@Appender({name: "insight"})
 export class InsightAppender extends BaseAppender {
   private logger: any;
 
@@ -19,3 +18,5 @@ export class InsightAppender extends BaseAppender {
     }
   }
 }
+
+appender("insight", InsightAppender);

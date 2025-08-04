@@ -1,4 +1,4 @@
-import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import {$log, Appender, appender, BaseAppender, LogEvent} from "@tsed/logger";
 import axios, {AxiosBasicCredentials} from "axios";
 import axiosRetry, {IAxiosRetryConfig} from "axios-retry";
 import * as util from "util";
@@ -39,7 +39,6 @@ export class LogStashHttpOptions {
   httpsAgent?: any;
 }
 
-@Appender({name: "logstash-http"})
 export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
   private client: ReturnType<typeof axios.create>;
 
@@ -159,3 +158,5 @@ export class LogStashHttpAppender extends BaseAppender<LogStashHttpOptions> {
     return this.flush();
   }
 }
+
+appender("logstash-http", LogStashHttpAppender);

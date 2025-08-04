@@ -3,7 +3,7 @@ import {basename, dirname, join} from "node:path";
 
 import {globbySync} from "globby";
 
-const root = join(import.meta.dirname, "../../..");
+export const root = join(import.meta.dirname, "../../..");
 
 function deps(pkg, pkgs, set = new Set()) {
   Object.keys({
@@ -18,7 +18,7 @@ function deps(pkg, pkgs, set = new Set()) {
 }
 
 function findPackages() {
-  const pkgs = globbySync(["packages/*/package.json", "!**/node_modules/**"], {
+  const pkgs = globbySync(["packages/*/package.json", "packages/*/*/package.json", "!**/node_modules/**"], {
     cwd: root,
     absolute: true
   }).map((file) => ({
@@ -43,9 +43,11 @@ function findPackages() {
 
 const packages = findPackages();
 
-export const alias = packages.reduce((acc, pkg) => {
-  return {
-    ...acc,
-    [pkg.pkg.name]: join(dirname(pkg.path), pkg.pkg.source)
-  };
-}, {});
+export const alias = packages
+  .filter((pkg) => pkg.path && pkg.pkg.main)
+  .reduce((acc, pkg) => {
+    return {
+      ...acc,
+      [pkg.pkg.name]: join(dirname(pkg.path), pkg.pkg.source)
+    };
+  }, {});

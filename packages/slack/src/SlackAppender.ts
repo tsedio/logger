@@ -1,7 +1,6 @@
 import {WebClient} from "@slack/web-api";
-import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import {appender, BaseAppender, LogEvent} from "@tsed/logger";
 
-@Appender({name: "slack"})
 export class SlackAppender extends BaseAppender {
   async write(loggingEvent: LogEvent) {
     try {
@@ -23,3 +22,5 @@ export class SlackAppender extends BaseAppender {
     }
   }
 }
+
+appender("slack", SlackAppender);

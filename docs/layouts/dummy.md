@@ -8,12 +8,13 @@ This layout only outputs the first value in the log event's data.
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import {DummyLayout} from "@tsed/logger/layouts/DummyLayout.js";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("std-log", {
   type: "console",
-  layout: {type: "dummy"},
+  layout: DummyLayout,
   level: ["debug", "info", "trace"]
 });
 

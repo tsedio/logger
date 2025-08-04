@@ -1,8 +1,7 @@
-import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import {$log, Appender, appender, BaseAppender, LogEvent} from "@tsed/logger";
 // @ts-ignore
 import LogEntries from "le_node";
 
-@Appender({name: "logentries"})
 export class LogEntriesAppender extends BaseAppender {
   private logger: any;
 
@@ -20,3 +19,5 @@ export class LogEntriesAppender extends BaseAppender {
     }
   }
 }
+
+appender("logentries", LogEntriesAppender);

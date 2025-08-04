@@ -1,4 +1,6 @@
-import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import "@tsed/logger/layouts/ObjectLayout.js";
+
+import {appender, BaseAppender, LogEvent} from "@tsed/logger";
 
 export interface ConnectLogger {
   debug?(log: any): any;
@@ -18,7 +20,6 @@ export interface ConnectAppenderOpts {
   logger: ConnectLogger;
 }
 
-@Appender({name: "connect", defaultLayout: "object"})
 export class ConnectAppender extends BaseAppender<ConnectAppenderOpts> {
   write(loggingEvent: LogEvent) {
     const level = loggingEvent.level.toString().toLowerCase();
@@ -29,3 +30,4 @@ export class ConnectAppender extends BaseAppender<ConnectAppenderOpts> {
     }
   }
 }
+appender("connect", ConnectAppender, {defaultLayout: "object"});
