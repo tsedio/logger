@@ -1,4 +1,4 @@
-import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import {$log, appender, BaseAppender, LogEvent} from "@tsed/logger";
 import {Logger, SeqEvent, SeqLogLevel} from "seq-logging";
 
 const LEVEL_NAMES: Record<string, SeqLogLevel> = {
@@ -11,7 +11,6 @@ const LEVEL_NAMES: Record<string, SeqLogLevel> = {
   FATAL: "Fatal"
 };
 
-@Appender({name: "seq"})
 export class SeqAppender extends BaseAppender {
   private logger: Logger;
 
@@ -76,3 +75,5 @@ export class SeqAppender extends BaseAppender {
     return this.logger.close();
   }
 }
+
+appender("seq", SeqAppender);

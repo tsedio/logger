@@ -9,7 +9,7 @@
   "typings": "./lib/types/index.d.ts",
   "exports": {
     ".": {
-      "@tsed/source": "./src/index.ts",
+      "tsed_source": "./src/index.ts",
       "types": "./lib/types/index.d.ts",
       "import": "./lib/esm/index.js",
       "default": "./lib/esm/index.js"
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "yarn run build:ts",
-    "build:ts": "tsc --build tsconfig.json"
+    "build:ts": "tsc --build tsconfig.esm.json"
   },
   "author": {
     "name": "Romain Lenzotti"
@@ -44,7 +44,7 @@
     "tslib": "2.8.1"
   },
   "devDependencies": {
-    "@tsed/logger": "7.0.2",
+    "@tsed/logger": "workspace:*",
     "@tsed/typescript": "workspace:*",
     "typescript": "5.9.2"
   },

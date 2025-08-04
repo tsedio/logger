@@ -1,9 +1,8 @@
-import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
-import amqplib, {Connection} from "amqplib";
+import {$log, appender, BaseAppender, LogEvent} from "@tsed/logger";
+import amqplib, {ChannelModel} from "amqplib";
 
-@Appender({name: "seq"})
 export class RabbitMQAppender extends BaseAppender {
-  private connection: Connection;
+  private connection: ChannelModel;
   private messagesToSend: any[] = [];
   private promisesWaiting: number = 0;
   private waitingToConnect: boolean = true;
@@ -122,3 +121,5 @@ export class RabbitMQAppender extends BaseAppender {
     }
   }
 }
+
+appender("rabbitmq", RabbitMQAppender);

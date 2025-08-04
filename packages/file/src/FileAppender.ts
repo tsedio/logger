@@ -1,4 +1,6 @@
-import {Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import "@tsed/logger/layouts/BasicLayout.js";
+
+import {appender, BaseAppender, LogEvent} from "@tsed/logger";
 import * as Os from "os";
 import {normalize} from "path";
 // @ts-ignore
@@ -77,7 +79,7 @@ const eol = Os.EOL || "\n";
  * ```
  *
  */
-@Appender({name: "file", defaultLayout: "basic"})
+
 export class FileAppender extends BaseAppender {
   private writer: any;
   private listener: any;
@@ -153,3 +155,5 @@ export class FileAppender extends BaseAppender {
     return stream;
   }
 }
+
+appender("file", FileAppender, {defaultLayout: "basic"});

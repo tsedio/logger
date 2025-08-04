@@ -2,7 +2,9 @@
 
 You can add your own layouts with @@Layout()@@ before pushing a configure to your logger.
 
-```typescript
+::: code-group
+
+```typescript [Decorator]
 // customLayout.ts
 import {BaseLayout, LogEvent, Layout} from "@tsed/logger";
 import {formatLogData} from "ts-log-debug/lib/utils/inpectUtils";
@@ -24,6 +26,33 @@ export class JsonLayout extends BaseLayout {
   }
 }
 ```
+
+```typescript [Functional API]
+// customLayout.ts
+import {BaseLayout, LogEvent, Layout, layout} from "@tsed/logger";
+import {formatLogData} from "ts-log-debug/lib/utils/inpectUtils";
+
+export class JsonLayout extends BaseLayout {
+  transform(loggingEvent: LogEvent, timezoneOffset?): string {
+    const log = {
+      startTime: loggingEvent.startTime,
+      categoryName: loggingEvent.categoryName,
+      level: loggingEvent.level.toString(),
+      data: loggingEvent.data,
+      context: loggingEvent.context
+    };
+
+    log.data = log.data.map((data) => formatLogData([data]));
+
+    return JSON.stringify(log) + (this.config["separator"] || "");
+  }
+}
+
+layout("customJson", JsonLayout)
+```
+
+:::
+
 
 This layout can be use like this:
 

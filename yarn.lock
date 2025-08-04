@@ -2638,10 +2638,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-connect@workspace:packages/connect"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.2"
+    vitest: "npm:^3.2.4"
   peerDependencies:
     "@tsed/logger": 7.0.2
   languageName: unknown
@@ -2651,7 +2652,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-file@workspace:packages/file"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     streamroller: "npm:^3.1.5"
     tslib: "npm:2.8.1"
@@ -2665,7 +2666,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-insight@workspace:packages/insight"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     r7insight_node: "npm:3.3.1"
     tslib: "npm:2.8.1"
@@ -2679,7 +2680,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logentries@workspace:packages/logentries"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     le_node: "npm:^1.8.0"
     tslib: "npm:2.8.1"
@@ -2693,7 +2694,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-loggly@workspace:packages/loggly"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     "@types/node-loggly-bulk": "npm:^2.2.4"
     node-loggly-bulk: "npm:^4.0.2"
@@ -2708,7 +2709,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-http@workspace:packages/logstash-http"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     "@types/uuid": "npm:^10.0.0"
     axios: "npm:1.11.0"
@@ -2725,7 +2726,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-logstash-udp@workspace:packages/logstash-udp"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.2"
@@ -2734,11 +2735,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@tsed/logger-pattern-layout@workspace:packages/logger-pattern-layout":
+  version: 0.0.0-use.local
+  resolution: "@tsed/logger-pattern-layout@workspace:packages/logger-pattern-layout"
+  dependencies:
+    "@tsed/barrels": "npm:6.6.0"
+    "@tsed/logger": "workspace:*"
+    "@tsed/typescript": "workspace:*"
+    "@tsed/vitest": "workspace:*"
+    tslib: "npm:2.8.1"
+    typescript: "npm:5.9.2"
+    vite: "npm:7.0.6"
+    vitest: "npm:^3.2.4"
+  languageName: unknown
+  linkType: soft
+
 "@tsed/logger-rabbitmq@workspace:packages/rabbitmq":
   version: 0.0.0-use.local
   resolution: "@tsed/logger-rabbitmq@workspace:packages/rabbitmq"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     "@types/amqplib": "npm:^0.10.7"
     amqplib: "npm:0.10.8"
@@ -2794,6 +2810,7 @@ __metadata:
     unplugin-swc: "npm:^1.5.5"
     vite: "npm:7.0.6"
     vite-plugin-dts: "npm:^4.5.4"
+    vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:3.2.4"
   languageName: unknown
   linkType: soft
@@ -2802,7 +2819,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-seq@workspace:packages/seq"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     seq-logging: "npm:3.0.0"
     tslib: "npm:2.8.1"
@@ -2817,7 +2834,7 @@ __metadata:
   resolution: "@tsed/logger-slack@workspace:packages/slack"
   dependencies:
     "@slack/web-api": "npm:^7.9.3"
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.2"
@@ -2830,7 +2847,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/logger-smtp@workspace:packages/smtp"
   dependencies:
-    "@tsed/logger": "npm:7.0.2"
+    "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     "@types/nodemailer": "npm:6.4.17"
     nodemailer: "npm:^6.10.1"
@@ -2841,7 +2858,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tsed/logger@npm:7.0.2, @tsed/logger@workspace:packages/logger":
+"@tsed/logger-std@workspace:packages/logger-std":
+  version: 0.0.0-use.local
+  resolution: "@tsed/logger-std@workspace:packages/logger-std"
+  dependencies:
+    "@tsed/barrels": "npm:6.6.0"
+    "@tsed/logger": "workspace:*"
+    "@tsed/typescript": "workspace:*"
+    "@tsed/vitest": "workspace:*"
+    colors: "npm:1.4.0"
+    date-format: "npm:^4.0.14"
+    semver: "npm:^7.7.2"
+    tslib: "npm:2.8.1"
+    typescript: "npm:5.9.2"
+    vite: "npm:7.0.6"
+    vitest: "npm:^3.2.4"
+  languageName: unknown
+  linkType: soft
+
+"@tsed/logger@workspace:*, @tsed/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@tsed/logger@workspace:packages/logger"
   dependencies:
@@ -2928,7 +2963,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/vitest@workspace:tools/vitest"
   dependencies:
-    globby: "npm:14.1.0"
     vitest: "npm:3.2.4"
   languageName: unknown
   linkType: soft
@@ -6945,19 +6979,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "fast-glob@npm:3.3.3"
-  dependencies:
-    "@nodelib/fs.stat": "npm:^2.0.2"
-    "@nodelib/fs.walk": "npm:^1.2.3"
-    glob-parent: "npm:^5.1.2"
-    merge2: "npm:^1.3.0"
-    micromatch: "npm:^4.0.8"
-  checksum: 10/dcc6432b269762dd47381d8b8358bf964d8f4f60286ac6aa41c01ade70bda459ff2001b516690b96d5365f68a49242966112b5d5cc9cd82395fa8f9d017c90ad
-  languageName: node
-  linkType: hard
-
 "fast-json-stable-stringify@npm:^2.0.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
@@ -7881,20 +7902,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:14.1.0":
-  version: 14.1.0
-  resolution: "globby@npm:14.1.0"
-  dependencies:
-    "@sindresorhus/merge-streams": "npm:^2.1.0"
-    fast-glob: "npm:^3.3.3"
-    ignore: "npm:^7.0.3"
-    path-type: "npm:^6.0.0"
-    slash: "npm:^5.1.0"
-    unicorn-magic: "npm:^0.3.0"
-  checksum: 10/e527ff54f0dddf60abfabd0d9e799768619d957feecd8b13ef60481f270bfdce0d28f6b09267c60f8064798fb3003b8ec991375f7fe0233fbce5304e1741368c
-  languageName: node
-  linkType: hard
-
 "globby@npm:8.0.2":
   version: 8.0.2
   resolution: "globby@npm:8.0.2"
@@ -7935,6 +7942,13 @@ __metadata:
     merge2: "npm:^1.4.1"
     slash: "npm:^3.0.0"
   checksum: 10/288e95e310227bbe037076ea81b7c2598ccbc3122d87abc6dab39e1eec309aa14f0e366a98cdc45237ffcfcbad3db597778c0068217dcb1950fef6249104e1b1
+  languageName: node
+  linkType: hard
+
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: 10/81ce62ee6f800d823d6b7da7687f841676d60ee8f51f934ddd862e4057316d26665c4edc0358d4340a923ac00a514f8b67c787e28fe693aae16350f4e60d55e9
   languageName: node
   linkType: hard
 
@@ -8439,7 +8453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:^7.0.0, ignore@npm:^7.0.3":
+"ignore@npm:^7.0.0":
   version: 7.0.5
   resolution: "ignore@npm:7.0.5"
   checksum: 10/f134b96a4de0af419196f52c529d5c6120c4456ff8a6b5a14ceaaa399f883e15d58d2ce651c9b69b9388491d4669dda47285d307e827de9304a53a1824801bc6
@@ -12872,13 +12886,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-type@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "path-type@npm:6.0.0"
-  checksum: 10/b9f6eaf7795c48d5c9bc4c6bc3ac61315b8d36975a73497ab2e02b764c0836b71fb267ea541863153f633a069a1c2ed3c247cb781633842fc571c655ac57c00e
-  languageName: node
-  linkType: hard
-
 "pathe@npm:^1.1.2":
   version: 1.1.2
   resolution: "pathe@npm:1.1.2"
@@ -15592,6 +15599,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsconfck@npm:^3.0.3":
+  version: 3.1.6
+  resolution: "tsconfck@npm:3.1.6"
+  peerDependencies:
+    typescript: ^5.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  bin:
+    tsconfck: bin/tsconfck.js
+  checksum: 10/8574595286850273bf83319b4e67ca760088df3c36f7ca1425aaf797416672e854271bd31e75c9b3e1836ed5b66410c6bc38cbbda9c638a5416c6a682ed94132
+  languageName: node
+  linkType: hard
+
 "tsconfig-paths@npm:^4.1.2":
   version: 4.2.0
   resolution: "tsconfig-paths@npm:4.2.0"
@@ -16324,6 +16345,22 @@ __metadata:
     vite:
       optional: true
   checksum: 10/1504a8da02f8015c3138ef57a690179ad9b9d4369a054ae48b52a1c8cbc7ad05474551eab309cd90cf758800e17b67ccd13317aa5f8e28efde957547c7a339fb
+  languageName: node
+  linkType: hard
+
+"vite-tsconfig-paths@npm:5.1.4":
+  version: 5.1.4
+  resolution: "vite-tsconfig-paths@npm:5.1.4"
+  dependencies:
+    debug: "npm:^4.1.1"
+    globrex: "npm:^0.1.2"
+    tsconfck: "npm:^3.0.3"
+  peerDependencies:
+    vite: "*"
+  peerDependenciesMeta:
+    vite:
+      optional: true
+  checksum: 10/b409dbd17829f560021a71dba3e473b9c06dcf5fdc9d630b72c1f787145ec478b38caff1be04868971ac8bdcbf0f5af45eeece23dbc9c59c54b901f867740ae0
   languageName: node
   linkType: hard
 

@@ -4,6 +4,28 @@
 - pattern - string - specifier for the output format, using placeholders as described below
 - tokens - object (optional) - user-defined tokens to be used in the pattern
 
+## Installation
+
+:::code-group
+
+```bash [npm]
+npm install @tsed/logger-pattern-layout
+```
+
+```bash [yarn]
+yarn add @tsed/logger-pattern-layout
+```
+
+```bash [pnpm]
+pnpm add @tsed/logger-pattern-layout
+```
+
+```bash [bun]
+bun add @tsed/logger-pattern-layout
+```
+
+:::
+
 ## Pattern format
 
 The pattern string can contain any characters, but sequences beginning with `%` will be replaced with values taken from
@@ -35,13 +57,14 @@ User-defined tokens can be either a string or a function. Functions will be pass
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import {PatternLayout} from "@tsed/logger-pattern-layout";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("std-log-custom", {
   type: "console",
   layout: {
-    type: "pattern",
+    type: PatternLayout,
     pattern: "%d %p %c %x{user} %m%n",
     tokens: {
       user: (logEvent) => AuthLibrary.currentUser()

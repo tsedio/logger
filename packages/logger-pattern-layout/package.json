@@ -1,0 +1,58 @@
+{
+  "name": "@tsed/logger-pattern-layout",
+  "description": "Pattern layout appender module for @tsed/logger",
+  "type": "module",
+  "version": "7.0.2",
+  "author": {
+    "name": "Romain Lenzotti"
+  },
+  "license": "MIT",
+  "source": "./src/index.ts",
+  "main": "./lib/esm/index.js",
+  "module": "./lib/esm/index.js",
+  "browser": "./lib/common/index.js",
+  "typings": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "tsed_source": "./src/node/index.ts",
+      "types": "./lib/types/node/index.d.ts",
+      "browser": "./lib/esm/common/index.js",
+      "import": "./lib/esm/node/index.js",
+      "default": "./lib/esm/node/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage.thresholds.autoUpdate=true",
+    "build": "yarn barrels && yarn run build:ts",
+    "barrels": "barrels",
+    "build:ts": "tsc --build tsconfig.esm.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsedio/logger.git"
+  },
+  "keywords": [
+    "ts",
+    "log",
+    "debug",
+    "typescript",
+    "trace"
+  ],
+  "bugs": {
+    "url": "https://github.com/tsedio/logger/issues"
+  },
+  "homepage": "https://github.com/tsedio/logger",
+  "dependencies": {
+    "tslib": "2.8.1"
+  },
+  "devDependencies": {
+    "@tsed/barrels": "6.6.0",
+    "@tsed/logger": "workspace:*",
+    "@tsed/typescript": "workspace:*",
+    "@tsed/vitest": "workspace:*",
+    "typescript": "5.9.2",
+    "vite": "7.0.6",
+    "vitest": "^3.2.4"
+  }
+}

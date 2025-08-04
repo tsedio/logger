@@ -1,13 +1,12 @@
+import {join} from "node:path";
+
 import swc from "unplugin-swc";
+import tsconfigPaths from "vite-tsconfig-paths";
 import {defineConfig} from "vitest/config";
 
-import {alias} from "./alias.js";
+export const root = join(import.meta.dirname, "../../..");
 
 export const presets = defineConfig({
-  resolve: {
-    alias,
-    conditions: ["@tsed/source"]
-  },
   test: {
     globals: true,
     environment: "node",
@@ -34,6 +33,9 @@ export const presets = defineConfig({
     }
   },
   plugins: [
+    tsconfigPaths({
+      projects: [join(root, "tsconfig.json"), join(root, "tsconfig.spec.json")]
+    }),
     swc.vite({
       sourceMaps: true,
       inlineSourcesContent: true,

@@ -6,15 +6,12 @@
 
 ```typescript
 import {$log} from "@tsed/logger";
-import "@tsed/logger-connect";
-import {myLogger} from "./MyLogger";
+import {ObjectLayout} from "@tsed/logger/layouts/ObjectLayout.js";
 
-$log.clear()
-$log.appenders.set("std-log-json", {
-  type: "connect",
-  options: {
-    logger: myLogger // should implements .info/debug/trace/warn/error/fatal
-  }
+logger.appenders.set("std-log", {
+  type: "console",
+  layout: ObjectLayout,
+  level: ["debug", "info", "trace"]
 });
 
 $log.info("this is just a test");

@@ -1,4 +1,4 @@
-import {$log, Appender, BaseAppender, LogEvent} from "@tsed/logger";
+import {$log, Appender, appender, BaseAppender, LogEvent} from "@tsed/logger";
 import * as dgram from "dgram";
 import * as os from "os";
 import * as util from "util";
@@ -42,7 +42,6 @@ const defaultExtraDataProvider = (loggingEvent: LogEvent) => {
   return {};
 };
 
-@Appender({name: "logstash-http"})
 export class LogStashUdpAppender extends BaseAppender {
   private udp: ReturnType<typeof dgram.createSocket>;
   private extraDataProvider: Function;
@@ -99,3 +98,5 @@ export class LogStashUdpAppender extends BaseAppender {
     });
   }
 }
+
+appender("logstash-http", LogStashUdpAppender);

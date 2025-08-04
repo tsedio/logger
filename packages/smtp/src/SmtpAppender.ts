@@ -1,4 +1,5 @@
-import {Appender, BaseAppender, BaseLayout, Layouts, LogEvent, MessagePassThroughLayout, PartialAppenderConfiguration} from "@tsed/logger";
+import {appender, BaseAppender, BaseLayout, Layouts, LogEvent, PartialAppenderConfiguration} from "@tsed/logger";
+import {MessagePassThroughLayout} from "@tsed/logger/layouts/MessagePassThroughLayout.js";
 import mailer from "nodemailer";
 import os from "os";
 
@@ -24,7 +25,7 @@ function getTransportOptions(config: any) {
  *    config.shutdownTimeout time to give up remaining emails (in seconds; defaults to 5).
  * @param _layout a function that takes a logevent and returns a string (defaults to basicLayout).
  */
-@Appender({name: "smtp"})
+
 export class SmtpAppender extends BaseAppender {
   private subjectLayout: BaseLayout;
   private sendInterval: any;
@@ -140,3 +141,5 @@ export class SmtpAppender extends BaseAppender {
     }
   }
 }
+
+appender("smtp", SmtpAppender);

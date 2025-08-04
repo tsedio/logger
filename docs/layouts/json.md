@@ -7,12 +7,13 @@
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import {JsonLayout} from "@tsed/logger/layouts/JsonLayout.js";
 
 const logger = new Logger("loggerName");
 
 logger.appenders.set("std-log-json", {
   type: "console",
-  layout: {type: "json", separator: ","},
+  layout: {type: JsonLayout, separator: ","},
   level: ["debug", "info", "trace"]
 });
 
