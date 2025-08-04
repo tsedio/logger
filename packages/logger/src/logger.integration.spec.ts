@@ -1,22 +1,19 @@
 import {Logger} from "./index.js";
+import {JsonLayout} from "./layouts/components/JsonLayout.js";
 
 describe("Logger integration", () => {
   it("should log only on trace", () => {
     const logger = new Logger("test");
-    const layout = {
-      type: "pattern",
-      pattern: "[%d{hh:mm:ss}][%p] %m%n"
-    };
 
     logger.appenders
       .set("stdout", {
-        type: "stdout",
-        layout,
+        type: "console",
+        layout: JsonLayout,
         level: ["info", "debug"]
       })
       .set("stderr", {
-        type: "stderr",
-        layout,
+        type: "console",
+        layout: JsonLayout,
         level: ["trace", "fatal", "error", "warn"]
       });
 

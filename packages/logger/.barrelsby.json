@@ -1,9 +1,7 @@
 {
   "directory": [
-    "./src/common",
-    "./src/browser",
-    "./src/node"
+    "./src"
   ],
-  "exclude": ["**/__mock__", "**/__mocks__", "**/*.spec.ts"],
+  "exclude": ["**/__mock__", "**/__mocks__", "**/*.spec.ts", "**/layouts/components"],
   "delete": true
 }
