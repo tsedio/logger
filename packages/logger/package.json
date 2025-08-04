@@ -47,15 +47,15 @@
   "dependencies": {
     "colors": "1.4.0",
     "date-format": "^4.0.14",
-    "semver": "^7.6.0",
-    "tslib": "2.6.2"
+    "semver": "^7.7.2",
+    "tslib": "2.8.1"
   },
   "devDependencies": {
-    "@tsed/barrels": "6.0.2",
+    "@tsed/barrels": "6.6.0",
     "@tsed/typescript": "workspace:*",
     "@tsed/vitest": "workspace:*",
-    "typescript": "5.7.2",
-    "vite": "5.4.11",
-    "vitest": "^2.1.6"
+    "typescript": "5.9.2",
+    "vite": "7.0.6",
+    "vitest": "^3.2.4"
   }
 }

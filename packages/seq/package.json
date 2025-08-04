@@ -40,13 +40,13 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
-    "seq-logging": "1.1.2",
-    "tslib": "2.6.2"
+    "seq-logging": "3.0.0",
+    "tslib": "2.8.1"
   },
   "devDependencies": {
     "@tsed/logger": "7.0.2",
     "@tsed/typescript": "workspace:*",
-    "typescript": "5.7.2"
+    "typescript": "5.9.2"
   },
   "peerDependencies": {
     "@tsed/logger": "7.0.2"
