@@ -2,7 +2,7 @@
   "name": "@tsed/logger",
   "description": "A multi channel logger written in TypeScript.",
   "type": "module",
-  "version": "7.0.2",
+  "version": "8.0.0-rc.1",
   "author": {
     "name": "Romain Lenzotti"
   },
