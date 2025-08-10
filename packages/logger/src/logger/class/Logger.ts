@@ -26,7 +26,7 @@ export class Logger {
   }
 
   set level(level: string) {
-    this._level = LogLevel.getLevel(level, "debug");
+    level && (this._level = LogLevel.getLevel(level, "debug"));
   }
 
   /**
