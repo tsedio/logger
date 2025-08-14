@@ -2,7 +2,7 @@
   "name": "@tsed/logger-pattern-layout",
   "description": "Pattern layout appender module for @tsed/logger",
   "type": "module",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "author": {
     "name": "Romain Lenzotti"
   },
