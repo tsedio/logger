@@ -41,7 +41,13 @@ export class LoggerAppenders {
    * @param config Required. The config of the element to add to the loggerAppenders object.
    * @returns {LoggerAppender}
    */
-  set(name: string, config: Omit<AppenderConfiguration, "options"> & {type: string | any; options?: any}): LoggerAppenders {
+  set(
+    name: string,
+    config: Omit<AppenderConfiguration, "options"> & {
+      type: string | any;
+      options?: any;
+    }
+  ): LoggerAppenders {
     const type = typeof config.type === "string" ? config.type : (config.type as any)?.$name;
     const opts = {
       level: ["debug", "info", "trace", "error", "warn", "fatal"],
@@ -51,9 +57,13 @@ export class LoggerAppenders {
     };
 
     if (!AppendersRegistry.has(opts.type)) {
-      const error = new Error(`Appender ${opts.type} doesn't exists. Check your configuration:\n${JSON.stringify(opts)}\n`);
-      error.name = "UNKNOW_APPENDER";
-      throw error;
+      console.warn(`Appender ${opts.type} doesn't exists. Check your configuration.`);
+
+      if (["stderr", "stdout"].includes(opts.type)) {
+        console.warn("Have you imported the @tsed/logger-std package?");
+      }
+
+      opts.type = "console"; // Fallback to console appender
     }
 
     const klass = AppendersRegistry.get(opts.type)!.provide;

@@ -211,19 +211,4 @@ describe("Logger", () => {
       await logger.shutdown();
     });
   });
-
-  describe("when appender doesn't exists", () => {
-    it("should throw an error", () => {
-      const logger = new Logger();
-
-      let error;
-      try {
-        logger.appenders.set("unknown", {} as any);
-      } catch (er) {
-        error = er;
-      }
-
-      expect(error.message).toContain("Appender undefined doesn't exists. Check your configuration");
-    });
-  });
 });
