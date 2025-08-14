@@ -2,6 +2,10 @@ import {BasicLayoutConfiguration} from "../interfaces/BasicLayoutConfiguration.j
 import {LayoutsRegistry} from "../registries/LayoutsRegistry.js";
 import {BaseLayout} from "./BaseLayout.js";
 
+function ucfirst(name: string) {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
 export class Layouts {
   static get(name: string | any, config: BasicLayoutConfiguration): BaseLayout {
     if (typeof name !== "string") {
@@ -9,8 +13,17 @@ export class Layouts {
     }
 
     if (!LayoutsRegistry.has(name)) {
+      console.warn("Missing " + name + " layout doesn't exists.");
+
+      if (name === "pattern") {
+        console.warn(
+          `Have you installed the @tsed/logger-pattern-layout package? If not, you can install it using the command: npm install @tsed/logger-pattern-layout`
+        );
+      } else {
+        console.warn(`Have you imported the @tsed/logger/layouts/${ucfirst(name)}Layout module in your code?`);
+      }
+
       name = "colored";
-      console.trace(name + " layout doesn't exists");
     }
 
     const layoutKlass: any = LayoutsRegistry.get(name);
