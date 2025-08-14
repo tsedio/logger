@@ -2,7 +2,7 @@
   "name": "@tsed/logger-file",
   "description": "File appender module for @tsed/logger",
   "type": "module",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "author": {
     "name": "Romain Lenzotti"
   },

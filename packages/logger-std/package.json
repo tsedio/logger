@@ -2,7 +2,7 @@
   "name": "@tsed/logger-std",
   "description": "Stdout and Stderr appender module for @tsed/logger",
   "type": "module",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "author": {
     "name": "Romain Lenzotti"
   },
