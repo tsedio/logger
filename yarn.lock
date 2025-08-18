@@ -2743,10 +2743,16 @@ __metadata:
     "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     "@tsed/vitest": "workspace:*"
+    date-format: "npm:^4.0.14"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.2"
     vite: "npm:7.0.6"
     vitest: "npm:^3.2.4"
+  peerDependencies:
+    "@tsed/logger": ">=8.0.0"
+  peerDependenciesMeta:
+    "@tsed/logger":
+      optional: false
   languageName: unknown
   linkType: soft
 
@@ -2874,6 +2880,11 @@ __metadata:
     typescript: "npm:5.9.2"
     vite: "npm:7.0.6"
     vitest: "npm:^3.2.4"
+  peerDependencies:
+    "@tsed/logger": ">=8.0.0"
+  peerDependenciesMeta:
+    "@tsed/logger":
+      optional: false
   languageName: unknown
   linkType: soft
 

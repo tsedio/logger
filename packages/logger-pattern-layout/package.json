@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
+    "date-format": "^4.0.14",
     "tslib": "2.8.1"
   },
   "devDependencies": {
@@ -54,5 +55,13 @@
     "typescript": "5.9.2",
     "vite": "7.0.6",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@tsed/logger": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tsed/logger": {
+      "optional": false
+    }
   }
 }

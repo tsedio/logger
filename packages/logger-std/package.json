@@ -55,5 +55,13 @@
     "typescript": "5.9.2",
     "vite": "7.0.6",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@tsed/logger": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tsed/logger": {
+      "optional": false
+    }
   }
 }
