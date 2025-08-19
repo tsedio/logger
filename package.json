@@ -1,6 +1,6 @@
 {
   "name": "@tsed/logger-root",
-  "version": "8.0.3",
+  "version": "8.0.4",
   "description": "A multi channel logger written in TypeScript.",
   "private": true,
   "type": "module",
