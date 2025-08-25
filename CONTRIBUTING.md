@@ -11,19 +11,19 @@ $ git clone https://github.com/YOUR_USERNAME/logger.git
 Install npm dependencies
 
 ```
-npm install
+yarn
 ```
 
 Run build process
 
 ```
-npm run tsc:compile
+yarn build
 ```
 
 ## Test
 
 ```
-npm run test
+yarn test
 ```
 
 ## Write documentation
@@ -32,7 +32,7 @@ TsLogDebug use docsify to convert markdown to HTML. In addition, all documentati
 the Api documentation. To preview your comments on a class you can run this command:
 
 ```
-npm run doc:serve
+yarn docs:serve
 ```
 
 ## Guidelines
