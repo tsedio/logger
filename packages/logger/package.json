@@ -35,7 +35,7 @@
     "test": "vitest run",
     "test:ci": "vitest run --coverage.thresholds.autoUpdate=true",
     "build": "yarn barrels && yarn run build:ts",
-    "barrels": "barrels",
+    "barrels": "barrels && eslint src/**/index.ts --fix",
     "build:ts": "tsc --build tsconfig.esm.json"
   },
   "repository": {
@@ -66,5 +66,6 @@
     "typescript": "5.9.2",
     "vite": "7.0.6",
     "vitest": "^3.2.4"
-  }
+  },
+  "peerDependencies": {}
 }
