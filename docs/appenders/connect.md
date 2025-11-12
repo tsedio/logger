@@ -20,12 +20,14 @@ import "@tsed/logger-connect";
 $log.appenders.clear()
 $log.appenders.set("channel", {
   type: "connect",
-  logger: {
-    info: (obj) => console.log(obj),
-    warn: (obj) => console.warn(obj),
-    debug: (obj) => console.debug(obj),
-    trace: (obj) => console.trace(obj),
-    error: (obj) => console.error(obj),
+  options: {
+    logger: {
+      info: (obj) => console.log(obj),
+      warn: (obj) => console.warn(obj),
+      debug: (obj) => console.debug(obj),
+      trace: (obj) => console.trace(obj),
+      error: (obj) => console.error(obj),
+    }
   }
 });
 
