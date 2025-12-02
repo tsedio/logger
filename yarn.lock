@@ -2805,7 +2805,7 @@ __metadata:
     is-ci: "npm:^4.1.0"
     lerna: "npm:8.2.3"
     lint-staged: "npm:^16.1.4"
-    nodemailer: "npm:^6.10.1"
+    nodemailer: "npm:^7.0.11"
     prettier: "npm:3.6.2"
     semantic-release: "npm:^24.2.7"
     semantic-release-slack-bot: "npm:^4.0.2"
@@ -2857,7 +2857,7 @@ __metadata:
     "@tsed/logger": "workspace:*"
     "@tsed/typescript": "workspace:*"
     "@types/nodemailer": "npm:6.4.17"
-    nodemailer: "npm:^6.10.1"
+    nodemailer: "npm:^7.0.11"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.2"
   peerDependencies:
@@ -11622,10 +11622,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.10.1":
-  version: 6.10.1
-  resolution: "nodemailer@npm:6.10.1"
-  checksum: 10/d9911701641e06143a2deb0bd5deb518310972316c6e6eabc594af24353b0d67867f26cb8d72b0cfa385abef945149ac51ae40a40d2199e1088aef5829e58a3d
+"nodemailer@npm:^7.0.11":
+  version: 7.0.11
+  resolution: "nodemailer@npm:7.0.11"
+  checksum: 10/2ad4dd56a4caf84a83aa6f4378ded26d5ef8a644ca3be09c3b4fb2255d861369e620f29be6c3c97148ac4a50aa5fdff6240b9d60805362bd99ca15f2ea62e8a2
   languageName: node
   linkType: hard
 
