@@ -1,9 +1,7 @@
 import "../node/index.js";
 
-import {LogEvent} from "@tsed/logger";
+import {dateFormat, ISO8601_WITH_TZ_OFFSET_FORMAT, LogEvent} from "@tsed/logger";
 import {levels} from "@tsed/logger";
-// @ts-ignore
-import * as dateFormat from "date-format";
 import * as os from "os";
 
 import {formatter} from "./fn/formatter.js";
@@ -141,11 +139,7 @@ describe("PatternLayout", () => {
     });
 
     it("%d should allow for format specification", () => {
-      testPattern(
-        tokens,
-        "%d{ISO8601_WITH_TZ_OFFSET}",
-        dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, logEvent.startTime, undefined)
-      );
+      testPattern(tokens, "%d{ISO8601_WITH_TZ_OFFSET}", dateFormat(ISO8601_WITH_TZ_OFFSET_FORMAT, logEvent.startTime));
       testPattern(tokens, "%d{ISO8601}", "2017-06-18T22:29:38.234");
       testPattern(tokens, "%d{ABSOLUTE}", "22:29:38.234");
       testPattern(tokens, "%d{DATE}", "18 06 2017 22:29:38.234");

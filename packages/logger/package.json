@@ -55,7 +55,6 @@
   "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
     "colors": "1.4.0",
-    "date-format": "^4.0.14",
     "semver": "^7.7.2",
     "tslib": "2.8.1"
   },
