@@ -1,7 +1,7 @@
 // @ts-ignore
-import * as dateFormat from "date-format";
 
 import {LogEvent} from "../../core/LogEvent.js";
+import {dateFormat} from "../../utils/dateFormat.js";
 import {colorize} from "./colorizeUtils.js";
 import {StringUtils} from "./StringUtils.js";
 
@@ -9,7 +9,7 @@ export function timestampLevelAndCategory(loggingEvent: LogEvent, colour: any, t
   return colorize(
     StringUtils.format(
       "[%s] [%s] [%s] - ",
-      dateFormat.asString(loggingEvent.startTime, timezoneOffset),
+      dateFormat(loggingEvent.startTime, timezoneOffset),
       loggingEvent.formattedLevel,
       loggingEvent.categoryName
     ),

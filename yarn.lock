@@ -2896,7 +2896,6 @@ __metadata:
     "@tsed/typescript": "workspace:*"
     "@tsed/vitest": "workspace:*"
     colors: "npm:1.4.0"
-    date-format: "npm:^4.0.14"
     semver: "npm:^7.7.2"
     tslib: "npm:2.8.1"
     typescript: "npm:5.9.2"

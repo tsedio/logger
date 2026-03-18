@@ -26,3 +26,4 @@ export * from "./layouts/utils/timestampLevelAndCategory.js";
 export * from "./logger/class/Logger.js";
 export * from "./logger/class/LoggerAppenders.js";
 export * from "./logger/utils/tableUtils.js";
+export * from "./utils/dateFormat.js";
