@@ -37,23 +37,23 @@ jobs:
         run: yarn install --immutable
       - name: Run test 🔍
         run: yarn test:coverage
-#      - name: Coveralls
-#        uses: coverallsapp/github-action@master
-#        with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          parallel: true
-#          flag-name: "@tsed/logger"
-#          path-to-lcov: './packages/logger/coverage/lcov.info'
-#
-#  coveralls:
-#    needs: test
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Coveralls Finished
-#        uses: coverallsapp/github-action@master
-#        with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          parallel-finished: true
+  #      - name: Coveralls
+  #        uses: coverallsapp/github-action@master
+  #        with:
+  #          github-token: ${{ secrets.GITHUB_TOKEN }}
+  #          parallel: true
+  #          flag-name: "@tsed/logger"
+  #          path-to-lcov: './packages/logger/coverage/lcov.info'
+  #
+  #  coveralls:
+  #    needs: test
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Coveralls Finished
+  #        uses: coverallsapp/github-action@master
+  #        with:
+  #          github-token: ${{ secrets.GITHUB_TOKEN }}
+  #          parallel-finished: true
 
   build:
     runs-on: ubuntu-latest
@@ -72,24 +72,27 @@ jobs:
 
   deploy-packages:
     runs-on: ubuntu-latest
-    needs: [ test, build, lint ]
+    needs: [test, build, lint]
     if: ${{ github.event_name != 'pull_request' && (contains(github.ref, 'production') || contains(github.ref, 'alpha')  || contains(github.ref, 'beta') || contains(github.ref, 'rc')) }}
-
+    permissions:
+      contents: write
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 24.x
           cache: "yarn"
       - name: Install dependencies 🚀
         run: yarn install --immutable
+      - name: Verify trusted publishing readiness
+        run: yarn monorepo trust verify
       - name: Release packages 🔖
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         run: yarn release
       - uses: actions/upload-artifact@v4
