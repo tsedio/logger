@@ -3,7 +3,7 @@ import {join} from "node:path";
 import {intro, log, outro, spinner} from "@clack/prompts";
 
 import {copyFiles} from "./utils/copy-files.js";
-import {buildReferenceSidebar, type ApiSidebarOptions} from "./utils/sidebar.js";
+import {type ApiSidebarOptions, buildReferenceSidebar} from "./utils/sidebar.js";
 
 export interface LlmContentSection {
   destination: string;

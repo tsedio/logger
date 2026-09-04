@@ -1,7 +1,7 @@
 import {join} from "node:path";
 
-import {mapApiReferences} from "@tsed/vitepress-theme/composables/api/mappers/mapApiReferences.js";
 import type {ApiResponse, ApiSymbol} from "@tsed/vitepress-theme/composables/api/interfaces/Api.js";
+import {mapApiReferences} from "@tsed/vitepress-theme/composables/api/mappers/mapApiReferences.js";
 import fsExtra from "fs-extra";
 
 import api from "../../../public/api.json" with {type: "json"};
