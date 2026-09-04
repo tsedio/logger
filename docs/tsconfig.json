@@ -1,0 +1,20 @@
+{
+  "extends": "@tsed/typescript/tsconfig.node.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {}
+  },
+  "include": ["**/*.ts", "**/*.json", "**/*.mts", "./.vitepress/**/*.mts"],
+  "exclude": [
+    "./packages/*/src/**/*.spec.ts",
+    "./packages/*/*/src/**/*.spec.ts",
+    "**/__tests__/**/*.ts",
+    "**/__mock__/**/*.ts",
+    "**/helpers/**/*.ts",
+    "node_modules",
+    "**/generate_code/**",
+    "**/generated/**",
+    "**/docs/**",
+    "**/lib/**"
+  ]
+}

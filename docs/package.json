@@ -11,9 +11,9 @@
     "@tsed/vitepress-theme": "^1.8.0",
     "@vueuse/core": "10.11.0",
     "axios": "1.7.7",
-    "lodash": "4.17.21",
+    "lodash": "^4.18.1",
     "lucide-vue-next": "^0.436.0",
-    "vitepress": "1.4.2"
+    "vitepress": "^1.6.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",

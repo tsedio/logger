@@ -1,14 +1,41 @@
 import {defineConfig} from "vitepress";
+// @ts-ignore
 import {apiAnchor} from "@tsed/vitepress-theme/markdown/api-anchor/api-anchor.js";
-import pkg from "../../package.json";
-import team from "../team.json"
+import pkg from "../../package.json" with {type: "json"};
+import referenceSidebar from "../public/reference-sidebar.json" with {type: "json"};
+import team from "../team.json" with {type: "json"};
 import llmstxt from "vitepress-plugin-llms";
-import {getSidebar} from "./api.js";
+import {apiLlmLinks} from "./plugins/apiLllmLinks.js";
+import {buildLlmContentsPlugin} from "./plugins/buildLlmContents.js";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   vite: {
     plugins: [
+      buildLlmContentsPlugin({
+        sections: [
+          {
+            source: "guide",
+            destination: "public/ai/guides",
+            label: "Guides"
+          },
+          {
+            source: "introduction",
+            destination: "public/ai/introduction",
+            label: "Introduction"
+          },
+          {
+            source: "api",
+            destination: "public/ai/api",
+            label: "API references"
+          }
+        ],
+        sidebar: {
+          coreModulePattern: /@tsed\/logger$/,
+          coreModules: ["logger"]
+        }
+      }),
+      apiLlmLinks,
       llmstxt({
         ignoreFilesPerOutput: {
           llmsTxt: ["api/**"]
@@ -163,7 +190,7 @@ export default defineConfig({
       }
     ],
     sidebar: {
-      "/api": getSidebar(),
+      "/api/": referenceSidebar,
       "/": [
         {
           text: "Introduction",
@@ -246,12 +273,15 @@ export default defineConfig({
       copyright: "Copyright © 2019-present Romain Lenzotti"
     }
   },
-  markdown: {
-    image: {
-      lazyLoading: true
-    },
-    config: (md) => {
-      md.use(apiAnchor);
+  markdown:
+    {
+      image: {
+        lazyLoading: true;
+      }
+      ,
+      config: (md) => {
+        md.use(apiAnchor);
+      };
     }
-  }
-});
+})
+;
