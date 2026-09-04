@@ -63,7 +63,7 @@
     "@tsed/typescript": "workspace:*",
     "@tsed/vitest": "workspace:*",
     "typescript": "5.9.2",
-    "vite": "7.0.6",
+    "vite": "7.1.12",
     "vitest": "^3.2.4"
   }
 }
