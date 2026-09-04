@@ -2,10 +2,20 @@ import {defineConfig} from "vitepress";
 import {apiAnchor} from "@tsed/vitepress-theme/markdown/api-anchor/api-anchor.js";
 import pkg from "../../package.json";
 import team from "../team.json"
+import llmstxt from "vitepress-plugin-llms";
 import {getSidebar} from "./api.js";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    plugins: [
+      llmstxt({
+        ignoreFilesPerOutput: {
+          llmsTxt: ["api/**"]
+        }
+      })
+    ]
+  },
   title: "Ts.ED Logger",
   lastUpdated: true,
   description: "Ts.ED Logger is multi-channel logger compatible with Node.js, Bun.js and browser environment",
