@@ -2,11 +2,16 @@ import {defineConfig} from "vitepress";
 // @ts-ignore
 import {apiAnchor} from "@tsed/vitepress-theme/markdown/api-anchor/api-anchor.js";
 import pkg from "../../package.json" with {type: "json"};
-import referenceSidebar from "../public/reference-sidebar.json" with {type: "json"};
 import team from "../team.json" with {type: "json"};
 import llmstxt from "vitepress-plugin-llms";
 import {apiLlmLinks} from "./plugins/apiLllmLinks.js";
 import {buildLlmContentsPlugin} from "./plugins/buildLlmContents.js";
+import {getSidebar} from "./plugins/utils/sidebar.js";
+
+const apiSidebar = {
+  coreModulePattern: /@tsed\/logger$/,
+  coreModules: ["logger"]
+};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -30,10 +35,7 @@ export default defineConfig({
             label: "API references"
           }
         ],
-        sidebar: {
-          coreModulePattern: /@tsed\/logger$/,
-          coreModules: ["logger"]
-        }
+        sidebar: apiSidebar
       }),
       apiLlmLinks,
       llmstxt({
@@ -190,7 +192,7 @@ export default defineConfig({
       }
     ],
     sidebar: {
-      "/api/": referenceSidebar,
+      "/api/": getSidebar(apiSidebar),
       "/": [
         {
           text: "Introduction",
