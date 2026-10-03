@@ -275,15 +275,13 @@ export default defineConfig({
       copyright: "Copyright © 2019-present Romain Lenzotti"
     }
   },
-  markdown:
-    {
-      image: {
-        lazyLoading: true;
-      }
-      ,
-      config: (md) => {
-        md.use(apiAnchor);
-      };
+  markdown: {
+    image: {
+      lazyLoading: true
+    },
+    config: (md) => {
+      md.use(apiAnchor);
     }
+  }
 })
 ;
