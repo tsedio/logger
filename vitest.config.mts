@@ -10,8 +10,6 @@ export default defineConfig({
         lines: 26
       }
     },
-    projects: [
-      'packages/**/vitest.config.{mts,ts}',
-    ]
+    projects: ["packages/**/vitest.config.{mts,ts}"]
   }
-})
+});

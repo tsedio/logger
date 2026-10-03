@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 140,
+  "bracketSpacing": false,
+  "trailingComma": "none",
+  "arrowParens": "always",
+  "ignorePatterns": [
+    "node_modules",
+    "**/lib",
+    "**/dist",
+    "**/coverage",
+    "**/.nyc_output",
+    "**/node_modules",
+    "*-lock.json",
+    "*.lock",
+    "benchmarks.*",
+    "**/generated",
+    "docs/api",
+    "docs/.vitepress/cache",
+    "docs/.vitepress/dist"
+  ]
+}

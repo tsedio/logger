@@ -1,9 +1,29 @@
 {
   "name": "@tsed/logger-loggly",
-  "description": "Loggly appender module for @tsed/logger",
-  "type": "module",
   "version": "8.0.5",
+  "description": "Loggly appender module for @tsed/logger",
+  "keywords": [
+    "debug",
+    "log",
+    "loggly",
+    "trace",
+    "ts",
+    "typescript"
+  ],
+  "homepage": "https://github.com/tsedio/logger",
+  "bugs": {
+    "url": "https://github.com/tsedio/logger/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Romain Lenzotti"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsedio/logger.git"
+  },
   "source": "./src/index.ts",
+  "type": "module",
   "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
   "typings": "./lib/types/index.d.ts",
@@ -19,26 +39,6 @@
     "build": "yarn run build:ts",
     "build:ts": "tsc --build tsconfig.esm.json"
   },
-  "author": {
-    "name": "Romain Lenzotti"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tsedio/logger.git"
-  },
-  "keywords": [
-    "ts",
-    "log",
-    "debug",
-    "typescript",
-    "trace",
-    "loggly"
-  ],
-  "bugs": {
-    "url": "https://github.com/tsedio/logger/issues"
-  },
-  "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
     "@types/node-loggly-bulk": "^2.2.4",
     "node-loggly-bulk": "^4.0.2",
@@ -47,7 +47,7 @@
   "devDependencies": {
     "@tsed/logger": "workspace:*",
     "@tsed/typescript": "workspace:*",
-    "typescript": "5.9.2"
+    "typescript": "7.0.2"
   },
   "peerDependencies": {
     "@tsed/logger": ">=8.0.0"

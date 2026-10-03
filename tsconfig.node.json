@@ -1,7 +1,6 @@
 {
   "extends": "@tsed/typescript/tsconfig.node.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "noEmit": true,
     "paths": {
       "@tsed/logger": ["./packages/logger/src/index.ts"],
@@ -9,11 +8,7 @@
       "@tsed/logger-std": ["./packages/logger-std/src/index.ts"]
     }
   },
-  "include": [
-    "./packages/*/src/**/*.ts",
-    "./packages/*/*/src/**/*.ts",
-    "**/vite.config.mts"
-  ],
+  "include": ["./packages/*/src/**/*.ts", "./packages/*/*/src/**/*.ts", "**/vite.config.mts"],
   "exclude": [
     "./docs/**",
     "./packages/*/src/**/*.spec.ts",

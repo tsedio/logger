@@ -200,7 +200,7 @@ export default defineConfig({
             {text: "What is Ts.ED?", link: "/introduction/what-is-tsed"},
             {text: "Capabilities", link: "/introduction/capabilities"},
             {text: "Installation", link: "/introduction/getting-started"},
-            {text: "Migrate to v8", link: "/introduction/migrate-to-v8"},
+            {text: "Migrate to v8", link: "/introduction/migrate-to-v8"}
           ]
         },
         {
@@ -283,5 +283,4 @@ export default defineConfig({
       md.use(apiAnchor);
     }
   }
-})
-;
+});

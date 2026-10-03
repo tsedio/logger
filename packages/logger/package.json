@@ -1,13 +1,28 @@
 {
   "name": "@tsed/logger",
-  "description": "A multi channel logger written in TypeScript.",
-  "type": "module",
   "version": "8.0.5",
+  "description": "A multi channel logger written in TypeScript.",
+  "keywords": [
+    "debug",
+    "log",
+    "trace",
+    "ts",
+    "typescript"
+  ],
+  "homepage": "https://github.com/tsedio/logger",
+  "bugs": {
+    "url": "https://github.com/tsedio/logger/issues"
+  },
+  "license": "MIT",
   "author": {
     "name": "Romain Lenzotti"
   },
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsedio/logger.git"
+  },
   "source": "./src/index.ts",
+  "type": "module",
   "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
   "typings": "./lib/types/index.d.ts",
@@ -35,24 +50,9 @@
     "test": "vitest run",
     "test:ci": "vitest run --coverage.thresholds.autoUpdate=true",
     "build": "yarn barrels && yarn run build:ts",
-    "barrels": "barrels && eslint src/**/index.ts --fix",
+    "barrels": "barrels && yarn run -T oxfmt 'src/**/index.ts'",
     "build:ts": "tsc --build tsconfig.esm.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tsedio/logger.git"
-  },
-  "keywords": [
-    "ts",
-    "log",
-    "debug",
-    "typescript",
-    "trace"
-  ],
-  "bugs": {
-    "url": "https://github.com/tsedio/logger/issues"
-  },
-  "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
     "colors": "1.4.0",
     "semver": "^7.8.5",
@@ -62,8 +62,9 @@
     "@tsed/barrels": "6.6.0",
     "@tsed/typescript": "workspace:*",
     "@tsed/vitest": "workspace:*",
-    "typescript": "5.9.2",
+    "typescript": "7.0.2",
     "vite": "7.0.6",
     "vitest": "^3.2.4"
-  }
+  },
+  "peerDependencies": {}
 }

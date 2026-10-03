@@ -24,7 +24,6 @@ bun add @tsed/logger-std
 
 :::
 
-
 ## Configuration
 
 type - `stderr`

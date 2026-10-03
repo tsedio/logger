@@ -17,7 +17,7 @@ In v7, Appenders and Layouts were bundled with the main `@tsed/logger` package a
 
 ```typescript
 // v7 (old)
-import { JsonLayout } from "@tsed/logger";
+import {JsonLayout} from "@tsed/logger";
 
 // v8 (new)
 import "@tsed/logger/layouts/JsonLayout.js";
@@ -37,10 +37,10 @@ Then import and use it:
 
 ```typescript
 // v7 (old)
-import { StdoutAppender, StdErrAppender } from "@tsed/logger";
+import {StdoutAppender, StdErrAppender} from "@tsed/logger";
 
 // v8 (new)
-import { StdoutAppender, StdErrAppender } from "@tsed/logger-std";
+import {StdoutAppender, StdErrAppender} from "@tsed/logger-std";
 ```
 
 #### Using PatternLayout
@@ -57,10 +57,10 @@ Then import and use it:
 
 ```typescript
 // v7 (old)
-import { PatternLayout } from "@tsed/logger";
+import {PatternLayout} from "@tsed/logger";
 
 // v8 (new)
-import { PatternLayout } from "@tsed/logger-pattern-layout";
+import {PatternLayout} from "@tsed/logger-pattern-layout";
 ```
 
 ## Migration Steps
