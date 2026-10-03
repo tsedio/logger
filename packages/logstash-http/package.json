@@ -38,7 +38,9 @@
   },
   "scripts": {
     "build": "yarn run build:ts",
-    "build:ts": "tsc --build tsconfig.esm.json"
+    "build:ts": "tsc --build tsconfig.esm.json",
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage.thresholds.autoUpdate=true"
   },
   "dependencies": {
     "axios": ">=1.20.0",
