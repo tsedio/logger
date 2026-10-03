@@ -254,6 +254,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@clack/core@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@clack/core@npm:1.5.1"
+  dependencies:
+    fast-wrap-ansi: "npm:^0.2.0"
+    sisteransi: "npm:^1.0.5"
+  checksum: 10/2bd9f8ae5b756e13ee73da37b7afe29987aa43ffc0b892669eed46194a708ccc3f368a41067bf09a8072ffac5ff8ca5f074a6a3d067543e1cbf8edc4ee6e1581
+  languageName: node
+  linkType: hard
+
+"@clack/prompts@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@clack/prompts@npm:1.8.1"
+  dependencies:
+    "@clack/core": "npm:1.5.1"
+    fast-string-width: "npm:^3.0.2"
+    fast-wrap-ansi: "npm:^0.2.0"
+    sisteransi: "npm:^1.0.5"
+  checksum: 10/fb4f920dc0caf054f4fa3d611dc82979e80518c09dd961996cab7aec5866bcf5359b63e60881506c84089c4ede8686965946db6195116d41ed8cba3fdfdabc8a
+  languageName: node
+  linkType: hard
+
 "@docsearch/css@npm:3.8.2":
   version: 3.8.2
   resolution: "@docsearch/css@npm:3.8.2"
@@ -789,6 +811,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tsed/docs-new@workspace:."
   dependencies:
+    "@clack/prompts": "npm:^1.8.1"
     "@tsed/vitepress-theme": "npm:^1.8.0"
     "@vueuse/core": "npm:10.11.0"
     autoprefixer: "npm:^10.4.19"
@@ -1829,6 +1852,31 @@ __metadata:
     merge2: "npm:^1.3.0"
     micromatch: "npm:^4.0.4"
   checksum: 10/222512e9315a0efca1276af9adb2127f02105d7288fa746145bf45e2716383fb79eb983c89601a72a399a56b7c18d38ce70457c5466218c5f13fad957cee16df
+  languageName: node
+  linkType: hard
+
+"fast-string-truncated-width@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "fast-string-truncated-width@npm:3.0.3"
+  checksum: 10/3a1631e48927cb558b612a90ee78a61a660823c39b024bfc113935760b5b64805dbf03c4e696c33005294db578417687432e9d13567f1a582c2c75015e8a7648
+  languageName: node
+  linkType: hard
+
+"fast-string-width@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "fast-string-width@npm:3.0.2"
+  dependencies:
+    fast-string-truncated-width: "npm:^3.0.2"
+  checksum: 10/5b9019769f2b00b96d43575c202f4e035a0e55eba7669a9a32351de9fa0805d0959a2afcaec6e4db5ee9b9a4c08d8e77f95abeb04b5bae2f76635cf04ddb4b80
+  languageName: node
+  linkType: hard
+
+"fast-wrap-ansi@npm:^0.2.0":
+  version: 0.2.2
+  resolution: "fast-wrap-ansi@npm:0.2.2"
+  dependencies:
+    fast-string-width: "npm:^3.0.2"
+  checksum: 10/c72272e4ee9c047ec4609adea9beb779f058e0aaee37d9e99d2306c401b34ad2b158ba6969860e35f8be7a0b0ba7512b71315d403e58a45a9f0eba0dc5b4befd
   languageName: node
   linkType: hard
 
@@ -3516,6 +3564,13 @@ __metadata:
   version: 4.1.0
   resolution: "signal-exit@npm:4.1.0"
   checksum: 10/c9fa63bbbd7431066174a48ba2dd9986dfd930c3a8b59de9c29d7b6854ec1c12a80d15310869ea5166d413b99f041bfa3dd80a7947bcd44ea8e6eb3ffeabfa1f
+  languageName: node
+  linkType: hard
+
+"sisteransi@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "sisteransi@npm:1.0.5"
+  checksum: 10/aba6438f46d2bfcef94cf112c835ab395172c75f67453fe05c340c770d3c402363018ae1ab4172a1026a90c47eaccf3af7b6ff6fa749a680c2929bd7fa2b37a4
   languageName: node
   linkType: hard
 
