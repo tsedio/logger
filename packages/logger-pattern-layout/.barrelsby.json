@@ -1,7 +1,5 @@
 {
-  "directory": [
-    "./src/common"
-  ],
+  "directory": ["./src/common"],
   "exclude": ["**/__mock__", "**/__mocks__", "**/*.spec.ts"],
   "delete": true
 }

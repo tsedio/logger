@@ -17,7 +17,7 @@ npm install --save @tsed/logger-connect
 import {$log} from "@tsed/logger";
 import "@tsed/logger-connect";
 
-$log.appenders.clear()
+$log.appenders.clear();
 $log.appenders.set("channel", {
   type: "connect",
   options: {
@@ -26,7 +26,7 @@ $log.appenders.set("channel", {
       warn: (obj) => console.warn(obj),
       debug: (obj) => console.debug(obj),
       trace: (obj) => console.trace(obj),
-      error: (obj) => console.error(obj),
+      error: (obj) => console.error(obj)
     }
   }
 });

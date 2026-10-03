@@ -1,7 +1,4 @@
 {
-  "compilerOptions": {
-    "baseUrl": "."
-  },
   "include": [],
   "references": [
     {

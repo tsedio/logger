@@ -1,8 +1,8 @@
 {
   "name": "@tsed/typescript",
   "version": "8.0.5",
-  "description": "Util to compile source",
   "private": true,
+  "description": "Util to compile source",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -11,5 +11,8 @@
   },
   "scripts": {
     "build:references": "node ./index.js"
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
 }

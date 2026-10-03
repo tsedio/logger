@@ -1,8 +1,35 @@
 {
   "name": "@tsed/logger-root",
   "version": "8.0.7",
-  "description": "A multi channel logger written in TypeScript.",
   "private": true,
+  "description": "A multi channel logger written in TypeScript.",
+  "keywords": [
+    "debug",
+    "log",
+    "trace",
+    "ts",
+    "typescript"
+  ],
+  "homepage": "https://github.com/tsedio/logger",
+  "bugs": {
+    "url": "https://github.com/tsedio/logger/issues"
+  },
+  "license": "MIT",
+  "author": "Romain Lenzotti",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsedio/logger.git"
+  },
+  "directories": {
+    "test": "test",
+    "packages": "packages"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "tools/*"
+    ]
+  },
   "type": "module",
   "scripts": {
     "postinstall": "cd docs && yarn install && cd ..",
@@ -11,8 +38,8 @@
     "test:unit": "vitest run",
     "test:ci": "vitest run --coverage --coverage.thresholds.autoUpdate=true",
     "test:coverage": "vitest run --coverage --coverage.thresholds.autoUpdate=true",
-    "test:lint": "eslint '**/*.{ts,js}'",
-    "test:lint:fix": "yarn test:lint --fix",
+    "test:lint": "oxlint . && node ./tools/oxc/check-workspace-imports.mjs",
+    "test:lint:fix": "oxlint --fix . && node ./tools/oxc/check-workspace-imports.mjs",
     "build": "monorepo build --verbose",
     "build:references": "node ./tools/typescript",
     "compile": "lerna run build",
@@ -25,28 +52,12 @@
     "docs:publish": "CI=1 monorepo publish ghpages",
     "vitepress:build": "cd ./docs && yarn docs:build",
     "vitepress:serve": "yarn docs:install && cd docs && yarn docs:dev",
-    "prettier": "prettier '**/*.{ts,js,json,md,yml,yaml}' --write",
+    "format": "oxfmt '**/*.{ts,tsx,js,jsx,mts,cts,mjs,cjs,json,md,yml,yaml}'",
+    "format:check": "oxfmt --check '**/*.{ts,tsx,js,jsx,mts,cts,mjs,cjs,json,md,yml,yaml}'",
     "release": "semantic-release",
     "release:dryRun": "semantic-release --dry-run",
     "prepare": "is-ci || husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tsedio/logger.git"
-  },
-  "keywords": [
-    "ts",
-    "log",
-    "debug",
-    "typescript",
-    "trace"
-  ],
-  "author": "Romain Lenzotti",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tsedio/logger/issues"
-  },
-  "homepage": "https://github.com/tsedio/logger",
   "dependencies": {
     "colors": "1.4.0",
     "date-format": "^4.0.14",
@@ -66,45 +77,37 @@
     "@tsed/monorepo-utils": "3.3.3",
     "@tsed/ts-doc": "5.0.0",
     "@types/node": "20.19.9",
-    "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@typescript-eslint/parser": "8.38.0",
     "@vitest/coverage-v8": "3.2.4",
     "barrelsby": "2.8.1",
     "concurrently": "^9.2.0",
     "coveralls": "^3.1.1",
     "cross-env": "10.0.0",
     "entities": "4.5.0",
-    "eslint": "9.32.0",
-    "eslint-config-prettier": "9.1.2",
-    "eslint-plugin-prettier": "5.5.3",
-    "eslint-plugin-simple-import-sort": "12.1.1",
-    "eslint-plugin-vitest": "0.5.4",
-    "eslint-plugin-workspaces": "0.11.0",
     "gflow": "^5.1.4",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^16.1.4",
-    "prettier": "3.6.2",
+    "oxfmt": "0.59.0",
+    "oxlint": "1.74.0",
     "semantic-release": "^24.2.7",
     "semantic-release-slack-bot": "^4.0.2",
-    "ts-node": "^10.9.2",
-    "typescript": "5.9.2",
+    "typescript": "7.0.2",
     "unplugin-swc": "^1.5.5",
     "vite": "7.0.6",
     "vite-plugin-dts": "^4.5.4",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.2.4"
   },
-  "directories": {
-    "packages": "packages",
-    "test": "test"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "tools/*"
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx,mts,cts,mjs,cjs}": [
+      "oxlint --fix --no-error-on-unmatched-pattern",
+      "oxfmt"
+    ],
+    "**/*.{json,md,yml,yaml}": [
+      "oxfmt"
     ]
   },
+  "packageManager": "yarn@4.18.0",
   "monorepo": {
     "productionBranch": "production",
     "npmAccess": "public",
@@ -116,6 +119,5 @@
         "cname": "logger.tsed.dev"
       }
     ]
-  },
-  "packageManager": "yarn@4.18.0"
+  }
 }

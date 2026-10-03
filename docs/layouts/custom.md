@@ -48,11 +48,10 @@ export class JsonLayout extends BaseLayout {
   }
 }
 
-layout("customJson", JsonLayout)
+layout("customJson", JsonLayout);
 ```
 
 :::
-
 
 This layout can be use like this:
 

@@ -1,6 +1,3 @@
-import "./StdoutAppender";
-import "./StdoutAppender";
-
 import {format} from "node:util";
 
 import {levels, LogEvent, StringUtils} from "@tsed/logger";

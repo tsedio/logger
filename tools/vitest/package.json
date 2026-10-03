@@ -1,18 +1,20 @@
 {
   "name": "@tsed/vitest",
-  "type": "module",
   "version": "8.0.5",
   "private": true,
+  "type": "module",
   "exports": {
     ".": "./index.js",
     "./plugins/*": "./plugins/*",
     "./presets": "./presets/index.js"
   },
-  "devDependencies": {
-    "vitest": "3.2.4"
-  },
   "scripts": {
     "generate": "node index.js",
     "reset:coverage": "node reset.js"
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vitest": "3.2.4"
+  },
+  "peerDependencies": {}
 }

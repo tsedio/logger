@@ -3,9 +3,9 @@
 </p>
 
 <div align="center">
- 
+
    <h1>Ts.ED Logger</h1>
- 
+
 [![Build Status](https://travis-ci.org/tsedio/logger.svg?branch=master)](https://travis-ci.org/tsedio/logger)
 [![PR Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tsedio/logger/blob/master/CONTRIBUTING.md)
 [![Coverage Status](https://coveralls.io/repos/github/tsedio/logger/badge.svg?branch=production)](https://coveralls.io/github/tsedio/logger?branch=production)
@@ -97,6 +97,7 @@ logger.appenders
     }
   });
 ```
+
 ## Repository stats
 
 ![Alt](https://repobeats.axiom.co/api/embed/1a7b80d5a5a473c37c4b1c3084e101001d15e14a.svg "Repobeats analytics image")

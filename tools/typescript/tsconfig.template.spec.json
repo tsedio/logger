@@ -1,7 +1,6 @@
 {
   "extends": "@tsed/typescript/tsconfig.node.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "rootDir": ".",
     "declaration": false,
     "composite": false,

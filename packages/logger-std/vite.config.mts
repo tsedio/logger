@@ -8,7 +8,7 @@ export default defineConfig({
     dts({
       outDir: "lib/browser/types",
       include: ["src/browser", "src/common"],
-      exclude: ["**/*.spec.{ts,tsx}", "**/*.stories.{ts,tsx}"],
+      exclude: ["**/*.spec.{ts,tsx}", "**/*.stories.{ts,tsx}"]
     })
   ],
   build: {
@@ -17,7 +17,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/browser/index.ts"),
       formats: ["umd", "es"],
       name: "@tsed/logger",
-      fileName: "logger",
-    },
+      fileName: "logger"
+    }
   }
 });
