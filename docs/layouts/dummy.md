@@ -15,7 +15,7 @@ const logger = new Logger("loggerName");
 logger.appenders.set("std-log", {
   type: "console",
   layout: DummyLayout,
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 
 logger.debug("Cheese is too ripe! Cheese was: ", cheeseName);

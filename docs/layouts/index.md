@@ -16,7 +16,7 @@ const logger = new Logger("loggerName");
 logger.appenders.set("std-log", {
   type: "stdout",
   layout: {type: "basic"},
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 ```
 

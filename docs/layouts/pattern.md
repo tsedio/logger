@@ -70,7 +70,7 @@ logger.appenders.set("std-log-custom", {
       user: (logEvent) => AuthLibrary.currentUser()
     }
   },
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 logger.info("doing something.");
 ```
@@ -93,7 +93,7 @@ logger.appenders.set("std-log", {
     type: "pattern",
     pattern: "%d %p %c %X{user} %m%n"
   },
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 logger.context.add("user", "charlie");
 logger.info("doing something.");

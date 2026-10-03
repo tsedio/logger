@@ -49,7 +49,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "loggly",
-  level: ["info"],
+  levels: ["info"],
   options: {
     token: "somethinglong",
     subdomain: "your.subdomain",

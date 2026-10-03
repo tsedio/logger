@@ -26,7 +26,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "insight",
-  level: ["info"],
+  levels: ["info"],
   options: {
     token: "the token",
     region: "us"

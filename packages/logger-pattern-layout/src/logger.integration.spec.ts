@@ -16,12 +16,12 @@ describe("Logger integration", () => {
       .set("console", {
         type: "stdout",
         layout,
-        level: ["info", "debug"]
+        levels: ["info", "debug"]
       })
       .set("console", {
         type: "stderr",
         layout,
-        level: ["trace", "fatal", "error", "warn"]
+        levels: ["trace", "fatal", "error", "warn"]
       });
 
     logger.info("===");

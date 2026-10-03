@@ -35,7 +35,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "rabbitmq",
-  level: ["info"],
+  levels: ["info"],
   options: {
     host: "127.0.0.1",
     port: 5672,

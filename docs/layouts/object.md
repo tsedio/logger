@@ -11,7 +11,7 @@ import {ObjectLayout} from "@tsed/logger/layouts/ObjectLayout.js";
 logger.appenders.set("std-log", {
   type: "console",
   layout: ObjectLayout,
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 
 $log.info("this is just a test");

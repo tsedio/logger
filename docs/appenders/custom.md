@@ -27,6 +27,6 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("std-log", {
   type: "console2",
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 ```

@@ -55,7 +55,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("email", {
   type: "smtp",
-  level: ["error"],
+  levels: ["error"],
   recipients: "dev.team@company.name"
 });
 ```
@@ -73,7 +73,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("email", {
   type: "smtp",
-  level: ["error"],
+  levels: ["error"],
   recipients: "dev.team@company.name",
   subject: "Latest logs",
   sender: "my.application@company.name",
@@ -98,7 +98,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("email", {
   type: "smtp",
-  level: ["error"],
+  levels: ["error"],
   recipients: "dev.team@company.name",
   SMTP: {host: "smtp.company.name", port: 8025}
 });
@@ -114,7 +114,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("email", {
   type: "smtp",
-  level: ["error"],
+  levels: ["error"],
   recipients: "dev.team@company.name",
   transport: {
     plugin: "smtp",

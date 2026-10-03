@@ -47,7 +47,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "logstash-udp",
-  level: ["info"],
+  levels: ["info"],
   options: {
     host: "log.server",
     port: 12345
@@ -84,7 +84,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "loggly",
-  level: ["info"],
+  levels: ["info"],
   options: {
     host: "log.server",
     port: 12345,

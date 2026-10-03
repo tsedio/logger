@@ -14,7 +14,7 @@ const logger = new Logger("loggerName");
 logger.appenders.set("std-log-json", {
   type: "console",
   layout: {type: JsonLayout, separator: ","},
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 
 logger.info("this is just a test");

@@ -26,7 +26,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "seq",
-  level: ["info"],
+  levels: ["info"],
   options: {
     serverUrl: "http://localhost:5341",
     apiKey: "the token"

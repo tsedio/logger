@@ -26,7 +26,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "slack",
-  level: ["error"],
+  levels: ["error"],
   options: {
     token: "xoxb-xxxx-xxxx-xxxx",
     channel_id: "prod-alerts",

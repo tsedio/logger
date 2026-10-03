@@ -48,7 +48,7 @@ const logger = new Logger("loggerName");
 
 logger.appenders.set("stdout", {
   type: "logstash-http",
-  level: ["info"],
+  levels: ["info"],
   options: {
     url: "http://localhost:9200/_bulk",
     application: "logstash-tsed",

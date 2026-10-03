@@ -42,7 +42,7 @@ logger.appenders.set("stdout", {
     type: PatternLayout,
     pattern: "%d %p %c %m%n"
   },
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 
 logger.info("Hello world");
@@ -98,7 +98,7 @@ logger.appenders.set("stdout", {
       user: (logEvent) => AuthLibrary.currentUser()
     }
   },
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 
 logger.info("User action");
@@ -120,7 +120,7 @@ logger.appenders.set("stdout", {
     type: PatternLayout,
     pattern: "%d %p %c %X{user} %m%n"
   },
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 
 logger.context.add("user", "charlie");

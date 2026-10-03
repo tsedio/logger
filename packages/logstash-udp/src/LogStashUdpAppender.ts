@@ -99,4 +99,4 @@ export class LogStashUdpAppender extends BaseAppender {
   }
 }
 
-appender("logstash-http", LogStashUdpAppender);
+appender("logstash-udp", LogStashUdpAppender);

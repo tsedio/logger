@@ -50,7 +50,7 @@ export class LoggerAppenders {
   ): LoggerAppenders {
     const type = typeof config.type === "string" ? config.type : (config.type as any)?.$name;
     const opts = {
-      level: ["debug", "info", "trace", "error", "warn", "fatal"],
+      levels: ["debug", "info", "trace", "error", "warn", "fatal"],
       ...config,
       type,
       options: config.options || {}

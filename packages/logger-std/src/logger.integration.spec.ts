@@ -10,11 +10,11 @@ describe("Logger integration", () => {
     logger.appenders
       .set("stdout", {
         type: StdoutAppender,
-        level: ["info", "debug"]
+        levels: ["info", "debug"]
       })
       .set("stderr", {
         type: StderrAppender,
-        level: ["trace", "fatal", "error", "warn"]
+        levels: ["trace", "fatal", "error", "warn"]
       });
 
     logger.info("===");

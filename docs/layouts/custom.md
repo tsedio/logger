@@ -64,7 +64,7 @@ const logger = new Logger("loggerName");
 logger.appenders.set("std-log", {
   type: "console",
   layout: {type: "customJson"},
-  level: ["debug", "info", "trace"]
+  levels: ["debug", "info", "trace"]
 });
 logger.info("this is just a test");
 logger.error("of a custom appender");
