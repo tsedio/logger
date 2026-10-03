@@ -7,10 +7,17 @@ otherTopics: true
 ## Installation
 
 ```bash
-npm install -g typescript
 npm install @tsed/logger
-npm install source-map-support
 ```
+
+`@tsed/logger` v8 is ESM only and ships the console appender and the colored layout. Other appenders and layouts are
+installed and imported on demand:
+
+```bash
+npm install @tsed/logger-std @tsed/logger-file @tsed/logger-pattern-layout
+```
+
+See the [migration guide](/introduction/migrate-to-v8) when you come from v7.
 
 ## Quick start
 
@@ -35,6 +42,10 @@ Will be produce the following log output:
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import "@tsed/logger/layouts/JsonLayout.js"; // registers the "json" layout
+import "@tsed/logger-file"; // registers the "file" appender
+import "@tsed/logger-pattern-layout"; // registers the "pattern" layout
+import "@tsed/logger-std"; // registers the "stdout" and "stderr" appenders
 
 const logger = new Logger("loggerName");
 logger.appenders
@@ -52,13 +63,18 @@ logger.appenders
   })
   .set("all-log-file", {
     type: "file",
-    filename: `${__dirname}/app.log`,
+    filename: `${import.meta.dirname}/app.log`,
     layout: {
       type: "json",
       separator: ","
     }
   });
 ```
+
+::: warning
+An appender or a layout whose package is not imported is unknown to the logger: it prints a warning and falls back to the
+console appender or the colored layout.
+:::
 
 ## Shutdown
 

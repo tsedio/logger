@@ -40,7 +40,7 @@ Then import and use it:
 import {StdoutAppender, StdErrAppender} from "@tsed/logger";
 
 // v8 (new)
-import {StdoutAppender, StdErrAppender} from "@tsed/logger-std";
+import {StdoutAppender, StderrAppender} from "@tsed/logger-std";
 ```
 
 #### Using PatternLayout

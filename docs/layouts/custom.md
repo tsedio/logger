@@ -7,11 +7,10 @@ You can add your own layouts with @@Layout()@@ before pushing a configure to you
 ```typescript [Decorator]
 // customLayout.ts
 import {BaseLayout, LogEvent, Layout} from "@tsed/logger";
-import {formatLogData} from "ts-log-debug/lib/utils/inpectUtils";
 
 @Layout({name: "customJson"})
 export class JsonLayout extends BaseLayout {
-  transform(loggingEvent: LogEvent, timezoneOffset?): string {
+  transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
     const log = {
       startTime: loggingEvent.startTime,
       categoryName: loggingEvent.categoryName,
@@ -19,8 +18,6 @@ export class JsonLayout extends BaseLayout {
       data: loggingEvent.data,
       context: loggingEvent.context
     };
-
-    log.data = log.data.map((data) => formatLogData([data]));
 
     return JSON.stringify(log) + (this.config["separator"] || "");
   }
@@ -29,11 +26,10 @@ export class JsonLayout extends BaseLayout {
 
 ```typescript [Functional API]
 // customLayout.ts
-import {BaseLayout, LogEvent, Layout, layout} from "@tsed/logger";
-import {formatLogData} from "ts-log-debug/lib/utils/inpectUtils";
+import {BaseLayout, LogEvent, layout} from "@tsed/logger";
 
 export class JsonLayout extends BaseLayout {
-  transform(loggingEvent: LogEvent, timezoneOffset?): string {
+  transform(loggingEvent: LogEvent, timezoneOffset?: number): string {
     const log = {
       startTime: loggingEvent.startTime,
       categoryName: loggingEvent.categoryName,
@@ -41,8 +37,6 @@ export class JsonLayout extends BaseLayout {
       data: loggingEvent.data,
       context: loggingEvent.context
     };
-
-    log.data = log.data.map((data) => formatLogData([data]));
 
     return JSON.stringify(log) + (this.config["separator"] || "");
   }
@@ -57,7 +51,7 @@ This layout can be use like this:
 
 ```typescript
 import {Logger} from "@tsed/logger";
-import "./customLayout.ts";
+import "./customLayout.js";
 
 const logger = new Logger("loggerName");
 
@@ -76,5 +70,5 @@ This example outputs the following:
 ```bash
 {"startTime":"2017-06-05T22:23:08.479Z","categoryName":"json-test","data":["this is just a test"],"level":"INFO","context":{}},
 {"startTime":"2017-06-05T22:23:08.483Z","categoryName":"json-test","data":["of a custom appender"],"level":"ERROR","context":{}},
-{"startTime":"2017-06-05T22:23:08.483Z","categoryName":"json-test","data":["that outputs json"],"level""WARN","context":{}},
+{"startTime":"2017-06-05T22:23:08.483Z","categoryName":"json-test","data":["that outputs json"],"level":"WARN","context":{}},
 ```
