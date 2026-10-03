@@ -6,19 +6,21 @@ Appenders serialise log events to some form of output. They can write to files, 
 
 ```typescript
 import {Logger} from "@tsed/logger";
+import "@tsed/logger-file";
+import "@tsed/logger-std";
 
 const logger = new Logger("loggerName");
 
 logger.appenders
-  .set({
+  .set("stdout", {
     type: "stdout",
     levels: ["debug", "info", "trace"]
   })
-  .set({
+  .set("stderr", {
     type: "stderr",
     levels: ["error", "fatal", "warn"]
   })
-  .set({
+  .set("file", {
     type: "file",
     filename: "logfile.log"
   });

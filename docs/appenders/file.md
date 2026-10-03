@@ -72,13 +72,14 @@ When `all-the-logs.log` reaches 10Mb again, then all-the-logs.log.1.gz will be r
 ## Example with date rolling
 
 ```typescript
-import {Logger} from "@tsed/logger-file";
+import {Logger} from "@tsed/logger";
 import "@tsed/logger-file";
+
 export const logger = new Logger("Log Example");
 
 logger.appenders.set("file", {
   type: "file",
-  filename: `${__dirname}/../logs/myfile.log`,
+  filename: `${import.meta.dirname}/../logs/myfile.log`,
   pattern: ".yyyy-MM-dd"
 });
 ```
